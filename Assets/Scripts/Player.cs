@@ -10,6 +10,12 @@ public abstract class Player : MonoBehaviour
     protected Animator anim;
     protected bool isFacingRight;
 
+    protected Collider2D playerCollider;
+    [SerializeField] float respawnTime;
+    private float respawnTimer;
+    [SerializeField] Transform respwanPoint;
+    protected bool isActive;
+
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
     protected float gravity;
@@ -37,9 +43,11 @@ public abstract class Player : MonoBehaviour
 
     void Start()
     {
+        playerCollider = GetComponent<Collider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
         gravity = rigidBody.gravityScale;
         anim = GetComponent<Animator>();
+        isActive = true;
         anim.SetBool("isLedgeGrabbing", false);
         anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
@@ -107,6 +115,33 @@ public abstract class Player : MonoBehaviour
         {
             ledgePos1 = grabPos - difference3;
             ledgePos2 = grabPos + difference4;
+        }
+    }
+
+    private void MiniJump(float miniJumpForce) 
+    {
+        rigidBody.velocity = new Vector2(0, 0);
+        rigidBody.AddForce(Vector2.up * miniJumpForce, ForceMode2D.Impulse);
+    }
+
+    public void DamagePlayer()
+    {
+        anim.SetBool("isDamaged", true);
+        isActive = false;
+        playerCollider.enabled = false;
+        MiniJump(12f);
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        if (!isActive)
+        {
+            transform.position = respwanPoint.position;
+            isActive = true;
+            playerCollider.enabled = true;
+            anim.SetBool("isDamaged", false);
         }
     }
 }

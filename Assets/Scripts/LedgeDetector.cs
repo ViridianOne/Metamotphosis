@@ -17,7 +17,7 @@ public class LedgeDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Ledge Grabbing")
         {
             Player.instance.GrabLedge(transform.position, isRight, coefficient);
         }

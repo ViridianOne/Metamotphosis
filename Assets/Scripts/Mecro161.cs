@@ -5,6 +5,8 @@ using UnityEditor.Animations;
 
 public class Mecro161 : Player
 {
+    [SerializeField] private SpriteRenderer playerLight;
+
     [Header("Jumping")]
     private bool isGrounded;
     [SerializeField] private Transform feetPos;
@@ -33,51 +35,60 @@ public class Mecro161 : Player
 
     private void Update()
     {
-        if (isAbleToMove)
+        if (isActive)
         {
-            moveInput = Input.GetAxisRaw("Horizontal");
-            if(Input.GetButtonDown("Fire1"))
+            if (isAbleToMove)
             {
-                lightSwitcher = !lightSwitcher;
+                moveInput = Input.GetAxisRaw("Horizontal");
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    lightSwitcher = !lightSwitcher;
+                }
                 if (lightSwitcher)
                 {
                     anim.SetLayerWeight(1, 0);
                     anim.SetLayerWeight(2, 100);
+                    playerLight.enabled = true;
                 }
                 else
                 {
                     anim.SetLayerWeight(1, 100);
                     anim.SetLayerWeight(2, 0);
+                    playerLight.enabled = false;
                 }
+                wasOnGround = isGrounded;
+                //isGrounded = Physics2D.OverlapCircle(feetPos.position, radius, groundMask);
+                isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
+                if (!wasOnGround && isGrounded)
+                {
+                    StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
+                }
+                if (isGrounded && Input.GetButtonDown("Jump"))
+                {
+                    //isJumping = true;
+                    jumpTimer = Time.time + jumpDelay;
+                }
+                if (!isGrounded)
+                {
+                    anim.SetBool("isJumping", true);
+                }
+                else
+                {
+                    anim.SetBool("isJumping", false);
+                    anim.SetBool("landingMoment", false);
+                }
+                if (rigidBody.velocity.y <= 0 && !isGrounded)
+                    anim.SetBool("landingMoment", true);
+                UpdateMovementAnimation();
             }
-            wasOnGround = isGrounded;
-            //isGrounded = Physics2D.OverlapCircle(feetPos.position, radius, groundMask);
-            isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
-            if (!wasOnGround && isGrounded)
-            {
-                StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
-            }
-            if (isGrounded && Input.GetButtonDown("Jump"))
-            {
-                //isJumping = true;
-                jumpTimer = Time.time + jumpDelay;
-            }
-            if (!isGrounded)
-            {
-                anim.SetBool("isJumping", true);
-            }
-            else
-            {
-                anim.SetBool("isJumping", false);
-                anim.SetBool("landingMoment", false);
-            }
-            if (rigidBody.velocity.y <= 0 && !isGrounded)
-                anim.SetBool("landingMoment", true);
-            UpdateMovementAnimation();
+            UpdateLedegGrabbing();
+            if (isTouchingLedge)
+                isGrounded = false;
         }
-        UpdateLedegGrabbing();
-        if (isTouchingLedge)
-            isGrounded = false;
+        else 
+        {
+            playerLight.enabled = false;
+        }
     }
 
     private void OnDrawGizmos()
@@ -112,12 +123,15 @@ public class Mecro161 : Player
 
     private void FixedUpdate()
     {
-        Move();
-        if(jumpTimer > Time.time)
-            jumpTimer -= Time.deltaTime;
-        if (jumpTimer <= Time.time && jumpTimer > 0f)
+        if (isActive)
         {
-            Jump();
+            Move();
+            if (jumpTimer > Time.time)
+                jumpTimer -= Time.deltaTime;
+            if (jumpTimer <= Time.time && jumpTimer > 0f)
+            {
+                Jump();
+            }
         }
     }
 
