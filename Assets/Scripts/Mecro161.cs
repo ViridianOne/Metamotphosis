@@ -5,8 +5,6 @@ using UnityEditor.Animations;
 
 public class Mecro161 : Player
 {
-    [SerializeField] private SpriteRenderer playerLight;
-
     [Header("Jumping")]
     private bool isGrounded;
     [SerializeField] private Transform feetPos;
@@ -43,18 +41,16 @@ public class Mecro161 : Player
                 if (Input.GetButtonDown("Fire1"))
                 {
                     lightSwitcher = !lightSwitcher;
-                }
-                if (lightSwitcher)
-                {
-                    anim.SetLayerWeight(1, 0);
-                    anim.SetLayerWeight(2, 100);
-                    playerLight.enabled = true;
-                }
-                else
-                {
-                    anim.SetLayerWeight(1, 100);
-                    anim.SetLayerWeight(2, 0);
-                    playerLight.enabled = false;
+                    if (lightSwitcher)
+                    {
+                        anim.SetLayerWeight(1, 0);
+                        anim.SetLayerWeight(2, 100);
+                    }
+                    else
+                    {
+                        anim.SetLayerWeight(1, 100);
+                        anim.SetLayerWeight(2, 0);
+                    }
                 }
                 wasOnGround = isGrounded;
                 //isGrounded = Physics2D.OverlapCircle(feetPos.position, radius, groundMask);
@@ -84,10 +80,6 @@ public class Mecro161 : Player
             UpdateLedegGrabbing();
             if (isTouchingLedge)
                 isGrounded = false;
-        }
-        else 
-        {
-            playerLight.enabled = false;
         }
     }
 
