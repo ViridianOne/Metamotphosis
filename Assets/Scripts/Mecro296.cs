@@ -51,10 +51,6 @@ public class Mecro296 : Player
                 if (isCeilingHitted)
                     jumpTimer = 0;
 
-                if (Input.GetButtonDown("Jump"))
-                {
-                    healthBarBehaviour.ToggleJumpSlider(true);
-                }
                 isChargingJump = Input.GetButton("Jump");
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
@@ -64,9 +60,9 @@ public class Mecro296 : Player
                 if (isGrounded && Input.GetButtonUp("Jump"))
                 {
                     isJumpCharged = true;
-                    healthBarBehaviour.ToggleJumpSlider(false);
                     healthBarBehaviour.AddValueToJumpSlider(-1000);
                 }
+
                 if (isGrounded && jumpTimer > 0f)
                     healthBarBehaviour.ToggleJumpSlider(true);
                 else

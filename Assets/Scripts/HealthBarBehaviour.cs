@@ -12,7 +12,7 @@ public class HealthBarBehaviour : MonoBehaviour
     private void Start()
     {
         sliderBox.SetActive(false);
-        slider.value = 100;
+        slider.value = 1000;
     }
 
     private void Update()
