@@ -144,7 +144,7 @@ public class Mecro296 : Player
     {
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
+        //StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
