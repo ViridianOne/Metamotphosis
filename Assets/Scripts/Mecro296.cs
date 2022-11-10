@@ -15,7 +15,7 @@ public class Mecro296 : Player
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform headPos;
     [SerializeField] private Vector2 headDetectorSize;
-    //public GameObject holder;
+    public GameObject holder;
 
     private bool isChargingJump = false;
     private bool isJumpCharged = false;
@@ -147,23 +147,23 @@ public class Mecro296 : Player
         //StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
-    //IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
-    //{
-    //    Vector3 originSize = Vector3.one;
-    //    Vector3 newSize = new Vector3(xSqueeze, ySqueeze, originSize.z);
-    //    float timer = 0f;
-    //    while (timer <= 1f)
-    //    {
-    //        timer += Time.deltaTime / seconds;
-    //        holder.transform.localScale = Vector3.Lerp(originSize, newSize, timer);
-    //        yield return null;
-    //    }
-    //    timer = 0;
-    //    while (timer <= 1f)
-    //    {
-    //        timer += Time.deltaTime / seconds;
-    //        holder.transform.localScale = Vector3.Lerp(newSize, originSize, timer);
-    //        yield return null;
-    //    }
-    //}
+    IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
+    {
+        Vector3 originSize = Vector3.one;
+        Vector3 newSize = new Vector3(xSqueeze, ySqueeze, originSize.z);
+        float timer = 0f;
+        while (timer <= 1f)
+        {
+            timer += Time.deltaTime / seconds;
+            holder.transform.localScale = Vector3.Lerp(originSize, newSize, timer);
+            yield return null;
+        }
+        timer = 0;
+        while (timer <= 1f)
+        {
+            timer += Time.deltaTime / seconds;
+            holder.transform.localScale = Vector3.Lerp(newSize, originSize, timer);
+            yield return null;
+        }
+    }
 }
