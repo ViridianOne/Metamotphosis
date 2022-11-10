@@ -7,17 +7,13 @@ public class Mecro71 : Player
 {
     [Header("Jumping")]
     private bool isGrounded;
-    [SerializeField] private Transform feetPos;
+    //[SerializeField] private Transform feetPos;
     [SerializeField] private float radius;
     [SerializeField] private Vector2 feetDetectorSize;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpForce;
-    private bool isJumping = false;
     [SerializeField] private float jumpDelay = 0.25f;
-    private float jumpTimer;
     public GameObject holder;
-    private bool wasOnGround;
-    private bool lightSwitcher = false;
     public float acceleration = 0.5f;
     public bool isFlying;
     public int jumpCount = 0;
@@ -33,6 +29,7 @@ public class Mecro71 : Player
     private bool isCeilingHit;
     [SerializeField] private Transform headPos;                 //for collision detection
     [SerializeField] private Vector2 headDetectorSize;
+    [SerializeField] private float accelerationCoefficient;
 
     protected override void Move()
     {
@@ -67,25 +64,25 @@ public class Mecro71 : Player
 
     private void ChoosingDirection()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
             moveInput = Input.GetAxisRaw("Horizontal");
             directionArrow = "right";
             directionChosen = true;
 
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetAxisRaw("Horizontal") < 0)
         {
             directionArrow = "left";
             moveInput = Input.GetAxisRaw("Horizontal");
             directionChosen = true;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetAxisRaw("Vertical") < 0)
         {
             directionArrow = "down";
             directionChosen = true;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
             directionArrow = "up";
             directionChosen = true;
@@ -96,10 +93,11 @@ public class Mecro71 : Player
     private void Update()
     {
         //if (jumpCount == 0) with space
-        if (directionChosen == false)
-            ChoosingDirection();
         if (isActive)
         {
+            if (directionChosen == false)
+                ChoosingDirection();
+
             if (isAbleToMove)
             {
                 //if (Input.GetButtonDown("Jump"))
@@ -163,7 +161,7 @@ public class Mecro71 : Player
             {
                 Move();
                 if (moveSpeed < maxSpeed)
-                    moveSpeed += acceleration * Time.deltaTime;
+                    moveSpeed += acceleration * accelerationCoefficient * Time.deltaTime;
                 anim.SetBool("isFlying", true);
             }
             else
@@ -184,7 +182,7 @@ public class Mecro71 : Player
         //Gizmos.DrawWireSphere(feetPos.position, radius);
         Gizmos.color = Color.magenta;
         //Gizmos.DrawRay(transform.position, transform.right);
-        Gizmos.DrawWireCube(feetPos.position, feetDetectorSize);
+        //Gizmos.DrawWireCube(feetPos.position, feetDetectorSize);
     }
 
     private void UpdateMovementAnimation()
@@ -214,7 +212,7 @@ public class Mecro71 : Player
         }
     }*/
 
-            private void Flip()
+    private void Flip()
     {
         if (moveInput > 0f)
         {
