@@ -52,6 +52,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
+        anim.SetBool("isFlying", false);
     }
 
     protected abstract void Move();
