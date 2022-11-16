@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class Pause_menu : MonoBehaviour
 {
     public static bool isPaused = false;
+    private GameObject activePage = null;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuButtons;
+    public GameObject helpPage;
+
 
     // Update is called once per frame
     void Update()
@@ -28,14 +31,19 @@ public class Pause_menu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        if(activePage != null)
+        {
+            activePage.SetActive(false);
+            activePage = null;
+        }
+        pauseMenuButtons.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
 
     private void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        pauseMenuButtons.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -47,6 +55,12 @@ public class Pause_menu : MonoBehaviour
 
     protected void OpenHelp()
     {
+        if (activePage != null)
+        {
+            activePage.SetActive(false);
+        }
+        helpPage.SetActive(true);
+        activePage = helpPage;
         DoNothing();
     }
 
