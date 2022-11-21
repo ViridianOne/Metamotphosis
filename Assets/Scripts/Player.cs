@@ -119,7 +119,7 @@ public abstract class Player : MonoBehaviour
         }
     }
 
-    private void MiniJump(float miniJumpForce) 
+    public void MiniJump(float miniJumpForce) 
     {
         rigidBody.velocity = new Vector2(0, 0);
         rigidBody.AddForce(Vector2.up * miniJumpForce, ForceMode2D.Impulse);
