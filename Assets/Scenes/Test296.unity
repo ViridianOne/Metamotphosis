@@ -347,7 +347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 94690240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d812670d931ee04cb720e10388cbb25, type: 3}
+  m_Script: {fileID: 11500000, guid: f95827eb8d4b3da40a47886e602163be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sliderBox: {fileID: 384968903}
@@ -777,9 +777,9 @@ MonoBehaviour:
   timeBetweenJump: 0.25
   minJumpTime: 0.1
   maxJumpTime: 0.3
-  jumpChargeSpeed: 0.002
-  healthBarBehaviour: {fileID: 94690245}
-  healthBarChangeSpeed: 17000
+  jumpChargeSpeed: 0.007
+  jumpBarBehaviour: {fileID: 94690245}
+  jumpBarChangeSpeed: 17000
 --- !u!50 &274842936
 Rigidbody2D:
   serializedVersion: 4
@@ -2213,7 +2213,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2c5ef17d393d1e546987b861dc788a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2599,7 +2599,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -192867732, guid: e5fc7af32615ceb40b378419a94043f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
