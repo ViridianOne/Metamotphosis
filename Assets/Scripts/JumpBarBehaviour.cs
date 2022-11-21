@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarBehaviour : MonoBehaviour
+public class JumpBarBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject sliderBox;
     [SerializeField] private Slider slider;

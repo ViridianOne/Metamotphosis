@@ -52,6 +52,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
+        anim.SetBool("isFlying", false);
     }
 
     protected abstract void Move();
@@ -118,7 +119,7 @@ public abstract class Player : MonoBehaviour
         }
     }
 
-    private void MiniJump(float miniJumpForce) 
+    public void MiniJump(float miniJumpForce) 
     {
         rigidBody.velocity = new Vector2(0, 0);
         rigidBody.AddForce(Vector2.up * miniJumpForce, ForceMode2D.Impulse);
