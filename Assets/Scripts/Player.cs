@@ -13,8 +13,8 @@ public abstract class Player : MonoBehaviour
     protected Collider2D playerCollider;
     [SerializeField] float respawnTime;
     private float respawnTimer;
-    [SerializeField] Transform respwanPoint;
-    protected bool isActive;
+    [HideInInspector] public Transform respawnPoint;
+    public bool isActive;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -139,7 +139,7 @@ public abstract class Player : MonoBehaviour
         yield return new WaitForSeconds(respawnTime);
         if (!isActive)
         {
-            transform.position = respwanPoint.position;
+            transform.position = respawnPoint.position;
             isActive = true;
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
