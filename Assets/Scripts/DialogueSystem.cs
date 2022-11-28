@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public string[] sentences;
+    [HideInInspector] public string[] sentences;
     public bool dialogueStarted;
 
     public GameObject dialogueWindow;
