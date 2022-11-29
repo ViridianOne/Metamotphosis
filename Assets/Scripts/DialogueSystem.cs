@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public string[] sentences;
+    [HideInInspector] public string[] sentences;
     public bool dialogueStarted;
 
     public GameObject dialogueWindow;
@@ -77,7 +76,7 @@ public class DialogueSystem : MonoBehaviour
         if (waitForNext == true && Input.GetKeyDown(KeyCode.E))
         {
             waitForNext = false;
-            dialogueSpeed = 0.2f;
+            dialogueSpeed = 0.4f;
             sentenceIndex++;
 
             if (sentenceIndex < sentences.Length)
