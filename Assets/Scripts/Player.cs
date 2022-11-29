@@ -130,7 +130,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isDamaged", true);
         isActive = false;
         playerCollider.enabled = false;
-        MiniJump(12f);
+        //MiniJump(12f);
         StartCoroutine(Respawn());
     }
 
