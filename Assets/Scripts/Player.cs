@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public abstract class Player : MonoBehaviour
 {
     public static Player instance;
@@ -128,9 +129,10 @@ public abstract class Player : MonoBehaviour
     public void DamagePlayer()
     {
         anim.SetBool("isDamaged", true);
+        anim.SetTrigger("damage");
         isActive = false;
         playerCollider.enabled = false;
-        //MiniJump(12f);
+        MiniJump(12f);
         StartCoroutine(Respawn());
     }
 
