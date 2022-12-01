@@ -15,7 +15,7 @@ public abstract class Player : MonoBehaviour
     [SerializeField] float respawnTime;
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
-    public bool isActive;
+    protected bool isActive;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -146,5 +146,14 @@ public abstract class Player : MonoBehaviour
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
         }
+    }
+
+    public void ToggleActive(bool state)
+    {
+        isActive = state;
+        anim.SetBool("isMoving", false);
+        anim.SetBool("isJumping", false);
+        anim.SetBool("landingMoment", false);
+        anim.SetBool("isFlying", false);
     }
 }
