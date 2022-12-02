@@ -40,14 +40,14 @@ public abstract class Player : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        anim = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
-        rigidBody = GetComponent<Rigidbody2D>();
         gravity = rigidBody.gravityScale;
-        anim = GetComponent<Animator>();
         isActive = true;
         anim.SetBool("isLedgeGrabbing", false);
         anim.SetBool("isMoving", false);
@@ -148,12 +148,18 @@ public abstract class Player : MonoBehaviour
         }
     }
 
+    protected abstract void StopMoving();
+
     public void ToggleActive(bool state)
     {
         isActive = state;
-        anim.SetBool("isMoving", false);
+        /*anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
-        anim.SetBool("isFlying", false);
+        anim.SetBool("isFlying", false);*/
+        if (!state)
+        {
+            StopMoving();
+        }
     }
 }
