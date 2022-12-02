@@ -175,4 +175,13 @@ public class Mecro161 : Player
             yield return null;
         }
     }
+
+    protected override void StopMoving()
+    {
+        anim.SetBool("isMoving", false);
+        anim.SetBool("isJumping", false);
+        anim.SetBool("landingMoment", false);
+        anim.SetBool("isLedgeGrabbing", false);
+        rigidBody.velocity = Vector2.zero;
+    }
 }
