@@ -105,7 +105,7 @@ public class Enemy1 : MonoBehaviour
         {
             moveDirection = 0;
             isActive = false;
-            anim.SetBool("isDamaged", true);
+            anim.SetTrigger("damage");
             StartCoroutine(Vanishing());
         }
     }

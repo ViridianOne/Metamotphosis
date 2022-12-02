@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &350467939650575438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 350467939650575432}
+  - component: {fileID: 350467939650575433}
+  m_Layer: 0
+  m_Name: Mecro Select Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &350467939650575432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350467939650575438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.40367997, y: 0.332423, z: 0.044058364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &350467939650575433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350467939650575438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dedba3aa88ee16469c04cd699f2d1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMecroIndex: 2
+  respawnPoint: {fileID: 0}
+  selectTime: 0.8
+  mecros:
+  - {fileID: 5772419249652849744, guid: bf09a01bf8341204cb31c8ca09e3f1c6, type: 3}
+  - {fileID: 520462003863146414, guid: 131c9871e0e63a5408da5f0ae472db59, type: 3}
+  - {fileID: 7280123948819870365, guid: 47cfc6c5bdf9f76429558d85230c0b65, type: 3}

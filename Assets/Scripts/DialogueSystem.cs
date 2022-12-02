@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public string[] sentences;
+    [HideInInspector] public string[] sentences;
     public bool dialogueStarted;
 
     public GameObject dialogueWindow;
@@ -36,6 +35,8 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueStarted)
             return;
 
+        Player.instance.ToggleActive(false);
+        dialogueSpeed = 0.05f;
         dialogueStarted = true;
         ToggleWindow(true);
         GetDialogue(0);
@@ -52,6 +53,8 @@ public class DialogueSystem : MonoBehaviour
     public void EndDialogue()
     {
         ToggleWindow(false);
+        dialogueStarted = false;
+        Player.instance.ToggleActive(true);
     }
 
     IEnumerator DialogueWriting()
@@ -74,10 +77,10 @@ public class DialogueSystem : MonoBehaviour
         if (!dialogueStarted)
             return;
 
-        if (waitForNext == true && Input.GetKeyDown(KeyCode.E))
+        if (waitForNext && Input.GetKeyDown(KeyCode.E))
         {
             waitForNext = false;
-            dialogueSpeed = 0.4f;
+            dialogueSpeed = 0.1f;
             sentenceIndex++;
 
             if (sentenceIndex < sentences.Length)
@@ -85,7 +88,7 @@ public class DialogueSystem : MonoBehaviour
             else
                 EndDialogue();
         }
-        if (waitForNext == false && Input.anyKey && charIndex > 4)
+        if (!waitForNext && Input.GetKeyDown(KeyCode.E) && charIndex > 4)
         {
             dialogueSpeed = 0;
         }
