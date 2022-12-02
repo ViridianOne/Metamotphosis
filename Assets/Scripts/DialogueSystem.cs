@@ -60,11 +60,11 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator DialogueWriting()
     {
         string currentSentence = sentences[sentenceIndex];
-        dialogueText.text += currentSentence[charIndex];
-        charIndex++;
 
         if (charIndex < currentSentence.Length)
         {
+            dialogueText.text += currentSentence[charIndex];
+            charIndex++;
             yield return new WaitForSeconds(dialogueSpeed);
             StartCoroutine(DialogueWriting());
         }
