@@ -15,6 +15,7 @@ public class Mecro71 : Player
     [SerializeField] private float jumpDelay = 0.25f;
     public GameObject holder;
     public float acceleration = 0.5f;
+    public float deceleration = 1f;
     public bool isFlying;
     public int jumpCount = 0;
     public float defaultMoveSpeed; //equal to starting MoveSpeed
@@ -25,6 +26,7 @@ public class Mecro71 : Player
     public string directionArrow;
     private float rotationSpeed = 720;
     public bool directionChosen = false;
+    public bool started_flying = false;
 
     private bool isCeilingHit;
     [SerializeField] private Transform headPos;                 //for collision detection
@@ -120,38 +122,41 @@ public class Mecro71 : Player
                 directionArrow = "";
                 damageCount = 1;                
             }
-                //var jump_count = 0;
-                // Starting flying with Space
-                /*if (Input.GetButtonDown("Jump") && jumpCount == 0)  //bool and count for knowing if it's start of flying
-                {
-                    isFlying = true;
-                    jumpCount = 1;
-                    //Move();
-                    //if (moveSpeed < maxSpeed)
-                    //moveSpeed += acceleration * Time.deltaTime;
-                }
-                else if (Input.GetButtonDown("Jump") && jumpCount == 1)
-                {
-                    isFlying = false;
-                    jumpCount = 0;
-                }
-                if (isFlying)
-                {
-                    Move();
-                    if (moveSpeed < maxSpeed)
-                        moveSpeed += acceleration * Time.deltaTime;
-                    anim.SetBool("isFlying", true);
-                }
-                else
-                {
-                    anim.SetBool("isFlying", false);
-                    moveSpeed = defaultMoveSpeed;
-                    rigidBody.velocity = new Vector2(0, 0);
-                }*/
-
-                //Starting flying right after arrow (with directionChosen)
-            if (directionChosen)
+            //var jump_count = 0;
+            // Starting flying with Space
+            /*if (Input.GetButtonDown("Jump") && jumpCount == 0)  //bool and count for knowing if it's start of flying
+            {
                 isFlying = true;
+                jumpCount = 1;
+                //Move();
+                //if (moveSpeed < maxSpeed)
+                //moveSpeed += acceleration * Time.deltaTime;
+            }
+            else if (Input.GetButtonDown("Jump") && jumpCount == 1)
+            {
+                isFlying = false;
+                jumpCount = 0;
+            }
+            if (isFlying)
+            {
+                Move();
+                if (moveSpeed < maxSpeed)
+                    moveSpeed += acceleration * Time.deltaTime;
+                anim.SetBool("isFlying", true);
+            }
+            else
+            {
+                anim.SetBool("isFlying", false);
+                moveSpeed = defaultMoveSpeed;
+                rigidBody.velocity = new Vector2(0, 0);
+            }*/
+
+            //Starting flying right after arrow (with directionChosen)
+            if (directionChosen)
+            {
+                isFlying = true;
+                started_flying = true;
+            }
             if (Input.GetButtonDown("Jump") || damageCount == 1)
             {
                 isFlying = false;
@@ -164,14 +169,18 @@ public class Mecro71 : Player
                     moveSpeed += acceleration * accelerationCoefficient * Time.deltaTime;
                 anim.SetBool("isFlying", true);
             }
-            else
+            else if (isFlying == false && started_flying == true)
             {
                 anim.SetBool("isFlying", false);
-                moveSpeed = defaultMoveSpeed;
-                rigidBody.velocity = new Vector2(0, 0);
+                /*moveSpeed = defaultMoveSpeed;
+                rigidBody.velocity = new Vector2(0, 0);*/
+                Move();
+                if (moveSpeed > defaultMoveSpeed)
+                    moveSpeed -= deceleration * Time.deltaTime;
+                if (moveSpeed <= defaultMoveSpeed)
+                    rigidBody.velocity = new Vector2(0, 0);
             }
         }
-
     }
 
     private void OnDrawGizmos()
