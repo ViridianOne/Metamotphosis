@@ -6,16 +6,36 @@ using UnityEngine.UI;
 
 public class Pause_menu : MonoBehaviour
 {
-    public static bool isPaused = false;
+    public enum ActiveButtonState
+    {
+        None,
+        Continue,
+        Settings,
+        Help,
+        Map,
+        Extras,
+        Authors,
+        Delete,
+        Quit
+    }
+
+    public ActiveButtonState activeButtonState;
+
+    public bool isPaused = false;
     private GameObject activePage = null;
 
     public GameObject pauseMenuButtons;
+    public GameObject settingsPage;
     public GameObject helpPage;
+    public GameObject mapPage;
+    public GameObject extrasPage;
+    public GameObject authorsPage;
+    public GameObject deletePage;
+    public GameObject quitPage;
 
-
-    // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -34,6 +54,7 @@ public class Pause_menu : MonoBehaviour
         if(activePage != null)
         {
             activePage.SetActive(false);
+            activeButtonState = ActiveButtonState.None;
             activePage = null;
         }
         pauseMenuButtons.SetActive(false);
@@ -48,50 +69,151 @@ public class Pause_menu : MonoBehaviour
         isPaused = true;
     }
 
-    protected void OpenSettings()
+    public void OpenSettings()
     {
-        DoNothing();
-    }
-
-    protected void OpenHelp()
-    {
-        if (activePage != null)
+        if (activeButtonState == ActiveButtonState.Settings)
         {
-            activePage.SetActive(false);
+            //if (activePage == settingsPage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //settingsPage.SetActive(true);
+            //activePage = settingsPage;
         }
-        helpPage.SetActive(true);
-        activePage = helpPage;
-        DoNothing();
+        else
+            return;
     }
 
-    protected void OpenMap()
+    public void OpenHelp()
     {
-        DoNothing();
+        if (activeButtonState == ActiveButtonState.Help)
+        {
+            if (activePage == helpPage)
+            {
+                activePage.SetActive(false);
+                activePage = null;
+                return;
+            }
+            else if (activePage != null)
+            {
+                activePage.SetActive(false);
+            }
+            helpPage.SetActive(true);
+            activePage = helpPage;
+        }
+        else
+            return;
     }
 
-    protected void OpenExtras()
+    public void OpenMap()
     {
-        DoNothing();
+        if (activeButtonState == ActiveButtonState.Map)
+        {
+            //if (activePage == mapPage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //mapPage.SetActive(true);
+            //activePage = mapPage;
+        }
+        else
+            return;
     }
 
-    protected void OpenAuthors()
+    public void OpenExtras()
     {
-        DoNothing();
+        if (activeButtonState == ActiveButtonState.Extras)
+        {
+            //if (activePage == extrasPage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //extrasPage.SetActive(true);
+            //activePage = extrasPage;
+        }
+        else
+            return;
     }
 
-    protected void DeleteProgress()
+    public void OpenAuthors()
     {
-        DoNothing();
+        if (activeButtonState == ActiveButtonState.Authors)
+        {
+            //if (activePage == authorsPage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //authorsPage.SetActive(true);
+            //activePage = authorsPage;
+        }
+        else
+            return;
     }
 
-    protected void Quit()
+    public void DeleteProgress()
     {
-        DoNothing();
-        Application.Quit();
+        if (activeButtonState == ActiveButtonState.Delete)
+        {
+            //if (activePage == deletePage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //deletePage.SetActive(true);
+            //activePage = deletePage;
+        }
+        else
+            return;
     }
 
-    private void DoNothing()
+    public void Quit()
     {
-        Debug.Log("Текст для проверки");
+        if (activeButtonState == ActiveButtonState.Quit)
+        {
+            //if (activePage == quitPage)
+            //{
+            //    activePage.SetActive(false);
+            //    activePage = null;
+            //    return;
+            //}
+            //else if (activePage != null)
+            //{
+            //    activePage.SetActive(false);
+            //}
+            //quitPage.SetActive(true);
+            //activePage = quitPage;
+        }
+        else
+            return;
+        //Application.Quit();
     }
 }

@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System;
 
 public class DialogueSystem : MonoBehaviour
 {
-    [HideInInspector] public string[] sentences;
+    [HideInInspector] public NpcFrase[] sentences;
+
+    public GameObject dialogue;
+
     public bool dialogueStarted;
 
-    public GameObject dialogueWindow;
+    public Image dialogueWindow;
 
     public TMP_Text dialogueText;
 
@@ -18,8 +23,6 @@ public class DialogueSystem : MonoBehaviour
     private int charIndex;
     private bool waitForNext;
 
-    //private float temp;//мне очень не нравится что оно здесь есть, но мне нужно что - то в этой области памяти для запоминания изначальной скорости
-
     private void Awake()
     {
         ToggleWindow(false);
@@ -27,7 +30,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void ToggleWindow(bool state)
     {
-        dialogueWindow.SetActive(state);
+        dialogue.SetActive(state);
     }
 
     public void StartDialogue()
@@ -36,6 +39,7 @@ public class DialogueSystem : MonoBehaviour
             return;
 
         dialogueStarted = true;
+        dialogueWindow.sprite = sentences[0].fraseBackground;
         ToggleWindow(true);
         GetDialogue(0);
     }
@@ -44,6 +48,7 @@ public class DialogueSystem : MonoBehaviour
     {
         sentenceIndex = index;
         charIndex = 0;
+        dialogueWindow.sprite = sentences[index].fraseBackground;
         dialogueText.text = string.Empty;
         StartCoroutine(DialogueWriting());
     }
@@ -55,7 +60,7 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator DialogueWriting()
     {
-        string currentSentence = sentences[sentenceIndex];
+        string currentSentence = sentences[sentenceIndex].text;
         dialogueText.text += currentSentence[charIndex];
         charIndex++;
 
@@ -88,5 +93,12 @@ public class DialogueSystem : MonoBehaviour
         {
             dialogueSpeed = 0;
         }
+    }
+
+    [Serializable]
+    public struct NpcFrase
+    {
+        public string text;
+        public Sprite fraseBackground;
     }
 }

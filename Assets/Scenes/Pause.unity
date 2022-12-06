@@ -1583,19 +1583,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 214346765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenExtras
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &214346765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,7 +1641,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1669,7 +1657,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1685,7 +1673,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1707,9 +1695,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 5
   buttonImage: {fileID: 2047519855}
-  selectedSprite: {fileID: 386536331, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1284715105, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 386536331, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 458062424, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1471304148}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -3664,19 +3654,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760263562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenAuthors
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &760263562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,7 +3712,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3750,7 +3728,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3766,7 +3744,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3788,9 +3766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 6
   buttonImage: {fileID: 1684619147}
-  selectedSprite: {fileID: -94151867, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1106779769, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -94151867, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: -2005511230, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 946632808}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -6095,19 +6075,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290945585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1290945585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6158,9 +6126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 1
   buttonImage: {fileID: 117305242}
-  selectedSprite: {fileID: -623624241, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 78902149, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -623624241, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1214615396, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1895196528}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -6185,7 +6155,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6201,7 +6171,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6217,7 +6187,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6452,19 +6422,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1318957023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenMap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1318957023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6522,7 +6480,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6538,7 +6496,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6554,7 +6512,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6576,9 +6534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 4
   buttonImage: {fileID: 606268064}
-  selectedSprite: {fileID: -1943139587, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1319526513, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -1943139587, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 2001510462, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 199508917}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -7325,19 +7285,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1444519277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1444519277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7395,7 +7343,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7411,7 +7359,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7427,7 +7375,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7449,9 +7397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 2
   buttonImage: {fileID: 1322714446}
-  selectedSprite: {fileID: 130723902, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 1069307871, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 130723902, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1547802826, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 777145677}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -8146,8 +8096,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4bed6827dd3ce4bb3d33ed31123f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeButtonState: 0
+  isPaused: 0
   pauseMenuButtons: {fileID: 176410261}
+  settingsPage: {fileID: 0}
   helpPage: {fileID: 1125836879}
+  mapPage: {fileID: 0}
+  extrasPage: {fileID: 0}
+  authorsPage: {fileID: 0}
+  deletePage: {fileID: 0}
+  quitPage: {fileID: 0}
 --- !u!1 &1540828002
 GameObject:
   m_ObjectHideFlags: 0
@@ -9178,19 +9136,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1813823772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1813823772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9248,7 +9194,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9264,7 +9210,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9280,7 +9226,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9302,9 +9248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 8
   buttonImage: {fileID: 290729319}
-  selectedSprite: {fileID: 1667290918, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1954457443, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 1667290918, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: -167342970, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 338484485}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -9726,19 +9674,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1830265984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenHelp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1830265984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9796,7 +9732,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9812,7 +9748,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9828,7 +9764,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9850,9 +9786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 3
   buttonImage: {fileID: 1996680443}
-  selectedSprite: {fileID: -1458698292, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 988021405, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -1458698292, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 2142456632, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1145544351}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -10119,19 +10057,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861697354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: DeleteProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1861697354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10189,7 +10115,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10205,7 +10131,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10221,7 +10147,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10243,9 +10169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 7
   buttonImage: {fileID: 743314162}
-  selectedSprite: {fileID: 1785911833, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 629996388, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 1785911833, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1919853814, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 482426139}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}

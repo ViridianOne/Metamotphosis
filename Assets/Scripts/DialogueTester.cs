@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static DialogueSystem;
 
 public class DialogueTester : MonoBehaviour
 {
     public DialogueSystem dialogeSystem;
-    public string[] npcSentences;
+    public NpcFrase[] npcSentences;
 
     public void Update()
     {
