@@ -234,4 +234,13 @@ public class Mecro71 : Player
             isFacingRight = false;
         }
     }
+
+    protected override void StopMoving()
+    {
+        isFlying = false;
+        directionChosen = false;
+        anim.SetBool("isFlying", false);
+        anim.SetBool("isLedgeGrabbing", false);
+        rigidBody.velocity = Vector2.zero;
+    }
 }

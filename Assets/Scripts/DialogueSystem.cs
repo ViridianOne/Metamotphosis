@@ -35,6 +35,8 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueStarted)
             return;
 
+        Player.instance.ToggleActive(false);
+        dialogueSpeed = 0.05f;
         dialogueStarted = true;
         ToggleWindow(true);
         GetDialogue(0);
@@ -51,16 +53,18 @@ public class DialogueSystem : MonoBehaviour
     public void EndDialogue()
     {
         ToggleWindow(false);
+        dialogueStarted = false;
+        Player.instance.ToggleActive(true);
     }
 
     IEnumerator DialogueWriting()
     {
         string currentSentence = sentences[sentenceIndex];
-        dialogueText.text += currentSentence[charIndex];
-        charIndex++;
 
         if (charIndex < currentSentence.Length)
         {
+            dialogueText.text += currentSentence[charIndex];
+            charIndex++;
             yield return new WaitForSeconds(dialogueSpeed);
             StartCoroutine(DialogueWriting());
         }
@@ -73,10 +77,10 @@ public class DialogueSystem : MonoBehaviour
         if (!dialogueStarted)
             return;
 
-        if (waitForNext == true && Input.GetKeyDown(KeyCode.E))
+        if (waitForNext && Input.GetKeyDown(KeyCode.E))
         {
             waitForNext = false;
-            dialogueSpeed = 0.4f;
+            dialogueSpeed = 0.1f;
             sentenceIndex++;
 
             if (sentenceIndex < sentences.Length)
@@ -84,7 +88,7 @@ public class DialogueSystem : MonoBehaviour
             else
                 EndDialogue();
         }
-        if (waitForNext == false && Input.anyKey && charIndex > 4)
+        if (!waitForNext && Input.GetKeyDown(KeyCode.E) && charIndex > 4)
         {
             dialogueSpeed = 0;
         }

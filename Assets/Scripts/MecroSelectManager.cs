@@ -81,10 +81,10 @@ public class MecroSelectManager : MonoBehaviour
 
     private IEnumerator WaitAfterSelect()
     {
-        Player.instance.isActive = false;
+        Player.instance.ToggleActive(false);
         canSelect = false;
         yield return new WaitForSeconds(selectTime);
-        Player.instance.isActive = true;
+        Player.instance.ToggleActive(true);
         canSelect = true;
     }
 
