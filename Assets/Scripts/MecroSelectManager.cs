@@ -6,7 +6,7 @@ public class MecroSelectManager : MonoBehaviour
 {
     private bool canSelect;
     [SerializeField] private int startMecroIndex;
-    private int currentMecroIndex;
+    public int currentMecroIndex;
     [SerializeField] public Transform respawnPoint;
     [SerializeField] private float selectTime;
 
@@ -86,5 +86,10 @@ public class MecroSelectManager : MonoBehaviour
         yield return new WaitForSeconds(selectTime);
         Player.instance.ToggleActive(true);
         canSelect = true;
+    }
+
+    public int GetIndex()
+    {
+        return currentMecroIndex;
     }
 }
