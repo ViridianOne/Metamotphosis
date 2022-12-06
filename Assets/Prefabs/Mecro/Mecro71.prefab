@@ -204,7 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  isActive: 1
   moveSpeed: 6
   maxSpeed: 10
   linearDrag: 4
@@ -223,7 +222,7 @@ MonoBehaviour:
   jumpDelay: 0.05
   holder: {fileID: 5772419249600110069}
   acceleration: 1
-  deceleration: 1
+  deceleration: 5
   isFlying: 0
   jumpCount: 0
   defaultMoveSpeed: 8.5
