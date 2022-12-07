@@ -81,7 +81,7 @@ public class DialogueSystem : MonoBehaviour
         if (waitForNext == true && Input.GetKeyDown(KeyCode.E))
         {
             waitForNext = false;
-            dialogueSpeed = 0.4f;
+            dialogueSpeed = 0.2f;
             sentenceIndex++;
 
             if (sentenceIndex < sentences.Length)
