@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     [SerializeField] private DialogueSystem dialogueSystem;
-    [SerializeField] private string[] npcSentences;
+    [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
     private bool wasDialogue;
     private bool canTalk;

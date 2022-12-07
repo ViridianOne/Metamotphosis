@@ -23,10 +23,10 @@ public class DialogueSystem : MonoBehaviour
     private int charIndex;
     private bool waitForNext;
 
-    private void Awake()
-    {
-        ToggleWindow(false);
-    }
+    //private void Awake()
+    //{
+    //    ToggleWindow(false);
+    //}
 
     private void ToggleWindow(bool state)
     {
@@ -38,9 +38,10 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueStarted)
             return;
 
+        ToggleWindow(true);
         dialogueStarted = true;
         dialogueWindow.sprite = sentences[0].fraseBackground;
-        ToggleWindow(true);
+        Player.instance.ToggleActive(false);
         GetDialogue(0);
     }
 
@@ -55,7 +56,9 @@ public class DialogueSystem : MonoBehaviour
 
     public void EndDialogue()
     {
+        Player.instance.ToggleActive(true);
         ToggleWindow(false);
+        dialogueStarted = false;
     }
 
     IEnumerator DialogueWriting()
