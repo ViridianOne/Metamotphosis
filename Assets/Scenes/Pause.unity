@@ -1126,82 +1126,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132325112}
   m_CullTransparentMesh: 1
---- !u!1 &147261279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 147261280}
-  - component: {fileID: 147261282}
-  - component: {fileID: 147261281}
-  m_Layer: 5
-  m_Name: Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &147261280
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147261279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1828966027}
-  m_Father: {fileID: 1452962328}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -171}
-  m_SizeDelta: {x: 162.1684, y: 144.615}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &147261281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147261279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6395dcf2a2b238647b43ad77b94db1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogeSystem: {fileID: 147261282}
-  npcSentences:
-  - Text...
-  - More Text...
-  - 'I said: more text...'
---- !u!114 &147261282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147261279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e94a02da26838a4180e219d7626e00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sentences:
-  - "\u0422\u0435\u043A\u0441\u0442 \u0434\u0438\u0430\u043B\u043E\u0433\u0430"
-  - "\u0431\u043E\u043B\u044C\u0448\u0435 \u0442\u0435\u043A\u0441\u0442\u0430!"
-  - "\u0411\u041E\u041E\u041E\u041E\u041B\u042C\u0428\u0415!"
-  dialogueStarted: 0
-  dialogueWindow: {fileID: 1828966026}
-  dialogueText: {fileID: 857511527}
-  dialogueSpeed: 0.4
 --- !u!1 &176410261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,19 +1507,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 214346765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenExtras
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &214346765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,7 +1565,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1669,7 +1581,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1685,7 +1597,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 214346768}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1707,9 +1619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 5
   buttonImage: {fileID: 2047519855}
-  selectedSprite: {fileID: 386536331, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1284715105, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 386536331, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 458062424, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1471304148}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -3664,19 +3578,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760263562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenAuthors
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &760263562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,7 +3636,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3750,7 +3652,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3766,7 +3668,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 760263565}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3788,9 +3690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 6
   buttonImage: {fileID: 1684619147}
-  selectedSprite: {fileID: -94151867, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1106779769, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -94151867, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: -2005511230, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 946632808}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -4183,141 +4087,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827690407}
-  m_CullTransparentMesh: 1
---- !u!1 &857511525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 857511526}
-  - component: {fileID: 857511528}
-  - component: {fileID: 857511527}
-  m_Layer: 5
-  m_Name: Dialogue_text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &857511526
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857511525}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1828966027}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 146.9, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &857511527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857511525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: New Text
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &857511528
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857511525}
   m_CullTransparentMesh: 1
 --- !u!1 &886014091
 GameObject:
@@ -5104,6 +4873,83 @@ RectTransform:
   m_AnchoredPosition: {x: 570.85, y: -1657.4302}
   m_SizeDelta: {x: 1141.7, y: 284.1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1055378307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055378308}
+  - component: {fileID: 1055378310}
+  - component: {fileID: 1055378309}
+  m_Layer: 5
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1055378308
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055378307}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1410517066}
+  m_Father: {fileID: 1452962328}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -313}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1055378309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055378307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6395dcf2a2b238647b43ad77b94db1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogeSystem: {fileID: 1055378310}
+  npcSentences:
+  - text: Text....
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+  - text: MOOOOOORE TEEEEXT!
+    fraseBackground: {fileID: 21300000, guid: fd9341b9c4896cb4bb788c14de69714c, type: 3}
+  - text: I SAID MOOOOOOOOOOOOOOOOORE!
+    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+--- !u!114 &1055378310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055378307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e94a02da26838a4180e219d7626e00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences: []
+  dialogue: {fileID: 1410517065}
+  dialogueStarted: 0
+  dialogueWindow: {fileID: 1410517067}
+  dialogueText: {fileID: 1504295146}
+  dialogueSpeed: 0.4
 --- !u!1 &1072648447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,19 +5941,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290945585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1290945585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6158,9 +5992,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 1
   buttonImage: {fileID: 117305242}
-  selectedSprite: {fileID: -623624241, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 78902149, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -623624241, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1214615396, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1895196528}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -6185,7 +6021,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6201,7 +6037,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6217,7 +6053,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1290945588}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6452,19 +6288,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1318957023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenMap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1318957023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6522,7 +6346,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6538,7 +6362,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6554,7 +6378,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1318957026}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6576,9 +6400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 4
   buttonImage: {fileID: 606268064}
-  selectedSprite: {fileID: -1943139587, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1319526513, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -1943139587, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 2001510462, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 199508917}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -7103,6 +6929,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405636470}
   m_CullTransparentMesh: 1
+--- !u!1 &1410517065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410517066}
+  - component: {fileID: 1410517068}
+  - component: {fileID: 1410517067}
+  m_Layer: 5
+  m_Name: Dialogue Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1410517066
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410517065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1504295145}
+  m_Father: {fileID: 1055378308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1700, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1410517067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410517065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1410517068
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410517065}
+  m_CullTransparentMesh: 1
 --- !u!1 &1433176785
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,19 +7228,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1444519277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1444519277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7395,7 +7286,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7411,7 +7302,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7427,7 +7318,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1444519280}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7449,9 +7340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 2
   buttonImage: {fileID: 1322714446}
-  selectedSprite: {fileID: 130723902, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 1069307871, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 130723902, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1547802826, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 777145677}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -7491,7 +7384,7 @@ RectTransform:
   - {fileID: 1125836880}
   - {fileID: 18000220}
   - {fileID: 556066318}
-  - {fileID: 147261280}
+  - {fileID: 1055378308}
   m_Father: {fileID: 1534295082}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7893,6 +7786,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471304146}
   m_CullTransparentMesh: 1
+--- !u!1 &1504295144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504295145}
+  - component: {fileID: 1504295147}
+  - component: {fileID: 1504295146}
+  m_Layer: 5
+  m_Name: Dialogue Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1504295145
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504295144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1410517066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 232.6571, y: 77.2142}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1504295146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504295144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -343.70776, y: -80.8725, z: -321.65173, w: -91.9005}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1504295147
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504295144}
+  m_CullTransparentMesh: 1
 --- !u!1 &1519361979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8146,8 +8174,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4bed6827dd3ce4bb3d33ed31123f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeButtonState: 0
+  isPaused: 0
   pauseMenuButtons: {fileID: 176410261}
+  settingsPage: {fileID: 0}
   helpPage: {fileID: 1125836879}
+  mapPage: {fileID: 0}
+  extrasPage: {fileID: 0}
+  authorsPage: {fileID: 0}
+  deletePage: {fileID: 0}
+  quitPage: {fileID: 0}
 --- !u!1 &1540828002
 GameObject:
   m_ObjectHideFlags: 0
@@ -9178,19 +9214,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1813823772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1813823772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9248,7 +9272,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9264,7 +9288,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9280,7 +9304,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1813823775}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9302,9 +9326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 8
   buttonImage: {fileID: 290729319}
-  selectedSprite: {fileID: 1667290918, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: -1954457443, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 1667290918, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: -167342970, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 338484485}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -9521,125 +9547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822864768}
   m_CullTransparentMesh: 1
---- !u!1 &1828966026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1828966027}
-  - component: {fileID: 1828966031}
-  - component: {fileID: 1828966030}
-  - component: {fileID: 1828966029}
-  - component: {fileID: 1828966028}
-  m_Layer: 5
-  m_Name: Dialogue_form
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1828966027
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828966026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 857511526}
-  m_Father: {fileID: 147261280}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7412, y: 2.2447}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1828966028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828966026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
---- !u!114 &1828966029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828966026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 10
-    m_Bottom: 10
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
-  m_ReverseArrangement: 0
---- !u!114 &1828966030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828966026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1828966031
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828966026}
-  m_CullTransparentMesh: 1
 --- !u!1 &1830265981
 GameObject:
   m_ObjectHideFlags: 0
@@ -9726,19 +9633,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1830265984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: OpenHelp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1830265984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9796,7 +9691,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9812,7 +9707,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9828,7 +9723,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1830265987}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9850,9 +9745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 3
   buttonImage: {fileID: 1996680443}
-  selectedSprite: {fileID: -1458698292, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 988021405, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: -1458698292, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 2142456632, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 1145544351}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
@@ -10119,19 +10016,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861697354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1534295083}
-        m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: DeleteProgress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1861697354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10189,7 +10074,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ChangeSprite
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10205,7 +10090,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: ReturnSprite
+          m_MethodName: PointerLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10221,7 +10106,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1861697357}
           m_TargetAssemblyTypeName: ButtonColorChanger, Assembly-CSharp
-          m_MethodName: Highlight
+          m_MethodName: PointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10243,9 +10128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b762a08373903ec4eb7947e69b42d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1534295083}
+  buttonState: 7
   buttonImage: {fileID: 743314162}
-  selectedSprite: {fileID: 1785911833, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   normalSprite: {fileID: 629996388, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
+  selectedSprite: {fileID: 1785911833, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   clickedSprite: {fileID: 1919853814, guid: dc0fe3871880b0747b19e067369cea1e, type: 3}
   buttonText: {fileID: 482426139}
   normal: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
