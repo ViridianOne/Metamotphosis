@@ -26,8 +26,8 @@ public class Mecro296 : Player
     [SerializeField] private float maxJumpTime;
     [SerializeField] private float jumpChargeSpeed;
     private float betweenJumpTimer = 0f;
-    [SerializeField] private HealthBarBehaviour healthBarBehaviour;
-    [SerializeField] private float healthBarChangeSpeed;
+    [SerializeField] private JumpBarBehaviour jumpBarBehaviour;
+    [SerializeField] private float jumpBarChangeSpeed;
 
     private void Update() 
     {
@@ -54,19 +54,19 @@ public class Mecro296 : Player
                 isChargingJump = Input.GetButton("Jump");
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
-                    jumpTimer += jumpChargeSpeed; 
-                    healthBarBehaviour.AddValueToJumpSlider((maxJumpTime - minJumpTime) * jumpChargeSpeed * healthBarChangeSpeed);
+                    jumpTimer += jumpChargeSpeed * Time.deltaTime; 
+                    jumpBarBehaviour.AddValueToJumpSlider((maxJumpTime - minJumpTime) * jumpChargeSpeed * jumpBarChangeSpeed * Time.deltaTime);
                 }
                 if (isGrounded && Input.GetButtonUp("Jump"))
                 {
                     isJumpCharged = true;
-                    healthBarBehaviour.AddValueToJumpSlider(-1000);
+                    jumpBarBehaviour.AddValueToJumpSlider(-1000);
                 }
 
                 if (isGrounded && jumpTimer > 0f)
-                    healthBarBehaviour.ToggleJumpSlider(true);
+                    jumpBarBehaviour.ToggleJumpSlider(true);
                 else
-                    healthBarBehaviour.ToggleJumpSlider(false);
+                    jumpBarBehaviour.ToggleJumpSlider(false);
 
                 UpdateMovementAnimation();
             }

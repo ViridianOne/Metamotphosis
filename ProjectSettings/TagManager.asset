@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Ledge Grabbing
+  - Enemy
+  - Enemy Marker
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPC
+    uniqueID: 1794567763
     locked: 0
   - name: Enemies
     uniqueID: 600509019
