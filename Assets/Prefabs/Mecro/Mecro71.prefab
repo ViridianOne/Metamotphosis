@@ -202,12 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd80bf12ec75f74fa45b38ed74195a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 5772419249652849746}
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  isActive: 1
+  timemet: 1
   moveSpeed: 6
-  maxSpeed: 17
+  maxSpeed: 10
   linearDrag: 4
   isTouchingLedge: 0
   ledgeGrabbingTime: 1
@@ -224,11 +223,13 @@ MonoBehaviour:
   jumpDelay: 0.05
   holder: {fileID: 5772419249600110069}
   acceleration: 1
+  deceleration: 5
   isFlying: 0
   jumpCount: 0
   defaultMoveSpeed: 8.5
   directionArrow: 
   directionChosen: 0
+  started_flying: 0
   headPos: {fileID: 5772419249819723160}
   headDetectorSize: {x: 0.75, y: 0.75}
   accelerationCoefficient: 4.5

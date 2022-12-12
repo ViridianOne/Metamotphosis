@@ -23,6 +23,7 @@ public class Enemy1 : MonoBehaviour
     [SerializeField] private GameObject electricity;
     [SerializeField] private Transform electricityPosition;
 
+    [SerializeField] private GameObject expolosion;
     [SerializeField] private float vanishTime;
     [SerializeField] private float vanishSpeed;
 
@@ -106,11 +107,12 @@ public class Enemy1 : MonoBehaviour
             moveDirection = 0;
             isActive = false;
             anim.SetTrigger("damage");
-            StartCoroutine(Vanishing());
+            var explosionInstance = Instantiate(expolosion, gameObject.transform.position, gameObject.transform.rotation);
+            StartCoroutine(Vanishing(explosionInstance));
         }
     }
 
-    private IEnumerator Vanishing()
+    private IEnumerator Vanishing(GameObject explosionInstance)
     {
         //yield return new WaitForSeconds(vanishTime);        
         //var sprite = holder.GetComponent<SpriteRenderer>();
@@ -128,6 +130,8 @@ public class Enemy1 : MonoBehaviour
         var timer = 0f;
         while (timer <= vanishTime)
         {
+            if (explosionInstance != null)
+                explosionInstance.transform.position = gameObject.transform.position;
             var spriteColor = sprite.color;
             timer += Time.deltaTime;
             spriteColor.a += (isTakingDown ? -1 : 1) * vanishSpeed * Time.deltaTime;

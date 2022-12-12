@@ -41,15 +41,19 @@ public class Mecro296 : Player
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
+                    isCeilingHitted = false;
                     betweenJumpTimer = timeBetweenJump;
                     jumpTimer = 0f;
                     isJumpCharged = false;
                     StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
                 }
 
-                isCeilingHitted = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);
-                if (isCeilingHitted)
-                    jumpTimer = 0;
+                if (!isCeilingHitted)
+                {
+                    isCeilingHitted = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);
+                    if (isCeilingHitted)
+                        jumpTimer = 0;
+                }
 
                 isChargingJump = Input.GetButton("Jump");
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
@@ -139,7 +143,10 @@ public class Mecro296 : Player
 
     protected override void Move()
     {
-        rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, isCeilingHitted ? 0 : rigidBody.velocity.y);
+        if (isCeilingHitted && rigidBody.velocity.y > 0)
+            rigidBody.velocity = new Vector2(0, 0);
+        else
+            rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, rigidBody.velocity.y);
     }
 
     public void Jump()
@@ -183,4 +190,6 @@ public class Mecro296 : Player
         anim.SetBool("isListening", true);
         rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
     }
+
+    public override void DisableAbility() { }
 }

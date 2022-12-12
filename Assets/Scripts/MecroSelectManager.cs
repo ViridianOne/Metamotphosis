@@ -6,7 +6,7 @@ public class MecroSelectManager : MonoBehaviour
 {
     private bool canSelect;
     [SerializeField] private int startMecroIndex;
-    private int currentMecroIndex;
+    public int currentMecroIndex;
     [SerializeField] public Transform respawnPoint;
     [SerializeField] private float selectTime;
 
@@ -60,6 +60,7 @@ public class MecroSelectManager : MonoBehaviour
     {
         if (currentMecroIndex != mecroListIndex)
         {
+            Player.instance.DisableAbility();
             //Vector3 mecroPos = Player.instance.transform.position;
             //Quaternion mecroRot = Player.instance.transform.localRotation;
             //Destroy(Player.instance.gameObject);
@@ -86,5 +87,10 @@ public class MecroSelectManager : MonoBehaviour
         yield return new WaitForSeconds(selectTime);
         Player.instance.ToggleActive(true);
         canSelect = true;
+    }
+
+    public int GetIndex()
+    {
+        return currentMecroIndex;
     }
 }
