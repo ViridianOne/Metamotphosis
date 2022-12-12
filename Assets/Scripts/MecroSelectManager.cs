@@ -60,6 +60,7 @@ public class MecroSelectManager : MonoBehaviour
     {
         if (currentMecroIndex != mecroListIndex)
         {
+            Player.instance.DisableAbility();
             //Vector3 mecroPos = Player.instance.transform.position;
             //Quaternion mecroRot = Player.instance.transform.localRotation;
             //Destroy(Player.instance.gameObject);
