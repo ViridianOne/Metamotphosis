@@ -101,6 +101,8 @@ public class Mecro296 : Player
 
     private void UpdateMovementAnimation()
     {
+        anim.SetBool("isListening", false);
+
         anim.SetFloat("xVelocity", Mathf.Abs(rigidBody.velocity.x));
         anim.SetFloat("yVelocity", rigidBody.velocity.y);
 
@@ -165,5 +167,20 @@ public class Mecro296 : Player
             holder.transform.localScale = Vector3.Lerp(newSize, originSize, timer);
             yield return null;
         }
+    }
+
+    protected override void StopMoving()
+    {
+        //anim.SetFloat("xVelocity", 0f);
+        //anim.SetFloat("yVelocity", 0f);
+        //anim.SetBool("isMoving", false);
+        //anim.SetBool("isCeilingHitted", false);
+        //anim.SetBool("isLedgeGrabbing", false);
+        //anim.SetBool("isJumping", false);
+        //anim.SetBool("landingMoment", false);
+
+        anim.SetTrigger("listen");
+        anim.SetBool("isListening", true);
+        rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
     }
 }

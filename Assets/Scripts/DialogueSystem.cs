@@ -4,12 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using static Form_switch_controller;
 
 public class DialogueSystem : MonoBehaviour
 {
     [HideInInspector] public NpcFrase[] sentences;
 
     public GameObject dialogue;
+
+    public GameObject formSwitchController;
 
     public bool dialogueStarted;
 
@@ -23,10 +26,10 @@ public class DialogueSystem : MonoBehaviour
     private int charIndex;
     private bool waitForNext;
 
-    private void Awake()
-    {
-        ToggleWindow(false);
-    }
+    //private void Awake()
+    //{
+    //    ToggleWindow(false);
+    //}
 
     private void ToggleWindow(bool state)
     {
@@ -38,9 +41,11 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueStarted)
             return;
 
-        dialogueStarted = true;
-        dialogueWindow.sprite = sentences[0].fraseBackground;
         ToggleWindow(true);
+        dialogueStarted = true;
+        formSwitchController.SetActive(false);
+        dialogueWindow.sprite = sentences[0].fraseBackground;
+        Player.instance.ToggleActive(false);
         GetDialogue(0);
     }
 
@@ -55,7 +60,10 @@ public class DialogueSystem : MonoBehaviour
 
     public void EndDialogue()
     {
+        Player.instance.ToggleActive(true);
         ToggleWindow(false);
+        formSwitchController.SetActive(true);
+        dialogueStarted = false;
     }
 
     IEnumerator DialogueWriting()
