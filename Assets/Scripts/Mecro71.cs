@@ -14,8 +14,8 @@ public class Mecro71 : Player
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpDelay = 0.25f;
     public GameObject holder;
-    public float acceleration = 0.5f;
-    public float deceleration = 1f;
+    public float acceleration;
+    public float deceleration;
     public bool isFlying;
     public int jumpCount = 0;
     public float defaultMoveSpeed; //equal to starting MoveSpeed
