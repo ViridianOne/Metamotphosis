@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MecroSelectManager : MonoBehaviour
 {
+    public static MecroSelectManager instance;
     private bool canSelect;
     [SerializeField] private int startMecroIndex;
     public int currentMecroIndex;
@@ -12,8 +13,12 @@ public class MecroSelectManager : MonoBehaviour
 
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
-    private Player[] instantiatedMecros = new Player[3]; 
-    
+    public Player[] instantiatedMecros = new Player[3];
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         canSelect = true;
@@ -27,8 +32,11 @@ public class MecroSelectManager : MonoBehaviour
         {
             instantiatedMecros[i] = Instantiate(mecros[i], mecroPos, mecroRot);
             instantiatedMecros[i].gameObject.SetActive(false);
-            instantiatedMecros[i].respawnPoint = respawnPoint;
+            instantiatedMecros[i].respawnPoint = respawnPoint;//respawnPoint;
         }
+        //mecros[0].respawnPoint = respawnPoint;
+        //mecros[1].respawnPoint = respawnPoint;
+        //mecros[2].respawnPoint = respawnPoint;
         /*currentMecro = instantiatedMecros[0];
         currentMecro.gameObject.SetActive(true);*/
         //instantiatedMecros[startMecroIndex].respawnPoint = respawnPoint;
@@ -60,6 +68,7 @@ public class MecroSelectManager : MonoBehaviour
     {
         if (currentMecroIndex != mecroListIndex)
         {
+            Player.instance.DisableAbility();
             //Vector3 mecroPos = Player.instance.transform.position;
             //Quaternion mecroRot = Player.instance.transform.localRotation;
             //Destroy(Player.instance.gameObject);

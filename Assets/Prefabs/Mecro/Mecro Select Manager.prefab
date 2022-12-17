@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dedba3aa88ee16469c04cd699f2d1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMecroIndex: 2
+  startMecroIndex: 0
+  currentMecroIndex: 0
   respawnPoint: {fileID: 0}
   selectTime: 0.8
   mecros:
-  - {fileID: 5772419249652849744, guid: bf09a01bf8341204cb31c8ca09e3f1c6, type: 3}
   - {fileID: 520462003863146414, guid: 131c9871e0e63a5408da5f0ae472db59, type: 3}
   - {fileID: 7280123948819870365, guid: 47cfc6c5bdf9f76429558d85230c0b65, type: 3}
+  - {fileID: 5772419249652849744, guid: bf09a01bf8341204cb31c8ca09e3f1c6, type: 3}

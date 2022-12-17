@@ -115,12 +115,16 @@ public class Mecro71 : Player
 
             var damageCount = 0;
             isCeilingHit = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);     //for collision detection
-            if (isCeilingHit)
+            if (isCeilingHit && !ledgeDetected)
             {
-                DamagePlayer();
                 //Player.instance.StartCoroutine(Respawn());
-                directionArrow = "";
+                StopFlying();
+                DamagePlayer();
                 damageCount = 1;                
+            }
+            if (ledgeDetected)
+            {
+                StopFlying();
             }
             //var jump_count = 0;
             // Starting flying with Space
@@ -155,7 +159,7 @@ public class Mecro71 : Player
             if (directionChosen)
             {
                 isFlying = true;
-                started_flying = true;
+                //started_flying = true;
             }
             if (Input.GetButtonDown("Jump") || damageCount == 1)
             {
@@ -169,7 +173,8 @@ public class Mecro71 : Player
                     moveSpeed += acceleration * accelerationCoefficient * Time.deltaTime;
                 anim.SetBool("isFlying", true);
             }
-            else if (isFlying == false && started_flying == true)
+            //else if (!isFlying && started_flying)
+            else
             {
                 anim.SetBool("isFlying", false);
                 /*moveSpeed = defaultMoveSpeed;
@@ -178,9 +183,23 @@ public class Mecro71 : Player
                 if (moveSpeed > defaultMoveSpeed)
                     moveSpeed -= deceleration * Time.deltaTime;
                 if (moveSpeed <= defaultMoveSpeed)
+                {
                     rigidBody.velocity = new Vector2(0, 0);
+                    directionArrow = "";
+                }
             }
         }
+        else
+        {
+            StopFlying();
+        }
+    }
+
+    private void StopFlying()
+    {
+        isFlying = false;
+        directionArrow = "";
+        directionChosen = false;
     }
 
     private void OnDrawGizmos()
@@ -243,4 +262,6 @@ public class Mecro71 : Player
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
     }
+
+    public override void DisableAbility() { }
 }

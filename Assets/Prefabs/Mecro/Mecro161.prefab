@@ -183,10 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afc66c86b7be0943bf833400c436f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 520462003863146408}
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  isActive: 0
   moveSpeed: 4.5
   maxSpeed: 4
   linearDrag: 4
@@ -205,6 +203,7 @@ MonoBehaviour:
   jumpForce: 11
   jumpDelay: 0.05
   holder: {fileID: 520462003942758405}
+  lightEffect: {fileID: 520462004323958491}
 --- !u!1 &520462003870438060
 GameObject:
   m_ObjectHideFlags: 0

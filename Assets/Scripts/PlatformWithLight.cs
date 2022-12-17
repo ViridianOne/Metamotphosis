@@ -24,15 +24,18 @@ public class PlatformWithLight : MonoBehaviour
     void Update()
     {
         anim = GetComponent<Animator>();
-        if (checkAreaScript.StartMoving() == true && index.GetIndex() == 0)
+        if (/*checkAreaScript.StartMoving() == true &&*/ index.GetIndex() == 0)
         {
             if (Input.GetButtonDown("Fire1"))
             {
                 lightsOn = !lightsOn;
                 anim.SetBool("isOn", lightsOn);
-                if (transform.position == pos1.position || lightsOn == true)
+                if (checkAreaScript.StartMoving() == true)
                 {
-                    nextPos = pos2.position;
+                    if (transform.position == pos1.position || lightsOn == true)
+                    {
+                        nextPos = pos2.position;
+                    }
                 }
                 if (lightsOn == false)
                 {
