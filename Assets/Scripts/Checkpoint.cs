@@ -16,6 +16,7 @@ public class Checkpoint : MonoBehaviour
         {
             respawnPointObject.position = other.transform.position;
             currentCheck = true;
+            FindObjectOfType<AudioManager>().Play("CheckpointOn");
             //respawnPoint = other.transform;//transform.position;
             /*Mecro161.instance.respawnPoint = gameObject.transform;
             Mecro296.instance.respawnPoint = gameObject.transform;
