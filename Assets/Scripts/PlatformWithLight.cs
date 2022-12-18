@@ -13,6 +13,8 @@ public class PlatformWithLight : MonoBehaviour
     public bool lightsOn = false;
     public CheckArea checkAreaScript;
     public MecroSelectManager index;
+    public bool MovingDown = false;
+    public bool MovingUp = false;
 
     void Start()
     {
@@ -30,19 +32,40 @@ public class PlatformWithLight : MonoBehaviour
             {
                 lightsOn = !lightsOn;
                 anim.SetBool("isOn", lightsOn);
-                if (checkAreaScript.StartMoving() == true)
+                /*if (checkAreaScript.StartMoving() == true)
                 {
                     if (transform.position == pos1.position || lightsOn == true)
                     {
                         nextPos = pos2.position;
+                        if (transform.position == pos2.position)
+                            nextPos = pos1.position;
                     }
                 }
+                if (lightsOn == false)
+                {
+                    nextPos = transform.position;
+                }*/
                 if (lightsOn == false)
                 {
                     nextPos = transform.position;
                 }
             }
             
+        }
+        if (checkAreaScript.StartMoving() == true && lightsOn==true)
+        {
+            if (transform.position == pos1.position || (lightsOn && MovingDown))
+            {
+                MovingDown = true;
+                MovingUp = false;
+                nextPos = pos2.position;
+            }
+            if (transform.position==pos2.position || (lightsOn && MovingUp))
+            {
+                MovingUp = true;
+                MovingDown = false;
+                nextPos = pos1.position;
+            }
         }
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         /*if (transform.position == pos1.position && Input.GetButtonDown("Fire1"))
