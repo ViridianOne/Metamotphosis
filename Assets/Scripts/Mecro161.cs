@@ -47,12 +47,14 @@ public class Mecro161 : Player
                         lightEffect.SetActive(true);
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
+                        FindObjectOfType<AudioManager>().Play("LightOn");
                     }
                     else
                     {
                         lightEffect.SetActive(false);
                         anim.SetLayerWeight(1, 100);
                         anim.SetLayerWeight(2, 0);
+                        FindObjectOfType<AudioManager>().Play("LightOff");
                     }
                 }
                 wasOnGround = isGrounded;
