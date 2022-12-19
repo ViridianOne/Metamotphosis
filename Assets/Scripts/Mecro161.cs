@@ -17,7 +17,7 @@ public class Mecro161 : Player
     private float jumpTimer;
     public GameObject holder;
     private bool wasOnGround;
-    private bool lightSwitcher = false;
+    //private bool lightSwitcher = false;
     //[SerializeField] private GameObject lightEffect;
 
     protected override void Move()

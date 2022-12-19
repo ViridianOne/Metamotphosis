@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Trampolines : MonoBehaviour
 {
-    public float JumpForceTrampoline = 20f;
+    public float JumpForceTrampoline;
     public MecroSelectManager indexTrampoline;
     public bool lightOn = false;
     protected Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,18 +27,15 @@ public class Trampolines : MonoBehaviour
 
     private void Update()
     {
-        anim = GetComponent<Animator>();
-        if (Input.GetButtonDown("Fire1") && indexTrampoline.GetIndex()==0)
+        if (/*Input.GetButtonDown("Fire1") && */indexTrampoline.GetIndex()==0)
         {
-            lightOn = !lightOn;
-            if (lightOn == true)
-            {
-                anim.SetBool("isOn", true);
-            }
-            if (lightOn == false)
-            {
-                anim.SetBool("isOn", false);
-            }
+            lightOn = indexTrampoline.instantiatedMecros[indexTrampoline.GetIndex()].lightSwitcher;
+            anim.SetBool("isOn", lightOn);
+        }
+        else
+        {
+            lightOn = false;
+            anim.SetBool("isOn", lightOn);
         }
     }
 }

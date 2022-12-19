@@ -19,18 +19,17 @@ public class PlatformWithLight : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim = GetComponent<Animator>();
         if (/*checkAreaScript.StartMoving() == true &&*/ index.GetIndex() == 0)
         {
-            if (Input.GetButtonDown("Fire1"))
+            /*if (Input.GetButtonDown("Fire1"))
             {
-                lightsOn = !lightsOn;
+                lightsOn = !index.instantiatedMecros[index.GetIndex()].lightSwitcher;
                 anim.SetBool("isOn", lightsOn);
                 /*if (checkAreaScript.StartMoving() == true)
                 {
@@ -44,30 +43,46 @@ public class PlatformWithLight : MonoBehaviour
                 if (lightsOn == false)
                 {
                     nextPos = transform.position;
-                }*/
+                }
                 if (lightsOn == false)
                 {
                     nextPos = transform.position;
                 }
+            }*/
+            if (index.instantiatedMecros[index.GetIndex()].lightSwitcher)
+            {
+                lightsOn = index.instantiatedMecros[index.GetIndex()].lightSwitcher;
+                anim.SetBool("isOn", lightsOn);
+                nextPos = transform.position;
             }
-            
+            else
+            {
+                lightsOn = false;
+                anim.SetBool("isOn", false);
+                nextPos = transform.position;
+            }
+
+            if (checkAreaScript.StartMoving() == true && lightsOn == true)
+            {
+                if (transform.position == pos1.position || (lightsOn && MovingDown))
+                {
+                    MovingDown = true;
+                    MovingUp = false;
+                    nextPos = pos2.position;
+                }
+                if (transform.position == pos2.position || (lightsOn && MovingUp))
+                {
+                    MovingUp = true;
+                    MovingDown = false;
+                    nextPos = pos1.position;
+                }
+            }
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         }
-        if (checkAreaScript.StartMoving() == true && lightsOn==true)
+        else
         {
-            if (transform.position == pos1.position || (lightsOn && MovingDown))
-            {
-                MovingDown = true;
-                MovingUp = false;
-                nextPos = pos2.position;
-            }
-            if (transform.position==pos2.position || (lightsOn && MovingUp))
-            {
-                MovingUp = true;
-                MovingDown = false;
-                nextPos = pos1.position;
-            }
+            anim.SetBool("isOn", false);
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         /*if (transform.position == pos1.position && Input.GetButtonDown("Fire1"))
         {
             nextPos = pos2.position;
@@ -90,6 +105,30 @@ public class PlatformWithLight : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /*if (collision.gameObject.tag == "Player")
+        {
+            if (transform.childCount == 0)
+            {
+                collision.collider.transform.SetParent(transform);
+            }
+            else
+            {
+                transform.DetachChildren();
+                collision.collider.transform.SetParent(transform);
+            }
+        }*/
+        collision.collider.transform.SetParent(transform);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        {
+            collision.collider.transform.SetParent(null);
+        }
     }
 }
 
