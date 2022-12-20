@@ -26,6 +26,7 @@ public class Enemy1 : MonoBehaviour
     [SerializeField] private GameObject expolosion;
     [SerializeField] private float vanishTime;
     [SerializeField] private float vanishSpeed;
+    public AudioSource robotMoving;
 
 
     void Start()
@@ -43,6 +44,14 @@ public class Enemy1 : MonoBehaviour
         if (isActive)
         {
             UpdateMovementAnimation();
+        }
+        if (!robotMoving.isPlaying && isActive)
+        {
+            robotMoving.Play();
+        }
+        if (!isActive)
+        {
+            robotMoving.Stop();
         }
     }
 
@@ -91,6 +100,7 @@ public class Enemy1 : MonoBehaviour
             moveDirection = 0;
             Instantiate(electricity, electricityPosition.position, electricityPosition.rotation);
             Invoke("CreatingElectricity", creatingElectricityTime);
+            robotMoving.Stop();
         }
     }
 
@@ -108,6 +118,7 @@ public class Enemy1 : MonoBehaviour
             isActive = false;
             anim.SetTrigger("damage");
             var explosionInstance = Instantiate(expolosion, gameObject.transform.position, gameObject.transform.rotation);
+            FindObjectOfType<AudioManager>().Play("RobotLoss");
             StartCoroutine(Vanishing(explosionInstance));
         }
     }
