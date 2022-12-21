@@ -58,7 +58,6 @@ public class Mecro296 : Player
                 isChargingJump = Input.GetButton("Jump");
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
-                    FindObjectOfType<AudioManager>().Play("JumpScale");
                     jumpTimer += jumpChargeSpeed * Time.deltaTime; 
                     jumpBarBehaviour.AddValueToJumpSlider((maxJumpTime - minJumpTime) * jumpChargeSpeed * jumpBarChangeSpeed * Time.deltaTime);
                 }
@@ -66,18 +65,25 @@ public class Mecro296 : Player
                 {
                     isJumpCharged = true;
                     jumpBarBehaviour.AddValueToJumpSlider(-1000);
+                    AudioManager.instance.Stop(7);
                 }
 
                 if (isGrounded && jumpTimer > 0f)
                     jumpBarBehaviour.ToggleJumpSlider(true);
                 else
+                {
                     jumpBarBehaviour.ToggleJumpSlider(false);
+                    AudioManager.instance.Play(7);
+                }
 
                 UpdateMovementAnimation();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)
+            {
                 isGrounded = false;
+                AudioManager.instance.Stop(7);
+            }
         }
     }
 
@@ -155,7 +161,7 @@ public class Mecro296 : Player
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
-        FindObjectOfType<AudioManager>().Play("Spring");
+        AudioManager.instance.Play(5);
     }
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
