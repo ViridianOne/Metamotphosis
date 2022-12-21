@@ -58,6 +58,7 @@ public class Mecro296 : Player
                 isChargingJump = Input.GetButton("Jump");
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
+                    FindObjectOfType<AudioManager>().Play("JumpScale");
                     jumpTimer += jumpChargeSpeed * Time.deltaTime; 
                     jumpBarBehaviour.AddValueToJumpSlider((maxJumpTime - minJumpTime) * jumpChargeSpeed * jumpBarChangeSpeed * Time.deltaTime);
                 }
@@ -154,6 +155,7 @@ public class Mecro296 : Player
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
+        FindObjectOfType<AudioManager>().Play("Spring");
     }
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
@@ -191,5 +193,8 @@ public class Mecro296 : Player
         rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
     }
 
-    public override void DisableAbility() { }
+    public override void DisableAbility() 
+    {
+        lightSwitcher = false;
+    }
 }

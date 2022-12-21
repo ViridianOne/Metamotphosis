@@ -16,6 +16,7 @@ public abstract class Player : MonoBehaviour
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
     protected bool isActive;
+    [HideInInspector] public bool lightSwitcher = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -128,6 +129,7 @@ public abstract class Player : MonoBehaviour
 
     public void DamagePlayer()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");
         isActive = false;

@@ -17,15 +17,15 @@ public class Darkness : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-            lightsOn = !lightsOn;
-        if (index.GetIndex() == 0 && isDark == true && lightsOn == true) 
+        //if (Input.GetButtonDown("Fire1"))
+        //    lightsOn = !lightsOn;
+        if (/*index.GetIndex() == 0 && */isDark && index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn == true*/) 
         {
             darknessWithLight.transform.position = Player.instance.transform.position;
             darknessWithLight.SetActive(true);
             fullDarknessObject.SetActive(false);
         }
-        else if (isDark == true && lightsOn==false)
+        else if (isDark && !index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn==false*/)
         {
             darknessWithLight.SetActive(false);
             fullDarknessObject.SetActive(true);
@@ -33,7 +33,7 @@ public class Darkness : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && isDark == false)
+        if (other.CompareTag("Player") && !isDark)
         {
             fullDarknessObject.SetActive(true);
             isDark = !isDark;
@@ -46,7 +46,7 @@ public class Darkness : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && isDark == true)
+        if (other.CompareTag("Player") && isDark)
         {
             fullDarknessObject.SetActive(false);
             darknessWithLight.SetActive(false);

@@ -263,5 +263,8 @@ public class Mecro71 : Player
         rigidBody.velocity = Vector2.zero;
     }
 
-    public override void DisableAbility() { }
+    public override void DisableAbility() 
+    {
+        lightSwitcher = false;
+    }
 }
