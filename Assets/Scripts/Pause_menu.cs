@@ -78,18 +78,18 @@ public class Pause_menu : MonoBehaviour
     {
         if (activeButtonState == ActiveButtonState.Settings)
         {
-            //if (activePage == settingsPage)
-            //{
-            //    activePage.SetActive(false);
-            //    activePage = null;
-            //    return;
-            //}
-            //else if (activePage != null)
-            //{
-            //    activePage.SetActive(false);
-            //}
-            //settingsPage.SetActive(true);
-            //activePage = settingsPage;
+            if (activePage == settingsPage)
+            {
+                activePage.SetActive(false);
+                activePage = null;
+                return;
+            }
+            else if (activePage != null)
+            {
+                activePage.SetActive(false);
+            }
+            settingsPage.SetActive(true);
+            activePage = settingsPage;
         }
         else
             return;
