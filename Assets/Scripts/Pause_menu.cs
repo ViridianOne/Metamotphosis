@@ -220,6 +220,7 @@ public class Pause_menu : MonoBehaviour
             //}
             //quitPage.SetActive(true);
             //activePage = quitPage;
+            Application.Quit();
         }
         else
             return;
