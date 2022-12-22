@@ -292,7 +292,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7471866223484610891
 CanvasRenderer:
@@ -4031,6 +4031,7 @@ MonoBehaviour:
   authorsPage: {fileID: 0}
   deletePage: {fileID: 0}
   quitPage: {fileID: 0}
+  pauseBG: {fileID: 3209772439689893673}
 --- !u!1 &3209772439475277404
 GameObject:
   m_ObjectHideFlags: 0
@@ -5458,7 +5459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3209772439689893670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12696,7 +12697,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3209772441172946618}
   - component: {fileID: 3209772441172946616}
-  - component: {fileID: 3209772441172946619}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -12738,32 +12738,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences: []
-  dialogue: {fileID: 3209772439714573687}
+  dialogue: {fileID: 3209772441172946621}
   formSwitchController: {fileID: 8440482645723668518}
   dialogueStarted: 0
   dialogueWindow: {fileID: 3209772439714573685}
   dialogueText: {fileID: 3209772439508475348}
   dialogueSpeed: 0.4
---- !u!114 &3209772441172946619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3209772441172946621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6395dcf2a2b238647b43ad77b94db1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogeSystem: {fileID: 3209772441172946616}
-  npcSentences:
-  - text: Text....
-    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
-  - text: MOOOOOORE TEEEEXT!
-    fraseBackground: {fileID: 21300000, guid: fd9341b9c4896cb4bb788c14de69714c, type: 3}
-  - text: I SAID MOOOOOOOOOOOOOOOOORE!
-    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
 --- !u!1 &3209772441182720542
 GameObject:
   m_ObjectHideFlags: 0
@@ -13506,7 +13486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7513725331490664549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14058,7 +14038,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &9004784697555299905
 CanvasRenderer:
@@ -14142,7 +14122,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5112522748775846915}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.46968
+  m_Size: 0.46072084
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14554,7 +14534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.184}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15120,7 +15100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.184}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15150,7 +15130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3821241125800925692}
-  state: 0
+  state: 1
   buttonImage: {fileID: 7501373294866823191}
   normalSprite: {fileID: 335781836, guid: 874d5dd52de413b42ab855b77737c8b1, type: 3}
   selectedSprite: {fileID: 1662823260, guid: 874d5dd52de413b42ab855b77737c8b1, type: 3}
@@ -15766,7 +15746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.184}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16518,7 +16498,7 @@ RectTransform:
   m_Father: {fileID: 4643320704878287875}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.53032}
+  m_AnchorMin: {x: 0, y: 0.53927916}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -17373,7 +17353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.184}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17403,7 +17383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3821241125800925692}
-  state: 1
+  state: 0
   buttonImage: {fileID: 968185127173612969}
   normalSprite: {fileID: -1470630846, guid: 874d5dd52de413b42ab855b77737c8b1, type: 3}
   selectedSprite: {fileID: -1577619886, guid: 874d5dd52de413b42ab855b77737c8b1, type: 3}
@@ -17786,7 +17766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3072373407162323226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18757,11 +18737,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571147120811662507, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.0899963
+      value: 1.0898438
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_Interactable
@@ -18769,7 +18753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -18778,18 +18762,18 @@ PrefabInstance:
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8719629906888668347}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeVolume
+      value: SetVolume
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Music_Slider, Assembly-CSharp
+      value: VolumeChanger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3603346404435789269, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -18801,7 +18785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5134667801557687790, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.0395508
+      value: 1.0390625
       objectReference: {fileID: 0}
     - target: {fileID: 7870925228149995150, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18817,10 +18801,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8760528227264128704, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.21044922
+      value: -0.2109375
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
+--- !u!1 &8003485937807824574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3748971945405322272, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
+  m_PrefabInstance: {fileID: 6563185091551724190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8719629906888668347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003485937807824574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ed5fb695502d748aa8f2d797712870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 593ef9a5b6ffd194e8fb549707db7db2, type: 2}
 --- !u!224 &8257547129360260358 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2994239870953856920, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
@@ -18835,7 +18837,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2071485096299310942, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.184
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2071485096299310942, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMax.y
@@ -19063,7 +19065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870925228149995150, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.184
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7870925228149995150, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMax.y
@@ -19071,7 +19073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870925228149995150, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.184
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8760528227264128704, guid: 76f70839b9d8b3a49b7811b84848ff21, type: 3}
       propertyPath: m_AnchoredPosition.y

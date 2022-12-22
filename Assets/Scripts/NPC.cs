@@ -7,6 +7,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueSystem dialogueSystem;
     [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
+    private DialogueSystem.NpcFrase[] empty;
     private bool canTalk;
     private bool wasDialogue;
 
@@ -14,7 +15,6 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        dialogueSystem.sentences = npcSentences;
         pressButtonMessage.SetActive(false);
         wasDialogue = false;
     }
@@ -36,6 +36,7 @@ public class NPC : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            dialogueSystem.sentences = npcSentences;
             canTalk = wasDialogue;
 
             if (wasDialogue)
@@ -65,6 +66,7 @@ public class NPC : MonoBehaviour
             {
                 dialogueSystem.EndDialogue();
             }
+            dialogueSystem.sentences = empty;
         }
     }
 }
