@@ -16,6 +16,7 @@ public abstract class Player : MonoBehaviour
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
     protected bool isActive;
+    [HideInInspector] public bool lightSwitcher = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -31,7 +32,7 @@ public abstract class Player : MonoBehaviour
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
     private bool canClimbLedge;
-    private bool ledgeDetected;
+    protected bool ledgeDetected;
     private Vector2 ledgePos1, ledgePos2;
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
@@ -128,6 +129,7 @@ public abstract class Player : MonoBehaviour
 
     public void DamagePlayer()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");
         isActive = false;
@@ -138,9 +140,13 @@ public abstract class Player : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(respawnTime);
+        rigidBody.gravityScale = 4;
+        yield return new WaitForSeconds(0.3f);
+        rigidBody.gravityScale = 0;
+        yield return new WaitForSeconds(respawnTime - 0.3f);
         if (!isActive)
         {
+            rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             isActive = true;
             playerCollider.enabled = true;
@@ -162,4 +168,6 @@ public abstract class Player : MonoBehaviour
             StopMoving();
         }
     }
+
+    public abstract void DisableAbility();
 }

@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 520462003863146404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.86, y: -0.87474465, z: 0.049875434}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 520462004323958489}
@@ -183,26 +183,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afc66c86b7be0943bf833400c436f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 520462003863146408}
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  isActive: 0
-  moveSpeed: 4.5
+  moveSpeed: 6
   maxSpeed: 4
   linearDrag: 4
   isTouchingLedge: 0
   ledgeGrabbingTime: 1.04
-  difference1: {x: 0.5, y: 0.45, z: 0}
-  difference2: {x: 0.05, y: 0.65, z: 0}
-  difference3: {x: -0.25, y: 0.45, z: 0}
-  difference4: {x: -0.2, y: 0.65, z: 0}
+  difference1: {x: 0.55, y: 0.65, z: 0}
+  difference2: {x: 0.15, y: 0.7, z: 0}
+  difference3: {x: -0.25, y: 0.7, z: 0}
+  difference4: {x: -0.4, y: 0.7, z: 0}
   feetPos: {fileID: 520462003214590728}
   radius: 0.3
-  feetDetectorSize: {x: 0.3, y: 0.3}
+  feetDetectorSize: {x: 0.5, y: 0.3}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 11
+  jumpForce: 14
   jumpDelay: 0.05
   holder: {fileID: 520462003942758405}
 --- !u!1 &520462003870438060

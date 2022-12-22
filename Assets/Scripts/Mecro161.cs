@@ -17,7 +17,8 @@ public class Mecro161 : Player
     private float jumpTimer;
     public GameObject holder;
     private bool wasOnGround;
-    private bool lightSwitcher = false;
+    //private bool lightSwitcher = false;
+    //[SerializeField] private GameObject lightEffect;
 
     protected override void Move()
     {
@@ -81,6 +82,12 @@ public class Mecro161 : Player
             if (isTouchingLedge)
                 isGrounded = false;
         }
+        //else
+        //{
+        //    lightSwitcher = false;
+        //    anim.SetLayerWeight(1, 100);
+        //    anim.SetLayerWeight(2, 0);
+        //}
     }
 
     private void OnDrawGizmos()
@@ -183,5 +190,12 @@ public class Mecro161 : Player
         anim.SetBool("landingMoment", false);
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
+    }
+
+    public override void DisableAbility()
+    {
+        lightSwitcher = false;
+        anim.SetLayerWeight(1, 100);
+        anim.SetLayerWeight(2, 0);
     }
 }
