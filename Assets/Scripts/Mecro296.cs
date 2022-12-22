@@ -56,6 +56,8 @@ public class Mecro296 : Player
                 }
 
                 isChargingJump = Input.GetButton("Jump");
+                if(Input.GetButtonDown("Jump"))
+                    AudioManager.instance.Play(7);
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
                     jumpTimer += jumpChargeSpeed * Time.deltaTime; 
@@ -73,7 +75,6 @@ public class Mecro296 : Player
                 else
                 {
                     jumpBarBehaviour.ToggleJumpSlider(false);
-                    AudioManager.instance.Play(7);
                 }
 
                 UpdateMovementAnimation();
