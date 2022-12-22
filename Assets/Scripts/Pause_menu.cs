@@ -36,6 +36,8 @@ public class Pause_menu : MonoBehaviour
     public GameObject deletePage;
     public GameObject quitPage;
 
+    public GameObject pauseBG;
+
     void Update()
     {
         
@@ -61,6 +63,7 @@ public class Pause_menu : MonoBehaviour
             activePage = null;
         }
         pauseMenuButtons.SetActive(false);
+        pauseBG.SetActive(false);
         formSwitchController.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
@@ -68,6 +71,7 @@ public class Pause_menu : MonoBehaviour
 
     private void Pause()
     {
+        pauseBG.SetActive(true);
         pauseMenuButtons.SetActive(true);
         formSwitchController.SetActive(false);
         Time.timeScale = 0f;

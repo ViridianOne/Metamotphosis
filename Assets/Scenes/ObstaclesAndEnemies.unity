@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3209772439469234453, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: pauseBG
+      value: 
+      objectReference: {fileID: 896318116}
     - target: {fileID: 3209772439469234456, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -827,6 +831,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2911980974421858469, guid: 02269ee8b76ca8648bd1e5a040ba8c54, type: 3}
   m_PrefabInstance: {fileID: 2911980974685503973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &896318116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3209772439689893673, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+  m_PrefabInstance: {fileID: 384206751}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &953326074
 GameObject:
