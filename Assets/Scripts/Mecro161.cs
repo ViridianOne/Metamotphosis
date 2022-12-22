@@ -19,14 +19,11 @@ public class Mecro161 : Player
     private bool wasOnGround;
     //private bool lightSwitcher = false;
     //[SerializeField] private GameObject lightEffect;
-    public AudioSource runSound;
-    [SerializeField] private bool isMoving = false;
 
     protected override void Move()
     {
         movementForce = moveInput * moveSpeed;
         rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);
-        isMoving = true;
         //rigidBody.AddForce(Vector2.right * movementForce);
         //rigidBody.AddForce(Vector2.right * direction.x * moveSpeed);
         //if (Mathf.Abs(rigidBody.velocity.x) > maxSpeed)
@@ -49,13 +46,13 @@ public class Mecro161 : Player
                     {
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
-                        FindObjectOfType<AudioManager>().Play("LightOn");
+                        AudioManager.instance.Play(1);
                     }
                     else
                     {
                         anim.SetLayerWeight(1, 100);
                         anim.SetLayerWeight(2, 0);
-                        FindObjectOfType<AudioManager>().Play("LightOff");
+                        AudioManager.instance.Play(2);
                     }
                 }
                 wasOnGround = isGrounded;
@@ -83,7 +80,7 @@ public class Mecro161 : Player
                 if (rigidBody.velocity.y <= 0 && !isGrounded)
                 {
                     anim.SetBool("landingMoment", true);
-                    FindObjectOfType<AudioManager>().Play("Landing");
+                    AudioManager.instance.Play(8);
                 }
                 UpdateMovementAnimation();
             }
@@ -103,13 +100,9 @@ public class Mecro161 : Player
         {
             runSound.Play();
         }*/
-        if (!isGrounded && runSound.isPlaying)
+        if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[9].source.isPlaying)
         {
-            runSound.Stop();
-        }
-        if (isMoving==false && runSound.isPlaying )
-        {
-            runSound.Stop();
+            AudioManager.instance.Stop(9);
         }
     }
 
@@ -140,9 +133,9 @@ public class Mecro161 : Player
         {
             anim.SetBool("isMoving", false);
         }
-        if (moveInput!=0f && !runSound.isPlaying)
+        if (moveInput!=0f && !AudioManager.instance.sounds[9].source.isPlaying)
         {
-            runSound.Play();
+            AudioManager.instance.Play(9);
         }
         Flip();
     }
@@ -212,13 +205,12 @@ public class Mecro161 : Player
 
     protected override void StopMoving()
     {
-        isMoving = false;
         anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
-        runSound.Stop();
+        AudioManager.instance.Stop(9);
     }
 
     public override void DisableAbility()

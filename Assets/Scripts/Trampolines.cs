@@ -21,7 +21,7 @@ public class Trampolines : MonoBehaviour
             if (lightOn == true)
             { 
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpForceTrampoline, ForceMode2D.Impulse);
-                FindObjectOfType<AudioManager>().Play("Trampoline");
+                AudioManager.instance.Play(4);
             }
         }
     }

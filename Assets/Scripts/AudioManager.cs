@@ -6,26 +6,30 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
     public Sound[] sounds;
+    public AudioMixerGroup group;
     public void Awake()
     {
+        instance = this;
+
         foreach(Sound sound in sounds)
         {
             sound.source=gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
+            sound.source.outputAudioMixerGroup = group;
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
+            sound.source.playOnAwake = sound.playOnAwake;
         }
     }
-    public void Play(string audioName)
+    public void Play(int index)
     {
-        Sound sound = Array.Find(sounds, s => s.clipName == audioName);
-        sound.source.Play();
+        sounds[index].source.Play();
     }
-    public void Stop(string audioName)
+    public void Stop(int index)
     {
-        Sound sound = Array.Find(sounds, s => s.clipName == audioName);
-        sound.source.Stop();
+        sounds[index].source.Stop();
     }
 }

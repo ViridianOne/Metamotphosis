@@ -129,7 +129,7 @@ public abstract class Player : MonoBehaviour
 
     public void DamagePlayer()
     {
-        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        AudioManager.instance.Play(3);
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");
         isActive = false;
