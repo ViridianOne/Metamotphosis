@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class MecroSelectManager : MonoBehaviour
 {
-    public static MecroSelectManager instance;
+    [HideInInspector] public static MecroSelectManager instance;
     private bool canSelect;
-    [SerializeField] private int startMecroIndex;
-    public int currentMecroIndex;
+    [SerializeField] private MecroStates startMecro = MecroStates.form161;
+    private MecroStates currentMecro;
     [SerializeField] public Transform respawnPoint;
     [SerializeField] private float selectTime;
 
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
-    public Player[] instantiatedMecros = new Player[3];
+    [HideInInspector] public Player[] instantiatedMecros = new Player[3];
+    [SerializeField] public bool[] isMecroUnlocked = { true, false, false };
 
     private void Awake()
     {
         instance = this;
     }
+
     void Start()
     {
-        canSelect = true;
         /*currentMecro = Player.instance;
         currentMecro.respawnPoint = respawnPoint;*/
-        currentMecroIndex = startMecroIndex;
+        //mecros[0].respawnPoint = respawnPoint;
+        //mecros[1].respawnPoint = respawnPoint;
+        //mecros[2].respawnPoint = respawnPoint;
+        /*currentMecro = instantiatedMecros[0];
+        currentMecro.gameObject.SetActive(true);*/
+        //instantiatedMecros[startMecroIndex].respawnPoint = respawnPoint;
+        canSelect = true;
+        currentMecro = startMecro;
         Vector3 mecroPos = Player.instance.transform.position;
         Quaternion mecroRot = Player.instance.transform.localRotation;
         Destroy(Player.instance.gameObject);
@@ -32,15 +40,9 @@ public class MecroSelectManager : MonoBehaviour
         {
             instantiatedMecros[i] = Instantiate(mecros[i], mecroPos, mecroRot);
             instantiatedMecros[i].gameObject.SetActive(false);
-            instantiatedMecros[i].respawnPoint = respawnPoint;//respawnPoint;
+            instantiatedMecros[i].respawnPoint = respawnPoint;
         }
-        //mecros[0].respawnPoint = respawnPoint;
-        //mecros[1].respawnPoint = respawnPoint;
-        //mecros[2].respawnPoint = respawnPoint;
-        /*currentMecro = instantiatedMecros[0];
-        currentMecro.gameObject.SetActive(true);*/
-        //instantiatedMecros[startMecroIndex].respawnPoint = respawnPoint;
-        Player.instance = instantiatedMecros[startMecroIndex];
+        Player.instance = instantiatedMecros[(int)startMecro];
         Player.instance.gameObject.SetActive(true);
     }
 
@@ -49,42 +51,41 @@ public class MecroSelectManager : MonoBehaviour
         //Player.instance.isActive = canSelect;
         if (canSelect)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                CreateNewMecro(1);
+                SelectMecro(MecroStates.form161);
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                CreateNewMecro(0);
+                SelectMecro(MecroStates.form296);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                CreateNewMecro(2);
+                SelectMecro(MecroStates.form71);
             }
         }
     }
 
-    private void CreateNewMecro(int mecroListIndex)
+    private void SelectMecro(MecroStates mecroState)
     {
-        if (currentMecroIndex != mecroListIndex)
+        if (isMecroUnlocked[(int)mecroState] && currentMecro != mecroState)
         {
-            Player.instance.DisableAbility();
             //Vector3 mecroPos = Player.instance.transform.position;
             //Quaternion mecroRot = Player.instance.transform.localRotation;
             //Destroy(Player.instance.gameObject);
             //currentMecro = Instantiate(mecros[mecroListIndex], mecroPos, mecroRot);
-            Player.instance.gameObject.SetActive(false);
             /*currentMecro = mecros[mecroListIndex];
             currentMecro.gameObject.SetActive(true);
             currentMecro.respawnPoint = respawnPoint;*/
-            instantiatedMecros[mecroListIndex].transform.position = Player.instance.transform.position;
-            instantiatedMecros[mecroListIndex].transform.localRotation = Player.instance.transform.localRotation;
             //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
-            Player.instance = instantiatedMecros[mecroListIndex];
+            Player.instance.DisableAbility();
+            Player.instance.gameObject.SetActive(false);
+            instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
+            instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
+            Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
-            currentMecroIndex = mecroListIndex;
+            currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
-            //CameraController.instance.target = currentMecro.transform;
         }
     }
 
@@ -99,6 +100,6 @@ public class MecroSelectManager : MonoBehaviour
 
     public int GetIndex()
     {
-        return currentMecroIndex;
+        return (int)currentMecro;
     }
 }
