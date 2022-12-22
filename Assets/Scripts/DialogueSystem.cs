@@ -4,12 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using static Form_switch_controller;
 
 public class DialogueSystem : MonoBehaviour
 {
     [HideInInspector] public NpcFrase[] sentences;
 
     public GameObject dialogue;
+
+    public GameObject formSwitchController;
 
     public bool dialogueStarted;
 
@@ -40,6 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
         ToggleWindow(true);
         dialogueStarted = true;
+        formSwitchController.SetActive(false);
         dialogueWindow.sprite = sentences[0].fraseBackground;
         Player.instance.ToggleActive(false);
         GetDialogue(0);
@@ -58,6 +62,7 @@ public class DialogueSystem : MonoBehaviour
     {
         Player.instance.ToggleActive(true);
         ToggleWindow(false);
+        formSwitchController.SetActive(true);
         dialogueStarted = false;
     }
 

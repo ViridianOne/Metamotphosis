@@ -7,8 +7,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueSystem dialogueSystem;
     [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
-    private bool wasDialogue;
     private bool canTalk;
+    private bool wasDialogue;
+
+    [SerializeField] private MecroStates mecroToUnlock; 
 
     void Start()
     {
@@ -44,6 +46,10 @@ public class NPC : MonoBehaviour
             {
                 dialogueSystem.StartDialogue();
                 wasDialogue = true;
+                if (mecroToUnlock != MecroStates.none)
+                {
+                    MecroSelectManager.instance.isMecroUnlocked[(int)mecroToUnlock] = true;
+                }
             }
         }
     }

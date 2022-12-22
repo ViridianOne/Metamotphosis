@@ -17,8 +17,8 @@ public class Mecro161 : Player
     private float jumpTimer;
     public GameObject holder;
     private bool wasOnGround;
-    private bool lightSwitcher = false;
-    [SerializeField] private GameObject lightEffect;
+    //private bool lightSwitcher = false;
+    //[SerializeField] private GameObject lightEffect;
 
     protected override void Move()
     {
@@ -44,13 +44,11 @@ public class Mecro161 : Player
                     lightSwitcher = !lightSwitcher;
                     if (lightSwitcher)
                     {
-                        lightEffect.SetActive(true);
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
                     }
                     else
                     {
-                        lightEffect.SetActive(false);
                         anim.SetLayerWeight(1, 100);
                         anim.SetLayerWeight(2, 0);
                     }
@@ -196,7 +194,6 @@ public class Mecro161 : Player
 
     public override void DisableAbility()
     {
-        lightEffect.SetActive(false);
         lightSwitcher = false;
         anim.SetLayerWeight(1, 100);
         anim.SetLayerWeight(2, 0);

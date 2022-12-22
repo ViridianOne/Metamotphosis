@@ -35,4 +35,28 @@ public class Platform : MonoBehaviour
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //if (transform.childCount == 0)
+            //{
+            //    collision.collider.transform.SetParent(transform);
+            //}
+            //else
+            //{
+            //    transform.DetachChildren();
+            //    collision.collider.transform.SetParent(transform);
+            //}
+            collision.collider.transform.SetParent(transform);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        {
+            collision.collider.transform.SetParent(null);
+        }
+    }
 }

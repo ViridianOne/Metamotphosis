@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Form_switch_controller;
 
 public class Pause_menu : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Pause_menu : MonoBehaviour
 
     public bool isPaused = false;
     private GameObject activePage = null;
+
+    public GameObject formSwitchController;
 
     public GameObject pauseMenuButtons;
     public GameObject settingsPage;
@@ -58,6 +61,7 @@ public class Pause_menu : MonoBehaviour
             activePage = null;
         }
         pauseMenuButtons.SetActive(false);
+        formSwitchController.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -65,6 +69,7 @@ public class Pause_menu : MonoBehaviour
     private void Pause()
     {
         pauseMenuButtons.SetActive(true);
+        formSwitchController.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
     }
