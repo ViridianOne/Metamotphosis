@@ -17,6 +17,8 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public Transform respawnPoint;
     protected bool isActive;
     [HideInInspector] public bool lightSwitcher = false;
+    public bool isOnMovingPlatform = false;
+    private bool ledgeFlag;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -37,6 +39,7 @@ public abstract class Player : MonoBehaviour
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
     [SerializeField] private Vector3 difference1, difference2, difference3, difference4;
+    public Vector2 movingPlatDif = Vector2.zero;
 
     private void Awake()
     {
@@ -68,10 +71,13 @@ public abstract class Player : MonoBehaviour
         if (ledgeDetected && !canClimbLedge)
         {
             canClimbLedge = true;
+            ledgeFlag = true;
             anim.SetBool("isLedgeGrabbing", true);
         }
         if (canClimbLedge)
         {
+            if (isOnMovingPlatform)
+                ledgePos1 -= movingPlatDif;
             transform.position = ledgePos1;
             if (ledgeGrabbingTimer <= 0)
                 ledgeGrabbingTimer = ledgeGrabbingTime;
@@ -88,6 +94,9 @@ public abstract class Player : MonoBehaviour
     {
         canClimbLedge = false;
         transform.position = ledgePos2;
+        movingPlatDif = Vector2.zero;
+        //ledgeFlag = false;
+        isOnMovingPlatform = false;
         ledgeDetected = false;
         isAbleToMove = true;
         isTouchingLedge = false;

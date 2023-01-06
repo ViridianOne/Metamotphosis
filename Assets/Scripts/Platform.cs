@@ -49,6 +49,11 @@ public class Platform : MonoBehaviour
             //    transform.DetachChildren();
             //    collision.collider.transform.SetParent(transform);
             //}
+            if (nextPos == pos1.position)
+            {
+                Player.instance.isOnMovingPlatform = true;
+                Player.instance.movingPlatDif = new Vector2(0, 0.005f);
+            }
             collision.collider.transform.SetParent(transform);
         }
     }
@@ -56,6 +61,8 @@ public class Platform : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
         {
+            //Player.instance.isOnMovingPlatform = false;
+            //Player.instance.movingPlatDif = Vector2.zero;
             collision.collider.transform.SetParent(null);
         }
     }

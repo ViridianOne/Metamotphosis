@@ -121,6 +121,11 @@ public class PlatformWithLight : MonoBehaviour
                 collision.collider.transform.SetParent(transform);
             }
         }*/
+        if (nextPos == pos1.position)
+        {
+            Player.instance.isOnMovingPlatform = true;
+            Player.instance.movingPlatDif = new Vector2(0, 0.005f);
+        }
         collision.collider.transform.SetParent(transform);
     }
     private void OnCollisionExit2D(Collision2D collision)
