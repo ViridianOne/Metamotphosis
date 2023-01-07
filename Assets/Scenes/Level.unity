@@ -301,6 +301,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1768910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+  m_PrefabInstance: {fileID: 1777057402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4174223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14086,28 +14091,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 897619268}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextString
+      value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.size
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[0].text
-      value: "\u041C\u043E\u0438 \u043F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F,
-        \u041C\u0435\u043A\u0440\u043E"
+      value: My congratulations, Mecro.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[1].text
-      value: "\u0418\u0437\u0432\u0438\u043D\u044F\u044E\u0441\u044C \u0437\u0430
-        \u043F\u0430\u0444\u043E\u0441, \u043D\u043E \u044F \u043F\u0440\u043E\u0441\u0442\u043E
-        \u043F\u044B\u0442\u0430\u044E\u0441\u044C \u043D\u0435 \u0432\u044B\u0445\u043E\u0434\u0438\u0442\u044C
-        \u0438\u0437 \u0432\u0441\u043E\u0435\u0433\u043E \u043E\u0431\u0440\u0430\u0437\u0430"
+      value: I'm sorry for being snobbish. I'm just trying to keep my "strange ghost"
+        image.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[2].text
-      value: "\u0422\u044B \u0438\u0437\u0443\u0447\u0438\u043B \u0438 \u043F\u043E\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u043E\u0432\u0430\u043B
-        3 \u0444\u043E\u0440\u043C\u044B, \u0432\u043A\u043B\u044E\u0447\u0430\u044F
-        \u0441\u0432\u043E\u044E. \u0422\u0435\u043F\u0435\u0440\u044C \u0442\u044B
-        \u0433\u043E\u0442\u043E\u0432 \u0443\u0441\u043B\u044B\u0448\u0430\u0442\u044C
-        \u043F\u0440\u0430\u0432\u0434\u0443..."
+      value: You've learned and practiced 3 forms. Now you're ready to hear the truth.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[3].text
@@ -14115,28 +14125,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[4].text
-      value: "\u0422\u044B \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u0438\u0437 \u0436\u0438\u0432\u044B\u0445, \u043A\u0442\u043E \u043C\u043E\u0436\u0435\u0442
-        \u0432\u0438\u0434\u0435\u0442\u044C \u043C\u0435\u043D\u044F. \u041D\u0430
-        \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0432\u0440\u0435\u043C\u044F
-        \u0442\u044B \u0443\u043C\u0435\u0440, \u043D\u043E \u0447\u0435\u0440\u0435\u0437
-        \u043C\u0438\u043D\u0443\u0442\u0443 \u043F\u0440\u043E\u0441\u043D\u0443\u043B\u0441\u044F.
-        \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E, \u044D\u0442\u043E \u0438
-        \u043F\u043E\u0441\u043B\u0443\u0436\u0438\u043B\u043E \u043F\u0440\u0438\u0447\u0438\u043D\u043E\u0439
-        \u043D\u0430\u0448\u0435\u0433\u043E \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F."
+      value: You're the only alive creature who can see me. The cause may be is that
+        you had been dead for a minute after the experiment, but then you became
+        alive again.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[5].text
-      value: "\u041C\u0435\u043A\u0440\u043E, \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F
-        \u0442\u0432\u043E\u0438\u043C \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044F\u043C
-        \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043E\u0441\u0432\u043E\u0431\u043E\u0434\u0438\u0442\u044C
-        \u0432\u0441\u0435\u0445 \u0441\u0443\u0449\u0435\u0441\u0442\u0432 \u0438\u0437
-        \u044D\u0442\u043E\u0439 \u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u0438\u0438"
+      value: Mecro, with your abilities you can help me to save all the creatures
+        of this laboratory and let them out.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[6].text
-      value: "\u0411\u0435\u0437 \u0442\u0432\u043E\u0435\u0439 \u043F\u043E\u043C\u043E\u0449\u0438
-        \u043C\u043D\u0435 \u043D\u0435 \u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0441\u044F"
+      value: I can't do that without your you help. Mecro, plaese, we need you.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[7].text
@@ -14144,10 +14144,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[8].text
-      value: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0442\u0435\u0431\u044F,
-        \u041C\u0435\u043A\u0440\u043E. \u042F \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
-        \u0434\u0430\u043B\u044C\u0448\u0435 \u0431\u0443\u0434\u0443 \u0442\u0435\u0431\u0435
-        \u043F\u043E\u043C\u043E\u0433\u0430\u0442\u044C. \u0423\u0434\u0430\u0447\u0438!"
+      value: Thank you, Mecro. I will always be next to you. I promise I will help
+        you too. Good luck!
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[9].text
@@ -17750,7 +17748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &520662579
 Transform:
   m_ObjectHideFlags: 0
@@ -19906,6 +19904,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4000293335975901153, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293335975901153, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293335975901153, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293335975901153, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293335975901153, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289008, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: m_Name
       value: NPC 161 Ghost
@@ -19915,12 +19933,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 897619268}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextString
+      value: Now you can use the 296 form. Use the left arraow to turn to 296 from. 
+        You can find more information in the Help Menu.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.size
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[0].text
-      value: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u041C\u0435\u043A\u0440\u043E..."
+      value: Good morning, Mecro...
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[1].text
@@ -19928,16 +19959,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[2].text
-      value: "\u0414\u0430, \u0438\u043C\u0435\u043D\u043D\u043E \u0442\u0430\u043A,
-        \u0432 \u0447\u0435\u0441\u0442\u044C \u0434\u043E\u043A\u0442\u043E\u0440\u0430
-        \u041C\u0435\u043A\u0440\u043E, \u0442\u0435\u0431\u044F \u043F\u0440\u043E\u0437\u0432\u0430\u043B\u0438
-        \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u0438\u043D\u0443\u0442
-        \u043D\u0430\u0437\u0430\u0434"
+      value: Yes, you were named after Dr. Mecro several minutes ago. He's kind a
+        boss of this laboratory.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[3].text
-      value: "\u0421\u043E\u0433\u043B\u0430\u0441\u0438\u0441\u044C, \u0442\u0430\u043A
-        \u043F\u0440\u043E\u0449\u0435 \u043A \u0442\u0435\u0431\u0435 \u043E\u0431\u0440\u0430\u0449\u0430\u0442\u044C\u0441\u044F"
+      value: Believe that this name better than "Creature 1615151"
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[4].text
@@ -19945,31 +19972,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[5].text
-      value: "\u0417\u0430 \u0442\u043E\u0431\u043E\u0439 \u043E\u0445\u043E\u0442\u044F\u0442\u0441\u044F,
-        \u041C\u0435\u043A\u0440\u043E."
+      value: They're going to haunt you.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[6].text
-      value: "\u0422\u044B \u043F\u0435\u0440\u0432\u043E\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E,
-        \u0441\u0443\u043C\u0435\u0432\u0448\u0435\u0435 \u0432\u044B\u0436\u0438\u0442\u044C
-        \u043F\u043E\u0441\u043B\u0435 \u044D\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u043E\u0432,
-        \u0438 \u043D\u0430\u0434 \u0442\u043E\u0431\u043E\u0439 \u0445\u043E\u0442\u044F\u0442
-        \u0441\u0430\u0442\u0432\u0438\u0442\u044C \u043E\u043F\u044B\u0442\u044B
-        \u0434\u0430\u043B\u044C\u0448\u0435."
+      value: You're the first creature who survived after their experiments. They
+        want to continue experimenting on you.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[7].text
-      value: "\u0422\u0435\u0431\u0435 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
-        \u0441\u0431\u0435\u0436\u0430\u0442\u044C \u0438\u0437 \u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u0438\u0438"
+      value: You need to get out of here and I will help you with this.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[8].text
-      value: "\u0414\u043B\u044F \u043D\u0430\u0447\u0430\u043B\u0430 \u043D\u0430\u0434\u043E
-        \u043F\u043E\u043D\u044F\u0442\u044C, \u0447\u0442\u043E \u044D\u0442\u043E
-        \u0437\u0430 \u0430\u043D\u0442\u0435\u043D\u043D\u0430 \u043F\u043E\u044F\u0432\u0438\u043B\u0430\u0441\u044C
-        \u043D\u0430 \u0442\u0432\u043E\u0435\u0439 \u0433\u043E\u043B\u043E\u0432\u0435.
-        \u0422\u044B \u0447\u0442\u043E-\u0442\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0435
-        \u0443 \u0441\u0435\u0431\u044F \u0437\u0430\u043C\u0435\u0447\u0430\u043B?"
+      value: First of all, we need to realize what this antenna on your head is.
+        Did you notice anything strange in yourself?
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[9].text
@@ -19977,29 +19994,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[10].text
-      value: "\u0412 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u0435
-        \u043F\u0440\u0435\u0434\u044B\u0434\u0443\u0449\u0435\u0433\u043E \u043E\u043F\u044B\u0442\u0430
-        \u0438\u0441\u043F\u044B\u0442\u0443\u0435\u043C\u044B\u0439 \u043D\u0430
-        \u0432\u0440\u0435\u043C\u044F \u043F\u0440\u0438\u043E\u0431\u0440\u0451\u043B
-        \u0432\u043D\u0435\u0448\u043D\u043E\u0441\u0442\u044C \u0438 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
-        \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0432\u0438\u0434\u0430. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439
-        \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0442\u0430\u043A \u0436\u0435"
+      value: After previous experiment the creature turned to another form, which
+        is similar to one of the species, for a few minutes. Let's try to do that.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[11].text
-      value: "\u0414\u043B\u044F \u043D\u0430\u0447\u0430\u043B\u0430 \u0442\u0435\u0431\u0435
-        \u043D\u0443\u0436\u043D\u043E \u0431\u0443\u0434\u0435\u0442 \u0438\u0437\u0443\u0447\u0438\u0442\u044C
-        \u0441\u0442\u0440\u043E\u0435\u043D\u0438\u0435 \u0438 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
-        \u043E\u0434\u043D\u043E\u0433\u043E \u0438\u0437 \u0432\u0438\u0434\u0430"
+      value: First of all, you need to learn a body structure and physical attributes
+        of one of the species.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[12].text
-      value: "\u041F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u044E \u0432\u044B\u0431\u0440\u0430\u0442\u044C
-        296 \u0432\u0438\u0434. \u0415\u0433\u043E \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C
-        \u0440\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0432\u044B\u0441\u043E\u0442\u0443 \u043F\u0440\u044B\u0436\u043A\u0430
-        \u043F\u043E\u043D\u0430\u0434\u043E\u0431\u0438\u0442\u044C\u0441\u044F
-        \u0441\u0435\u0439\u0447\u0430\u0441"
+      value: I advise you to choose the form of 296 species. They can regulate the
+        height of their jumps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[13].text
+      value: Now you can use the 296 form. Use the left arrow to turn to 296 from. 
+        You can find more information in the Help Menu.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[14].text
+      value: And don't forget to use your native form of 161 species. You can turn
+        the lights on and off by using a "Ctrl" key.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[1].fraseBackground
@@ -20043,6 +20059,14 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[12].fraseBackground
+      value: 
+      objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[13].fraseBackground
+      value: 
+      objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[14].fraseBackground
       value: 
       objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
     - target: {fileID: 4000293336948289014, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
@@ -20606,11 +20630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 520462003863146410, guid: 131c9871e0e63a5408da5f0ae472db59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: 38.21
       objectReference: {fileID: 0}
     - target: {fileID: 520462003863146410, guid: 131c9871e0e63a5408da5f0ae472db59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.67
+      value: -18.29
       objectReference: {fileID: 0}
     - target: {fileID: 520462003863146410, guid: 131c9871e0e63a5408da5f0ae472db59, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21668,6 +21692,48 @@ CompositeCollider2D:
       - X: 119999900
         Y: 90000041
       - X: 119999900
+        Y: 30000100
+      - X: 50312480
+        Y: 30000100
+      - X: 50312443
+        Y: 30000085
+      - X: 49999915
+        Y: 29687557
+      - X: 49999900
+        Y: 29687520
+      - X: 49999900
+        Y: 23437480
+      - X: 49999915
+        Y: 23437443
+      - X: 50937443
+        Y: 22499915
+      - X: 50937480
+        Y: 22499900
+      - X: 59999958
+        Y: 22499900
+      - X: 59999915
+        Y: 22499943
+      - X: 59999914
+        Y: 22499945
+      - X: 59999959
+        Y: 22499900
+      - X: 69999958
+        Y: 22499900
+      - X: 72499900
+        Y: 19999958
+      - X: 72499900
+        Y: -29999900
+      - X: 70000100
+        Y: -29999900
+      - X: 70000100
+        Y: -30000041
+      - X: 70000041
+        Y: -30000100
+      - X: 62499959
+        Y: -30000100
+      - X: 62499900
+        Y: -30000041
+      - X: 62499900
         Y: -29999900
       - X: 50000100
         Y: -29999900
@@ -21789,6 +21855,26 @@ CompositeCollider2D:
         Y: 19999900
       - X: -60624980
         Y: 19999900
+    - - X: 90000100
+        Y: 22499962
+      - X: 90000100
+        Y: 22499959
+      - X: 90000078
+        Y: 22499937
+    - - X: 80000100
+        Y: -29999900
+      - X: 80000100
+        Y: 21249928
+      - X: 80937528
+        Y: 21562402
+      - X: 90000045
+        Y: 22499904
+      - X: 90000041
+        Y: 22499900
+      - X: 119999900
+        Y: 22499900
+      - X: 119999900
+        Y: -29999900
   m_CompositePaths:
     m_Paths:
     - - {x: 11.999974, y: -6.00001}
@@ -21796,7 +21882,14 @@ CompositeCollider2D:
       - {x: 13.00001, y: -4.9999747}
       - {x: 12.999974, y: 9.00001}
       - {x: 11.99999, y: 8.999974}
-      - {x: 11.999961, y: -2.99999}
+      - {x: 11.999961, y: 3.00001}
+      - {x: 5.0312366, y: 3.000001}
+      - {x: 4.99999, y: 2.9687412}
+      - {x: 4.999999, y: 2.343737}
+      - {x: 5.093759, y: 2.24999}
+      - {x: 7.0000033, y: 2.2499824}
+      - {x: 7.2499905, y: 1.999985}
+      - {x: 7.249961, y: -2.99999}
       - {x: 5.00001, y: -2.9999607}
       - {x: 4.9999747, y: -0.99999}
       - {x: 0.99999, y: -1.0000252}
@@ -21814,6 +21907,12 @@ CompositeCollider2D:
       - {x: -7.0000067, y: 2.75001}
       - {x: -12.00001, y: 2.7499747}
       - {x: -11.999974, y: 1.99999}
+    - - {x: 11.99999, y: -2.9999607}
+      - {x: 8.00001, y: -2.9999607}
+      - {x: 8.000029, y: 2.1249993}
+      - {x: 8.093756, y: 2.1562407}
+      - {x: 9.000005, y: 2.24999}
+      - {x: 11.99999, y: 2.2499607}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &703629740
@@ -22561,6 +22660,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 12, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -22611,11 +22720,31 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 12, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -22631,11 +22760,31 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 12, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 7, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -22706,6 +22855,76 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 11
       m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 5, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 7, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 8, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 9, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 10, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 11, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -22843,16 +23062,16 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: 5b6665f6879126849bcb40de48fe1cef, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 021eb41898fd92547af5715ef2fd07be, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: a256c24de11944249a390345e2a6492f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fb58c1ec56ae45f42820bbd9809901d6, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: b1a201361a182794bbd5484ac8758b54, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: a3a12f87542fe5b4d8faf35e1f374f15, type: 2}
   - m_RefCount: 39
@@ -22871,15 +23090,23 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 28665632836423c4989ba7b2855a1f35, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: 23adb0e7ab883bb4d844050d48a44294, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 409237bbbbeacc74e87ecea45c4506fe, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: cb2d53bb542cc414b84343b95252955c, type: 2}
+  - m_RefCount: 5
+    m_Data: {fileID: 11400000, guid: 32e173be2dc8b314485b6dbe9e4df9d0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: dfa5c86d0a42144439368902444281d4, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 3
+    m_Data: {fileID: 564415284, guid: 8550f437125f0804ca55807e911fb811, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 215038413, guid: 8550f437125f0804ca55807e911fb811, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -560077834, guid: 8550f437125f0804ca55807e911fb811, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1377963063, guid: 8550f437125f0804ca55807e911fb811, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -358442981, guid: 8550f437125f0804ca55807e911fb811, type: 3}
   - m_RefCount: 2
@@ -22900,8 +23127,16 @@ Tilemap:
     m_Data: {fileID: 458511973, guid: 58ad8bde6d681ad4091425a29f69fa0a, type: 3}
   - m_RefCount: 22
     m_Data: {fileID: -155988809, guid: 58ad8bde6d681ad4091425a29f69fa0a, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1474041733, guid: 8550f437125f0804ca55807e911fb811, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1804069575, guid: 8550f437125f0804ca55807e911fb811, type: 3}
+  - m_RefCount: 5
+    m_Data: {fileID: 19827947, guid: 8550f437125f0804ca55807e911fb811, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1746321396, guid: 8550f437125f0804ca55807e911fb811, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 93
+  - m_RefCount: 105
     m_Data:
       e00: 1
       e01: 0
@@ -22920,7 +23155,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 93
+  - m_RefCount: 105
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -32231,17 +32466,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 897619268}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroUnlockTextString
+      value: Now you can use the 71 form. Use the left arraow to turn to 71 from. 
+        You can find more information in the Help Menu.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[0].text
-      value: "\u0412\u0438\u0436\u0443, \u0442\u044B \u0441\u0443\u043C\u0435\u043B
-        \u043F\u0440\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u0447\u0435\u0440\u0435\u0437
-        \u043E\u0441\u043D\u043E\u0432\u043D\u0443\u044E \u0447\u0430\u0441\u0442\u044C
-        \u043F\u043E\u0434\u0432\u0430\u043B\u0430. \u0422\u0435\u043F\u0435\u0440\u044C
-        \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C \u043E\u0442\u0441\u044E\u0434\u0430
-        \u0432\u044B\u0439\u0442\u0438."
+      value: I can see that you could get through the main part of basement.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[1].text
@@ -32249,29 +32492,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[2].text
-      value: "\u0422\u0435\u0431\u044F \u0441\u043C\u0443\u0442\u0438\u043B\u0430
-        \u044D\u0442\u0430 \u043F\u0440\u043E\u043F\u0430\u0441\u0442\u044C?"
+      value: Did this precipice scared you?
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[3].text
-      value: "\u0412 \u0442\u0430\u043A\u043E\u043C \u0441\u043B\u0443\u0447\u0430\u0435
-        \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F
-        \u0441 \u043D\u043E\u0432\u044B\u043C \u0432\u0438\u0434\u043E\u043C \u0438
-        \u043F\u0435\u0440\u0435\u0432\u043E\u043F\u043B\u043E\u0442\u0438\u0442\u044C\u0441\u044F
-        \u0432 \u0435\u0451 \u0444\u043E\u0440\u043C\u0443"
+      value: Well, it's time to learn a form of the new species.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[4].text
-      value: "\u0412\u0438\u0434, \u0444\u043E\u0440\u043C\u0430 \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E
-        \u0442\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u0430, - 71. \u0418\u0437\u0443\u0447\u0438
-        \u0435\u0433\u043E \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A\u0438"
+      value: You need a form of 71 species.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[5].text
-      value: "\u0421\u0430\u043C\u0430\u044F \u0433\u043B\u0430\u0432\u043D\u0430\u044F
-        \u0438\u0437 \u043D\u0438\u0445 - \u0431\u044B\u0441\u0442\u0440\u044B\u0439
-        \u043F\u0435\u0440\u0435\u043B\u0451\u0442 \u0432 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u043E\u043C
-        \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438"
+      value: Their main ability is to fly in the one of the four directions.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[6].text
+      value: Now you can use the 71 form. Use the right arrow to turn to 71 from. 
+        You can find more information in the Help Menu.
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[1].fraseBackground
@@ -32287,6 +32525,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: npcSentences.Array.data[5].fraseBackground
+      value: 
+      objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: npcSentences.Array.data[6].fraseBackground
       value: 
       objectReference: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
     - target: {fileID: 4000293336948289014, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
@@ -41244,7 +41486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8534715575850186890, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.16
+      value: 7.99
       objectReference: {fileID: 0}
     - target: {fileID: 8534715575850186890, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46479,6 +46721,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4588597701816752361, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
 --- !u!1001 &1369013494
@@ -48993,6 +49239,7 @@ Transform:
   - {fileID: 1731825179}
   - {fileID: 72577976}
   - {fileID: 2024088788}
+  - {fileID: 1768910}
   m_Father: {fileID: 1005661021}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60942,7 +61189,9 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1743501297}
     m_ColliderPaths:
-    - - X: -140000041
+    - - X: -49999900
+        Y: -50000041
+      - X: -49999900
         Y: -49999900
       - X: 109999900
         Y: -49999900
@@ -60959,6 +61208,18 @@ CompositeCollider2D:
       - X: -100
         Y: -19999959
       - X: -100
+        Y: -40000000
+      - X: -49999900
+        Y: -40000000
+      - X: -49999900
+        Y: -39999959
+      - X: -49999959
+        Y: -39999900
+      - X: -60000041
+        Y: -39999900
+      - X: -60000100
+        Y: -39999959
+      - X: -60000100
         Y: -40000000
       - X: -129999900
         Y: -40000000
@@ -61000,6 +61261,16 @@ CompositeCollider2D:
         Y: -39999959
       - X: -140000100
         Y: -49999959
+      - X: -140000041
+        Y: -49999900
+      - X: -60000100
+        Y: -49999900
+      - X: -60000100
+        Y: -50000041
+      - X: -60000041
+        Y: -50000100
+      - X: -49999959
+        Y: -50000100
     - - X: 110000100
         Y: -10000041
       - X: 110000100
@@ -62723,7 +62994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756355352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.14, y: -2.08, z: 0}
+  m_LocalPosition: {x: 50.14, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64766,6 +65037,67 @@ Transform:
   m_Father: {fileID: 192639359}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1777057402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1469905260}
+    m_Modifications:
+    - target: {fileID: 910007736784223081, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562513462265458998, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_Name
+      value: Left Ledge (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.8965
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0297
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073515922874459415, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 260ed5369f062494b97c5f1873646e6e, type: 3}
 --- !u!1 &1778122087 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8534715575850186903, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
@@ -74177,6 +74509,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 19
+      m_TileSpriteIndex: 19
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 12, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -74237,6 +74579,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 19
+      m_TileSpriteIndex: 19
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 12, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -74252,6 +74604,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 7, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 18
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -74322,6 +74684,36 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 11
       m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 8, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 10, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -74491,6 +74883,14 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 407153c862b4a074ea832f2b6ad68e1f, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 262870261dbfb6646abdbd939bcf43ad, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 0f2d017a20474ec4695d6a740fef498a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 2153945282ca2c04e92394c3da5b7423, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 16dd375a37d5d4047aff5072eab00be6, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: eb5b71425b03cab4d8399a15239b3035, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 2
     m_Data: {fileID: -222320100, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
@@ -74524,8 +74924,16 @@ Tilemap:
     m_Data: {fileID: 956027043, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1584153525, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: 1364541880, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1144034475, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 708666078, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: 877650072, guid: 11af909a4c41f8348a95166a36df7bc6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 93
+  - m_RefCount: 99
     m_Data:
       e00: 1
       e01: 0
@@ -74544,7 +74952,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 93
+  - m_RefCount: 99
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

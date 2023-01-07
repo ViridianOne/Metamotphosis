@@ -53,12 +53,13 @@ public class Checkpoint : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !currentCheck)
         {
             respawnPointObject.position = other.transform.position;
             AudioManager.instance.Play(0);
             Checkpoints.instance.currentCheckpoint = index;
             Checkpoints.instance.previousCheckpoint = index - 1;
+            currentCheck = true;
         }
     }
     public void Update()
@@ -72,6 +73,7 @@ public class Checkpoint : MonoBehaviour
         {
             activeCheck.SetActive(false);
             notActiveCheck.SetActive(true);
+            currentCheck = false;
         }
     }
 

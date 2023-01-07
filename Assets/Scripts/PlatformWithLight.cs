@@ -130,7 +130,7 @@ public class PlatformWithLight : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             collision.collider.transform.SetParent(null);
         }

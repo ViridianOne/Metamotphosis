@@ -49,7 +49,7 @@ public class Platform : MonoBehaviour
             //    transform.DetachChildren();
             //    collision.collider.transform.SetParent(transform);
             //}
-            if (nextPos == pos1.position)
+            if (nextPos == pos1.position && pos1.position != pos2.position)
             {
                 Player.instance.isOnMovingPlatform = true;
                 Player.instance.movingPlatDif = new Vector2(0, 0.005f);
@@ -59,7 +59,7 @@ public class Platform : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             //Player.instance.isOnMovingPlatform = false;
             //Player.instance.movingPlatDif = Vector2.zero;

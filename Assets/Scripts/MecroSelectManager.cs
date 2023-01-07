@@ -16,6 +16,8 @@ public class MecroSelectManager : MonoBehaviour
     [HideInInspector] public Player[] instantiatedMecros = new Player[3];
     [SerializeField] public bool[] isMecroUnlocked = { true, false, false };
 
+    public bool isChanged;
+
     private void Awake()
     {
         instance = this;
@@ -78,6 +80,7 @@ public class MecroSelectManager : MonoBehaviour
             currentMecro.gameObject.SetActive(true);
             currentMecro.respawnPoint = respawnPoint;*/
             //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
+            isChanged = true;
             Player.instance.DisableAbility();
             Player.instance.gameObject.SetActive(false);
             instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
@@ -96,6 +99,7 @@ public class MecroSelectManager : MonoBehaviour
         yield return new WaitForSeconds(selectTime);
         Player.instance.ToggleActive(true);
         canSelect = true;
+        isChanged = false;
     }
 
     public int GetIndex()

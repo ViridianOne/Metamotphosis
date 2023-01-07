@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPC : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class NPC : MonoBehaviour
     private bool canTalk;
     private bool wasDialogue;
 
-    [SerializeField] private MecroStates mecroToUnlock; 
+    [SerializeField] private MecroStates mecroToUnlock;
 
     void Start()
     {

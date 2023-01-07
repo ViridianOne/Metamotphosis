@@ -139,6 +139,10 @@ public abstract class Player : MonoBehaviour
     public void DamagePlayer()
     {
         AudioManager.instance.Play(3);
+        if (canClimbLedge)
+        {
+            FinishLedgeGrabbing();
+        }
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");
         isActive = false;
