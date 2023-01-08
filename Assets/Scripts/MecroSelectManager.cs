@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MecroSelectManager : MonoBehaviour
+public class MecroSelectManager : MonoBehaviour, IDataPersistance
 {
     [HideInInspector] public static MecroSelectManager instance;
     private bool canSelect;
@@ -43,6 +43,7 @@ public class MecroSelectManager : MonoBehaviour
             instantiatedMecros[i] = Instantiate(mecros[i], mecroPos, mecroRot);
             instantiatedMecros[i].gameObject.SetActive(false);
             instantiatedMecros[i].respawnPoint = respawnPoint;
+            instantiatedMecros[i].transform.position = respawnPoint.position;
         }
         Player.instance = instantiatedMecros[(int)startMecro];
         Player.instance.gameObject.SetActive(true);
@@ -80,9 +81,11 @@ public class MecroSelectManager : MonoBehaviour
             currentMecro.gameObject.SetActive(true);
             currentMecro.respawnPoint = respawnPoint;*/
             //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
-            isChanged = true;
+            //isChanged = true;
             Player.instance.DisableAbility();
             Player.instance.gameObject.SetActive(false);
+            isChanged = true;
+            instantiatedMecros[(int)mecroState].respawnPoint = respawnPoint;
             instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
             Player.instance = instantiatedMecros[(int)mecroState];
@@ -105,5 +108,18 @@ public class MecroSelectManager : MonoBehaviour
     public int GetIndex()
     {
         return (int)currentMecro;
+    }
+
+    public void LoadData(GameData data)
+    {
+        isMecroUnlocked = data.mecroFromsAvailabilty;
+        respawnPoint.position = data.lastCheckpoint;
+        Player.instance.transform.position = respawnPoint.position;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.mecroFromsAvailabilty = isMecroUnlocked;
+        data.lastCheckpoint = respawnPoint.position;
     }
 }

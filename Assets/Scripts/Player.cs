@@ -8,6 +8,9 @@ public abstract class Player : MonoBehaviour
 {
     public static Player instance;
 
+    public GameObject holder;
+    private SpriteRenderer holderSprite;
+
     protected Animator anim;
     protected bool isFacingRight;
 
@@ -18,7 +21,6 @@ public abstract class Player : MonoBehaviour
     protected bool isActive;
     [HideInInspector] public bool lightSwitcher = false;
     public bool isOnMovingPlatform = false;
-    private bool ledgeFlag;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -46,6 +48,7 @@ public abstract class Player : MonoBehaviour
         instance = this;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        holderSprite = holder.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -71,7 +74,6 @@ public abstract class Player : MonoBehaviour
         if (ledgeDetected && !canClimbLedge)
         {
             canClimbLedge = true;
-            ledgeFlag = true;
             anim.SetBool("isLedgeGrabbing", true);
         }
         if (canClimbLedge)
@@ -176,9 +178,23 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
         anim.SetBool("isFlying", false);*/
+        anim.SetBool("landingMoment", true);
+        anim.SetBool("landingMoment", false);
         if (!state)
         {
             StopMoving();
+        }
+    }
+
+    protected void CheckVisability()
+    {
+        if(!holderSprite.enabled && isActive)
+        {
+            rigidBody.gravityScale = gravity;
+            transform.position = respawnPoint.position;
+            isActive = true;
+            playerCollider.enabled = true;
+            anim.SetBool("isDamaged", false);
         }
     }
 

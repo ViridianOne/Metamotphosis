@@ -14,7 +14,7 @@ public class Mecro296 : Player
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform headPos;
     [SerializeField] private Vector2 headDetectorSize;
-    public GameObject holder;
+    //public GameObject holder;
 
     private bool isChargingJump = false;
     private bool isJumpCharged = false;
@@ -84,6 +84,7 @@ public class Mecro296 : Player
                 isGrounded = false;
                 AudioManager.instance.Stop(7);
             }
+            CheckVisability();
         }
     }
 

@@ -14,7 +14,7 @@ public class Mecro161 : Player
     private bool isJumping = false;
     [SerializeField] private float jumpDelay = 0.25f;
     private float jumpTimer;
-    public GameObject holder;
+    //public GameObject holder;
     private bool wasOnGround;
     //private bool lightSwitcher = false;
     //[SerializeField] private GameObject lightEffect;
@@ -88,6 +88,7 @@ public class Mecro161 : Player
             {
                 isGrounded = false;
             }
+            CheckVisability();
         }
         //else
         //{

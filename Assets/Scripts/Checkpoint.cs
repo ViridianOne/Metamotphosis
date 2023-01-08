@@ -55,7 +55,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player") && !currentCheck)
         {
-            respawnPointObject.position = other.transform.position;
+            MecroSelectManager.instance.respawnPoint.position = other.transform.position;
             AudioManager.instance.Play(0);
             Checkpoints.instance.currentCheckpoint = index;
             Checkpoints.instance.previousCheckpoint = index - 1;
