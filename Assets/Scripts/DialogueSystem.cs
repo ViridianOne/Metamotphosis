@@ -55,6 +55,7 @@ public class DialogueSystem : MonoBehaviour
         charIndex = 0;
         dialogueWindow.sprite = sentences[index].fraseBackground;
         dialogueText.text = string.Empty;
+        AudioManager.instance.Play(15);
         StartCoroutine(DialogueWriting());
     }
 

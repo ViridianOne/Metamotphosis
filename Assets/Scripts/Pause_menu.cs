@@ -221,7 +221,6 @@ public class Pause_menu : MonoBehaviour
             //}
             //quitPage.SetActive(true);
             //activePage = quitPage;
-            DataManager.instance.SaveGame();
             Application.Quit();
         }
         else

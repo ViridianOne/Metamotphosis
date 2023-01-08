@@ -60,6 +60,7 @@ public class Checkpoint : MonoBehaviour
             Checkpoints.instance.currentCheckpoint = index;
             Checkpoints.instance.previousCheckpoint = index - 1;
             currentCheck = true;
+            DataManager.instance.SaveGame();
         }
     }
     public void Update()

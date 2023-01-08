@@ -70,6 +70,7 @@ public class Mecro71 : Player
             moveInput = Input.GetAxisRaw("Horizontal");
             directionArrow = "right";
             directionChosen = true;
+            AudioManager.instance.Play(16);
 
         }
         if (Input.GetAxisRaw("Horizontal") < 0)
@@ -77,16 +78,19 @@ public class Mecro71 : Player
             directionArrow = "left";
             moveInput = Input.GetAxisRaw("Horizontal");
             directionChosen = true;
+            AudioManager.instance.Play(16);
         }
         if (Input.GetAxisRaw("Vertical") < 0)
         {
             directionArrow = "down";
             directionChosen = true;
+            AudioManager.instance.Play(16);
         }
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             directionArrow = "up";
             directionChosen = true;
+            AudioManager.instance.Play(16);
         }
     }
 
@@ -164,6 +168,7 @@ public class Mecro71 : Player
             {
                 isFlying = false;
                 directionChosen = false;
+                AudioManager.instance.Stop(16);
             }
             if (isFlying)
             {
@@ -200,6 +205,7 @@ public class Mecro71 : Player
         isFlying = false;
         directionArrow = "";
         directionChosen = false;
+        AudioManager.instance.Stop(16);
     }
 
     private void OnDrawGizmos()
@@ -261,6 +267,7 @@ public class Mecro71 : Player
         anim.SetBool("isFlying", false);
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
+        AudioManager.instance.Stop(16);
     }
 
     public override void DisableAbility() 

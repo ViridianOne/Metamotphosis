@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Main_menu : MonoBehaviour
 {
     [SerializeField] private string nextScene;
+    [SerializeField] private AudioSource music;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Main_menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            music.Stop();
             SceneManager.LoadScene(nextScene);
         }
     }
