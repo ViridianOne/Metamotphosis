@@ -51,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void GetDialogue(int index)
     {
+        formSwitchController.SetActive(false);
         sentenceIndex = index;
         charIndex = 0;
         dialogueWindow.sprite = sentences[index].fraseBackground;
