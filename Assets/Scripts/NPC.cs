@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
     private bool wasDialogue;
 
     [SerializeField] private MecroStates mecroToUnlock;
+    [SerializeField] private bool isFinal = false;
 
     void Start()
     {
@@ -37,6 +38,17 @@ public class NPC : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            dialogueSystem.isFinal = isFinal;
+            if (transform.position.y <= -10f && transform.position.y > -18f || transform.position.y >= -3f && transform.position.y < 3f || transform.position.y >= 11f)
+                dialogueSystem.yPos = -313f;
+            else
+                dialogueSystem.yPos = 313f;
+            if(transform.position.x < other.transform.position.x && transform.localRotation.y == 180f 
+                || transform.position.x >= other.transform.position.x && transform.localRotation.y == 0f)
+            {
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            }
             dialogueSystem.sentences = npcSentences;
             canTalk = wasDialogue;
 
