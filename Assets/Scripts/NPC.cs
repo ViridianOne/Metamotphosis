@@ -43,11 +43,19 @@ public class NPC : MonoBehaviour
                 dialogueSystem.yPos = -313f;
             else
                 dialogueSystem.yPos = 313f;
-            if(transform.position.x < other.transform.position.x && transform.localRotation.y == 180f 
-                || transform.position.x >= other.transform.position.x && transform.localRotation.y == 0f)
+            if(transform.position.x < other.transform.position.x && transform.localRotation.y != 0
+                || transform.position.x >= other.transform.position.x && transform.localRotation.y == 0)
             {
-                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-                pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                if (transform.localRotation.y == 0)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                    pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                }
+                else
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                    pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                }
             }
             dialogueSystem.sentences = npcSentences;
             canTalk = wasDialogue;
