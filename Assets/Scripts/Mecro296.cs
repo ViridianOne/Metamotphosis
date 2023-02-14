@@ -40,6 +40,7 @@ public class Mecro296 : Player
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
+                    rigidBody.gravityScale = gravity;
                     isCeilingHitted = false;
                     betweenJumpTimer = timeBetweenJump;
                     jumpTimer = 0f;
@@ -108,6 +109,13 @@ public class Mecro296 : Player
             }
             betweenJumpTimer -= Time.deltaTime;
             Move();
+            if (!isGrounded)
+            {
+                if (rigidBody.velocity.y < 0 && rigidBody.gravityScale < maxGravity)
+                    rigidBody.gravityScale *= gravityMultiplier;
+                if (rigidBody.gravityScale > maxGravity)
+                    rigidBody.gravityScale = maxGravity;
+            }
         }
     }
 
@@ -151,10 +159,28 @@ public class Mecro296 : Player
 
     protected override void Move()
     {
-        if (isCeilingHitted && rigidBody.velocity.y > 0)
-            rigidBody.velocity = new Vector2(0, 0);
-        else
-            rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, rigidBody.velocity.y);
+        float targetSpeed = moveInput * moveSpeed;
+        float accelerate = 0; 
+        
+        if(!isGrounded)
+            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount * accelerationInAir : runDeccelerationAmount * accelerationInAir;
+
+
+        if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
+            && Mathf.Sign(rigidBody.velocity.x) == Mathf.Sign(targetSpeed)
+            && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded)
+        {
+            accelerate = 0;
+        }
+
+        float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
+        rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
+
+        // Version 1
+        //if (isCeilingHitted && rigidBody.velocity.y > 0)
+        //    rigidBody.velocity = new Vector2(0, 0);
+        //else
+        //    rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, rigidBody.velocity.y);
     }
 
     public void Jump()
@@ -203,5 +229,12 @@ public class Mecro296 : Player
     public override void DisableAbility() 
     {
         lightSwitcher = false;
+    }
+
+    protected override IEnumerator TurnLedgeDetectorOff()
+    {
+        ledgeDecetror.enabled = false;
+        yield return new WaitForSeconds(ledgeCancelTime);
+        ledgeDecetror.enabled = true;
     }
 }
