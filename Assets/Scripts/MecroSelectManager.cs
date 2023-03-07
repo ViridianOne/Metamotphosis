@@ -13,8 +13,8 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
 
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
-    [HideInInspector] public Player[] instantiatedMecros = new Player[3];
-    [SerializeField] public bool[] isMecroUnlocked = { true, false, false };
+    [HideInInspector] public Player[] instantiatedMecros;
+    [SerializeField] public bool[] isMecroUnlocked = { true, false, false, false };
 
     public bool isChanged;
 
@@ -38,7 +38,8 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
         Vector3 mecroPos = Player.instance.transform.position;
         Quaternion mecroRot = Player.instance.transform.localRotation;
         Destroy(Player.instance.gameObject);
-        for(int i = 0; i < mecros.Length; i++)
+        instantiatedMecros = new Player[mecros.Length];
+        for (int i = 0; i < mecros.Length; i++)
         {
             instantiatedMecros[i] = Instantiate(mecros[i], mecroPos, mecroRot);
             instantiatedMecros[i].gameObject.SetActive(false);
@@ -46,6 +47,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             instantiatedMecros[i].transform.position = respawnPoint.position;
         }
         Player.instance = instantiatedMecros[(int)startMecro];
+        Physics2D.IgnoreLayerCollision(7, 9, false);
         Player.instance.gameObject.SetActive(true);
     }
 
@@ -65,6 +67,10 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 SelectMecro(MecroStates.form71);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                SelectMecro(MecroStates.form206);
             }
         }
     }
@@ -90,6 +96,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
+            Physics2D.IgnoreLayerCollision(7, 9, false);
             currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
         }

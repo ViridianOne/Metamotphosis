@@ -228,7 +228,7 @@ public class Mecro296 : Player
 
     public override void DisableAbility() 
     {
-        lightSwitcher = false;
+        isAbilityActivated = false;
     }
 
     protected override IEnumerator TurnLedgeDetectorOff()

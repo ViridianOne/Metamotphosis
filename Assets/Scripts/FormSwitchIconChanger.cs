@@ -61,6 +61,20 @@ public class FormSwitchIconChanger : MonoBehaviour
                 buttonImage.sprite = normalSprite;
             }
         }
+        //else if (Input.GetKeyUp(KeyCode.DownArrow))
+        //{
+        //    if (state == MecroStates.form206 && controller.playerState != state
+        //        && MecroSelectManager.instance.isMecroUnlocked[(int)state])
+        //    {
+        //        buttonImage.sprite = clickedSprite;
+        //        controller.playerState = state;
+        //    }
+        //    else if (state != MecroStates.form206 && controller.playerState != state
+        //        && MecroSelectManager.instance.isMecroUnlocked[(int)state])
+        //    {
+        //        buttonImage.sprite = normalSprite;
+        //    }
+        //}
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (state == MecroStates.form161 && controller.playerState != state 
@@ -85,5 +99,13 @@ public class FormSwitchIconChanger : MonoBehaviour
                 buttonImage.sprite = selectedSprite;
             }
         }
+        //else if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    if (state == MecroStates.form206 && controller.playerState != state
+        //        && MecroSelectManager.instance.isMecroUnlocked[(int)state])
+        //    {
+        //        buttonImage.sprite = selectedSprite;
+        //    }
+        //}
     }
 }
