@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: -1431124145
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -60041549, guid: 77130b6cacaf52f45a2f7eee27e6d0b9, type: 3}
+  m_Sprite: {fileID: 1700573062, guid: 845a3671bf4b80b4383690c3b154ae0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -336,6 +336,9 @@ MonoBehaviour:
   respawnPoint: {fileID: 0}
   isAbilityActivated: 0
   isOnMovingPlatform: 0
+  isOnArcPlatform: 0
+  isOn30: 0
+  isOn60: 0
   minGravity: 2
   maxGravity: 8
   gravityMultiplier: 1.2
