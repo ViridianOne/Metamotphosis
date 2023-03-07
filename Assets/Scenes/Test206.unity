@@ -493,6 +493,10 @@ PrefabInstance:
       propertyPath: animationLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4339278668267303638, guid: 69e761876406efe45a1c006297664a15, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e761876406efe45a1c006297664a15, type: 3}
 --- !u!1001 &524969164
@@ -1187,6 +1191,10 @@ PrefabInstance:
     - target: {fileID: 6662249641626712430, guid: 57100de70bb2c5f45806b3e617825a93, type: 3}
       propertyPath: m_Name
       value: Saw
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662249641626712430, guid: 57100de70bb2c5f45806b3e617825a93, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57100de70bb2c5f45806b3e617825a93, type: 3}

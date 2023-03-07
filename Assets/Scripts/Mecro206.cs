@@ -64,6 +64,7 @@ public class Mecro206 : Player
                         anim.SetLayerWeight(2, 0);
                         AudioManager.instance.Play(2);
                     }
+                    Physics2D.IgnoreLayerCollision(7, 9, isAbilityActivated);
                     VisibilityManager.instance.ToggleVisibility(isAbilityActivated);
                 }
 

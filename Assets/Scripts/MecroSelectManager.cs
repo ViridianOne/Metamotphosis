@@ -47,6 +47,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             instantiatedMecros[i].transform.position = respawnPoint.position;
         }
         Player.instance = instantiatedMecros[(int)startMecro];
+        Physics2D.IgnoreLayerCollision(7, 9, false);
         Player.instance.gameObject.SetActive(true);
     }
 
@@ -95,6 +96,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
+            Physics2D.IgnoreLayerCollision(7, 9, false);
             currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
         }

@@ -10,16 +10,7 @@ public class Invisible : MonoBehaviour
         if (renderer != null)
         {
             renderer.sortingLayerID = SortingLayer.NameToID("Invisible");
-            VisibilityManager.instance.MonitorInvisibleObject(gameObject);
+            VisibilityManager.instance.MonitorInvisibleObject(renderer);
         }
-    }
-
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
     }
 }

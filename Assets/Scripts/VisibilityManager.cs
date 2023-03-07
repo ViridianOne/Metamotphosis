@@ -8,19 +8,14 @@ public class VisibilityManager : MonoBehaviour
 
     [SerializeField] private SpriteRenderer invisibilityEffect;
     private bool isVisibilityActivated = false;
-    private List<GameObject> invisibleObjects = new List<GameObject>();
+    private List<SpriteRenderer> invisibleObjects = new List<SpriteRenderer>();
 
     public void Awake()
     {
         instance = this;
     }
 
-    private void Update()
-    {
-
-    }
-
-    public void MonitorInvisibleObject(GameObject obj)
+    public void MonitorInvisibleObject(SpriteRenderer obj)
     {
         invisibleObjects.Add(obj);
     }
@@ -33,19 +28,20 @@ public class VisibilityManager : MonoBehaviour
         }
         isVisibilityActivated = type;
         invisibilityEffect.transform.position = Player.instance.transform.position;
-        invisibilityEffect.GetComponent<SpriteRenderer>().enabled = type;
+        //invisibilityEffect.GetComponent<SpriteRenderer>().enabled = type;
+        invisibilityEffect.enabled = type;
         foreach (var obj in invisibleObjects)
         {
-            if (obj == null)
+            if (obj.gameObject == null)
             {
                 invisibleObjects.Remove(obj);
             }
             else
             {
-                var objRenderer = obj.GetComponent<SpriteRenderer>();
-                if (objRenderer != null)
+                //var objRenderer = obj.GetComponent<SpriteRenderer>();
+                if (obj != null)
                 {
-                    objRenderer.sortingLayerID = SortingLayer.NameToID(isVisibilityActivated ? "Visible" : "Invisible");
+                    obj.sortingLayerID = SortingLayer.NameToID(isVisibilityActivated ? "Visible" : "Invisible");
                 }
             }
         }
