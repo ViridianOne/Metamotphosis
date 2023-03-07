@@ -21,13 +21,14 @@ public class Darkness : MonoBehaviour
     {
         //if (Input.GetButtonDown("Fire1"))
         //    lightsOn = !lightsOn;
-        if (/*index.GetIndex() == 0 && */isDark && index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn == true*/) 
+        if (/*index.GetIndex() == 0 && */isDark 
+            && index.instantiatedMecros[/*index.GetIndex()*/(int)MecroStates.form161].isAbilityActivated/* && lightsOn == true*/) 
         {
             darknessWithLight.transform.position = Player.instance.transform.position;
             darknessWithLight.enabled = true;
             fullDarknessObject.enabled = false;
         }
-        else if (isDark && !index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn==false*/)
+        else if (isDark && !index.instantiatedMecros[/*index.GetIndex()*/(int)MecroStates.form161].isAbilityActivated/* && lightsOn==false*/)
         {
             darknessWithLight.enabled = false;
             fullDarknessObject.enabled = true;

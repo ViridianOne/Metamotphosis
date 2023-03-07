@@ -8,5 +8,6 @@ public enum MecroStates
     form161,
     form296,
     form71,
+    form206,
     none
 };

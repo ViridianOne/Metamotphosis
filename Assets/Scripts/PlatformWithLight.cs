@@ -49,9 +49,9 @@ public class PlatformWithLight : MonoBehaviour
                     nextPos = transform.position;
                 }
             }*/
-            if (index.instantiatedMecros[index.GetIndex()].lightSwitcher)
+            if (index.instantiatedMecros[index.GetIndex()].isAbilityActivated)
             {
-                lightsOn = index.instantiatedMecros[index.GetIndex()].lightSwitcher;
+                lightsOn = index.instantiatedMecros[index.GetIndex()].isAbilityActivated;
                 anim.SetBool("isOn", lightsOn);
                 nextPos = transform.position;
             }

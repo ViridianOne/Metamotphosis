@@ -8,7 +8,7 @@ public class HeadEnemyPlayerDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
         {
             enemyInstance.GetComponent<Enemy1>().TakeDamage();
         }

@@ -57,8 +57,8 @@ public class Mecro161 : Player
                 moveInput = Input.GetAxisRaw("Horizontal");
                 if (Input.GetButtonDown("Fire1"))
                 {
-                    lightSwitcher = !lightSwitcher;
-                    if (lightSwitcher)
+                    isAbilityActivated = !isAbilityActivated;
+                    if (isAbilityActivated)
                     {
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
@@ -262,7 +262,7 @@ public class Mecro161 : Player
 
     public override void DisableAbility()
     {
-        lightSwitcher = false;
+        isAbilityActivated = false;
         anim.SetLayerWeight(1, 100);
         anim.SetLayerWeight(2, 0);
     }

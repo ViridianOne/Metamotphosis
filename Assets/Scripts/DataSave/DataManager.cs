@@ -9,7 +9,7 @@ public class DataManager : MonoBehaviour
 
     private GameData data;
     [SerializeField] private Transform firstCheckpoint;
-    private bool[] mecroFormsAvailability = {true, false, false};
+    private bool[] mecroFormsAvailability = {true, false, false, false};
 
     private List<IDataPersistance> dataPersistances;
 

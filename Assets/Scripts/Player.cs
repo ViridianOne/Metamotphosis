@@ -19,7 +19,7 @@ public abstract class Player : MonoBehaviour
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
     protected bool isActive;
-    [HideInInspector] public bool lightSwitcher = false;
+    [HideInInspector] public bool isAbilityActivated = false;
     public bool isOnMovingPlatform = false;
 
     [Header("Physics")]
