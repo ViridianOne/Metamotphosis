@@ -121,11 +121,21 @@ public class PlatformWithLight : MonoBehaviour
                 collision.collider.transform.SetParent(transform);
             }
         }*/
+        if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
+        {
+            Player.instance.isOnMovingPlatform = true;
+            Player.instance.movingPlatDif = new Vector2(0, 0.005f);
+        }
+        else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
+        {
+            Player.instance.isOnMovingPlatform = true;
+            Player.instance.movingPlatDif = new Vector2(0, -0.005f);
+        }
         collision.collider.transform.SetParent(transform);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             collision.collider.transform.SetParent(null);
         }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Darkness : MonoBehaviour
 {
-    public GameObject fullDarknessObject;
-    public GameObject darknessWithLight;
-    public bool isDark = false;
+    public SpriteRenderer fullDarknessObject;
+    public SpriteRenderer darknessWithLight;
+    private bool isDark = false;
     public static Darkness instance;
     public MecroSelectManager index;
-    public bool lightsOn = false;
+    //public bool lightsOn = false;
+    [SerializeField] private bool isRoomDark;
+
     public void Awake()
     {
         instance = this;
@@ -22,22 +24,33 @@ public class Darkness : MonoBehaviour
         if (/*index.GetIndex() == 0 && */isDark && index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn == true*/) 
         {
             darknessWithLight.transform.position = Player.instance.transform.position;
-            darknessWithLight.SetActive(true);
-            fullDarknessObject.SetActive(false);
+            darknessWithLight.enabled = true;
+            fullDarknessObject.enabled = false;
         }
         else if (isDark && !index.instantiatedMecros[index.GetIndex()].lightSwitcher/* && lightsOn==false*/)
         {
-            darknessWithLight.SetActive(false);
-            fullDarknessObject.SetActive(true);
+            darknessWithLight.enabled = false;
+            fullDarknessObject.enabled = true;
+        }
+        else if(!isDark)
+        {
+            fullDarknessObject.enabled = false;
+            darknessWithLight.enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isDark)
+        if (other.CompareTag("Player") && isRoomDark)
         {
-            fullDarknessObject.SetActive(true);
+            fullDarknessObject.enabled = true;
             isDark = !isDark;
         }
+
+        //if(other.CompareTag("Enemy"))
+        //{
+        //    if(other.GetComponent<Enemy>().type == EnemyType.Robot)
+        //        other.GetComponent<Robot>().canSwitchTheLights = true;
+        //}
         /*(else if (other.CompareTag("Player") && isDark == true)
         {
             darknessObject.SetActive(false);
@@ -48,12 +61,16 @@ public class Darkness : MonoBehaviour
     {
         if (other.CompareTag("Player") && isDark)
         {
-            fullDarknessObject.SetActive(false);
-            darknessWithLight.SetActive(false);
+            fullDarknessObject.enabled = false;
+            darknessWithLight.enabled = false;
             isDark = !isDark;
         }
     }
 
+    public void TurnOn(bool canTurnOn)
+    {
+        isDark = canTurnOn;
+    }
     /*public void TurnOnLight()
     {
         if (index.GetIndex() == 0 && isDark == true)

@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1274597548, guid: 8ec57c2a91de01f42955ba851c9b3321, type: 3}
+  m_Sprite: {fileID: 621410135, guid: 9aa5598db7f49284dafa2767499d3c21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5772419249652849746}
   - component: {fileID: 5772419249652849747}
   - component: {fileID: 5772419249652849744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mecro71
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 5772419249652849751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.97, y: 2.49, z: 0.04987543}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5772419249600110068}
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0034539104, y: -0.25354218}
+  m_Offset: {x: -0.0015748739, y: -0.30169702}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -167,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56006515, y: 0.91725206}
+  m_Size: {x: 0.5481403, y: 1.2642183}
   m_EdgeRadius: 0
 --- !u!50 &5772419249652849747
 Rigidbody2D:
@@ -202,17 +202,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd80bf12ec75f74fa45b38ed74195a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: {fileID: 5772419249600110069}
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  moveSpeed: 6
+  lightSwitcher: 0
+  isOnMovingPlatform: 0
+  minGravity: 0
+  maxGravity: 0
+  gravityMultiplier: 0
+  gravityAddition: 0
+  moveSpeed: 0
   maxSpeed: 12
-  linearDrag: 4
+  runAcceleration: 4.8
+  runDecceleration: 1.2
+  runAccelerationAmount: 20
+  runDeccelerationAmount: 5
+  accelerationInAir: 1
   isTouchingLedge: 0
-  ledgeGrabbingTime: 1
-  difference1: {x: 0.5, y: 0.45, z: 0}
-  difference2: {x: 0.05, y: 0.65, z: 0}
-  difference3: {x: -0.25, y: 0.45, z: 0}
-  difference4: {x: -0.2, y: 0.65, z: 0}
+  ledgeGrabbingTime: 0.66
+  difference1: {x: 0.3, y: 0.5, z: 0}
+  difference2: {x: 0.28, y: 1.4, z: 0}
+  difference3: {x: -0.3, y: 0.5, z: 0}
+  difference4: {x: -0.28, y: 1.4, z: 0}
+  movingPlatDif: {x: 0, y: 0}
+  ledgeDecetror: {fileID: 5772419249974668045}
+  ledgeCancelTime: 1
   radius: 1
   feetDetectorSize: {x: 1, y: 1}
   groundMask:
@@ -220,15 +234,15 @@ MonoBehaviour:
     m_Bits: 64
   jumpForce: 11
   jumpDelay: 0.05
-  holder: {fileID: 5772419249600110069}
   acceleration: 5
   deceleration: 12
   isFlying: 0
   jumpCount: 0
   defaultMoveSpeed: 8.5
-  directionArrow: 
+  directionArrow: 0
   directionChosen: 0
   started_flying: 0
+  direction: {x: 0, y: 0}
   headPos: {fileID: 5772419249819723160}
   headDetectorSize: {x: 0.75, y: 0.75}
   accelerationCoefficient: 4.5
@@ -273,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5772419249974668050}
   - component: {fileID: 5772419249974668045}
+  - component: {fileID: 8095403532639024434}
   m_Layer: 0
   m_Name: Grab Pos
   m_TagString: Ledge Grabbing
@@ -308,9 +323,35 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016332865, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.92
+--- !u!61 &8095403532639024434
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772419249974668051}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.009936929}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.59, y: 0.27}
+  m_EdgeRadius: 0
 --- !u!1 &6557994973732154881
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +423,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1837258904, guid: 2ce6942735d0b75468616f81defa4d69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

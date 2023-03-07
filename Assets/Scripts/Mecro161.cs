@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
 
 public class Mecro161 : Player
 {
@@ -15,21 +14,38 @@ public class Mecro161 : Player
     private bool isJumping = false;
     [SerializeField] private float jumpDelay = 0.25f;
     private float jumpTimer;
-    public GameObject holder;
+    //public GameObject holder;
     private bool wasOnGround;
+    [SerializeField] private float jumpChargingTime;
+    private float jumpChargingTimer;
     //private bool lightSwitcher = false;
     //[SerializeField] private GameObject lightEffect;
+    //[SerializeField] private float acceleration;
+
 
     protected override void Move()
     {
-        movementForce = moveInput * moveSpeed;
-        rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);
-        //rigidBody.AddForce(Vector2.right * movementForce);
-        //rigidBody.AddForce(Vector2.right * direction.x * moveSpeed);
-        //if (Mathf.Abs(rigidBody.velocity.x) > maxSpeed)
-        //{
-        //    rigidBody.velocity = new Vector2(Mathf.Sign(rigidBody.velocity.x) * maxSpeed, rigidBody.velocity.y);
-        //}
+        //Version 1
+        /*movementForce = moveInput * moveSpeed;
+        rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);*/
+
+        float targetSpeed = moveInput * moveSpeed;
+        float accelerate = 0;
+
+        if (isGrounded)
+            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
+        else
+            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount * accelerationInAir : runDeccelerationAmount * accelerationInAir;
+
+        if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed) 
+            && Mathf.Sign(rigidBody.velocity.x) == Mathf.Sign(targetSpeed) 
+            && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded)
+        {
+            accelerate = 0;
+        }
+
+        float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
+        rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
     }
 
     private void Update()
@@ -46,11 +62,13 @@ public class Mecro161 : Player
                     {
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
+                        AudioManager.instance.Play(1);
                     }
                     else
                     {
                         anim.SetLayerWeight(1, 100);
                         anim.SetLayerWeight(2, 0);
+                        AudioManager.instance.Play(2);
                     }
                 }
                 wasOnGround = isGrounded;
@@ -58,16 +76,40 @@ public class Mecro161 : Player
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
+                    rigidBody.gravityScale = gravity;
                     StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
                 }
                 if (isGrounded && Input.GetButtonDown("Jump"))
                 {
                     //isJumping = true;
                     jumpTimer = Time.time + jumpDelay;
+                    jumpChargingTimer = jumpChargingTime;
+                }
+                if(rigidBody.velocity.y > 0f && Input.GetButton("Jump"))
+                {
+                    if (jumpChargingTimer > 0f)
+                    {
+                        rigidBody.gravityScale -= gravityAddition;
+                        jumpChargingTimer -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        jumpChargingTimer = 0f;
+                    }
+                    if(rigidBody.gravityScale < minGravity)
+                    {
+                        rigidBody.gravityScale = minGravity;
+                    }
+                }
+                if(Input.GetButtonUp("Jump"))
+                {
+                    jumpChargingTimer = 0f;
+                    rigidBody.gravityScale = gravity;
                 }
                 if (!isGrounded)
                 {
                     anim.SetBool("isJumping", true);
+                    //runSound.Stop();
                 }
                 else
                 {
@@ -75,12 +117,18 @@ public class Mecro161 : Player
                     anim.SetBool("landingMoment", false);
                 }
                 if (rigidBody.velocity.y <= 0 && !isGrounded)
+                {
                     anim.SetBool("landingMoment", true);
+                    AudioManager.instance.Play(8);
+                }
                 UpdateMovementAnimation();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)
+            {
                 isGrounded = false;
+            }
+            CheckVisability();
         }
         //else
         //{
@@ -88,6 +136,14 @@ public class Mecro161 : Player
         //    anim.SetLayerWeight(1, 100);
         //    anim.SetLayerWeight(2, 0);
         //}
+        /*if (isActive && !runSound.isPlaying)
+        {
+            runSound.Play();
+        }*/
+        if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[9].source.isPlaying)
+        {
+            AudioManager.instance.Stop(9);
+        }
     }
 
     private void OnDrawGizmos()
@@ -117,6 +173,10 @@ public class Mecro161 : Player
         {
             anim.SetBool("isMoving", false);
         }
+        if (moveInput!=0f && !AudioManager.instance.sounds[9].source.isPlaying)
+        {
+            AudioManager.instance.Play(9);
+        }
         Flip();
     }
 
@@ -130,6 +190,13 @@ public class Mecro161 : Player
             if (jumpTimer <= Time.time && jumpTimer > 0f)
             {
                 Jump();
+            }
+            if (!isGrounded)
+            {
+                if (rigidBody.velocity.y < 0 && rigidBody.gravityScale < maxGravity)
+                    rigidBody.gravityScale *= gravityMultiplier;
+                if(rigidBody.gravityScale > maxGravity)
+                    rigidBody.gravityScale = maxGravity;
             }
         }
     }
@@ -190,6 +257,7 @@ public class Mecro161 : Player
         anim.SetBool("landingMoment", false);
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
+        AudioManager.instance.Stop(9);
     }
 
     public override void DisableAbility()
@@ -197,5 +265,12 @@ public class Mecro161 : Player
         lightSwitcher = false;
         anim.SetLayerWeight(1, 100);
         anim.SetLayerWeight(2, 0);
+    }
+
+    protected override IEnumerator TurnLedgeDetectorOff()
+    {
+        ledgeDecetror.enabled = false;
+        yield return new WaitForSeconds(ledgeCancelTime);
+        ledgeDecetror.enabled = true;
     }
 }

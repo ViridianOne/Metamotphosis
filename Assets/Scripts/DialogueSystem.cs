@@ -26,6 +26,10 @@ public class DialogueSystem : MonoBehaviour
     private int charIndex;
     private bool waitForNext;
 
+    public bool isFinal = false;
+    public float yPos = -313f;
+    [SerializeField] private GameObject victoryScreen;
+
     //private void Awake()
     //{
     //    ToggleWindow(false);
@@ -33,6 +37,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void ToggleWindow(bool state)
     {
+        dialogue.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, yPos);
         dialogue.SetActive(state);
     }
 
@@ -51,10 +56,12 @@ public class DialogueSystem : MonoBehaviour
 
     private void GetDialogue(int index)
     {
+        formSwitchController.SetActive(false);
         sentenceIndex = index;
         charIndex = 0;
         dialogueWindow.sprite = sentences[index].fraseBackground;
         dialogueText.text = string.Empty;
+        AudioManager.instance.Play(15);
         StartCoroutine(DialogueWriting());
     }
 
@@ -64,6 +71,10 @@ public class DialogueSystem : MonoBehaviour
         ToggleWindow(false);
         formSwitchController.SetActive(true);
         dialogueStarted = false;
+        if (isFinal)
+        {
+            victoryScreen.SetActive(true); 
+        }
     }
 
     IEnumerator DialogueWriting()

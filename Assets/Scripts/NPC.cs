@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPC : MonoBehaviour
 {
     [SerializeField] private DialogueSystem dialogueSystem;
     [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
-    private bool wasDialogue;
+    private DialogueSystem.NpcFrase[] empty;
     private bool canTalk;
+    private bool wasDialogue;
+
+    [SerializeField] private MecroStates mecroToUnlock;
+    [SerializeField] private bool isFinal = false;
 
     void Start()
     {
-        dialogueSystem.sentences = npcSentences;
         pressButtonMessage.SetActive(false);
         wasDialogue = false;
     }
@@ -34,6 +38,26 @@ public class NPC : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            dialogueSystem.isFinal = isFinal;
+            if (transform.position.y <= -10f && transform.position.y > -18f || transform.position.y >= -3f && transform.position.y < 3f || transform.position.y >= 11f)
+                dialogueSystem.yPos = -313f;
+            else
+                dialogueSystem.yPos = 313f;
+            if(transform.position.x < other.transform.position.x && transform.localRotation.y != 0
+                || transform.position.x >= other.transform.position.x && transform.localRotation.y == 0)
+            {
+                if (transform.localRotation.y == 0)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                    pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                }
+                else
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                    pressButtonMessage.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                }
+            }
+            dialogueSystem.sentences = npcSentences;
             canTalk = wasDialogue;
 
             if (wasDialogue)
@@ -44,6 +68,10 @@ public class NPC : MonoBehaviour
             {
                 dialogueSystem.StartDialogue();
                 wasDialogue = true;
+                if (mecroToUnlock != MecroStates.none)
+                {
+                    MecroSelectManager.instance.isMecroUnlocked[(int)mecroToUnlock] = true;
+                }
             }
         }
     }
@@ -59,6 +87,7 @@ public class NPC : MonoBehaviour
             {
                 dialogueSystem.EndDialogue();
             }
+            dialogueSystem.sentences = empty;
         }
     }
 }

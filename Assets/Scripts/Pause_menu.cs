@@ -37,6 +37,7 @@ public class Pause_menu : MonoBehaviour
     public GameObject quitPage;
 
     public GameObject pauseBG;
+    public DialogueSystem dialogues;
 
     void Update()
     {
@@ -64,7 +65,8 @@ public class Pause_menu : MonoBehaviour
         }
         pauseMenuButtons.SetActive(false);
         pauseBG.SetActive(false);
-        formSwitchController.SetActive(true);
+        if (!dialogues.dialogueStarted)
+            formSwitchController.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -115,6 +117,7 @@ public class Pause_menu : MonoBehaviour
             }
             helpPage.SetActive(true);
             activePage = helpPage;
+            print('s');
         }
         else
             return;
@@ -187,18 +190,18 @@ public class Pause_menu : MonoBehaviour
     {
         if (activeButtonState == ActiveButtonState.Delete)
         {
-            //if (activePage == deletePage)
-            //{
-            //    activePage.SetActive(false);
-            //    activePage = null;
-            //    return;
-            //}
-            //else if (activePage != null)
-            //{
-            //    activePage.SetActive(false);
-            //}
-            //deletePage.SetActive(true);
-            //activePage = deletePage;
+            if (activePage == deletePage)
+            {
+                activePage.SetActive(false);
+                activePage = null;
+                return;
+            }
+            else if (activePage != null)
+            {
+                activePage.SetActive(false);
+            }
+            deletePage.SetActive(true);
+            activePage = deletePage;
         }
         else
             return;
@@ -220,6 +223,7 @@ public class Pause_menu : MonoBehaviour
             //}
             //quitPage.SetActive(true);
             //activePage = quitPage;
+            Application.Quit();
         }
         else
             return;
