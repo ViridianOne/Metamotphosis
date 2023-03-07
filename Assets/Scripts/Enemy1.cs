@@ -44,6 +44,14 @@ public class Enemy1 : MonoBehaviour
         {
             UpdateMovementAnimation();
         }
+        if (!AudioManager.instance.sounds[10].source.isPlaying && isActive)
+        {
+            AudioManager.instance.Play(10);
+        }
+        if (!isActive)
+        {
+            AudioManager.instance.Stop(10);
+        }
     }
 
     private void FixedUpdate()
@@ -91,6 +99,7 @@ public class Enemy1 : MonoBehaviour
             moveDirection = 0;
             Instantiate(electricity, electricityPosition.position, electricityPosition.rotation);
             Invoke("CreatingElectricity", creatingElectricityTime);
+            AudioManager.instance.Stop(10);
         }
     }
 
@@ -108,6 +117,7 @@ public class Enemy1 : MonoBehaviour
             isActive = false;
             anim.SetTrigger("damage");
             var explosionInstance = Instantiate(expolosion, gameObject.transform.position, gameObject.transform.rotation);
+            AudioManager.instance.Play(6);
             StartCoroutine(Vanishing(explosionInstance));
         }
     }

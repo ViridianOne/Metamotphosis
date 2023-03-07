@@ -1,0 +1,1921 @@
+fileFormatVersion: 2
+guid: 677f58b6896bf8e4f86a125f7db4df21
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 22
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MECRO341-1_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 617
+        width: 31
+        height: 45
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faf21aa32198a94bb22c46db6eaceeb
+      internalID: -1506486600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 617
+        width: 31
+        height: 43
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dc54872220f5f419f1e3dbd6e44deb
+      internalID: -1068773989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 617
+        width: 31
+        height: 47
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42209d60b4121d6479e17eda0dbe3660
+      internalID: 1610790372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 617
+        width: 31
+        height: 45
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475b1298516bb394bba0267a2636cbf2
+      internalID: 902232364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 617
+        width: 31
+        height: 43
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510177512aa3591419a40e6c31f0a887
+      internalID: 779444701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 617
+        width: 31
+        height: 45
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528ab73364faccd419b5f402577875a8
+      internalID: -799516521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 617
+        width: 31
+        height: 45
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a21042ab45f2124b92499d3a565debf
+      internalID: -1739617560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 617
+        width: 31
+        height: 45
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40452b08bddb0ed41ac24e07f898b731
+      internalID: 1305356693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 554
+        width: 28
+        height: 44
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5698468d33d67d488e9237868f37136
+      internalID: -1191293174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 554
+        width: 28
+        height: 42
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573570b613171a5419891bc99facf96d
+      internalID: 132379364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 554
+        width: 28
+        height: 46
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52e568a4a15d3840ad9bfc51ecd2ace
+      internalID: -2097187981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_11
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 554
+        width: 28
+        height: 44
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9d98f7a1600f046a243519a51e6de1
+      internalID: -704578328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_12
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 554
+        width: 28
+        height: 42
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2f03fde0c76594db93516515e28114
+      internalID: -89040345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 490
+        width: 35
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4285714, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30314f3a5ced8d46818ae13bb9e8636
+      internalID: -1919857671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_14
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 490
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4571429, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cab8b32b50f3bf4a91ae09cb619c4a4
+      internalID: -738601609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_15
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 490
+        width: 31
+        height: 41
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f169fc966bf5142be305a5f8015070
+      internalID: -435803943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_16
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 490
+        width: 35
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4285714, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816154ebafd16c745a36376e7624b7d2
+      internalID: -1998920812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_17
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 490
+        width: 35
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4571429, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9a3c1f286b06246a974be51031e177
+      internalID: -602545408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_18
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 490
+        width: 39
+        height: 38
+      alignment: 9
+      pivot: {x: 0.43589744, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9f1ea6246e15649bac9c5ef9f4b36e
+      internalID: -822628432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_19
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 490
+        width: 39
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad83af2e8bd08be49acbe216c8b6ea06
+      internalID: 614161539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_20
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 490
+        width: 39
+        height: 38
+      alignment: 9
+      pivot: {x: 0.43589744, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad1eaf6a36dbc64a95a46b991317170
+      internalID: -1622547868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_21
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 490
+        width: 39
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be8ff9a9ac2e6b469632c307dbc8d65
+      internalID: -615225087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_22
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 490
+        width: 34
+        height: 43
+      alignment: 9
+      pivot: {x: 0.3529412, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd926289be6b1364fa51ab594f185de4
+      internalID: 1448400511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_23
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 491
+        width: 41
+        height: 38
+      alignment: 9
+      pivot: {x: 0.46341464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ebf1c63a4b74542a5e3908c24c55a6
+      internalID: -1639594616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_24
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 427
+        width: 44
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4090909, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df87edbb9e9d1f147b454bceee532294
+      internalID: -1812500747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_25
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 427
+        width: 45
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4444444, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8928ba1c7ab0d66409f5006526b2557a
+      internalID: 1382816581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_26
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 427
+        width: 44
+        height: 37
+      alignment: 9
+      pivot: {x: 0.38636363, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502b2848360e6224ca8136d2984061b2
+      internalID: 1669598231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_27
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 427
+        width: 44
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4090909, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d52850dd6e54dc4ea52430dbc4cdf0b
+      internalID: 1403369408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_28
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 427
+        width: 45
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4444444, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfefbfb10048624f9479b52097a9675
+      internalID: 803580714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 427
+        width: 45
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0420b27f3144749b3f5d291cf30fa5
+      internalID: -1040792950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_30
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 427
+        width: 46
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4347826, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701e2b1ace155fa40b537f3f2eae865e
+      internalID: 782952925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_31
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 427
+        width: 45
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e95387fec39f9468c9fdd1543e56e1
+      internalID: 117046770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_32
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 427
+        width: 46
+        height: 35
+      alignment: 9
+      pivot: {x: 0.4347826, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44e31561ba66e94490a084b154bada5
+      internalID: 666251821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_33
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 427
+        width: 45
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcb9a0746083bf428db30273fe1e6d0
+      internalID: -892483287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_34
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 427
+        width: 46
+        height: 36
+      alignment: 9
+      pivot: {x: 0.41304347, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0e2c303a7ff4a46a7ffe1d98e6d02d
+      internalID: 1686924544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_35
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 369
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e8d7aaeba34b34ba1e1847f4a06074
+      internalID: 562687588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_36
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 370
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77062b9aa2b48b41b29239eae6c2e38
+      internalID: 88774499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_37
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 367
+        width: 46
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3248007a598833489ada76a0547e88c
+      internalID: -1846534016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_38
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 369
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6d289304a02934987d98ceea6d4bef
+      internalID: -1505105971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_39
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 370
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3738ce9d5be334c99df6822614ae89
+      internalID: 434101428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_40
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 368
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82dd76cfa26a5cd4ba7690af712239bc
+      internalID: 743537226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_41
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 369
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c07a3f997598044f95180228226c3d9
+      internalID: -1099826423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_42
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 368
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83a89fea63ba06418c5e746dade27b3
+      internalID: 494371625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_43
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 369
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3000b4b8f8d6335439fff09bf0b82cf5
+      internalID: 940336976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_44
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 368
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1a73f28c3259b43a051cc503b2d5a4
+      internalID: 1000845435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_45
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 368
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2e1d1db4817564fb54fdea3689d0be
+      internalID: 603608149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_46
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 304
+        width: 47
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5106383, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8be3ee0d6a0cef488d497e66403be0e
+      internalID: -36461203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_47
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 304
+        width: 47
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5106383, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e27fba2f85ecdb4698d1ff5a570eac7
+      internalID: 84982771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_48
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 241
+        width: 35
+        height: 43
+      alignment: 9
+      pivot: {x: 0.114285715, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77eda072a89f7540bd9ee190196670b
+      internalID: 1213778981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 241
+        width: 45
+        height: 23
+      alignment: 9
+      pivot: {x: 0.08888889, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15703fd134bb7f84da37e0970475b7e1
+      internalID: -462749905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_50
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 241
+        width: 46
+        height: 22
+      alignment: 9
+      pivot: {x: 0.08695652, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652aaa92c0e61f340a2321efb7068a67
+      internalID: 1611713657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_51
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 241
+        width: 44
+        height: 23
+      alignment: 9
+      pivot: {x: 0.09090909, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe6fe49104e4f84eb8c2b256883714f
+      internalID: 190729607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 241
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1bffbda8d48914c9b5462c64ce9644
+      internalID: -9802433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_53
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 241
+        width: 45
+        height: 31
+      alignment: 9
+      pivot: {x: 0.08695652, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b78024d16e278419cbd69a051c1375
+      internalID: -198910506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_54
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 241
+        width: 32
+        height: 45
+      alignment: 9
+      pivot: {x: 0.125, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5637d4ecb5c9b848977c260df049f3d
+      internalID: 97911691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_55
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 178
+        width: 36
+        height: 64
+      alignment: 9
+      pivot: {x: 1, y: 0.265625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c5c4af650e7934b9f9e2a103883f36
+      internalID: 1337065352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_56
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 178
+        width: 35
+        height: 75
+      alignment: 9
+      pivot: {x: 1, y: 0.22666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2209826327077444c8f2e6ce6bdf5a7b
+      internalID: 565138146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_57
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 178
+        width: 35
+        height: 75
+      alignment: 9
+      pivot: {x: 1, y: 0.22666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67b7eeffc9e84e4f969b07ab8b65787
+      internalID: -1895247604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_58
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 178
+        width: 34
+        height: 78
+      alignment: 9
+      pivot: {x: 1, y: 0.21794872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc44396ba7779e459615923880c29bb
+      internalID: 1242239545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_59
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 178
+        width: 34
+        height: 76
+      alignment: 9
+      pivot: {x: 1, y: 0.2236842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f6cd7b144c8af448b27658622004e7
+      internalID: -154007421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_60
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 178
+        width: 39
+        height: 77
+      alignment: 9
+      pivot: {x: 1, y: 0.22077923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe02d2cbcd048347a2d41ffd086ee80
+      internalID: 1532087195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_61
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 183
+        width: 45
+        height: 23
+      alignment: 9
+      pivot: {x: 1, y: 0.5217391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7d346a0deae4b4fb50a06ae576856c
+      internalID: -1881960954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_62
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 184
+        width: 45
+        height: 32
+      alignment: 9
+      pivot: {x: 1, y: 0.34375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e63b58341c8e5943bc7589ee471ef77
+      internalID: 1596731230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_63
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 184
+        width: 45
+        height: 31
+      alignment: 9
+      pivot: {x: 1, y: 0.3548387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a44c5e2cf37ed649a7cf98d550a6935
+      internalID: 563473567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_64
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 178
+        width: 45
+        height: 37
+      alignment: 9
+      pivot: {x: 1, y: 0.45945945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a468ff4a2fee24f43be5e4137e6e32f5
+      internalID: -801738112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_65
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 167
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 1, y: 0.5833333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b54144d1c892cc4a8174f1859f31921
+      internalID: -420954986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_66
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 164
+        width: 34
+        height: 51
+      alignment: 9
+      pivot: {x: 1, y: 0.60784316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff01127db9abab448b717c848455c7f1
+      internalID: -94060040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_67
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 177
+        width: 42
+        height: 44
+      alignment: 9
+      pivot: {x: 1, y: 0.4090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2513cb7b0ff8c8448a990ef1dea166e3
+      internalID: -1161950561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_68
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 72
+        width: 24
+        height: 45
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866ee4d1403a35042b2ca608116ad507
+      internalID: 150988679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_69
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 73
+        width: 31
+        height: 43
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532ad9c2bb4fcf44f9d81c14b363103d
+      internalID: -887075774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_70
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 74
+        width: 32
+        height: 42
+      alignment: 9
+      pivot: {x: 0.40625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb2c7ed6dd6be44d96e6d4b8f8172fb
+      internalID: -130209142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_71
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 74
+        width: 32
+        height: 56
+      alignment: 9
+      pivot: {x: 0.40625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb1902fa8039dd4dbccd36aa517d703
+      internalID: -2110173858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_72
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 74
+        width: 37
+        height: 75
+      alignment: 9
+      pivot: {x: 0.35135135, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e4fb5df66ac7d4d947c64936128e60
+      internalID: -1463039971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_73
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 74
+        width: 38
+        height: 75
+      alignment: 9
+      pivot: {x: 0.34210527, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb00eb317ada244faffb6d792212c44
+      internalID: -329134010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_74
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 74
+        width: 41
+        height: 76
+      alignment: 9
+      pivot: {x: 0.31707317, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c236240f91ca6d4d903fbaa45994cb9
+      internalID: -260332534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_75
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 74
+        width: 42
+        height: 78
+      alignment: 9
+      pivot: {x: 0.30952382, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f42fbcc802be1f4dba54412b12901f4
+      internalID: -2010298222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_76
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 74
+        width: 41
+        height: 80
+      alignment: 9
+      pivot: {x: 0.31707317, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b13be6cfb5f83e4e9d27e6bbcc18277
+      internalID: 98256774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_77
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 11
+        width: 44
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33ff23d58ef45f40a21fdd862ba0c5e
+      internalID: -1843341961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO341-1_78
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 13
+        width: 47
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5106383, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bcc6766ed031a44889f981828cbbe5
+      internalID: 1687518151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MECRO341-1_26: 1669598231
+      MECRO341-1_30: 782952925
+      MECRO341-1_52: -9802433
+      MECRO341-1_17: -602545408
+      MECRO341-1_58: 1242239545
+      MECRO341-1_44: 1000845435
+      MECRO341-1_40: 743537226
+      MECRO341-1_64: -801738112
+      MECRO341-1_29: -1040792950
+      MECRO341-1_61: -1881960954
+      MECRO341-1_55: 1337065352
+      MECRO341-1_5: -799516521
+      MECRO341-1_18: -822628432
+      MECRO341-1_72: -1463039971
+      MECRO341-1_19: 614161539
+      MECRO341-1_37: -1846534016
+      MECRO341-1_63: 563473567
+      MECRO341-1_3: 902232364
+      MECRO341-1_12: -89040345
+      MECRO341-1_38: -1505105971
+      MECRO341-1_36: 88774499
+      MECRO341-1_65: -420954986
+      MECRO341-1_56: 565138146
+      MECRO341-1_71: -2110173858
+      MECRO341-1_77: -1843341961
+      MECRO341-1_27: 1403369408
+      MECRO341-1_23: -1639594616
+      MECRO341-1_53: -198910506
+      MECRO341-1_28: 803580714
+      MECRO341-1_34: 1686924544
+      MECRO341-1_69: -887075774
+      MECRO341-1_24: -1812500747
+      MECRO341-1_76: 98256774
+      MECRO341-1_13: -1919857671
+      MECRO341-1_7: 1305356693
+      MECRO341-1_47: 84982771
+      MECRO341-1_62: 1596731230
+      MECRO341-1_0: -1506486600
+      MECRO341-1_25: 1382816581
+      MECRO341-1_21: -615225087
+      MECRO341-1_20: -1622547868
+      MECRO341-1_9: 132379364
+      MECRO341-1_4: 779444701
+      MECRO341-1_78: 1687518151
+      MECRO341-1_45: 603608149
+      MECRO341-1_11: -704578328
+      MECRO341-1_68: 150988679
+      MECRO341-1_70: -130209142
+      MECRO341-1_75: -2010298222
+      MECRO341-1_10: -2097187981
+      MECRO341-1_32: 666251821
+      MECRO341-1_66: -94060040
+      MECRO341-1_49: -462749905
+      MECRO341-1_59: -154007421
+      MECRO341-1_48: 1213778981
+      MECRO341-1_54: 97911691
+      MECRO341-1_35: 562687588
+      MECRO341-1_39: 434101428
+      MECRO341-1_74: -260332534
+      MECRO341-1_1: -1068773989
+      MECRO341-1_14: -738601609
+      MECRO341-1_67: -1161950561
+      MECRO341-1_57: -1895247604
+      MECRO341-1_6: -1739617560
+      MECRO341-1_8: -1191293174
+      MECRO341-1_15: -435803943
+      MECRO341-1_2: 1610790372
+      MECRO341-1_42: 494371625
+      MECRO341-1_46: -36461203
+      MECRO341-1_41: -1099826423
+      MECRO341-1_43: 940336976
+      MECRO341-1_16: -1998920812
+      MECRO341-1_73: -329134010
+      MECRO341-1_31: 117046770
+      MECRO341-1_22: 1448400511
+      MECRO341-1_51: 190729607
+      MECRO341-1_60: 1532087195
+      MECRO341-1_50: 1611713657
+      MECRO341-1_33: -892483287
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

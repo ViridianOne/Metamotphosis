@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
 
 public class Mecro296 : Player
 {
@@ -15,7 +14,7 @@ public class Mecro296 : Player
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform headPos;
     [SerializeField] private Vector2 headDetectorSize;
-    public GameObject holder;
+    //public GameObject holder;
 
     private bool isChargingJump = false;
     private bool isJumpCharged = false;
@@ -41,6 +40,7 @@ public class Mecro296 : Player
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
+                    rigidBody.gravityScale = gravity;
                     isCeilingHitted = false;
                     betweenJumpTimer = timeBetweenJump;
                     jumpTimer = 0f;
@@ -56,6 +56,8 @@ public class Mecro296 : Player
                 }
 
                 isChargingJump = Input.GetButton("Jump");
+                if(Input.GetButtonDown("Jump"))
+                    AudioManager.instance.Play(7);
                 if (isGrounded && jumpTimer < maxJumpTime && isChargingJump)
                 {
                     jumpTimer += jumpChargeSpeed * Time.deltaTime; 
@@ -65,18 +67,25 @@ public class Mecro296 : Player
                 {
                     isJumpCharged = true;
                     jumpBarBehaviour.AddValueToJumpSlider(-1000);
+                    AudioManager.instance.Stop(7);
                 }
 
                 if (isGrounded && jumpTimer > 0f)
                     jumpBarBehaviour.ToggleJumpSlider(true);
                 else
+                {
                     jumpBarBehaviour.ToggleJumpSlider(false);
+                }
 
                 UpdateMovementAnimation();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)
+            {
                 isGrounded = false;
+                AudioManager.instance.Stop(7);
+            }
+            CheckVisability();
         }
     }
 
@@ -100,6 +109,13 @@ public class Mecro296 : Player
             }
             betweenJumpTimer -= Time.deltaTime;
             Move();
+            if (!isGrounded)
+            {
+                if (rigidBody.velocity.y < 0 && rigidBody.gravityScale < maxGravity)
+                    rigidBody.gravityScale *= gravityMultiplier;
+                if (rigidBody.gravityScale > maxGravity)
+                    rigidBody.gravityScale = maxGravity;
+            }
         }
     }
 
@@ -143,10 +159,28 @@ public class Mecro296 : Player
 
     protected override void Move()
     {
-        if (isCeilingHitted && rigidBody.velocity.y > 0)
-            rigidBody.velocity = new Vector2(0, 0);
-        else
-            rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, rigidBody.velocity.y);
+        float targetSpeed = moveInput * moveSpeed;
+        float accelerate = 0; 
+        
+        if(!isGrounded)
+            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount * accelerationInAir : runDeccelerationAmount * accelerationInAir;
+
+
+        if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
+            && Mathf.Sign(rigidBody.velocity.x) == Mathf.Sign(targetSpeed)
+            && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded)
+        {
+            accelerate = 0;
+        }
+
+        float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
+        rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
+
+        // Version 1
+        //if (isCeilingHitted && rigidBody.velocity.y > 0)
+        //    rigidBody.velocity = new Vector2(0, 0);
+        //else
+        //    rigidBody.velocity = new Vector2(isGrounded ? 0 : moveInput * moveSpeed, rigidBody.velocity.y);
     }
 
     public void Jump()
@@ -154,6 +188,7 @@ public class Mecro296 : Player
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
+        AudioManager.instance.Play(5);
     }
 
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
@@ -193,6 +228,13 @@ public class Mecro296 : Player
 
     public override void DisableAbility() 
     {
-        lightSwitcher = false;
+        isAbilityActivated = false;
+    }
+
+    protected override IEnumerator TurnLedgeDetectorOff()
+    {
+        ledgeDecetror.enabled = false;
+        yield return new WaitForSeconds(ledgeCancelTime);
+        ledgeDecetror.enabled = true;
     }
 }

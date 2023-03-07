@@ -8,6 +8,9 @@ public abstract class Player : MonoBehaviour
 {
     public static Player instance;
 
+    public GameObject holder;
+    private SpriteRenderer holderSprite;
+
     protected Animator anim;
     protected bool isFacingRight;
 
@@ -16,18 +19,26 @@ public abstract class Player : MonoBehaviour
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
     protected bool isActive;
-    [HideInInspector] public bool lightSwitcher = false;
+    [HideInInspector] public bool isAbilityActivated = false;
+    public bool isOnMovingPlatform = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
     protected float gravity;
+    [SerializeField] protected float minGravity;
+    [SerializeField] protected float maxGravity;
+    [SerializeField] protected float gravityMultiplier;
+    [SerializeField] protected float gravityAddition;
     [SerializeField] protected float moveSpeed;
     protected float movementForce;
     protected float moveInput;
     [SerializeField] protected float maxSpeed;
-    [SerializeField] protected float linearDrag;
-    protected Vector2 direction;
     protected bool isAbleToMove = true;
+    [SerializeField] protected float runAcceleration;
+    [SerializeField] protected float runDecceleration;
+    [SerializeField] protected float runAccelerationAmount;
+    [SerializeField] protected float runDeccelerationAmount;
+    [SerializeField] protected float accelerationInAir;
 
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
@@ -37,12 +48,17 @@ public abstract class Player : MonoBehaviour
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
     [SerializeField] private Vector3 difference1, difference2, difference3, difference4;
+    public Vector2 movingPlatDif = Vector2.zero;
+    private bool isClimbing = false;
+    [SerializeField] protected Collider2D ledgeDecetror;
+    [SerializeField] protected float ledgeCancelTime;
 
     private void Awake()
     {
         instance = this;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        holderSprite = holder.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -67,27 +83,64 @@ public abstract class Player : MonoBehaviour
         }
         if (ledgeDetected && !canClimbLedge)
         {
+            rigidBody.gravityScale = gravity;
             canClimbLedge = true;
-            anim.SetBool("isLedgeGrabbing", true);
+            anim.SetBool("isGrabbed", true);
         }
         if (canClimbLedge)
         {
+            if (isOnMovingPlatform)
+                ledgePos1 -= movingPlatDif;
             transform.position = ledgePos1;
-            if (ledgeGrabbingTimer <= 0)
-                ledgeGrabbingTimer = ledgeGrabbingTime;
-            else
+            if(Input.GetButtonDown("Jump"))
             {
-                ledgeGrabbingTimer -= Time.deltaTime;
+                isClimbing = true;
             }
-            if (ledgeGrabbingTimer <= 0)
-                FinishLedgeGrabbing();
+            else if(Input.GetButtonDown("Fire3"))
+            {
+                CancelLedegeGrabbing();
+            }
+            if (isClimbing)
+            {
+                anim.SetBool("isLedgeGrabbing", true);
+                anim.SetBool("isGrabbed", false);
+                if (ledgeGrabbingTimer <= 0)
+                    ledgeGrabbingTimer = ledgeGrabbingTime;
+                else
+                {
+                    ledgeGrabbingTimer -= Time.deltaTime;
+                }
+                if (ledgeGrabbingTimer <= 0)
+                    FinishLedgeGrabbing();
+            }
         }
     }
+
+    private void CancelLedegeGrabbing()
+    {
+        canClimbLedge = false;
+        isClimbing = false;
+        movingPlatDif = Vector2.zero;
+        rigidBody.velocity = Vector2.zero;
+        isOnMovingPlatform = false;
+        ledgeDetected = false;
+        isAbleToMove = true;
+        isTouchingLedge = false;
+        anim.SetBool("isGrabbed", false);
+        StartCoroutine(TurnLedgeDetectorOff());
+    }
+
+    protected abstract IEnumerator TurnLedgeDetectorOff();
 
     private void FinishLedgeGrabbing()
     {
         canClimbLedge = false;
+        isClimbing = false;
         transform.position = ledgePos2;
+        movingPlatDif = Vector2.zero;
+        //ledgeFlag = false;
+        rigidBody.velocity = Vector2.zero;
+        isOnMovingPlatform = false;
         ledgeDetected = false;
         isAbleToMove = true;
         isTouchingLedge = false;
@@ -123,13 +176,17 @@ public abstract class Player : MonoBehaviour
 
     public void MiniJump(float miniJumpForce) 
     {
-        rigidBody.velocity = new Vector2(0, 0);
+        rigidBody.velocity = Vector2.zero;
         rigidBody.AddForce(Vector2.up * miniJumpForce, ForceMode2D.Impulse);
     }
 
     public void DamagePlayer()
     {
-        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        AudioManager.instance.Play(3);
+        if (canClimbLedge)
+        {
+            FinishLedgeGrabbing();
+        }
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");
         isActive = false;
@@ -148,6 +205,7 @@ public abstract class Player : MonoBehaviour
         {
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
+            rigidBody.velocity = Vector2.zero;
             isActive = true;
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
@@ -163,11 +221,34 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isJumping", false);
         anim.SetBool("landingMoment", false);
         anim.SetBool("isFlying", false);*/
+        anim.SetBool("landingMoment", true);
+        anim.SetBool("landingMoment", false);
         if (!state)
         {
             StopMoving();
         }
     }
 
+    protected void CheckVisability()
+    {
+        if(!holderSprite.enabled && isActive)
+        {
+            rigidBody.gravityScale = gravity;
+            transform.position = respawnPoint.position;
+            isActive = true;
+            playerCollider.enabled = true;
+            anim.SetBool("isDamaged", false);
+        }
+    }
+
     public abstract void DisableAbility();
+
+    private void OnValidate()
+    {
+        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
+        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
+
+        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
+        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+    }
 }
