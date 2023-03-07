@@ -113,13 +113,13 @@ public class FormSwitchIconChanger : MonoBehaviour
 
     private void releaseBottomButton()
     {
-        if (state == MecroStates.none
+        if (state == MecroStates.form206
                 && MecroSelectManager.instance.isMecroUnlocked[(int)state])
         {
             buttonImage.sprite = clickedSprite;
             controller.playerState = state;
         }
-        else if (state != MecroStates.none
+        else if (state != MecroStates.form206
             && MecroSelectManager.instance.isMecroUnlocked[(int)state])
         {
             buttonImage.sprite = normalSprite;
@@ -154,18 +154,10 @@ public class FormSwitchIconChanger : MonoBehaviour
 
     private void holdBottomButton()
     {
-        if (state == MecroStates.none
+        if (state == MecroStates.form206
                 && MecroSelectManager.instance.isMecroUnlocked[(int)state])
         {
             buttonImage.sprite = selectedSprite;
         }
-        //else if (Input.GetKeyDown(KeyCode.DownArrow))
-        //{
-        //    if (state == MecroStates.form206 && controller.playerState != state
-        //        && MecroSelectManager.instance.isMecroUnlocked[(int)state])
-        //    {
-        //        buttonImage.sprite = selectedSprite;
-        //    }
-        //}
     }
 }
