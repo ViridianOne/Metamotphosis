@@ -131,7 +131,7 @@ public class Mecro341 : Player
 
     public override void DisableAbility()
     {
-        lightSwitcher = false;
+        //lightSwitcher = false;
     }
 
     protected override void Move()
