@@ -18,6 +18,7 @@ public abstract class Enemy : MonoBehaviour
     public EnemyType type;
 
     protected Rigidbody2D rigidBody;
+    protected Collider2D enemyCollider;
     protected EnemyState state;
 
     [SerializeField] private float damageTime;
@@ -30,6 +31,7 @@ public abstract class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        enemyCollider = GetComponent<Collider2D>();
         holderSprite = holder.GetComponent<SpriteRenderer>();
         spriteColor = holderSprite.color;
     }
