@@ -21,6 +21,7 @@ public abstract class Player : MonoBehaviour
     protected bool isActive;
     [HideInInspector] public bool isAbilityActivated = false;
     public bool isOnMovingPlatform = false;
+    [HideInInspector] public bool isOnArcPlatform, isOn30, isOn60 = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;

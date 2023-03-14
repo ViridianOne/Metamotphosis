@@ -10,6 +10,7 @@ TagManager:
   - Enemy Marker
   - Checkpoint
   - Dark
+  - Magnet
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - NoDamage
   - Enemy
-  - 
+  - Magnet
   - 
   - 
   - 
@@ -44,9 +45,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Invisible
-    uniqueID: 1006682469
-    locked: 0
   - name: Background
     uniqueID: 4162358075
     locked: 0
@@ -55,9 +53,6 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 3321073319
-    locked: 0
-  - name: Visible
-    uniqueID: 2142000239
     locked: 0
   - name: Level
     uniqueID: 456547535
