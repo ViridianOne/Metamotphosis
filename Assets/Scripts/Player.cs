@@ -21,7 +21,8 @@ public abstract class Player : MonoBehaviour
     protected bool isActive;
     [HideInInspector] public bool isAbilityActivated = false;
     public bool isOnMovingPlatform = false;
-    [HideInInspector] public bool isOnArcPlatform, isOn0, isOn30, isOn60, isOn90 = false;
+    [HideInInspector] public bool isOnArcPlatform, isOn30, isOn60, isOn90 = false;
+    [HideInInspector] public bool isOn0 = true;
     [HideInInspector] public int ceilCoef = 1;
     [HideInInspector] public bool isVertical = false;
 
@@ -45,14 +46,14 @@ public abstract class Player : MonoBehaviour
 
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
-    private bool canClimbLedge;
+    protected bool canClimbLedge;
     protected bool ledgeDetected;
     private Vector2 ledgePos1, ledgePos2;
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
     [SerializeField] private Vector3 difference1, difference2, difference3, difference4;
     public Vector2 movingPlatDif = Vector2.zero;
-    private bool isClimbing = false;
+    protected bool isClimbing = false;
     [SerializeField] protected Collider2D ledgeDecetror;
     [SerializeField] protected float ledgeCancelTime;
 
@@ -119,7 +120,7 @@ public abstract class Player : MonoBehaviour
         }
     }
 
-    private void CancelLedegeGrabbing()
+    protected void CancelLedegeGrabbing()
     {
         canClimbLedge = false;
         isClimbing = false;
@@ -188,7 +189,7 @@ public abstract class Player : MonoBehaviour
         AudioManager.instance.Play(3);
         if (canClimbLedge)
         {
-            FinishLedgeGrabbing();
+            CancelLedegeGrabbing();
         }
         anim.SetBool("isDamaged", true);
         anim.SetTrigger("damage");

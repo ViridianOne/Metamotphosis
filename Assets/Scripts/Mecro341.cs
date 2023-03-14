@@ -17,6 +17,12 @@ public class Mecro341 : Player
     private float spriteAngle = 0;
     private float xGravity;
 
+    [Header("PLatform Pull Up")]
+    [SerializeField] private Vector2 ledgePlatPos1, ledgePlatPos2;
+    [SerializeField] private Vector2 diffPlat1, diffPlat2, diffPlat3, diffPlat4;
+    [SerializeField] private float platformGrabbingTime;
+    private float platformGrabbingTimer;
+
     void Update()
     {
         if(isActive)
@@ -48,7 +54,7 @@ public class Mecro341 : Player
                     force = originalForce;
                     spriteAngle = 0;
                     isOn90 = isOn60;
-                    isOn0 = isOn30;
+                    isOn0 = !isGrounded || isOn30;
                 }
                 //if (!isOnArcPlatform || (isOn30 && !isOn60))
                 //    moveInput = Input.GetAxisRaw("Horizontal");
@@ -75,7 +81,7 @@ public class Mecro341 : Player
                     holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
                     rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y);
                 }
-                if (moveInput == 0)
+                if (moveInput == 0 && !isOn0)
                     rigidBody.velocity = Vector2.zero;
                 anim.SetFloat("Rotation", spriteAngle);
 
@@ -83,6 +89,7 @@ public class Mecro341 : Player
                 UpdateMovementAnimation();
             }
             UpdateLedegGrabbing();
+            //UpdatePlatformGrabbing();
             if (isTouchingLedge)
             {
                 isGrounded = false;
@@ -208,4 +215,73 @@ public class Mecro341 : Player
         //Gizmos.DrawWireCube(wheelPos.position, wheelDetectorSize);
         Gizmos.DrawWireSphere(wheelPos.position, wheelRadius);
     }
+
+    //public void GrabPlatform(Vector2 grabPos, bool isRight)
+    //{
+    //    isAbleToMove = false;
+    //    isTouchingLedge = true;
+    //    if (!isRight)
+    //    {
+    //        ledgePlatPos1 = grabPos - diffPlat1;
+    //        ledgePlatPos2 = grabPos + diffPlat2;
+    //    }
+    //    else
+    //    {
+    //        ledgePlatPos1 = grabPos - diffPlat3;
+    //        ledgePlatPos2 = grabPos + diffPlat4;
+    //    }
+    //}
+
+    //private void UpdatePlatformGrabbing()
+    //{
+    //    if (isTouchingLedge && !ledgeDetected)
+    //    {
+    //        ledgeDetected = true;
+    //    }
+    //    if (ledgeDetected && !canClimbLedge)
+    //    {
+    //        rigidBody.gravityScale = gravity;
+    //        canClimbLedge = true;
+    //        anim.SetFloat("wallCoef", 1);
+    //        anim.SetBool("isGrabbed", true);
+    //    }
+    //    if (canClimbLedge)
+    //    {
+    //        transform.position = ledgePlatPos1;
+    //        if (Input.GetButtonDown("Jump"))
+    //        {
+    //            isClimbing = true;
+    //        }
+    //        else if (Input.GetButtonDown("Fire3"))
+    //        {
+    //            CancelLedegeGrabbing();
+    //        }
+    //        if (isClimbing)
+    //        {
+    //            anim.SetBool("isLedgeGrabbing", true);
+    //            anim.SetBool("isGrabbed", false);
+    //            if (platformGrabbingTimer <= 0)
+    //                platformGrabbingTimer = platformGrabbingTime;
+    //            else
+    //            {
+    //                platformGrabbingTimer -= Time.deltaTime;
+    //            }
+    //            if (platformGrabbingTimer <= 0)
+    //                FinishPlatformGrabbing();
+    //        }
+    //    }
+    //}
+
+    //private void FinishPlatformGrabbing()
+    //{
+    //    canClimbLedge = false;
+    //    isClimbing = false;
+    //    transform.position = ledgePlatPos2;
+    //    rigidBody.velocity = Vector2.zero;
+    //    ledgeDetected = false;
+    //    isAbleToMove = true;
+    //    isTouchingLedge = false;
+    //    anim.SetBool("isLedgeGrabbing", false);
+    //    anim.SetFloat("wallCoef", 0);
+    //}
 }

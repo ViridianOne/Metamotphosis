@@ -5,6 +5,7 @@ using UnityEngine;
 public class Detector30 : MonoBehaviour
 {
     private bool turnSwitch = false;
+    [SerializeField] private bool isConvex;
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
