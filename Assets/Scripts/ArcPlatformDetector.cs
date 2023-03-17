@@ -10,7 +10,7 @@ public class ArcPlatformDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Magnet"))
+        if(collision.CompareTag("Player"))
         {
             Player.instance.isOnArcPlatform = true;
         }
@@ -18,7 +18,7 @@ public class ArcPlatformDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Magnet"))
+        if (collision.CompareTag("Player"))
         {
             Player.instance.isOnArcPlatform = false;
         }

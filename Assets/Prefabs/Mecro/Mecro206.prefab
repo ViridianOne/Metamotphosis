@@ -339,6 +339,12 @@ MonoBehaviour:
   isOnArcPlatform: 0
   isOn30: 0
   isOn60: 0
+  isOn90: 0
+  isOn0: 1
+  ceilCoef: 1
+  isVertical: 0
+  enableVelocityRight: 0
+  enableVelocityLeft: 0
   minGravity: 2
   maxGravity: 8
   gravityMultiplier: 1.2
@@ -363,7 +369,7 @@ MonoBehaviour:
   feetDetectorSize: {x: 0.5, y: 0.3}
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   grav: 0
 --- !u!1 &2303130092479524941
 GameObject:

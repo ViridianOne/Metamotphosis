@@ -25,6 +25,7 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public bool isOn0 = true;
     [HideInInspector] public int ceilCoef = 1;
     [HideInInspector] public bool isVertical = false;
+    [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -254,5 +255,15 @@ public abstract class Player : MonoBehaviour
 
         runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
         runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+    }
+
+    public float GetMoveInput()
+    {
+        return moveInput;
+    }
+
+    public Vector2 GetNormalizedDirection()
+    {
+        return rigidBody.velocity.normalized;
     }
 }
