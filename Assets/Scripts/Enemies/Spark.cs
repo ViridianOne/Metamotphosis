@@ -125,6 +125,7 @@ public class Spark : Enemy
         rigidBody.velocity = Vector2.zero;
         state = EnemyState.Destroying;
         anim.SetBool("isFlying", false);
+        anim.SetFloat("idleCoef", 0);
         anim.SetTrigger("damage");
         StartCoroutine(TurnOff());
     }
@@ -136,6 +137,7 @@ public class Spark : Enemy
         rigidBody.gravityScale = 0;
         enemyCollider.enabled = false;
         state = EnemyState.Attack;
+        anim.SetFloat("idleCoef", 1);
 
         PredictPlayerPosition();
         CalculateMoveDirection();
@@ -149,7 +151,7 @@ public class Spark : Enemy
     {
         var playerPos = Player.instance.transform.position;
         predictedPlayerPos = new Vector2(playerPos.x, playerPos.y)
-            + Player.instance.gameObject.GetComponent<Rigidbody2D>().velocity * Time.deltaTime * Time.deltaTime * predictionScale;
+            + Player.instance.GetVelocity() * Time.deltaTime * Time.deltaTime * predictionScale;
         //predictedPlayerPos = new Vector2(Player.instance.transform.position.x, Player.instance.transform.position.y);
     }
 
@@ -178,6 +180,12 @@ public class Spark : Enemy
             moveInput = -1f;
             direction = Vector2.down;
         }
+
+        if (angleToPlayer >= 22.5f && angleToPlayer <= 67.5f || angleToPlayer <= -22.5f && angleToPlayer >= -67.5f
+            || angleToPlayer >= 112.5f && angleToPlayer <= 157.5f || angleToPlayer <= -112.5f && angleToPlayer >= -157.5f)
+            anim.SetFloat("angle", 45);
+        else
+            anim.SetFloat("angle", 0);
     }
 
     private void UpdateMovementAnimation()
@@ -204,7 +212,7 @@ public class Spark : Enemy
         }
         else if (moveInput == -1f)
         {
-            transform.localRotation = direction == Vector2.down ? Quaternion.Euler(0, 180, -90) : Quaternion.Euler(0, 180, 0);
+            transform.localRotation = direction == Vector2.down ? Quaternion.Euler(0, 0, -90) : Quaternion.Euler(0, 180, 0);
         }
     }
 
