@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class Mecro341 : Player
 {
-    [Header("Jumping")]
-    private bool isGrounded;
+    [Header("Physics")]
+    private bool isGrounded, isOnNonMetalGround;
     [SerializeField] private Transform wheelPos;
+    [SerializeField] private float wheelRadius;
     [SerializeField] private Vector2 wheelDetectorSize;
-    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask groundMask, nonMetalMask;
     [SerializeField] private Vector3 rotationDirection;
     [SerializeField] private Vector2 horizontalGravityDelta, verticalGravityDelta;
     [SerializeField] private float counteractingForce, originalForce;
     private float force = 0;
     private float spriteAngle = 0;
+    private float xGravity;
+    public float deffectTime;
+
+    //[Header("PLatform Pull Up")]
+    //[SerializeField] private Vector2 ledgePlatPos1, ledgePlatPos2;
+    //[SerializeField] private Vector2 diffPlat1, diffPlat2, diffPlat3, diffPlat4;
+    //[SerializeField] private float platformGrabbingTime;
+    //private float platformGrabbingTimer;
 
     void Update()
     {
         if(isActive)
         {
-            if(isAbleToMove)
+            if (isAbleToMove)
             {
                 if (isOnArcPlatform)
                 {
@@ -38,37 +47,56 @@ public class Mecro341 : Player
                         force = originalForce;
                         spriteAngle = 0;
                     }
+                    isOn90 = false;
+                    isOn0 = false;
                 }
                 if(!isOnArcPlatform)
                 {
                     force = originalForce;
                     spriteAngle = 0;
+                    isOn90 = isOn60;
+                    isOn0 = !isGrounded || isOn30;
                 }
                 //if (!isOnArcPlatform || (isOn30 && !isOn60))
                 //    moveInput = Input.GetAxisRaw("Horizontal");
-                if (isOn60)
+                if (isOn60 || isOn90)
                 {
+                    rigidBody.gravityScale = 0;
                     moveInput = Input.GetAxisRaw("Vertical");
-                    transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90);
-                    holder.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
+                    if(isOn90)
+                        holder.transform.rotation = Quaternion.Euler(0, 0, 90 * ceilCoef);
+                    else if (isOn60)
+                        holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef > 0 ? 0 : 180);
+                    if(ceilCoef > 0)
+                        xGravity = rigidBody.velocity.x <= counteractingForce ? counteractingForce : 5;
+                    else
+                        xGravity = rigidBody.velocity.x >= counteractingForce * ceilCoef ? counteractingForce : 4;
+                    rigidBody.velocity = new Vector2(xGravity * ceilCoef, enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3: rigidBody.velocity.y);
                 }
                 else
                 {
+                    rigidBody.gravityScale = 4 * ceilCoef;
                     moveInput = Input.GetAxisRaw("Horizontal");
-                    transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
-                    holder.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
+                    holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
+                    rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
+                }
+                if (moveInput == 0 && !isOn0)
+                {
+                    rigidBody.velocity = Vector2.zero;
                 }
                 anim.SetFloat("Rotation", spriteAngle);
-
-                if(!isOnArcPlatform || (isOn30 && !isOn60))
-                    rigidBody.velocity = new Vector2(rigidBody.velocity.x, originalForce);
-                else if(isOn60)
-                    rigidBody.velocity = new Vector2(counteractingForce, moveInput == 0 ? counteractingForce : rigidBody.velocity.y);
-
-                isGrounded = Physics2D.OverlapBox(wheelPos.position, wheelDetectorSize, 0f, groundMask);
+                isGrounded = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, groundMask);
+                isOnNonMetalGround = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, nonMetalMask) & moveInput != 0;
                 UpdateMovementAnimation();
+                if(isOnNonMetalGround)
+                {
+                    StartCoroutine(TakeDeffect());
+                }
             }
             UpdateLedegGrabbing();
+            //UpdatePlatformGrabbing();
             if (isTouchingLedge)
             {
                 isGrounded = false;
@@ -101,21 +129,21 @@ public class Mecro341 : Player
 
     private void Flip()
     {
-        if (moveInput > 0f)
+        if (moveInput * ceilCoef > 0f)
         {
-            if(isOn60)
-                transform.localRotation = Quaternion.Euler(0, 0, 90);
+            if(isOn60 || isOn90)
+                transform.rotation = Quaternion.Euler(0, 0, 90 * ceilCoef);
             else
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
             //transform.localScale = new Vector3(1f, 1f, 1f);
             isFacingRight = true;
         }
-        else if (moveInput < 0f)
+        else if (moveInput * ceilCoef < 0f)
         {
-            if(isOn60)
-                transform.localRotation = Quaternion.Euler(180, 0, 90);
+            if(isOn60 || isOn90)
+                transform.rotation = Quaternion.Euler(180, 0, 90 * ceilCoef);
             else
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.rotation = Quaternion.Euler(0, 180, ceilCoef == 1 ? 0 : 180);
             //transform.localScale = new Vector3(-1f, 1f, 1f);
             isFacingRight = false;
         }
@@ -131,7 +159,12 @@ public class Mecro341 : Player
 
     public override void DisableAbility()
     {
-        //lightSwitcher = false;
+        isOn0 = true;
+        isOn30 = false;
+        isOn60 = false;
+        isOn90 = false;
+        gravity = 4;
+        transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
     }
 
     protected override void Move()
@@ -160,7 +193,7 @@ public class Mecro341 : Player
         //    moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         //    rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
         //}
-        if (isOn60)
+        if (isOn60 || isOn90)
         {
             moveForce = (targetSpeed - rigidBody.velocity.y) * accelerate;
             rigidBody.AddForce(moveForce * Vector2.up, ForceMode2D.Force);
@@ -191,6 +224,17 @@ public class Mecro341 : Player
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireCube(wheelPos.position, wheelDetectorSize);
+        //Gizmos.DrawWireCube(wheelPos.position, wheelDetectorSize);
+        Gizmos.DrawWireSphere(wheelPos.position, wheelRadius);
+    }
+
+    private IEnumerator TakeDeffect()
+    {
+        isActive = false;
+        rigidBody.velocity = Vector2.zero;
+        moveInput = 0;
+        anim.SetTrigger("deffect");
+        yield return new WaitForSeconds(deffectTime);
+        isActive = true;
     }
 }

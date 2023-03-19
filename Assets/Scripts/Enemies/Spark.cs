@@ -33,6 +33,7 @@ public class Spark : Enemy
     private bool canTakeDamage = false;
     [SerializeField] protected Vector2 damagePos, damageSize;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private Transform respawnPoint;
 
 
     private void Update()
@@ -220,6 +221,7 @@ public class Spark : Enemy
     protected override IEnumerator DamagePlayer()
     {
         Player.instance.DamagePlayer();
+        TakeDamage();
         yield return new WaitForSeconds(0f);
     }
 }

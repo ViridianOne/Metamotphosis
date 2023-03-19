@@ -168,13 +168,15 @@ public class Mecro296 : Player
 
         if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
             && Mathf.Sign(rigidBody.velocity.x) == Mathf.Sign(targetSpeed)
-            && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded)
+            && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded || isGrounded)
         {
             accelerate = 0;
         }
 
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
+        if (isGrounded)
+            rigidBody.velocity *= Vector2.up;
 
         // Version 1
         //if (isCeilingHitted && rigidBody.velocity.y > 0)

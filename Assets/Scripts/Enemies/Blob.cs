@@ -16,16 +16,23 @@ public class Blob : Enemy
     private int directionCoef = 0;
     [SerializeField] private float stateChangeTime;
     private float stateChangeTimer;
+    [SerializeField] private Transform downGroundPos, forwardGroundPos;
+    [SerializeField] private Vector2 downGroundSize, playerDetectorSize, playerDetectorPos;
+    public bool isOnGround, isGroundInFront;
+    private bool isPlayerNear;
 
     [Header("Attack")]
     [SerializeField] private float attackTime;
     [SerializeField] private float fullAttackTime;
     private bool canTurnOffTheLights = true;
+    [SerializeField] private Transform attackPos1;
 
     [Header("Damage")]
     private bool isDamaged;
-    [SerializeField] private Vector2 damagePos, damageSize;
+    [SerializeField] private Transform damagePos;
+    [SerializeField] private Vector2 damageSize;
     private bool isActive = true;
+    [SerializeField] Transform respawnPoint;
 
     [SerializeField]private bool isGrounded;
     [SerializeField]private bool wasOnGround;
@@ -46,104 +53,110 @@ public class Blob : Enemy
 
     private void Update()
     {
+        wasOnGround = isGrounded;
+        isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
+        if (!wasOnGround && isGrounded)
+        {
+            rigidBody.gravityScale = gravity;
+            betweenJumpTimer = timeBetweenJump;
+            jumpTimer = 0f;
+            isJumpCharged = false;
+            StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
+        }
         if (isActive)
         {
-            wasOnGround = isGrounded;
-            isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
-            if (!wasOnGround && isGrounded)
-            {
-                rigidBody.gravityScale = gravity;
-                betweenJumpTimer = timeBetweenJump;
-                jumpTimer = 0f;
-                isJumpCharged = false;
-                StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
-            }
+            //wasOnGround = isGrounded;
+            //isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
+            //if (!wasOnGround && isGrounded)
+            //{
+            //    rigidBody.gravityScale = gravity;
+            //    betweenJumpTimer = timeBetweenJump;
+            //    jumpTimer = 0f;
+            //    isJumpCharged = false;
+            //    StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
+            //}
+
+            //isOnGround = Physics2D.OverlapBox(downGroundPos.position, downGroundSize, 0f, groundMask);
+            //isGroundInFront = Physics2D.OverlapBox(forwardGroundPos.position, forwardGroundSize, 0f, groundMask);
+            isPlayerNear = Physics2D.OverlapBox(playerDetectorPos, playerDetectorSize, 0f, masksAbleToDamage);
+
+            //if (isGroundInFront)
+            //    jumpForce = 20f;
+            //else
+            //    jumpForce = 11.5f;
 
             if (stateChangeTimer <= 0)
             {
-                state = (EnemyState)Random.Range(0, 3);
+                state = (EnemyState)Random.Range(0, 2);
                 stateChangeTimer = stateChangeTime;
                 if (state == EnemyState.Idle)
                 {
                     ChangeDirection(Directions.none, 0);
                 }
-                else if (state == EnemyState.Attack)
-                {
-                    StartCoroutine(Attack());
-                }
             }
             if (stateChangeTimer > 0)
                 stateChangeTimer -= Time.deltaTime;
+            //if(state == EnemyState.Moving && !isOnGround && !isGroundInFront)
+            //{
+            //    if(Player.instance.transform != null && CheckPositionRight())
+            //        ChangeDirection(Directions.left, -1);
+            //    if(Player.instance.transform != null && CheckPositionLeft())
+            //        ChangeDirection(Directions.right, 1);
+            //}
             if (state == EnemyState.Moving)
             {
-                if (CheckPosition(leftPos.position.x) || directionCoef == 0 && transform.localRotation.y == 0f)
+                if (Player.instance.transform != null && CheckPositionRight()
+                    || directionCoef == 0 && transform.localRotation.y == 0f)
                 {
                     ChangeDirection(Directions.right, 1);
                 }
-                if (CheckPosition(rightPos.position.x) || directionCoef == 0
-                    && (transform.localRotation.y == -1f || transform.localRotation.y == 1f))
+                if (Player.instance.transform != null && CheckPositionLeft()
+                    || directionCoef == 0 && (transform.localRotation.y == -1f || transform.localRotation.y == 1f))
                 {
                     ChangeDirection(Directions.left, -1);
                 }
             }
 
-            UpdateMovementAnimation();
-            attackPos.x = transform.position.x;
-            canDamagePlayer = Physics2D.OverlapBox(attackPos, attackSize, 0f, masksAbleToDamage);
-            damagePos.x = transform.position.x;
-            isDamaged = Physics2D.OverlapBox(damagePos, damageSize, 0f, masksAbleToDamage);
-            if (isDamaged || isDamaged && canDamagePlayer)
+            canDamagePlayer = Physics2D.OverlapBox(attackPos1.position, attackSize, 0f, masksAbleToDamage);
+            isDamaged = Physics2D.OverlapBox(damagePos.position, damageSize, 0f, masksAbleToDamage);
+            if ((isDamaged || isDamaged && canDamagePlayer)
+                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
                 TakeDamage();
             if (canDamagePlayer)
             {
                 StartCoroutine(DamagePlayer());
             }
         }
-    }
-
-    private IEnumerator Attack()
-    {
-        ChangeDirection(Directions.none, 0);
-        anim.SetTrigger("attack");
-        yield return new WaitForSeconds(attackTime);
-        if (Darkness.instance.gameObject != null)
-        {
-            Darkness.instance.TurnOn(canTurnOffTheLights);
-            canTurnOffTheLights = !canTurnOffTheLights;
-        }
-        yield return new WaitForSeconds(fullAttackTime - attackTime);
-        stateChangeTimer = 0;
+        UpdateMovementAnimation();
     }
 
     private void FixedUpdate()
     {
-        /*if (isActive)
-            Move();*/
+        if ((betweenJumpTimer < 0f || isJumpCharged) && !isChargingJump)
+        {
+            if (!isJumpCharged)
+            {
+                jumpTimer = minJumpTime;
+                isJumpCharged = true;
+            }
+
+            if (jumpTimer > 0f)
+            {
+                Jump();
+                jumpTimer -= Time.deltaTime;
+            }
+        }
+        betweenJumpTimer -= Time.deltaTime;
+        if (!isGrounded)
+        {
+            if (rigidBody.velocity.y < 0 && rigidBody.gravityScale < maxGravity)
+                rigidBody.gravityScale *= gravityMultiplier;
+            if (rigidBody.gravityScale > maxGravity)
+                rigidBody.gravityScale = maxGravity;
+        }
         if (isActive)
         {
-            if ((betweenJumpTimer < 0f || isJumpCharged) && !isChargingJump)
-            {
-                if (!isJumpCharged)
-                {
-                    jumpTimer = minJumpTime;
-                    isJumpCharged = true;
-                }
-
-                if (jumpTimer > 0f)
-                {
-                    Jump();
-                    jumpTimer -= Time.deltaTime;
-                }
-            }
-            betweenJumpTimer -= Time.deltaTime;
             Move();
-            if (!isGrounded)
-            {
-                if (rigidBody.velocity.y < 0 && rigidBody.gravityScale < maxGravity)
-                    rigidBody.gravityScale *= gravityMultiplier;
-                if (rigidBody.gravityScale > maxGravity)
-                    rigidBody.gravityScale = maxGravity;
-            }
         }
     }
 
@@ -215,7 +228,10 @@ public class Blob : Enemy
             anim.SetBool("landingMoment", false);
         }
         else
+        {
             anim.SetBool("isJumping", true);
+            anim.SetFloat("yVelocity", rigidBody.velocity.y);
+        }
         if (!wasOnGround && isGrounded)
             anim.SetBool("landingMoment", true);
 
@@ -229,38 +245,41 @@ public class Blob : Enemy
         }
     }
 
-    private bool CheckPosition(float xPos) => transform.position.x - xPos >= -0.25f && transform.position.x - xPos <= 0.25f;
+    private bool CheckPositionRight() => isPlayerNear ? transform.position.x - Player.instance.transform.position.x < 0f : transform.position.x - leftPos.position.x <= 0.25f;
+
+    private bool CheckPositionLeft() => isPlayerNear ? transform.position.x - Player.instance.transform.position.x > 0f : transform.position.x - rightPos.position.x >= -0.25f;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(damagePos, damageSize);
+        Gizmos.DrawWireCube(damagePos.position, damageSize);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos, attackSize);
+        Gizmos.DrawWireCube(attackPos1.position, attackSize);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(playerDetectorPos, playerDetectorSize);
     }
-
 
     private void TakeDamage()
     {
         ChangeDirection(Directions.none, 0);
         isActive = false;
+        canDamagePlayer = false;
         Player.instance.MiniJump(12f);
-        if (Darkness.instance.gameObject != null)
-        {
-            Darkness.instance.TurnOn(false);
-            canTurnOffTheLights = !canTurnOffTheLights;
-        }
         StartCoroutine(TurnOff());
     }
-
 
     protected override IEnumerator DamagePlayer()
     {
         isActive = false;
+        canDamagePlayer = false;
         Player.instance.DamagePlayer();
+        //if(Mathf.Abs(transform.position.x - Player.instance.respawnPoint.position.x) < 2f)
+        //    ChangeDirection(Directions.left, -1);
+        //else
         ChangeDirection(Directions.none, 0);
         stateChangeTimer = stateChangeTime;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        transform.position = respawnPoint.position;
         isActive = true;
     }
 }

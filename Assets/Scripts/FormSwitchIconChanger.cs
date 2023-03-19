@@ -66,6 +66,10 @@ public class FormSwitchIconChanger : MonoBehaviour
         {
             releaseBottomButton();
         }
+        else if (Input.GetKeyUp(KeyCode.I))
+        {
+            releaseIButton();
+        }
     }
     private void releaseLeftButton()
     {
@@ -123,6 +127,15 @@ public class FormSwitchIconChanger : MonoBehaviour
             && MecroSelectManager.instance.isMecroUnlocked[(int)state])
         {
             buttonImage.sprite = normalSprite;
+        }
+    }
+
+    private void releaseIButton()
+    {
+        if(state == MecroStates.form341
+            && MecroSelectManager.instance.isMecroUnlocked[(int)state])
+        {
+            controller.playerState = state;
         }
     }
 
