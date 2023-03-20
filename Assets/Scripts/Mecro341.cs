@@ -40,7 +40,7 @@ public class Mecro341 : Player
                     else if(isOn60)
                     {
                         force = counteractingForce;
-                        spriteAngle = 60;
+                        spriteAngle = 30;
                     }
                     else
                     {
@@ -63,11 +63,11 @@ public class Mecro341 : Player
                 {
                     rigidBody.gravityScale = 0;
                     moveInput = Input.GetAxisRaw("Vertical");
-                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
-                    if(isOn90)
-                        holder.transform.rotation = Quaternion.Euler(0, 0, 90 * ceilCoef);
-                    else if (isOn60)
-                        holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef > 0 ? 0 : 180);
+                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
+                    //if(isOn90)
+                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, 90 * ceilCoef);
+                    //else if (isOn60)
+                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef > 0 ? 0 : 180);
                     if(ceilCoef > 0)
                         xGravity = rigidBody.velocity.x <= counteractingForce ? counteractingForce : 5;
                     else
@@ -78,8 +78,8 @@ public class Mecro341 : Player
                 {
                     rigidBody.gravityScale = 4 * ceilCoef;
                     moveInput = Input.GetAxisRaw("Horizontal");
-                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
-                    holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
+                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
+                    //holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef == 1 ? 0 : 180);
                     rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
                 }
                 if (moveInput == 0 && !isOn0)
