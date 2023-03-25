@@ -10,5 +10,6 @@ public enum EnemyType
     Magnet,
     Arrow,
     Flash,
-    Ball
+    Ball,
+    Ghost
 }

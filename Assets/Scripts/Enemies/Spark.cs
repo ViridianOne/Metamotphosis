@@ -89,7 +89,7 @@ public class Spark : Enemy
 
     protected override void Move()
     {
-        currentSpeed = rigidBody.velocity.magnitude * (moveInput == 1 ? 1 : -1);
+        currentSpeed = rigidBody.velocity.magnitude * moveInput;
 
         var targetSpeed = moveInput * moveSpeed;
         float accelerate;
