@@ -143,6 +143,8 @@ public class Ghost : Enemy
         state = EnemyState.Destroying;
         anim.SetBool("isChasing", false);
         anim.SetTrigger("damage");
+        if (!gameObject.activeInHierarchy)
+            gameObject.SetActive(true);
         StartCoroutine(TurnOff());
     }
 
