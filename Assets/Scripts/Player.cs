@@ -259,13 +259,8 @@ public abstract class Player : MonoBehaviour
         runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
     }
 
-    public float GetMoveInput()
+    public Vector2 GetVelocity()
     {
-        return moveInput;
-    }
-
-    public Vector2 GetNormalizedDirection()
-    {
-        return rigidBody.velocity.normalized;
+        return rigidBody.velocity;
     }
 }
