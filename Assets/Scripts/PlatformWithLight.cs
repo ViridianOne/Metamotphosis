@@ -52,13 +52,15 @@ public class PlatformWithLight : MonoBehaviour
             if (index.instantiatedMecros[index.GetIndex()].isAbilityActivated)
             {
                 lightsOn = index.instantiatedMecros[index.GetIndex()].isAbilityActivated;
-                anim.SetBool("isOn", lightsOn);
+                //anim.SetBool("impulse", lightsOn);
+                anim.SetTrigger("impulse");
                 nextPos = transform.position;
             }
             else
             {
                 lightsOn = false;
-                anim.SetBool("isOn", false);
+                //anim.SetBool("impulse", false);
+                anim.ResetTrigger("impulse");
                 nextPos = transform.position;
             }
 
@@ -81,7 +83,7 @@ public class PlatformWithLight : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isOn", false);
+            anim.SetTrigger("impulse");
         }
         /*if (transform.position == pos1.position && Input.GetButtonDown("Fire1"))
         {
@@ -121,6 +123,8 @@ public class PlatformWithLight : MonoBehaviour
                 collision.collider.transform.SetParent(transform);
             }
         }*/
+
+        anim.SetBool("isPlayerOnPlatform", true);
         if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
         {
             Player.instance.isOnMovingPlatform = true;
@@ -138,6 +142,7 @@ public class PlatformWithLight : MonoBehaviour
         if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             collision.collider.transform.SetParent(null);
+            anim.SetBool("isPlayerOnPlatform", false);
         }
     }
 }
