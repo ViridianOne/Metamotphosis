@@ -25,42 +25,20 @@ public class PlatformWithLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (/*checkAreaScript.StartMoving() == true &&*/ index.GetIndex() == 0)
+        if (index.GetIndex() == 0)
         {
-            /*if (Input.GetButtonDown("Fire1"))
-            {
-                lightsOn = !index.instantiatedMecros[index.GetIndex()].lightSwitcher;
-                anim.SetBool("isOn", lightsOn);
-                /*if (checkAreaScript.StartMoving() == true)
-                {
-                    if (transform.position == pos1.position || lightsOn == true)
-                    {
-                        nextPos = pos2.position;
-                        if (transform.position == pos2.position)
-                            nextPos = pos1.position;
-                    }
-                }
-                if (lightsOn == false)
-                {
-                    nextPos = transform.position;
-                }
-                if (lightsOn == false)
-                {
-                    nextPos = transform.position;
-                }
-            }*/
             if (index.instantiatedMecros[index.GetIndex()].isAbilityActivated)
             {
                 lightsOn = index.instantiatedMecros[index.GetIndex()].isAbilityActivated;
-                //anim.SetBool("impulse", lightsOn);
-                anim.SetTrigger("impulse");
+                anim.SetBool("isSleeping", false);
+                //anim.SetTrigger("impulse");
                 nextPos = transform.position;
             }
             else
             {
                 lightsOn = false;
                 //anim.SetBool("impulse", false);
-                anim.ResetTrigger("impulse");
+                anim.SetBool("isSleeping", true);
                 nextPos = transform.position;
             }
 
@@ -83,25 +61,8 @@ public class PlatformWithLight : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("impulse");
+            anim.SetBool("isSleeping",true);
         }
-        /*if (transform.position == pos1.position && Input.GetButtonDown("Fire1"))
-        {
-            nextPos = pos2.position;
-            //anim.SetBool("isOn", true);
-            lightsOn = !lightsOn;
-            anim.SetBool("isOn", lightsOn);
-        }*/
-        /*if (transform.position == pos2.position && Input.GetButtonDown("Fire1"))
-        {
-            nextPos = pos1.position;
-        }*/
-        /*if (lightsOn == true && Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("isOn", false);
-            lightsOn = false;
-        }*/
-        //transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
@@ -111,19 +72,6 @@ public class PlatformWithLight : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.gameObject.tag == "Player")
-        {
-            if (transform.childCount == 0)
-            {
-                collision.collider.transform.SetParent(transform);
-            }
-            else
-            {
-                transform.DetachChildren();
-                collision.collider.transform.SetParent(transform);
-            }
-        }*/
-
         anim.SetBool("isPlayerOnPlatform", true);
         if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
         {

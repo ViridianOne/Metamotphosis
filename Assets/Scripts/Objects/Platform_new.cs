@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour
+public class Platform_new : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
     private Vector3 nextPos;
-
+    public Animator anim;
+    // Start is called before the first frame update
     void Start()
     {
-        nextPos = startPos.position;       
+        nextPos = startPos.position;
+        anim.SetFloat("sleepingCoef", 0);
+        anim.SetBool("isSleeping", false);
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        if (transform.position == pos1.position )
+    {
+        if (transform.position == pos1.position)
         {
             nextPos = pos2.position;
         }
@@ -26,7 +28,6 @@ public class Platform : MonoBehaviour
         {
             nextPos = pos1.position;
         }
-
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
@@ -34,26 +35,17 @@ public class Platform : MonoBehaviour
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            //if (transform.childCount == 0)
-            //{
-            //    collision.collider.transform.SetParent(transform);
-            //}
-            //else
-            //{
-            //    transform.DetachChildren();
-            //    collision.collider.transform.SetParent(transform);
-            //}
+            anim.SetBool("isPlayerOnPlatform", true);
             if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
             {
                 Player.instance.isOnMovingPlatform = true;
                 Player.instance.movingPlatDif = new Vector2(0, 0.005f);
             }
-            else if(nextPos == pos2.position && pos2.position.y != pos1.position.y)
+            else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
             {
                 Player.instance.isOnMovingPlatform = true;
                 Player.instance.movingPlatDif = new Vector2(0, -0.005f);
@@ -65,8 +57,7 @@ public class Platform : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
-            //Player.instance.isOnMovingPlatform = false;
-            //Player.instance.movingPlatDif = Vector2.zero;
+            anim.SetBool("isPlayerOnPlatform", false);
             collision.collider.transform.SetParent(null);
         }
     }
