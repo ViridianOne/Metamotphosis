@@ -8,7 +8,14 @@ public class Platform_new : MonoBehaviour
     public float speed;
     public Transform startPos;
     private Vector3 nextPos;
-    public Animator anim;
+    [SerializeField] private Animator anim;
+    public bool isSleeping;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +46,7 @@ public class Platform_new : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            anim.SetTrigger("impulse");
             anim.SetBool("isPlayerOnPlatform", true);
             if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
             {

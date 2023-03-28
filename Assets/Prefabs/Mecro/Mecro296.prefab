@@ -824,9 +824,12 @@ MonoBehaviour:
   ledgeDecetror: {fileID: 1722000280172493421}
   ledgeCancelTime: 1
   feetPos: {fileID: 7280123949123715799}
-  feetDetectorSize: {x: 0.3, y: 0.3}
+  feetDetectorSize: {x: 0.5, y: 0.2}
   radius: 0.3
   groundMask:
+    serializedVersion: 2
+    m_Bits: 12352
+  noPlatfromMask:
     serializedVersion: 2
     m_Bits: 4160
   headPos: {fileID: 7280123947654826000}
@@ -872,7 +875,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00062835217, y: 0.65711063}
-  m_Size: {x: 0.5439942, y: 1.3142213}
+  m_Size: {x: 0.5, y: 1.3142213}
   m_Direction: 0
 --- !u!1 &7280123949123715798
 GameObject:
