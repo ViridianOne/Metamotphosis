@@ -71,6 +71,8 @@ public class Robot : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
+            if (velocityCoef != 1)
+                StartCoroutine(ChangeVelocity(velocityChangeTime));
         }
     }
 
@@ -96,7 +98,7 @@ public class Robot : Enemy
 
     protected override void Move()
     {
-        float targetSpeed = directionCoef * moveSpeed;
+        float targetSpeed = directionCoef * moveSpeed * velocityCoef;
         float accelerate = 0;
 
         accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;

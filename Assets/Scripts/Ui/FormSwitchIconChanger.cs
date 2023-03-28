@@ -141,6 +141,7 @@ public class FormSwitchIconChanger : MonoBehaviour
             if (buttonImage.Name == form && PossibleStates.Contains(form))
             {
                 buttonImage.Icon.sprite = buttonImage.PressedImage;
+                MecroSelectManager.instance.SelectMecro(form);
             }
         }
     }

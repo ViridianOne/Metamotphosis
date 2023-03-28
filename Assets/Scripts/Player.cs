@@ -67,7 +67,7 @@ public abstract class Player : MonoBehaviour
         holderSprite = holder.GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         gravity = rigidBody.gravityScale;

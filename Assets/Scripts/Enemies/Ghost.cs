@@ -53,6 +53,8 @@ public class Ghost : Enemy
                 StartCoroutine(DamagePlayer());
                 StopAttacking();
             }
+            if (velocityCoef != 1)
+                StartCoroutine(ChangeVelocity(velocityChangeTime));
         }
     }
 
@@ -72,7 +74,7 @@ public class Ghost : Enemy
     {
         currentSpeed = rigidBody.velocity.magnitude * moveInput;
 
-        var targetSpeed = moveSpeed * moveInput;
+        var targetSpeed = moveSpeed * moveInput * velocityCoef;
         float accelerate;
 
         if (Mathf.Abs(currentSpeed) > Mathf.Abs(targetSpeed)

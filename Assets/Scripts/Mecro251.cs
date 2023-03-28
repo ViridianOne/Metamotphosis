@@ -17,9 +17,18 @@ public class Mecro251 : Player
     private float jumpChargingTimer;
 
     [Header("Attack")]
-    private bool isShooting = false;
-    [SerializeField] private float attackTime;
-    [SerializeField] private Bullet251 speedUpBullet;
+    [SerializeField] private float timeBeforeShoot, timeAfterShoot;
+    [SerializeField] private Bullet251 speedUpBullet, slowDownBullet;
+    [SerializeField] private Transform bulletStartPos;
+    [SerializeField] private float yInput;
+    private Directions direction;
+
+    protected override void Start()
+    {
+        base.Start();
+        speedUpBullet = Instantiate(speedUpBullet, bulletStartPos.position, bulletStartPos.rotation);
+        slowDownBullet = Instantiate(slowDownBullet, bulletStartPos.position, bulletStartPos.rotation);
+    }
 
     void Update()
     {
@@ -28,6 +37,7 @@ public class Mecro251 : Player
             if (isAbleToMove)
             {
                 moveInput = Input.GetAxisRaw("Horizontal");
+                yInput = Input.GetAxisRaw("Vertical");
                 wasOnGround = isGrounded;
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
@@ -77,11 +87,11 @@ public class Mecro251 : Player
                     anim.SetBool("landingMoment", true);
                     AudioManager.instance.Play(8);
                 }
-                if(Input.GetKeyDown(KeyCode.O))
+                if(Input.GetKeyDown(KeyCode.O) && !slowDownBullet.gameObject.activeInHierarchy)
                 {
                     StartCoroutine(Shoot(BulletType.SlowDown));
                 }
-                else if (Input.GetKeyDown(KeyCode.P))
+                else if (Input.GetKeyDown(KeyCode.P) && !speedUpBullet.gameObject.activeInHierarchy)
                 {
                     StartCoroutine(Shoot(BulletType.SpeedUp));
                 }
@@ -240,17 +250,38 @@ public class Mecro251 : Player
         anim.SetFloat("speedCoef", (int)bulletType);
         anim.SetTrigger("shoot");
         rigidBody.velocity = Vector2.zero;
+        direction = GetDirection();
+        moveInput = 0;
         if (!isGrounded)
         {
             rigidBody.gravityScale = 0;
         }
-        yield return new WaitForSeconds(attackTime);
+        yield return new WaitForSeconds(timeBeforeShoot);
         if(bulletType == BulletType.SpeedUp)
         {
+            speedUpBullet.transform.position = bulletStartPos.position;
             speedUpBullet.gameObject.SetActive(true);
-            speedUpBullet.Shoot(isFacingRight ? 1 : -1);
+            speedUpBullet.Shoot(direction == Directions.up || direction == Directions.right ? 1 : -1, direction);
         }
+        else if(bulletType == BulletType.SlowDown)
+        {
+            slowDownBullet.transform.position = bulletStartPos.position;
+            slowDownBullet.gameObject.SetActive(true);
+            slowDownBullet.Shoot(direction == Directions.up || direction == Directions.right ? 1 : -1, direction);
+        }
+        yield return new WaitForSeconds(timeAfterShoot);
         rigidBody.gravityScale = 4;
         isAbleToMove = true;
+    }
+
+    private Directions GetDirection()
+    {
+        if (yInput != 0)
+        {
+            return yInput > 0 ? Directions.up : Directions.down;
+        }
+        else if (moveInput < 0)
+            return Directions.left;
+        return Directions.right;
     }
 }

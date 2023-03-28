@@ -19,8 +19,13 @@ public class Bullet251 : MonoBehaviour
     [SerializeField] private float runAccelerationAmount;
     [SerializeField] private float runDeccelerationAmount;
     private int directionCoef;
+    private Vector2 forceDirection;
+
+    [Header("Attack")]
     private bool isShooted;
     [SerializeField] private BulletType type;
+    [SerializeField] private float explosionTime, effectTime;
+    [SerializeField] private float speedChangeCoef;
 
     private void Awake()
     {
@@ -39,7 +44,6 @@ public class Bullet251 : MonoBehaviour
         if(isShooted)
         {
             Move();
-            print(directionCoef);
         }
     }
 
@@ -51,7 +55,7 @@ public class Bullet251 : MonoBehaviour
         accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
 
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
-        rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
+        rigidBody.AddForce(moveForce * forceDirection, ForceMode2D.Force);
     }
 
     private void OnValidate()
@@ -63,24 +67,61 @@ public class Bullet251 : MonoBehaviour
         runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
     }
 
-    public void Shoot(int dirCoef)
+    public void Shoot(int dirCoef, Directions direction)
     {
         directionCoef = dirCoef;
+        Flip(direction);
         isShooted = true;
+        anim.SetBool("isRecovered", true);
+    }
+
+    private void Flip(Directions direction)
+    {
+        switch (direction)
+        {
+            case Directions.up:
+                transform.localRotation = Quaternion.Euler(0, 0, 90);
+                forceDirection = Vector2.up;
+                break;
+            case Directions.right:
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                forceDirection = Vector2.right;
+                break;
+            case Directions.down:
+                transform.localRotation = Quaternion.Euler(0, 0, -90);
+                forceDirection = Vector2.up;
+                break;
+            case Directions.left:
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                forceDirection = Vector2.right;
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("Untagged"))
+        if (!collision.CompareTag("Player") && !collision.CompareTag("Untagged") && !collision.CompareTag("Ledge Grabbing"))
         {
-            var rb = collision.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            if (collision.CompareTag("Enemy"))
             {
-                print("u did it");
+                var enemy = collision.GetComponent<Enemy>();
+                if(enemy != null)
+                {
+                    enemy.velocityChangeTime = effectTime;
+                    enemy.velocityCoef = speedChangeCoef;
+                }
             }
-            isShooted = false;
-            rigidBody.velocity = Vector2.zero;
-            anim.SetTrigger("explode");
+            StartCoroutine(ExplodeBullet());
         }
+    }
+
+    private IEnumerator ExplodeBullet()
+    {
+        isShooted = false;
+        rigidBody.velocity = Vector2.zero;
+        anim.SetBool("isRecovered", false);
+        anim.SetTrigger("explode");
+        yield return new WaitForSeconds(explosionTime);
+        gameObject.SetActive(false);
     }
 }
