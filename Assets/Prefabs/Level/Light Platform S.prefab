@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8534715575850186890}
   - component: {fileID: 8534715575850186901}
   - component: {fileID: 8534715575850186900}
-  - component: {fileID: 938455291}
-  - component: {fileID: 938455290}
-  - component: {fileID: 938455289}
+  - component: {fileID: 1618308963}
+  - component: {fileID: 1747262013}
+  - component: {fileID: 1747262012}
   m_Layer: 6
   m_Name: Light Platform S
   m_TagString: Ground
@@ -110,7 +110,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &938455291
+--- !u!61 &1618308963
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8991928, y: 0.9153042}
   m_EdgeRadius: 0
---- !u!251 &938455290
+--- !u!251 &1747262013
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +155,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &938455289
+--- !u!114 &1747262012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   lightsOn: 0
   checkAreaScript: {fileID: 0}
   index: {fileID: 0}
-  MovingDown: 0
+  MovingDown: 1
   MovingUp: 0
 --- !u!1001 &3693393372727346576
 PrefabInstance:
