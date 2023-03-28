@@ -1,0 +1,843 @@
+fileFormatVersion: 2
+guid: 41fff4c308d80a143814a9b84445e89b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 22
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2990130862514a241a8afa6dce93bf6a
+      internalID: 367183157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775d5c6e90c3afa4fba11b484189f5c4
+      internalID: -1990786699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767b2ac5412322840a6c0cd7c91cd85d
+      internalID: 874724091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_3
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ad40bdec1340a449211909031a2616
+      internalID: 820453856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_4
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a66daf756147841bfae708d152a428
+      internalID: -1845443136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_5
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 588
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f98b5907cccc6547833a16033c8cf55
+      internalID: 1229144748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fcf76da4de7b44ba23a570266d2699
+      internalID: -850785392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e8ed042d2c4e24c97c4bf563d4fc69
+      internalID: -1244644964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_8
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd3b1fd26f37304bb14d967a5a111a7
+      internalID: 1823601259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_9
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8faafe084278bab4e821d7efbc55427c
+      internalID: -1242860335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_10
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612eaa0b79af02142819f13da9f583ce
+      internalID: -608360047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_11
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 441
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f8f6419593373408dd9fe28ed53014
+      internalID: 1100214820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8d83282583c4140a5f833df633ba2a
+      internalID: -1584702845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573cc329f6642bb40a802805a4506069
+      internalID: 282486692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_14
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edc4ce92bea26d4c95432f17d25043c
+      internalID: 517597441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_15
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b82ba89edc8984c8185566a003b618
+      internalID: 423463980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_16
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7fe3d0de3ff6d4cb283e1f132fb080
+      internalID: -565249626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_17
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 294
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607575c1a92f9594a9be3af56abd04e2
+      internalID: -1736461984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053ed0c2a36435946833699ab435c014
+      internalID: 1154213919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_19
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d3ba2b745700144b000e4b0af317cd
+      internalID: -1984906802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ef5fd8da2a74545b07244c1a1d4676
+      internalID: -550888984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_21
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d963b7e090c76b546bb4ac3c16c8eb87
+      internalID: 756633135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_22
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad446e98beb1df24aad0032022e42b1f
+      internalID: 104584673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_23
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 147
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f687f41d88341c54481a8138a18071e7
+      internalID: 1175945781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3759fedcc34195c479826b04ef7e818b
+      internalID: 2138469862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_25
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc2854bed8a7a24b8e191530fe41e74
+      internalID: 1554738883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_26
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e3d3279e51c4343a13fbad20c57e67
+      internalID: 1422619701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_27
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1f165e838c8474e959e49e7a25c6e2
+      internalID: 283180780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_28
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7473fd62a2b7f646b9c6ccfe0050cf7
+      internalID: -1124696581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MECRO251-1-BULLETS_29
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 159
+        height: 147
+      alignment: 9
+      pivot: {x: 0.53, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be1ab0152417c24c951d8e84f5ffce6
+      internalID: -903344355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MECRO251-1-BULLETS_19: -1984906802
+      MECRO251-1-BULLETS_9: -1242860335
+      MECRO251-1-BULLETS_16: -565249626
+      MECRO251-1-BULLETS_20: -550888984
+      MECRO251-1-BULLETS_27: 283180780
+      MECRO251-1-BULLETS_15: 423463980
+      MECRO251-1-BULLETS_10: -608360047
+      MECRO251-1-BULLETS_13: 282486692
+      MECRO251-1-BULLETS_29: -903344355
+      MECRO251-1-BULLETS_17: -1736461984
+      MECRO251-1-BULLETS_1: -1990786699
+      MECRO251-1-BULLETS_12: -1584702845
+      MECRO251-1-BULLETS_26: 1422619701
+      MECRO251-1-BULLETS_0: 367183157
+      MECRO251-1-BULLETS_23: 1175945781
+      MECRO251-1-BULLETS_2: 874724091
+      MECRO251-1-BULLETS_5: 1229144748
+      MECRO251-1-BULLETS_18: 1154213919
+      MECRO251-1-BULLETS_25: 1554738883
+      MECRO251-1-BULLETS_22: 104584673
+      MECRO251-1-BULLETS_7: -1244644964
+      MECRO251-1-BULLETS_6: -850785392
+      MECRO251-1-BULLETS_3: 820453856
+      MECRO251-1-BULLETS_11: 1100214820
+      MECRO251-1-BULLETS_21: 756633135
+      MECRO251-1-BULLETS_4: -1845443136
+      MECRO251-1-BULLETS_24: 2138469862
+      MECRO251-1-BULLETS_14: 517597441
+      MECRO251-1-BULLETS_8: 1823601259
+      MECRO251-1-BULLETS_28: -1124696581
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

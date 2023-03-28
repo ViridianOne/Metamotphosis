@@ -6,6 +6,8 @@ public class Detector30 : MonoBehaviour
 {
     private bool turnSwitch = false;
     [SerializeField] private bool isConvex;
+    [SerializeField] private Collider2D wall;
+    [SerializeField] private float gravityChangeCoef;
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
@@ -18,7 +20,6 @@ public class Detector30 : MonoBehaviour
     //        Player.instance.ceilCoef = !Player.instance.isVertical ? 1 : -1;
     //    }
     //}
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -33,6 +34,10 @@ public class Detector30 : MonoBehaviour
                     Player.instance.isOn30 = !Player.instance.isOn60;
                     Player.instance.isVertical = transform.localRotation.x == 0 ? Player.instance.isVertical : !Player.instance.isVertical;
                     Player.instance.ceilCoef = !Player.instance.isVertical ? 1 : -1;
+                    if (isConvex)
+                    {
+                        Player.instance.transform.position += new Vector3(Input.GetAxisRaw("Horizontal") * gravityChangeCoef, Input.GetAxisRaw("Vertical") * gravityChangeCoef, 0f);
+                    }
                     turnSwitch = true;
                 }
             }

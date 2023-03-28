@@ -12,7 +12,7 @@ public abstract class Player : MonoBehaviour
     private SpriteRenderer holderSprite;
 
     protected Animator anim;
-    protected bool isFacingRight;
+    protected bool isFacingRight = true;
 
     protected Collider2D playerCollider;
     [SerializeField] float respawnTime;
@@ -25,6 +25,7 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public bool isOn0 = true;
     [HideInInspector] public int ceilCoef = 1;
     [HideInInspector] public bool isVertical = false;
+    [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
 
     [Header("Physics")]
     protected Rigidbody2D rigidBody;
@@ -43,6 +44,7 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected float runAccelerationAmount;
     [SerializeField] protected float runDeccelerationAmount;
     [SerializeField] protected float accelerationInAir;
+    protected bool isInverted = false;
 
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
@@ -51,7 +53,7 @@ public abstract class Player : MonoBehaviour
     private Vector2 ledgePos1, ledgePos2;
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
-    [SerializeField] private Vector3 difference1, difference2, difference3, difference4;
+    [SerializeField] protected Vector3 difference1, difference2, difference3, difference4;
     public Vector2 movingPlatDif = Vector2.zero;
     protected bool isClimbing = false;
     [SerializeField] protected Collider2D ledgeDecetror;
@@ -65,7 +67,7 @@ public abstract class Player : MonoBehaviour
         holderSprite = holder.GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         gravity = rigidBody.gravityScale;
@@ -87,7 +89,7 @@ public abstract class Player : MonoBehaviour
         }
         if (ledgeDetected && !canClimbLedge)
         {
-            rigidBody.gravityScale = gravity;
+            rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
             canClimbLedge = true;
             anim.SetBool("isGrabbed", true);
         }
@@ -181,7 +183,7 @@ public abstract class Player : MonoBehaviour
     public void MiniJump(float miniJumpForce) 
     {
         rigidBody.velocity = Vector2.zero;
-        rigidBody.AddForce(Vector2.up * miniJumpForce, ForceMode2D.Impulse);
+        rigidBody.AddForce((isInverted ? Vector2.down : Vector2.up) * miniJumpForce, ForceMode2D.Impulse);
     }
 
     public void DamagePlayer()
@@ -201,7 +203,7 @@ public abstract class Player : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        rigidBody.gravityScale = 4;
+        rigidBody.gravityScale = 4 * (isInverted ? -1 : 1);
         yield return new WaitForSeconds(0.3f);
         rigidBody.gravityScale = 0;
         yield return new WaitForSeconds(respawnTime - 0.3f);
@@ -211,6 +213,7 @@ public abstract class Player : MonoBehaviour
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
             isActive = true;
+            isInverted = false;
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
         }
@@ -254,5 +257,10 @@ public abstract class Player : MonoBehaviour
 
         runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
         runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+    }
+
+    public Vector2 GetVelocity()
+    {
+        return rigidBody.velocity;
     }
 }

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Mecro341 : Player
 {
-    [Header("Jumping")]
-    private bool isGrounded;
+    [Header("Physics")]
+    private bool isGrounded, isOnNonMetalGround;
     [SerializeField] private Transform wheelPos;
     [SerializeField] private float wheelRadius;
     [SerializeField] private Vector2 wheelDetectorSize;
-    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask groundMask, nonMetalMask;
     [SerializeField] private Vector3 rotationDirection;
     [SerializeField] private Vector2 horizontalGravityDelta, verticalGravityDelta;
     [SerializeField] private float counteractingForce, originalForce;
     private float force = 0;
     private float spriteAngle = 0;
     private float xGravity;
+    public float deffectTime;
 
-    [Header("PLatform Pull Up")]
-    [SerializeField] private Vector2 ledgePlatPos1, ledgePlatPos2;
-    [SerializeField] private Vector2 diffPlat1, diffPlat2, diffPlat3, diffPlat4;
-    [SerializeField] private float platformGrabbingTime;
-    private float platformGrabbingTimer;
+    //[Header("PLatform Pull Up")]
+    //[SerializeField] private Vector2 ledgePlatPos1, ledgePlatPos2;
+    //[SerializeField] private Vector2 diffPlat1, diffPlat2, diffPlat3, diffPlat4;
+    //[SerializeField] private float platformGrabbingTime;
+    //private float platformGrabbingTimer;
 
     void Update()
     {
@@ -39,7 +40,7 @@ public class Mecro341 : Player
                     else if(isOn60)
                     {
                         force = counteractingForce;
-                        spriteAngle = 60;
+                        spriteAngle = 30;
                     }
                     else
                     {
@@ -62,31 +63,37 @@ public class Mecro341 : Player
                 {
                     rigidBody.gravityScale = 0;
                     moveInput = Input.GetAxisRaw("Vertical");
-                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
-                    if(isOn90)
-                        holder.transform.rotation = Quaternion.Euler(0, 0, 90 * ceilCoef);
-                    else if (isOn60)
-                        holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef > 0 ? 0 : 180);
+                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
+                    //if(isOn90)
+                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, 90 * ceilCoef);
+                    //else if (isOn60)
+                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef > 0 ? 0 : 180);
                     if(ceilCoef > 0)
                         xGravity = rigidBody.velocity.x <= counteractingForce ? counteractingForce : 5;
                     else
                         xGravity = rigidBody.velocity.x >= counteractingForce * ceilCoef ? counteractingForce : 4;
-                    rigidBody.velocity = new Vector2(xGravity * ceilCoef, rigidBody.velocity.y);
+                    rigidBody.velocity = new Vector2(xGravity * ceilCoef, enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3: rigidBody.velocity.y);
                 }
                 else
                 {
                     rigidBody.gravityScale = 4 * ceilCoef;
                     moveInput = Input.GetAxisRaw("Horizontal");
-                    transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
-                    holder.transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
-                    rigidBody.velocity = new Vector2(rigidBody.velocity.x, rigidBody.velocity.y);
+                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
+                    //holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef == 1 ? 0 : 180);
+                    rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
                 }
                 if (moveInput == 0 && !isOn0)
+                {
                     rigidBody.velocity = Vector2.zero;
+                }
                 anim.SetFloat("Rotation", spriteAngle);
-
                 isGrounded = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, groundMask);
+                isOnNonMetalGround = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, nonMetalMask) & moveInput != 0;
                 UpdateMovementAnimation();
+                if(isOnNonMetalGround)
+                {
+                    StartCoroutine(TakeDeffect());
+                }
             }
             UpdateLedegGrabbing();
             //UpdatePlatformGrabbing();
@@ -152,7 +159,13 @@ public class Mecro341 : Player
 
     public override void DisableAbility()
     {
-        //lightSwitcher = false;
+        isAbilityActivated = false;
+        isOn0 = true;
+        isOn30 = false;
+        isOn60 = false;
+        isOn90 = false;
+        gravity = 4;
+        transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
     }
 
     protected override void Move()
@@ -216,72 +229,13 @@ public class Mecro341 : Player
         Gizmos.DrawWireSphere(wheelPos.position, wheelRadius);
     }
 
-    //public void GrabPlatform(Vector2 grabPos, bool isRight)
-    //{
-    //    isAbleToMove = false;
-    //    isTouchingLedge = true;
-    //    if (!isRight)
-    //    {
-    //        ledgePlatPos1 = grabPos - diffPlat1;
-    //        ledgePlatPos2 = grabPos + diffPlat2;
-    //    }
-    //    else
-    //    {
-    //        ledgePlatPos1 = grabPos - diffPlat3;
-    //        ledgePlatPos2 = grabPos + diffPlat4;
-    //    }
-    //}
-
-    //private void UpdatePlatformGrabbing()
-    //{
-    //    if (isTouchingLedge && !ledgeDetected)
-    //    {
-    //        ledgeDetected = true;
-    //    }
-    //    if (ledgeDetected && !canClimbLedge)
-    //    {
-    //        rigidBody.gravityScale = gravity;
-    //        canClimbLedge = true;
-    //        anim.SetFloat("wallCoef", 1);
-    //        anim.SetBool("isGrabbed", true);
-    //    }
-    //    if (canClimbLedge)
-    //    {
-    //        transform.position = ledgePlatPos1;
-    //        if (Input.GetButtonDown("Jump"))
-    //        {
-    //            isClimbing = true;
-    //        }
-    //        else if (Input.GetButtonDown("Fire3"))
-    //        {
-    //            CancelLedegeGrabbing();
-    //        }
-    //        if (isClimbing)
-    //        {
-    //            anim.SetBool("isLedgeGrabbing", true);
-    //            anim.SetBool("isGrabbed", false);
-    //            if (platformGrabbingTimer <= 0)
-    //                platformGrabbingTimer = platformGrabbingTime;
-    //            else
-    //            {
-    //                platformGrabbingTimer -= Time.deltaTime;
-    //            }
-    //            if (platformGrabbingTimer <= 0)
-    //                FinishPlatformGrabbing();
-    //        }
-    //    }
-    //}
-
-    //private void FinishPlatformGrabbing()
-    //{
-    //    canClimbLedge = false;
-    //    isClimbing = false;
-    //    transform.position = ledgePlatPos2;
-    //    rigidBody.velocity = Vector2.zero;
-    //    ledgeDetected = false;
-    //    isAbleToMove = true;
-    //    isTouchingLedge = false;
-    //    anim.SetBool("isLedgeGrabbing", false);
-    //    anim.SetFloat("wallCoef", 0);
-    //}
+    private IEnumerator TakeDeffect()
+    {
+        isActive = false;
+        rigidBody.velocity = Vector2.zero;
+        moveInput = 0;
+        anim.SetTrigger("deffect");
+        yield return new WaitForSeconds(deffectTime);
+        isActive = true;
+    }
 }

@@ -42,7 +42,7 @@ public class PlatformWithLight : MonoBehaviour
                 nextPos = transform.position;
             }
 
-            if (checkAreaScript.StartMoving() == true && lightsOn == true)
+            if (checkAreaScript.StartMoving() && lightsOn)
             {
                 if (transform.position == pos1.position || (lightsOn && MovingDown))
                 {

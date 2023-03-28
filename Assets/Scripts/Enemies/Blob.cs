@@ -65,19 +65,6 @@ public class Blob : Enemy
         }
         if (isActive)
         {
-            //wasOnGround = isGrounded;
-            //isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
-            //if (!wasOnGround && isGrounded)
-            //{
-            //    rigidBody.gravityScale = gravity;
-            //    betweenJumpTimer = timeBetweenJump;
-            //    jumpTimer = 0f;
-            //    isJumpCharged = false;
-            //    StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
-            //}
-
-            //isOnGround = Physics2D.OverlapBox(downGroundPos.position, downGroundSize, 0f, groundMask);
-            //isGroundInFront = Physics2D.OverlapBox(forwardGroundPos.position, forwardGroundSize, 0f, groundMask);
             isPlayerNear = Physics2D.OverlapBox(playerDetectorPos, playerDetectorSize, 0f, masksAbleToDamage);
 
             //if (isGroundInFront)
@@ -96,13 +83,6 @@ public class Blob : Enemy
             }
             if (stateChangeTimer > 0)
                 stateChangeTimer -= Time.deltaTime;
-            //if(state == EnemyState.Moving && !isOnGround && !isGroundInFront)
-            //{
-            //    if(Player.instance.transform != null && CheckPositionRight())
-            //        ChangeDirection(Directions.left, -1);
-            //    if(Player.instance.transform != null && CheckPositionLeft())
-            //        ChangeDirection(Directions.right, 1);
-            //}
             if (state == EnemyState.Moving)
             {
                 if (Player.instance.transform != null && CheckPositionRight()
@@ -126,6 +106,8 @@ public class Blob : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
+            if (velocityCoef != 1)
+                StartCoroutine(ChangeVelocity(velocityChangeTime));
         }
         UpdateMovementAnimation();
     }
@@ -162,7 +144,7 @@ public class Blob : Enemy
 
     protected override void Move()
     {
-        float targetSpeed = directionCoef * moveSpeed;
+        float targetSpeed = directionCoef * moveSpeed * velocityCoef;
         float accelerate = 0;
         if (!isGrounded)
             accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount *accelerationInAir : runDeccelerationAmount * accelerationInAir;
