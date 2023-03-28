@@ -205,8 +205,17 @@ MonoBehaviour:
   holder: {fileID: 5772419249600110069}
   respawnTime: 2
   respawnPoint: {fileID: 0}
-  lightSwitcher: 0
+  isAbilityActivated: 0
   isOnMovingPlatform: 0
+  isOnArcPlatform: 0
+  isOn30: 0
+  isOn60: 0
+  isOn90: 0
+  isOn0: 1
+  ceilCoef: 1
+  isVertical: 0
+  enableVelocityRight: 0
+  enableVelocityLeft: 0
   minGravity: 0
   maxGravity: 0
   gravityMultiplier: 0
@@ -231,7 +240,7 @@ MonoBehaviour:
   feetDetectorSize: {x: 1, y: 1}
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   jumpForce: 11
   jumpDelay: 0.05
   acceleration: 5

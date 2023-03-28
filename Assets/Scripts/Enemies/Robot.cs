@@ -63,9 +63,11 @@ public class Robot : Enemy
             canDamagePlayer = Physics2D.OverlapBox(attackPos, attackSize, 0f, masksAbleToDamage);
             damagePos.x = transform.position.x;
             isDamaged = Physics2D.OverlapBox(damagePos, damageSize, 0f, masksAbleToDamage);
-            if (isDamaged || isDamaged && canDamagePlayer)
+            if ((isDamaged || isDamaged && canDamagePlayer) 
+                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
                 TakeDamage();
-            if (canDamagePlayer)
+            if (canDamagePlayer 
+                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());
             }
