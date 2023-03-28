@@ -670,6 +670,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6854522176099007001, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: PossibleStates.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854522176099007001, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: PossibleStates.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854522176099007001, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: PossibleStates.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854522176099007001, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: PossibleStates.Array.data[5]
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
 --- !u!1 &416395484
@@ -2958,6 +2974,14 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 835656000}
+    - target: {fileID: 350467939650575433, guid: 2a1feca9a2161624db1e759d8f88c304, type: 3}
+      propertyPath: isMecroUnlocked.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350467939650575433, guid: 2a1feca9a2161624db1e759d8f88c304, type: 3}
+      propertyPath: isMecroUnlocked.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 350467939650575438, guid: 2a1feca9a2161624db1e759d8f88c304, type: 3}
       propertyPath: m_Name
       value: Mecro Select Manager
