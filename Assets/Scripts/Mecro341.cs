@@ -159,6 +159,7 @@ public class Mecro341 : Player
 
     public override void DisableAbility()
     {
+        isAbilityActivated = false;
         isOn0 = true;
         isOn30 = false;
         isOn60 = false;
