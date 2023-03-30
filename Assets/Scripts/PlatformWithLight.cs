@@ -30,7 +30,7 @@ public class PlatformWithLight : MonoBehaviour
             if (index.instantiatedMecros[index.GetIndex()].isAbilityActivated)
             {
                 lightsOn = index.instantiatedMecros[index.GetIndex()].isAbilityActivated;
-                anim.SetBool("isSleeping", false);
+                //anim.SetBool("isSleeping", false);
                 //anim.SetTrigger("impulse");
                 nextPos = transform.position;
             }
@@ -38,7 +38,7 @@ public class PlatformWithLight : MonoBehaviour
             {
                 lightsOn = false;
                 //anim.SetBool("impulse", false);
-                anim.SetBool("isSleeping", true);
+                //anim.SetBool("isSleeping", true);
                 nextPos = transform.position;
             }
 
@@ -61,7 +61,7 @@ public class PlatformWithLight : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isSleeping",true);
+            //anim.SetBool("isSleeping",true);
         }
     }
 
@@ -72,7 +72,7 @@ public class PlatformWithLight : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        anim.SetBool("isPlayerOnPlatform", true);
+        //anim.SetBool("isPlayerOnPlatform", true);
         if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
         {
             Player.instance.isOnMovingPlatform = true;
@@ -90,7 +90,7 @@ public class PlatformWithLight : MonoBehaviour
         if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             collision.collider.transform.SetParent(null);
-            anim.SetBool("isPlayerOnPlatform", false);
+            //anim.SetBool("isPlayerOnPlatform", false);
         }
     }
 }
