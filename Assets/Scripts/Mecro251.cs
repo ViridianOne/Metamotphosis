@@ -22,6 +22,8 @@ public class Mecro251 : Player
     [SerializeField] private Transform bulletStartPos;
     [SerializeField] private float yInput;
     private Directions direction;
+    private float angle;
+    [SerializeField] private Vector3[] bulletStartPositions;
 
     protected override void Start()
     {
@@ -247,17 +249,20 @@ public class Mecro251 : Player
     private IEnumerator Shoot(BulletType bulletType)
     {
         isAbleToMove = false;
-        anim.SetFloat("speedCoef", (int)bulletType);
-        anim.SetTrigger("shoot");
         rigidBody.velocity = Vector2.zero;
         direction = GetDirection();
+        angle = GetAttackAngle(direction);
+        anim.SetFloat("angle", angle);
+        anim.SetFloat("speedCoef", (int)bulletType);
+        anim.SetTrigger("shoot");
         moveInput = 0;
         if (!isGrounded)
         {
             rigidBody.gravityScale = 0;
         }
         yield return new WaitForSeconds(timeBeforeShoot);
-        if(bulletType == BulletType.SpeedUp)
+        bulletStartPos.localPosition = bulletStartPositions[(int)direction];
+        if (bulletType == BulletType.SpeedUp)
         {
             speedUpBullet.transform.position = bulletStartPos.position;
             speedUpBullet.gameObject.SetActive(true);
@@ -280,8 +285,21 @@ public class Mecro251 : Player
         {
             return yInput > 0 ? Directions.up : Directions.down;
         }
-        else if (moveInput < 0)
+        else if (!isFacingRight)
             return Directions.left;
         return Directions.right;
+    }
+
+    private float GetAttackAngle(Directions dir)
+    {
+        switch(dir)
+        {
+            case Directions.up:
+                return 90;
+            case Directions.down:
+                return -90;
+            default:
+                return 0;
+        }
     }
 }

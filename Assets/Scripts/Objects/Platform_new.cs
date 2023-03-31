@@ -8,46 +8,69 @@ public class Platform_new : MonoBehaviour
     public float speed;
     public Transform startPos;
     private Vector3 nextPos;
-    [SerializeField] private Animator anim;
+    private Animator anim;
     public bool isSleeping;
+    private bool lightsOn;
+    [SerializeField] private Vector2 activeZonePos, activeZoneSize;
+    [SerializeField] private LayerMask playerMask;
+    private bool isActiveZone;
+    [SerializeField] private int animationLayer;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        nextPos = startPos.position;
-        anim.SetFloat("sleepingCoef", 0);
-        anim.SetBool("isSleeping", false);
+        nextPos = pos1.position;
+        if (animationLayer != 1)
+        {
+            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(animationLayer, 100);
+        }
+        anim.SetFloat("sleepingCoef", isSleeping ? 1 : 0);
+        anim.SetBool("isSleeping", isSleeping);
+        lightsOn = !isSleeping;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (transform.position == pos1.position)
+        isActiveZone = Physics2D.OverlapBox(activeZonePos, activeZoneSize, 0, playerMask);
+        if(isActiveZone && isSleeping && MecroSelectManager.instance.GetIndex() == 0)
         {
-            nextPos = pos2.position;
+            lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
+            anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
+            anim.SetBool("isSleeping", !lightsOn);
         }
-        if (transform.position == pos2.position)
+        if (isActiveZone && lightsOn)
         {
-            nextPos = pos1.position;
+            if (transform.position == pos1.position || nextPos == pos2.position)
+            {
+                nextPos = pos2.position;
+            }
+            if (transform.position == pos2.position || nextPos == pos1.position)
+            {
+                nextPos = pos1.position;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(activeZonePos, activeZoneSize);
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             anim.SetTrigger("impulse");
-            anim.SetBool("isPlayerOnPlatform", true);
+            anim.SetBool("isPlayerOnPlatform", lightsOn);
             if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
             {
                 Player.instance.isOnMovingPlatform = true;

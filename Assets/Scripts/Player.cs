@@ -263,4 +263,9 @@ public abstract class Player : MonoBehaviour
     {
         return rigidBody.velocity;
     }
+
+    public void AddJumpForce(float jumpForceCoef)
+    {
+        rigidBody.AddForce(Vector2.up * jumpForceCoef, ForceMode2D.Impulse);
+    }
 }
