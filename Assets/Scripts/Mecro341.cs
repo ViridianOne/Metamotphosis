@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mecro341 : Player
 {
     [Header("Physics")]
-    private bool isGrounded, isOnNonMetalGround;
+    private bool isOnNonMetalGround;
     [SerializeField] private Transform wheelPos;
     [SerializeField] private float wheelRadius;
     [SerializeField] private Vector2 wheelDetectorSize;

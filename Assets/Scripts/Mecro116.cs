@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mecro116 : Player
 {
     [Header("Jumping")]
-    private bool isGrounded;
     private bool wasOnGround;
     private float jumpTimer;
     [SerializeField] private float jumpForce;

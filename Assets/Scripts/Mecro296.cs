@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mecro296 : Player
 {
     [Header("Jumping")]
-    private bool isGrounded;
     private bool wasOnGround;
     private bool isCeilingHitted; 
     [SerializeField] private Transform feetPos;

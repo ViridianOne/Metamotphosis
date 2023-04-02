@@ -28,6 +28,7 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
 
     [Header("Physics")]
+    protected bool isGrounded;
     protected Rigidbody2D rigidBody;
     protected float gravity;
     [SerializeField] protected float minGravity;
@@ -268,4 +269,6 @@ public abstract class Player : MonoBehaviour
     {
         rigidBody.AddForce(Vector2.up * jumpForceCoef, ForceMode2D.Impulse);
     }
+
+    public bool IsGrounded { get => isGrounded; }
 }

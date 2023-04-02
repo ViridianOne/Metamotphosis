@@ -7,7 +7,6 @@ public class Mecro206 : Player
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
     [SerializeField] private LayerMask groundMask;
-    private bool isGrounded;
     private bool wasOnGround;
 
     public float grav;
