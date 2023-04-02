@@ -28,6 +28,7 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
 
     [Header("Physics")]
+    protected bool isGrounded;
     protected Rigidbody2D rigidBody;
     protected float gravity;
     [SerializeField] protected float minGravity;
@@ -67,7 +68,7 @@ public abstract class Player : MonoBehaviour
         holderSprite = holder.GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         gravity = rigidBody.gravityScale;
@@ -263,4 +264,11 @@ public abstract class Player : MonoBehaviour
     {
         return rigidBody.velocity;
     }
+
+    public void AddJumpForce(float jumpForceCoef)
+    {
+        rigidBody.AddForce(Vector2.up * jumpForceCoef, ForceMode2D.Impulse);
+    }
+
+    public bool IsGrounded { get => isGrounded; }
 }

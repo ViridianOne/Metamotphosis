@@ -31,12 +31,12 @@ public class Trampolines : MonoBehaviour
         if (/*Input.GetButtonDown("Fire1") && */indexTrampoline.GetIndex() == 0)
         {
             lightOn = indexTrampoline.instantiatedMecros[indexTrampoline.GetIndex()].isAbilityActivated;
-            anim.SetBool("isOn", lightOn);
+            //anim.SetBool("isOn", lightOn);
         }
         else
         {
             lightOn = false;
-            anim.SetBool("isOn", lightOn);
+            //anim.SetBool("isOn", lightOn);
         }
     }
 }

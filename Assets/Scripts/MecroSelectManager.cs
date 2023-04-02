@@ -14,7 +14,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
     [HideInInspector] public Player[] instantiatedMecros;
-    [SerializeField] public bool[] isMecroUnlocked = { true, false, false, false, false, false };
+    [SerializeField] public bool[] isMecroUnlocked = { true, false, false, false, false, false, false };
 
     public bool isChanged;
 
@@ -83,7 +83,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
         }
     }
 
-    private void SelectMecro(MecroStates mecroState)
+    public void SelectMecro(MecroStates mecroState)
     {
         if (isMecroUnlocked[(int)mecroState] && currentMecro != mecroState)
         {

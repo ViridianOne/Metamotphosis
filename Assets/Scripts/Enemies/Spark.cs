@@ -72,6 +72,8 @@ public class Spark : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
+            if (velocityCoef != 1)
+                StartCoroutine(ChangeVelocity(velocityChangeTime));
         }
     }
 
@@ -91,7 +93,7 @@ public class Spark : Enemy
     {
         currentSpeed = rigidBody.velocity.magnitude * moveInput;
 
-        var targetSpeed = moveInput * moveSpeed;
+        var targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate;
 
         if (Mathf.Abs(currentSpeed) > Mathf.Abs(targetSpeed)

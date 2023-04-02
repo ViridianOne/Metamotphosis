@@ -20,6 +20,8 @@ public abstract class Enemy : MonoBehaviour
     protected Rigidbody2D rigidBody;
     protected Collider2D enemyCollider;
     protected EnemyState state;
+    [HideInInspector] public float velocityCoef;
+    [HideInInspector] public float velocityChangeTime;
 
     [SerializeField] private float damageTime;
     [SerializeField] protected LayerMask masksAbleToDamage;
@@ -80,4 +82,10 @@ public abstract class Enemy : MonoBehaviour
     }
 
     protected abstract IEnumerator DamagePlayer();
+
+    public IEnumerator ChangeVelocity(float effectTime)
+    {
+        yield return new WaitForSeconds(effectTime);
+        velocityCoef = 1;
+    }
 }

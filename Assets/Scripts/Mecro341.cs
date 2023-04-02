@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mecro341 : Player
 {
     [Header("Physics")]
-    private bool isGrounded, isOnNonMetalGround;
+    private bool isOnNonMetalGround;
     [SerializeField] private Transform wheelPos;
     [SerializeField] private float wheelRadius;
     [SerializeField] private Vector2 wheelDetectorSize;
@@ -159,6 +159,7 @@ public class Mecro341 : Player
 
     public override void DisableAbility()
     {
+        isAbilityActivated = false;
         isOn0 = true;
         isOn30 = false;
         isOn60 = false;

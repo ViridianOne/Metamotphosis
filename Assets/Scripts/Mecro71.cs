@@ -5,7 +5,6 @@ using UnityEngine;
 public class Mecro71 : Player
 {
     [Header("Jumping")]
-    private bool isGrounded;
     //[SerializeField] private Transform feetPos;
     [SerializeField] private float radius;
     [SerializeField] private Vector2 feetDetectorSize;

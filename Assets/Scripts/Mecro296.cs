@@ -5,13 +5,12 @@ using UnityEngine;
 public class Mecro296 : Player
 {
     [Header("Jumping")]
-    private bool isGrounded;
     private bool wasOnGround;
     private bool isCeilingHitted; 
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
     [SerializeField] private float radius;
-    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask groundMask, noPlatfromMask;
     [SerializeField] private Transform headPos;
     [SerializeField] private Vector2 headDetectorSize;
     //public GameObject holder;
@@ -50,7 +49,7 @@ public class Mecro296 : Player
 
                 if (!isCeilingHitted)
                 {
-                    isCeilingHitted = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);
+                    isCeilingHitted = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, noPlatfromMask);
                     if (isCeilingHitted)
                         jumpTimer = 0;
                 }
@@ -70,7 +69,7 @@ public class Mecro296 : Player
                     AudioManager.instance.Stop(7);
                 }
 
-                if (isGrounded && jumpTimer > 0f)
+                if (isGrounded && isChargingJump && jumpTimer > 0f)
                     jumpBarBehaviour.ToggleJumpSlider(true);
                 else
                 {
@@ -238,5 +237,11 @@ public class Mecro296 : Player
         ledgeDecetror.enabled = false;
         yield return new WaitForSeconds(ledgeCancelTime);
         ledgeDecetror.enabled = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(feetPos.position, feetDetectorSize);
     }
 }
