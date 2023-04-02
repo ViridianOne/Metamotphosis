@@ -28,7 +28,7 @@ public class Magnet : Enemy
     [SerializeField] private float forceMagnitude = -30f;
     [SerializeField] private float maxForceMagnitude = -50f;
     [SerializeField] private GameObject pointEffector;
-    private PointEffector2D pointEffectorComponent;
+    [SerializeField] private PointEffector2D pointEffectorComponent;
 
     [Header("Damage")]
     private bool isDamaged;
@@ -39,7 +39,7 @@ public class Magnet : Enemy
     private void Update()
     {
         if (isActive)
-        {   
+        {
             if (stateChangeTimer > 0f)
             {
                 stateChangeTimer -= Time.deltaTime;
@@ -59,7 +59,6 @@ public class Magnet : Enemy
                         rigidBody.gravityScale = 4f * (gravityDirection == Directions.down ? 1f : -1f);
                     }
                     transform.rotation = rotations[(int)gravityDirection];
-                    pointEffectorComponent = pointEffector.GetComponent<PointEffector2D>();
                     isGravitySet = true;
                 }
 
@@ -101,7 +100,7 @@ public class Magnet : Enemy
             }
 
             isDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + damagePos.x,
-                transform.position.y + damagePos.y), damageSize, 0f, masksAbleToDamage);
+                transform.position.y + damagePos.y), damageSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksAbleToDamage);
             if (isDamaged && state != EnemyState.Attack
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
@@ -109,8 +108,8 @@ public class Magnet : Enemy
             }
 
             canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
-            if (canDamagePlayer && state == EnemyState.Attack
+                transform.position.y + attackPos.y), attackSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksAbleToDamage);
+            if (canDamagePlayer
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());

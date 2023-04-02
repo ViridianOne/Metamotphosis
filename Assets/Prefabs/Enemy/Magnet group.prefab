@@ -306,8 +306,8 @@ MonoBehaviour:
   masksAbleToDamage:
     serializedVersion: 2
     m_Bits: 128
-  attackPos: {x: 0, y: 1}
-  attackSize: {x: 1.4, y: 0.7}
+  attackPos: {x: 0, y: 0}
+  attackSize: {x: 1.1, y: 2.1}
   gravityScale: 4
   gravityDirection: 2
   leftBottomPos: {fileID: 2616133537765414077}
@@ -321,10 +321,11 @@ MonoBehaviour:
   runDeccelerationAmount: 25
   attackTime: 3
   forceMagnitude: -30
-  maxForceMagnitude: -50
+  maxForceMagnitude: -30
   pointEffector: {fileID: 5917705247968815851}
-  damagePos: {x: 0, y: 0}
-  damageSize: {x: 1.1, y: 2.1}
+  pointEffectorComponent: {fileID: 2337364971231209555}
+  damagePos: {x: 0, y: 1}
+  damageSize: {x: 1.4, y: 0.7}
 --- !u!1 &5917705247968815851
 GameObject:
   m_ObjectHideFlags: 0
