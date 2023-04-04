@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    protected Animator anim;
+    [HideInInspector] public Animator anim;
     [SerializeField] protected GameObject holder;
-    private SpriteRenderer holderSprite;
+    [HideInInspector] public SpriteRenderer holderSprite;
     private Color spriteColor;
     private bool isFaded;
     [SerializeField] private float fadingTime;
@@ -87,5 +87,7 @@ public abstract class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(effectTime);
         velocityCoef = 1;
+        anim.speed = 1;
+        holderSprite.color = new Color(1, 1, 1, 1);
     }
 }

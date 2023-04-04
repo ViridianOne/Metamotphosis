@@ -340,7 +340,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: 10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -487,7 +487,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!1 &165950184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &855456982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &859218734
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -2574,7 +2574,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: -10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &953730768
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -2816,7 +2816,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: -10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -4279,7 +4279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1354359600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4531,11 +4531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2911980974421858469, guid: 02269ee8b76ca8648bd1e5a040ba8c54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.07
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 2911980974421858469, guid: 02269ee8b76ca8648bd1e5a040ba8c54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.08
+      value: 7.54
       objectReference: {fileID: 0}
     - target: {fileID: 2911980974421858469, guid: 02269ee8b76ca8648bd1e5a040ba8c54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &1634646791
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -4879,7 +4879,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: 10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -5383,7 +5383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713585833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.2, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5429,7 +5429,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &1740367143
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -5441,7 +5441,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: 10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -5703,7 +5703,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &1852876462
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -5715,7 +5715,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: -10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -6052,7 +6052,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &1935844108
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -6064,7 +6064,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: -10
   m_ForceVariation: 0
   m_DistanceScale: 1
@@ -6298,7 +6298,7 @@ MonoBehaviour:
   zone60Size: {x: 2, y: 3}
   magnetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!250 &2012744118
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -6310,7 +6310,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   m_ForceMagnitude: 10
   m_ForceVariation: 0
   m_DistanceScale: 1

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 6016499693783302896}
   m_Layer: 13
   m_Name: Platform
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   pos2: {fileID: 6016499694112348919}
   speed: 3
   startPos: {fileID: 6016499694112348919}
+  anim: {fileID: 0}
   isSleeping: 1
   activeZonePos: {x: 0, y: 0}
   activeZoneSize: {x: 32, y: 18}
@@ -207,6 +208,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   animationLayer: 0
+  velocityChangeTime: 0
+  velocityCoef: 0
+  sprite: {fileID: 0}
 --- !u!1 &6016499693953035634
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class Bullet251 : MonoBehaviour
     [SerializeField] private BulletType type;
     [SerializeField] private float explosionTime, effectTime;
     [SerializeField] private float speedChangeCoef;
+    [SerializeField] private Color changedColor;
 
     private void Awake()
     {
@@ -109,6 +110,19 @@ public class Bullet251 : MonoBehaviour
                 {
                     enemy.velocityChangeTime = effectTime;
                     enemy.velocityCoef = speedChangeCoef;
+                    enemy.anim.speed = speedChangeCoef;
+                    enemy.holderSprite.color = changedColor;
+                }
+            }
+            else if(collision.CompareTag("Platform"))
+            {
+                var platfrom = collision.GetComponent<Platform_new>();
+                if(platfrom != null)
+                {
+                    platfrom.velocityChangeTime = effectTime;
+                    platfrom.velocityCoef = speedChangeCoef;
+                    platfrom.anim.speed = speedChangeCoef;
+                    platfrom.sprite.color = changedColor;
                 }
             }
             StartCoroutine(ExplodeBullet());

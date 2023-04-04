@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5374912993229767356}
   - component: {fileID: 5374912993229767357}
   - component: {fileID: 5374912993229767358}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Fast Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.65
 --- !u!50 &5374912993229767357
 Rigidbody2D:
   serializedVersion: 4
@@ -166,4 +166,5 @@ MonoBehaviour:
   type: 1
   explosionTime: 0.6
   effectTime: 3
-  speedChangeCoef: 4
+  speedChangeCoef: 3
+  changedColor: {r: 0.8490566, g: 0.2830189, b: 0, a: 0.49803922}
