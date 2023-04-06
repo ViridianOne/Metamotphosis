@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Platform_new : MonoBehaviour
 {
+    [SerializeField] private bool isMoving;
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
@@ -47,7 +48,7 @@ public class Platform_new : MonoBehaviour
             anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
             anim.SetBool("isSleeping", !lightsOn);
         }
-        if (isActiveZone && lightsOn)
+        if (isMoving && isActiveZone && lightsOn)
         {
             if (transform.position == pos1.position || nextPos == pos2.position)
             {

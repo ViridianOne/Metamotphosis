@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814f5df1fc25a2748b0f85359f7abe19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
   pos1: {fileID: 6016499692852912017}
   pos2: {fileID: 6016499694112348919}
   speed: 3
@@ -207,7 +208,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  animationLayer: 0
+  animationLayer: 1
   velocityChangeTime: 0
   velocityCoef: 0
   sprite: {fileID: 0}
