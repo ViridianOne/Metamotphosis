@@ -34,7 +34,7 @@ public class FallingPlatform : MonoBehaviour
             timeRemainingBeforeRespawning = 15;
             playerTouchedPlatform = false;
         }
-        if (playerTouchedPlatform == false && timeRemaining<=0)
+        if (timeRemaining<=0)
         {
             if (timeRemainingBeforeRespawning > 0)
             { 

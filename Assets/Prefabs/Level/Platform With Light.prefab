@@ -288,6 +288,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1233418671276010406}
     m_Modifications:
+    - target: {fileID: 1747262012, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: pos1
+      value: 
+      objectReference: {fileID: 6874583001284571081}
+    - target: {fileID: 1747262012, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: pos2
+      value: 
+      objectReference: {fileID: 1762793782891800699}
+    - target: {fileID: 1747262012, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 6874583001284571081}
+    - target: {fileID: 1747262012, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: checkAreaScript
+      value: 
+      objectReference: {fileID: 4289785284656438448}
+    - target: {fileID: 1203139744813003179, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843324202147571081, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8534715575850186890, guid: 7f098e1d27f73ec4d82acf640014d6e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -377,7 +401,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 1.5}
+    oldSize: {x: 4, y: 1.5}
     newSize: {x: 3, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -422,3 +446,7 @@ MonoBehaviour:
   speed: 1
   startPos: {fileID: 6874583001284571081}
   lightsOn: 0
+  checkAreaScript: {fileID: 0}
+  index: {fileID: 0}
+  MovingDown: 0
+  MovingUp: 0
