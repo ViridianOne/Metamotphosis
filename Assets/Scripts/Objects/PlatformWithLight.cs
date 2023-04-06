@@ -30,7 +30,7 @@ public class PlatformWithLight : MonoBehaviour
             if (index.instantiatedMecros[index.GetIndex()].isAbilityActivated)
             {
                 lightsOn = index.instantiatedMecros[index.GetIndex()].isAbilityActivated;
-                //anim.SetBool("isSleeping", false);
+                anim.SetBool("isSleeping", false);
                 //anim.SetTrigger("impulse");
                 nextPos = transform.position;
             }
@@ -38,7 +38,7 @@ public class PlatformWithLight : MonoBehaviour
             {
                 lightsOn = false;
                 //anim.SetBool("impulse", false);
-                //anim.SetBool("isSleeping", true);
+                anim.SetBool("isSleeping", true);
                 nextPos = transform.position;
             }
 
