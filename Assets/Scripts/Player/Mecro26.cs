@@ -119,11 +119,19 @@ public class Mecro26 : Player
 
     private void UpdateMovementAnimation()
     {
-        if (moveInput > 0f)
+        /*if (moveInput > 0f)
         {
             anim.SetBool("isMoving", true);
         }
         else if (moveInput < 0f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }*/
+        if (Mathf.Abs(rigidBody.velocity.x) > 1)
         {
             anim.SetBool("isMoving", true);
         }
@@ -226,10 +234,16 @@ public class Mecro26 : Player
             {
                 moveSpeed = maxSpeed;
             }
+            accelerated = true;
+        }
+        if (accelerated && moveInput == 0f)
+        {
+            moveSpeed = defaultMoveSpeed;
+            accelerated = false;
         }
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
-        //Debug.Log(rigidBody.velocity.x);
+        Debug.Log(rigidBody.velocity.x);
     }
 
     protected override void StopMoving()
