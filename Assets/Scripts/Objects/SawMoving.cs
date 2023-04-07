@@ -13,6 +13,9 @@ public class SawMoving : MonoBehaviour
     private Animator anim;
     private CircleCollider2D circleCollider;
 
+    //[SerializeField] private SpriteRenderer holder;
+    [SerializeField] private Sprite bigSawSprite, smallSawSprite;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -51,5 +54,10 @@ public class SawMoving : MonoBehaviour
         {
             Player.instance.DamagePlayer();
         }
+    }
+
+    private void OnValidate()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = isSmall ? smallSawSprite : bigSawSprite;
     }
 }

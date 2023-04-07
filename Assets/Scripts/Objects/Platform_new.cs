@@ -72,31 +72,60 @@ public class Platform_new : MonoBehaviour
         Gizmos.DrawWireCube(activeZonePos, activeZoneSize);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        anim.SetTrigger("impulse");
+    //        anim.SetBool("isPlayerOnPlatform", lightsOn);
+    //        //if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
+    //        //{
+    //        //    Player.instance.isOnMovingPlatform = true;
+    //        //    Player.instance.movingPlatDif = new Vector2(0, 0.005f);
+    //        //}
+    //        //else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
+    //        //{
+    //        //    Player.instance.isOnMovingPlatform = true;
+    //        //    Player.instance.movingPlatDif = new Vector2(0, -0.005f);
+    //        //}
+    //        collision.transform.SetParent(transform);
+    //    }
+    //}
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
+    //    {
+    //        anim.SetBool("isPlayerOnPlatform", false);
+    //        collision.transform.SetParent(null);
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             anim.SetTrigger("impulse");
             anim.SetBool("isPlayerOnPlatform", lightsOn);
-            if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
-            {
-                Player.instance.isOnMovingPlatform = true;
-                Player.instance.movingPlatDif = new Vector2(0, 0.005f);
-            }
-            else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
-            {
-                Player.instance.isOnMovingPlatform = true;
-                Player.instance.movingPlatDif = new Vector2(0, -0.005f);
-            }
-            collision.collider.transform.SetParent(transform);
+            //if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
+            //{
+            //    Player.instance.isOnMovingPlatform = true;
+            //    Player.instance.movingPlatDif = new Vector2(0, 0.005f);
+            //}
+            //else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
+            //{
+            //    Player.instance.isOnMovingPlatform = true;
+            //    Player.instance.movingPlatDif = new Vector2(0, -0.005f);
+            //}
+            collision.transform.SetParent(transform);
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
         {
             anim.SetBool("isPlayerOnPlatform", false);
-            collision.collider.transform.SetParent(null);
+            collision.transform.SetParent(null);
         }
     }
 
