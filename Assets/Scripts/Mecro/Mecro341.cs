@@ -9,7 +9,7 @@ public class Mecro341 : Player
     [SerializeField] private Transform wheelPos;
     [SerializeField] private float wheelRadius;
     [SerializeField] private Vector2 wheelDetectorSize;
-    [SerializeField] private LayerMask groundMask, nonMetalMask;
+    [SerializeField] private LayerMask nonMetalMask;
     [SerializeField] private Vector3 rotationDirection;
     [SerializeField] private Vector2 horizontalGravityDelta, verticalGravityDelta;
     [SerializeField] private float counteractingForce, originalForce;
@@ -76,7 +76,7 @@ public class Mecro341 : Player
                 }
                 else
                 {
-                    rigidBody.gravityScale = 4 * ceilCoef;
+                    rigidBody.gravityScale = 4 * ceilCoef * (isInverted ? -1 : 1);
                     moveInput = Input.GetAxisRaw("Horizontal");
                     //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
                     //holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef == 1 ? 0 : 180);
@@ -90,7 +90,8 @@ public class Mecro341 : Player
                 isGrounded = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, groundMask);
                 isOnNonMetalGround = Physics2D.OverlapCircle(wheelPos.position, wheelRadius, nonMetalMask) & moveInput != 0;
                 UpdateMovementAnimation();
-                if(isOnNonMetalGround)
+                CheckCeilingTouch();
+                if (isOnNonMetalGround)
                 {
                     StartCoroutine(TakeDeffect());
                 }
@@ -237,5 +238,10 @@ public class Mecro341 : Player
         anim.SetTrigger("deffect");
         yield return new WaitForSeconds(deffectTime);
         isActive = true;
+    }
+
+    public override void InvertGravity()
+    {
+        isInverted = !isInverted;
     }
 }

@@ -46,6 +46,9 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected float runDeccelerationAmount;
     [SerializeField] protected float accelerationInAir;
     protected bool isInverted = false;
+    [SerializeField] protected Transform headPos;
+    [SerializeField] protected Vector2 headDetectorSize;
+    [SerializeField] protected LayerMask groundMask;
 
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
@@ -271,4 +274,20 @@ public abstract class Player : MonoBehaviour
     }
 
     public bool IsGrounded { get => isGrounded; }
+
+    public bool IsInverted { get => isInverted; }
+
+    public virtual void InvertGravity()
+    {
+        isInverted = !isInverted;
+        rigidBody.gravityScale = -rigidBody.gravityScale;
+    }
+
+    protected virtual void CheckCeilingTouch()
+    {
+        if (isInverted && Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask))
+        {
+            InvertGravity();
+        }
+    }
 }

@@ -11,5 +11,6 @@ public enum EnemyType
     Arrow,
     Flash,
     Ball,
-    Ghost
+    Ghost,
+    Dart,
 }

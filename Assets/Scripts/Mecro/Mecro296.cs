@@ -10,9 +10,7 @@ public class Mecro296 : Player
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
     [SerializeField] private float radius;
-    [SerializeField] private LayerMask groundMask, noPlatfromMask;
-    [SerializeField] private Transform headPos;
-    [SerializeField] private Vector2 headDetectorSize;
+    [SerializeField] private LayerMask noPlatfromMask;
     //public GameObject holder;
 
     private bool isChargingJump = false;
@@ -77,6 +75,7 @@ public class Mecro296 : Player
                 }
 
                 UpdateMovementAnimation();
+                CheckCeilingTouch();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)

@@ -259,6 +259,7 @@ Transform:
   - {fileID: 2303130091511993893}
   - {fileID: 2303130091048944257}
   - {fileID: 2303130091768914570}
+  - {fileID: 5512810064344943348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -356,6 +357,11 @@ MonoBehaviour:
   runAccelerationAmount: 4.1666665
   runDeccelerationAmount: 4.1666665
   accelerationInAir: 1.125
+  headPos: {fileID: 5512810064344943348}
+  headDetectorSize: {x: 0.5, y: 0.3}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 12352
   isTouchingLedge: 0
   ledgeGrabbingTime: 0.66
   difference1: {x: 0.4, y: -0.2, z: 0}
@@ -367,9 +373,6 @@ MonoBehaviour:
   ledgeCancelTime: 1
   feetPos: {fileID: 2303130091583491525}
   feetDetectorSize: {x: 0.5, y: 0.3}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 12352
   grav: 0
 --- !u!1 &2303130092479524941
 GameObject:
@@ -486,3 +489,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8486757933534541669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5512810064344943348}
+  m_Layer: 7
+  m_Name: HeadPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5512810064344943348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486757933534541669}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2303130091884061187}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

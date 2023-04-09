@@ -10,7 +10,6 @@ public class Mecro116 : Player
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpDelay = 0.25f;
 
     [SerializeField] private Vector3 invertedDifference1, invertedDifference2, invertedDifference3, invertedDifference4;
@@ -78,10 +77,7 @@ public class Mecro116 : Player
 
                 if (Input.GetButtonUp("Jump"))
                 {
-                    isInverted = !isInverted;
-                    InvertLedgeDifferencies();
-                    rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
-                    //feetPos.localPosition = new Vector3(feetPos.localPosition.x, -feetPos.localPosition.y, feetPos.localPosition.z);
+                    GravityJump();
                 }
 
                 UpdateMovementAnimation();
@@ -174,6 +170,14 @@ public class Mecro116 : Player
         transform.localRotation = Quaternion.Euler(isInverted ? 180 : 0, isFacingRight ? 0 : 180, 0);
     }
 
+    private void GravityJump()
+    {
+        isInverted = !isInverted;
+        InvertLedgeDifferencies();
+        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+        //feetPos.localPosition = new Vector3(feetPos.localPosition.x, -feetPos.localPosition.y, feetPos.localPosition.z);
+    }
+
     public void Jump()
     {
         jumpTimer = 0;
@@ -237,5 +241,10 @@ public class Mecro116 : Player
         ledgeDecetror.enabled = false;
         yield return new WaitForSeconds(ledgeCancelTime);
         ledgeDecetror.enabled = true;
+    }
+
+    public override void InvertGravity()
+    {
+        GravityJump();
     }
 }
