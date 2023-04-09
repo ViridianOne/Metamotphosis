@@ -6,7 +6,6 @@ public class Mecro206 : Player
 {
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
     private bool wasOnGround;
 
     public float grav;
@@ -76,6 +75,7 @@ public class Mecro206 : Player
                 }
 
                 UpdateMovementAnimation();
+                CheckCeilingTouch();
             }
 
             UpdateLedegGrabbing();

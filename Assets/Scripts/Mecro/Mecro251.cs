@@ -10,7 +10,6 @@ public class Mecro251 : Player
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpDelay = 0.25f;
     [SerializeField] private float jumpChargingTime;
     private float jumpChargingTimer;
@@ -97,6 +96,7 @@ public class Mecro251 : Player
                     StartCoroutine(Shoot(BulletType.SpeedUp));
                 }
                 UpdateMovementAnimation();
+                CheckCeilingTouch();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)

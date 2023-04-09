@@ -8,7 +8,6 @@ public class Mecro161 : Player
     [SerializeField] private Transform feetPos;
     [SerializeField] private float radius;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpForce;
     private bool isJumping = false;
     [SerializeField] private float jumpDelay = 0.25f;
@@ -121,6 +120,7 @@ public class Mecro161 : Player
                     AudioManager.instance.Play(8);
                 }
                 UpdateMovementAnimation();
+                CheckCeilingTouch();
             }
             UpdateLedegGrabbing();
             if (isTouchingLedge)

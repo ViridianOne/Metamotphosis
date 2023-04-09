@@ -8,7 +8,6 @@ public class Mecro71 : Player
     //[SerializeField] private Transform feetPos;
     [SerializeField] private float radius;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpDelay = 0.25f;
     //public GameObject holder;
@@ -28,8 +27,6 @@ public class Mecro71 : Player
     public Vector2 direction;
 
     private bool isCeilingHit;
-    [SerializeField] private Transform headPos;                 //for collision detection
-    [SerializeField] private Vector2 headDetectorSize;
     [SerializeField] private float accelerationCoefficient;
 
     protected override void Move()
@@ -118,18 +115,18 @@ public class Mecro71 : Player
             direction = Vector2.right;
             AudioManager.instance.Play(16);
         }
-        if (Input.GetAxisRaw("Vertical") < 0)
+        if ((Input.GetAxisRaw("Vertical") < 0 && !isInverted) || (Input.GetAxisRaw("Vertical") > 0 && isInverted))
         {
             directionArrow = Directions.down;
-            moveInput = Input.GetAxisRaw("Vertical");
+            moveInput = Input.GetAxisRaw("Vertical") * (isInverted ? -1 : 1);
             directionChosen = true;
             direction = Vector2.up;
             AudioManager.instance.Play(16);
         }
-        if (Input.GetAxisRaw("Vertical") > 0)
+        if ((Input.GetAxisRaw("Vertical") > 0 && !isInverted) || (Input.GetAxisRaw("Vertical") < 0 && isInverted))
         {
             directionArrow = Directions.up;
-            moveInput = Input.GetAxisRaw("Vertical");
+            moveInput = Input.GetAxisRaw("Vertical") * (isInverted ? -1 : 1);
             directionChosen = true;
             direction = Vector2.up;
             AudioManager.instance.Play(16);
@@ -299,5 +296,17 @@ public class Mecro71 : Player
         ledgeDecetror.enabled = false;
         yield return new WaitForSeconds(ledgeCancelTime);
         ledgeDecetror.enabled = true;
+    }
+
+    public override void InvertGravity()
+    {
+        isInverted = true;
+        StartCoroutine(WaitAndInvertGravity());
+    }
+
+    private IEnumerator WaitAndInvertGravity()
+    {
+        yield return new WaitForSeconds(4f);
+        isInverted = false;
     }
 }
