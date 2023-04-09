@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Platform_new : MonoBehaviour
 {
+    [SerializeField] private bool isMoving;
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
     private Vector3 nextPos;
-    private Animator anim;
+    [HideInInspector] public Animator anim;
     public bool isSleeping;
     private bool lightsOn;
     [SerializeField] private Vector2 activeZonePos, activeZoneSize;
     [SerializeField] private LayerMask playerMask;
     private bool isActiveZone;
     [SerializeField] private int animationLayer;
+    [HideInInspector] public float velocityChangeTime;
+    [HideInInspector] public float velocityCoef;
+    [HideInInspector] public SpriteRenderer sprite;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -43,7 +48,7 @@ public class Platform_new : MonoBehaviour
             anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
             anim.SetBool("isSleeping", !lightsOn);
         }
-        if (isActiveZone && lightsOn)
+        if (isMoving && isActiveZone && lightsOn)
         {
             if (transform.position == pos1.position || nextPos == pos2.position)
             {
@@ -53,8 +58,10 @@ public class Platform_new : MonoBehaviour
             {
                 nextPos = pos1.position;
             }
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * velocityCoef * Time.deltaTime);
         }
+        if(velocityCoef != 1)
+            StartCoroutine(ChangeVelocity(velocityChangeTime));
     }
 
     private void OnDrawGizmos()
@@ -91,5 +98,13 @@ public class Platform_new : MonoBehaviour
             anim.SetBool("isPlayerOnPlatform", false);
             collision.collider.transform.SetParent(null);
         }
+    }
+
+    public IEnumerator ChangeVelocity(float effectTime)
+    {
+        yield return new WaitForSeconds(effectTime);
+        velocityCoef = 1;
+        anim.speed = 1;
+        sprite.color = new Color(1, 1, 1, 1);
     }
 }

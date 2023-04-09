@@ -114,6 +114,8 @@ public class Magnet : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
+            if (velocityCoef != 1)
+                StartCoroutine(ChangeVelocity(velocityChangeTime));
         }
     }
 
@@ -127,7 +129,7 @@ public class Magnet : Enemy
 
     protected override void Move()
     {
-        float targetSpeed = moveSpeed * moveInput;
+        float targetSpeed = moveSpeed * moveInput * velocityCoef;
         float currentSpeed = isPlacedOnWall ? rigidBody.velocity.y : rigidBody.velocity.x;
         float accelerate;
 
