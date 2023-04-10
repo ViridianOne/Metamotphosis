@@ -60,8 +60,7 @@ public class Platform_new : MonoBehaviour
             }
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * velocityCoef * Time.deltaTime);
         }
-        if(velocityCoef != 1)
-            StartCoroutine(ChangeVelocity(velocityChangeTime));
+        ChangeVelocity();
     }
 
     private void OnDrawGizmos()
@@ -129,11 +128,15 @@ public class Platform_new : MonoBehaviour
         }
     }
 
-    public IEnumerator ChangeVelocity(float effectTime)
+    protected void ChangeVelocity()
     {
-        yield return new WaitForSeconds(effectTime);
-        velocityCoef = 1;
-        anim.speed = 1;
-        sprite.color = new Color(1, 1, 1, 1);
+        if (velocityChangeTime > 0)
+            velocityChangeTime -= Time.deltaTime;
+        else if (velocityChangeTime <= 0 && velocityCoef != 1)
+        {
+            velocityCoef = 1;
+            anim.speed = 1;
+            sprite.color = new Color(1, 1, 1, 1);
+        }
     }
 }

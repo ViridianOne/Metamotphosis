@@ -106,8 +106,7 @@ public class Blob : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
-            if (velocityCoef != 1)
-                StartCoroutine(ChangeVelocity(velocityChangeTime));
+            ChangeVelocity();
         }
         UpdateMovementAnimation();
     }

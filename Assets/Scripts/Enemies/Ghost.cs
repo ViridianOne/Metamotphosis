@@ -53,8 +53,7 @@ public class Ghost : Enemy
                 StartCoroutine(DamagePlayer());
                 StopAttacking();
             }
-            if (velocityCoef != 1)
-                StartCoroutine(ChangeVelocity(velocityChangeTime));
+            ChangeVelocity();
         }
     }
 

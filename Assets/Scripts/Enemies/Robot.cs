@@ -71,8 +71,7 @@ public class Robot : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
-            if (velocityCoef != 1)
-                StartCoroutine(ChangeVelocity(velocityChangeTime));
+            ChangeVelocity();
         }
     }
 

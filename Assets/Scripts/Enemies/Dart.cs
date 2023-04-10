@@ -63,6 +63,7 @@ public class Dart : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
+            ChangeVelocity();
         }
     }
 
@@ -98,7 +99,7 @@ public class Dart : Enemy
         isAttacking = true;
         isInverted = !isInverted;
         anim.SetTrigger("attack");
-        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1) * velocityCoef;
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 

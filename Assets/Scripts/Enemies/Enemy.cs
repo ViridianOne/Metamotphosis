@@ -83,11 +83,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract IEnumerator DamagePlayer();
 
-    public IEnumerator ChangeVelocity(float effectTime)
+    protected void ChangeVelocity()
     {
-        yield return new WaitForSeconds(effectTime);
-        velocityCoef = 1;
-        anim.speed = 1;
-        holderSprite.color = new Color(1, 1, 1, 1);
+        if (velocityChangeTime > 0)
+            velocityChangeTime -= Time.deltaTime;
+        else if (velocityChangeTime <= 0 && velocityCoef != 1)
+        {
+            velocityCoef = 1;
+            anim.speed = 1;
+            holderSprite.color = new Color(1, 1, 1, 1);
+        }
     }
 }
