@@ -13,10 +13,6 @@ public class Mecro206 : Player
 
     protected override void Move()
     {
-        //Version 1
-        /*movementForce = moveInput * moveSpeed;
-        rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);*/
-
         float targetSpeed = moveInput * moveSpeed;
         float accelerate;
 

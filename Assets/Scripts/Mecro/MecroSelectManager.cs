@@ -80,6 +80,10 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             {
                 SelectMecro(MecroStates.form116);
             }
+            else if (Input.GetKeyDown(KeyCode.K))
+            {
+                SelectMecro(MecroStates.form26);
+            }
         }
     }
 
