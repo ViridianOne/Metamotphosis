@@ -198,6 +198,7 @@ public abstract class Player : MonoBehaviour
             CancelLedegeGrabbing();
         }
         anim.SetBool("isDamaged", true);
+        anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         isActive = false;
         playerCollider.enabled = false;

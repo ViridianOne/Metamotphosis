@@ -97,7 +97,7 @@ public class Blob : Enemy
                 }
             }
 
-            canDamagePlayer = Physics2D.OverlapBox(attackPos1.position, attackSize, 0f, masksAbleToDamage);
+            canDamagePlayer = Physics2D.OverlapBox(attackPos1.position, attackSize, 0f, masksToDamage);
             isDamaged = Physics2D.OverlapBox(damagePos.position, damageSize, 0f, masksAbleToDamage);
             if ((isDamaged || isDamaged && canDamagePlayer)
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)

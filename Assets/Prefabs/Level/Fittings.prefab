@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7804960422790176456}
   - component: {fileID: 7804960422790176463}
   - component: {fileID: 6097731207598466871}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Fittings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bce5155a7495de45aabd8f80f94b37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHole: 0
 --- !u!114 &6097731207598466871
 MonoBehaviour:
   m_ObjectHideFlags: 0

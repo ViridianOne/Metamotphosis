@@ -24,7 +24,7 @@ public abstract class Enemy : MonoBehaviour
     [HideInInspector] public float velocityChangeTime;
 
     [SerializeField] private float damageTime;
-    [SerializeField] protected LayerMask masksAbleToDamage;
+    [SerializeField] protected LayerMask masksAbleToDamage, masksToDamage;
 
     protected bool canDamagePlayer;
     [SerializeField] protected Vector2 attackPos, attackSize;

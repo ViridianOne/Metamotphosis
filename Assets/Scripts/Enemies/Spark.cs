@@ -67,7 +67,7 @@ public class Spark : Enemy
             }
 
             canDamagePlayer = Physics2D.OverlapBox(
-                new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
+                new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackSize, 0f, masksToDamage);
             if (canDamagePlayer && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());

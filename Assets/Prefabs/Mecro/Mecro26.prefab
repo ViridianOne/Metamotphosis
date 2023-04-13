@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1842155209}
-  - component: {fileID: 1842155210}
+  - component: {fileID: 7992641532220774974}
   m_Layer: 15
   m_Name: Shield
   m_TagString: Shield
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 157238606358128087}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1842155210
-CapsuleCollider2D:
+--- !u!58 &7992641532220774974
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -45,9 +45,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011497498, y: 1.1807262}
-  m_Size: {x: 2.7947235, y: 3.1679933}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 1.06}
+  serializedVersion: 2
+  m_Radius: 1.06
 --- !u!1 &157238604723367139
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: -265479368, guid: 09da86840f47083479f24f03debe3f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -174,10 +174,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01109755, y: 0.88024586}
+  m_Offset: {x: -0.013842821, y: 0.7447818}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -188,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0844295, y: 0.36163247}
+  m_Size: {x: 2.1841807, y: 0.09070432}
   m_EdgeRadius: 0
 --- !u!1 &157238605332762543
 GameObject:
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157238606358128087}
   - component: {fileID: 157238606358128084}
-  - component: {fileID: 157238606358128086}
+  - component: {fileID: 7770382115944091292}
   - component: {fileID: 157238606358128085}
   - component: {fileID: 157238606358128089}
   m_Layer: 7
@@ -282,8 +282,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &157238606358128086
-CapsuleCollider2D:
+--- !u!58 &7770382115944091292
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -291,13 +291,13 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 157238606358128082}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012387395, y: 1.089731}
-  m_Size: {x: 2.1103942, y: 2.1103942}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 1.1}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!50 &157238606358128085
 Rigidbody2D:
   serializedVersion: 4
@@ -349,13 +349,18 @@ MonoBehaviour:
   maxGravity: 8
   gravityMultiplier: 1.2
   gravityAddition: 0.075
-  moveSpeed: 1
+  moveSpeed: 12
   maxSpeed: 12
-  runAcceleration: 2
-  runDecceleration: 0.5
-  runAccelerationAmount: 8.333333
-  runDeccelerationAmount: 2.0833333
+  runAcceleration: 0.5
+  runDecceleration: 0.25
+  runAccelerationAmount: 2.0833333
+  runDeccelerationAmount: 1.0416666
   accelerationInAir: 1.125
+  headPos: {fileID: 0}
+  headDetectorSize: {x: 0, y: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 143424
   isTouchingLedge: 0
   ledgeGrabbingTime: 0.66
   difference1: {x: 0.35, y: 0.7, z: 0}
@@ -368,9 +373,6 @@ MonoBehaviour:
   jumpForce: 5
   feetPos: {fileID: 157238605332762542}
   feetDetectorSize: {x: 0.5, y: 0.3}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 77888
   jumpDelay: 0.02
   jumpChargingTime: 100
   acceleration26: 0.1
@@ -378,7 +380,6 @@ MonoBehaviour:
   accelerated: 0
   defaultMoveSpeed: 5
   moveInputStatic: 0
-  accelerate: 0
   moveInputAssigned: 0
 --- !u!1 &157238606537163015
 GameObject:
@@ -535,7 +536,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 363238385, guid: 32d644a6576e09f458ee60264240e9bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

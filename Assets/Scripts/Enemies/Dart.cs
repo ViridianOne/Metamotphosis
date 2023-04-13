@@ -58,7 +58,7 @@ public class Dart : Enemy
 
             if (isAttacking 
                 && Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y),
-                    attackSize, 0f, masksAbleToDamage)
+                    attackSize, 0f, masksToDamage)
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());

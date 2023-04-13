@@ -10,17 +10,18 @@ public class Mecro26 : Player
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
+    //[SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpDelay = 0.25f;
     [SerializeField] private float jumpChargingTime;
     private float jumpChargingTimer;
 
+    [Header("Acceleration")]
     [SerializeField] private float acceleration26;
     [SerializeField] private float decceleration26;
     [SerializeField] private bool accelerated = false;
     [SerializeField] private float defaultMoveSpeed;
     [SerializeField] private float moveInputStatic;
-    [SerializeField] private float accelerate = 0;
+    private float accelerate = 0;
     [SerializeField] private bool moveInputAssigned = false;
 
     void Update()
@@ -75,6 +76,7 @@ public class Mecro26 : Player
                 if (!isGrounded)
                 {
                     anim.SetBool("isJumping", true);
+                    anim.SetBool("isMoving", false);
                 }
                 else
                 {
@@ -131,13 +133,15 @@ public class Mecro26 : Player
         {
             anim.SetBool("isMoving", false);
         }*/
-        if (Mathf.Abs(rigidBody.velocity.x) > 1)
+        if (Mathf.Abs(rigidBody.velocity.x) > 2f)
         {
             anim.SetBool("isMoving", true);
+            anim.speed = !isGrounded ? 1 : Mathf.Abs(rigidBody.velocity.normalized.x);
         }
         else
         {
             anim.SetBool("isMoving", false);
+            anim.speed = 1;
         }
         if (moveInput != 0f && !AudioManager.instance.sounds[9].source.isPlaying)
         {
@@ -148,13 +152,13 @@ public class Mecro26 : Player
 
     private void Flip()
     {
-        if (moveInput > 0f)
+        if (rigidBody.velocity.x > 0f)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             isFacingRight = true;
             //moveInputStatic = moveInput;
         }
-        else if (moveInput < 0f)
+        else if (rigidBody.velocity.x < 0f)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
             isFacingRight = false;
@@ -201,49 +205,58 @@ public class Mecro26 : Player
         float targetSpeed = moveInput * moveSpeed;
         //float accelerate;
 
+        if (isGrounded)
+            if (targetSpeed > 0.01f && rigidBody.velocity.x < -1f || targetSpeed < -0.01f && rigidBody.velocity.x > 1f)
+                accelerate = runDeccelerationAmount;
+            else
+                accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
+        else
+            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount * accelerationInAir : runDeccelerationAmount * accelerationInAir;
+
         if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
             && Mathf.Sign(rigidBody.velocity.x) == Mathf.Sign(targetSpeed)
             && Mathf.Abs(targetSpeed) > 0.01f && !isGrounded)
         {
             accelerate = 0;
         }
-        else
-        {
-            //accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
-            if (Mathf.Abs(targetSpeed)>0.01f)
-            {
-                accelerate = runAccelerationAmount;
-            }
-            else
-            {
-                accelerate = runDeccelerationAmount;
-            }
-            if (!isGrounded)
-            {
-                accelerate *= accelerationInAir;
-            }
-        }
-        /*if (accelerate == runDeccelerationAmount)
-        {
-            moveInputStatic = moveInput;
-        }*/
-        if (moveSpeed < maxSpeed && rigidBody.velocity.x !=0)
-        {
-            moveSpeed += acceleration26;
-            if (moveSpeed > maxSpeed)
-            {
-                moveSpeed = maxSpeed;
-            }
-            accelerated = true;
-        }
-        if (accelerated && moveInput == 0f)
-        {
-            moveSpeed = defaultMoveSpeed;
-            accelerated = false;
-        }
+
+
+        //else
+        //{
+        //    //accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
+        //    if (Mathf.Abs(targetSpeed)>0.01f)
+        //    {
+        //        accelerate = runAccelerationAmount;
+        //    }
+        //    else
+        //    {
+        //        accelerate = runDeccelerationAmount;
+        //    }
+        //    if (!isGrounded)
+        //    {
+        //        accelerate *= accelerationInAir;
+        //    }
+        //}
+        ///*if (accelerate == runDeccelerationAmount)
+        //{
+        //    moveInputStatic = moveInput;
+        //}*/
+        //if (moveSpeed < maxSpeed && rigidBody.velocity.x !=0)
+        //{
+        //    moveSpeed += acceleration26;
+        //    if (moveSpeed > maxSpeed)
+        //    {
+        //        moveSpeed = maxSpeed;
+        //    }
+        //    accelerated = true;
+        //}
+        //if (accelerated && moveInput == 0f)
+        //{
+        //    moveSpeed = defaultMoveSpeed;
+        //    accelerated = false;
+        //}
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
-        Debug.Log(rigidBody.velocity.x);
     }
 
     protected override void StopMoving()
