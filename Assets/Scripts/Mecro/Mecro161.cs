@@ -27,7 +27,7 @@ public class Mecro161 : Player
         /*movementForce = moveInput * moveSpeed;
         rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);*/
 
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0;
 
         if (isGrounded)
@@ -128,6 +128,7 @@ public class Mecro161 : Player
                 isGrounded = false;
             }
             CheckVisability();
+            ChangeVelocity();
         }
         //else
         //{
