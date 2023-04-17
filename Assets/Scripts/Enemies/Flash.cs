@@ -72,7 +72,7 @@ public class Flash : Enemy
 
             canDamagePlayer = Physics2D.OverlapCircle(
                 new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), currentAttackRadius, masksToDamage);
-            if (canDamagePlayer && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+            if (canDamagePlayer && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated && MecroSelectManager.instance.GetIndex() != 7)
             {
                 StartCoroutine(DamagePlayer());
             }
