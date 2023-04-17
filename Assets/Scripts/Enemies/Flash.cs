@@ -90,15 +90,14 @@ public class Flash : Enemy
 
         yield return new WaitForSeconds(delayAfterRelocating);
 
-        StartCoroutine(Explode());
+        if(attacksCount >= 2)
+            TakeDamage();
+        else
+            StartCoroutine(Explode());
 
         yield return new WaitForSeconds(explosionTime);
 
-        if (attacksCount >= 2)
-        {
-            TakeDamage();
-        }
-        else
+        if (attacksCount < 2)
         {
             ReturnAfterExplosion();
 
@@ -155,7 +154,12 @@ public class Flash : Enemy
 
         yield return new WaitForSeconds(explosionTime - 1.2f);
 
-        if (Random.Range(0, 2) == 0)
+        ChangePlayerVelocity(Random.Range(0, 2));
+    }
+
+    private void ChangePlayerVelocity(int variety)
+    {
+        if (variety == 0)
         {
             Player.instance.ReactToFlashExplosion(effectOnPlayerTime, acceleratingSpeedChangeCoef, changedColor.Item1);
         }
@@ -182,6 +186,12 @@ public class Flash : Enemy
     {
         isActive = false;
         state = EnemyState.Destroying;
+
+        isExploding = false;
+        currentAttackRadius = 0;
+        explosionTimer = 0;
+
+        ChangePlayerVelocity(Random.Range(0, 2));
         StartCoroutine(TurnOff());
     }
 

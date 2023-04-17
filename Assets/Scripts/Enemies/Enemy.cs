@@ -62,21 +62,24 @@ public abstract class Enemy : MonoBehaviour
         rigidBody.gravityScale = 0;
         gameObject.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(damageTime);
-        fadingTimer = fadingTime;
-        fadingFrameTimer = 0;
-        while (fadingTimer > 0)
+        if (type != EnemyType.Spark && type != EnemyType.Flash)
         {
-            spriteColor = holderSprite.color;
-            if (fadingFrameTimer <= 0)
+            fadingTimer = fadingTime;
+            fadingFrameTimer = 0;
+            while (fadingTimer > 0)
             {
-                isFaded = !isFaded;
-                fadingFrameTimer = fadingFrameTime;
+                spriteColor = holderSprite.color;
+                if (fadingFrameTimer <= 0)
+                {
+                    isFaded = !isFaded;
+                    fadingFrameTimer = fadingFrameTime;
+                }
+                spriteColor.a = isFaded ? 0 : 1;
+                holderSprite.color = spriteColor;
+                fadingTimer -= Time.deltaTime;
+                fadingFrameTimer -= Time.deltaTime;
+                yield return null;
             }
-            spriteColor.a = isFaded ? 0 : 1;
-            holderSprite.color = spriteColor;
-            fadingTimer -= Time.deltaTime;
-            fadingFrameTimer -= Time.deltaTime;
-            yield return null;
         }
         gameObject.SetActive(false);
     }
