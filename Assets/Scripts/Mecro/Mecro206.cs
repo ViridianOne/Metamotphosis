@@ -13,11 +13,7 @@ public class Mecro206 : Player
 
     protected override void Move()
     {
-        //Version 1
-        /*movementForce = moveInput * moveSpeed;
-        rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);*/
-
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate;
 
         if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
@@ -85,6 +81,7 @@ public class Mecro206 : Player
             }
 
             CheckVisability();
+            ChangeVelocity();
         }
 
         UpdateAudio();

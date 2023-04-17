@@ -84,6 +84,7 @@ public class Mecro296 : Player
                 AudioManager.instance.Stop(7);
             }
             CheckVisability();
+            ChangeVelocity();
         }
     }
 
@@ -157,7 +158,7 @@ public class Mecro296 : Player
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0; 
         
         if(!isGrounded)

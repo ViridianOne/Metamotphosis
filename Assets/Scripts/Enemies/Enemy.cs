@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float fadingFrameTime;
     private float fadingTimer;
     private float fadingFrameTimer;
-    [SerializeField] private int animationLayer;
+    [SerializeField] protected int animationLayer;
 
     public EnemyType type;
 
@@ -24,7 +24,7 @@ public abstract class Enemy : MonoBehaviour
     [HideInInspector] public float velocityChangeTime;
 
     [SerializeField] private float damageTime;
-    [SerializeField] protected LayerMask masksAbleToDamage;
+    [SerializeField] protected LayerMask masksAbleToDamage, masksToDamage;
 
     protected bool canDamagePlayer;
     [SerializeField] protected Vector2 attackPos, attackSize;
@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
         spriteColor = holderSprite.color;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         state = EnemyState.Idle;
         if (animationLayer == 0)
@@ -83,11 +83,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract IEnumerator DamagePlayer();
 
-    public IEnumerator ChangeVelocity(float effectTime)
+    protected void ChangeVelocity()
     {
-        yield return new WaitForSeconds(effectTime);
-        velocityCoef = 1;
-        anim.speed = 1;
-        holderSprite.color = new Color(1, 1, 1, 1);
+        if (velocityChangeTime > 0)
+            velocityChangeTime -= Time.deltaTime;
+        else if (velocityChangeTime <= 0 && velocityCoef != 1)
+        {
+            velocityCoef = 1;
+            anim.speed = 1;
+            holderSprite.color = new Color(1, 1, 1, 1);
+        }
     }
 }

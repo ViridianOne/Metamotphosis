@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7437017469912811909}
   - component: {fileID: 7437017469912811905}
   - component: {fileID: 7437017469912812029}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Saw body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973893977
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1326173548, guid: 01f92744ad60d19468645d178fd0ad83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -237,3 +237,5 @@ MonoBehaviour:
   speed: 2
   startPos: {fileID: 3569011434789117810}
   isSmall: 0
+  bigSawSprite: {fileID: 1326173548, guid: 01f92744ad60d19468645d178fd0ad83, type: 3}
+  smallSawSprite: {fileID: 775597598, guid: 6d831b690583a414ba178f9e17297f07, type: 3}

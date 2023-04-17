@@ -101,32 +101,32 @@ public class Bullet251 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("Untagged") && !collision.CompareTag("Ledge Grabbing"))
+        if (collision.CompareTag("Enemy"))
         {
-            if (collision.CompareTag("Enemy"))
+            var enemy = collision.GetComponent<Enemy>();
+            if (enemy != null)
             {
-                var enemy = collision.GetComponent<Enemy>();
-                if(enemy != null)
-                {
-                    enemy.velocityChangeTime = effectTime;
-                    enemy.velocityCoef = speedChangeCoef;
-                    enemy.anim.speed = speedChangeCoef;
-                    enemy.holderSprite.color = changedColor;
-                }
+                enemy.velocityChangeTime = effectTime;
+                enemy.velocityCoef = speedChangeCoef;
+                enemy.anim.speed = speedChangeCoef;
+                enemy.holderSprite.color = changedColor;
+                StartCoroutine(ExplodeBullet());
             }
-            else if(collision.CompareTag("Platform"))
-            {
-                var platfrom = collision.GetComponent<Platform_new>();
-                if(platfrom != null)
-                {
-                    platfrom.velocityChangeTime = effectTime;
-                    platfrom.velocityCoef = speedChangeCoef;
-                    platfrom.anim.speed = speedChangeCoef;
-                    platfrom.sprite.color = changedColor;
-                }
-            }
-            StartCoroutine(ExplodeBullet());
         }
+        else if (collision.CompareTag("Platform"))
+        {
+            var platfrom = collision.GetComponent<Platform_new>();
+            if (platfrom != null)
+            {
+                platfrom.velocityChangeTime = effectTime;
+                platfrom.velocityCoef = speedChangeCoef;
+                platfrom.anim.speed = speedChangeCoef;
+                platfrom.sprite.color = changedColor;
+                StartCoroutine(ExplodeBullet());
+            }
+        }
+        else if (collision.CompareTag("Ground"))
+            StartCoroutine(ExplodeBullet());
     }
 
     private IEnumerator ExplodeBullet()

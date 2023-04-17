@@ -13,6 +13,8 @@ TagManager:
   - Magnet
   - Bullet
   - Platform
+  - Shield
+  - 26 ground
   layers:
   - Default
   - TransparentFX
@@ -29,9 +31,9 @@ TagManager:
   - Non-Metal
   - Platform
   - Bullet
-  - 
-  - 
-  - 
+  - Shield
+  - 26 ground
+  - Obstacle
   - 
   - 
   - 
@@ -64,6 +66,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 600509019
+    locked: 0
+  - name: Invisibility
+    uniqueID: 2296876699
     locked: 0
   - name: Player
     uniqueID: 2170767603

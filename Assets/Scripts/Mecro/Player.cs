@@ -9,7 +9,7 @@ public abstract class Player : MonoBehaviour
     public static Player instance;
 
     public GameObject holder;
-    private SpriteRenderer holderSprite;
+    protected SpriteRenderer holderSprite;
 
     protected Animator anim;
     protected bool isFacingRight = true;
@@ -49,6 +49,8 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected Transform headPos;
     [SerializeField] protected Vector2 headDetectorSize;
     [SerializeField] protected LayerMask groundMask;
+    [HideInInspector] protected float velocityCoef;
+    [HideInInspector] protected float velocityChangeTime;
 
     [Header("Ledge Grabbing")]
     [HideInInspector] public bool isTouchingLedge;
@@ -198,6 +200,7 @@ public abstract class Player : MonoBehaviour
             CancelLedegeGrabbing();
         }
         anim.SetBool("isDamaged", true);
+        anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         isActive = false;
         playerCollider.enabled = false;
@@ -288,6 +291,26 @@ public abstract class Player : MonoBehaviour
         if (isInverted && Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask))
         {
             InvertGravity();
+        }
+    }
+
+    public void ReactToFlashExplosion(float effectOnPlayerTime, float speedChangeCoef, Color changeColor)
+    {
+        velocityChangeTime = effectOnPlayerTime;
+        velocityCoef = speedChangeCoef;
+        anim.speed = speedChangeCoef;
+        holderSprite.color = changeColor;
+    }
+
+    protected void ChangeVelocity()
+    {
+        if (velocityChangeTime > 0)
+            velocityChangeTime -= Time.deltaTime;
+        else if (velocityChangeTime <= 0 && velocityCoef != 1)
+        {
+            velocityCoef = 1;
+            anim.speed = 1;
+            holderSprite.color = new Color(1, 1, 1, 1);
         }
     }
 }

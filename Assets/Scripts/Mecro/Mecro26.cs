@@ -10,11 +10,19 @@ public class Mecro26 : Player
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    [SerializeField] private LayerMask groundMask;
+    //[SerializeField] private LayerMask groundMask;
     [SerializeField] private float jumpDelay = 0.25f;
     [SerializeField] private float jumpChargingTime;
     private float jumpChargingTimer;
 
+    [Header("Acceleration")]
+    [SerializeField] private float acceleration26;
+    [SerializeField] private float decceleration26;
+    [SerializeField] private bool accelerated = false;
+    [SerializeField] private float defaultMoveSpeed;
+    [SerializeField] private float moveInputStatic;
+    private float accelerate = 0;
+    [SerializeField] private bool moveInputAssigned = false;
 
     void Update()
     {
@@ -23,6 +31,15 @@ public class Mecro26 : Player
             if (isAbleToMove)
             {
                 moveInput = Input.GetAxisRaw("Horizontal");
+                /*if (!moveInputAssigned)
+                {
+                    moveInputStatic = moveInput;
+                    moveInputAssigned = true;
+                }
+                if ((moveInputAssigned && rigidBody.velocity.x == 0) || moveInput == 0)
+                {
+                    moveInputStatic = moveInput;
+                }*/
                 wasOnGround = isGrounded;
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
@@ -59,6 +76,7 @@ public class Mecro26 : Player
                 if (!isGrounded)
                 {
                     anim.SetBool("isJumping", true);
+                    anim.SetBool("isMoving", false);
                 }
                 else
                 {
@@ -78,6 +96,7 @@ public class Mecro26 : Player
                 isGrounded = false;
             }
             CheckVisability();
+            ChangeVelocity();
         }
     }
 
@@ -103,7 +122,7 @@ public class Mecro26 : Player
 
     private void UpdateMovementAnimation()
     {
-        if (moveInput > 0f)
+        /*if (moveInput > 0f)
         {
             anim.SetBool("isMoving", true);
         }
@@ -114,25 +133,37 @@ public class Mecro26 : Player
         else
         {
             anim.SetBool("isMoving", false);
+        }*/
+        if (Mathf.Abs(rigidBody.velocity.x) > 2f)
+        {
+            anim.SetBool("isMoving", true);
+            anim.speed = !isGrounded ? 1 : Mathf.Abs(rigidBody.velocity.normalized.x);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+            anim.speed = 1;
         }
         if (moveInput != 0f && !AudioManager.instance.sounds[9].source.isPlaying)
         {
             AudioManager.instance.Play(9);
         }
-        Flip();
+            Flip();
     }
 
     private void Flip()
     {
-        if (moveInput > 0f)
+        if (rigidBody.velocity.x > 0f)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             isFacingRight = true;
+            //moveInputStatic = moveInput;
         }
-        else if (moveInput < 0f)
+        else if (rigidBody.velocity.x < 0f)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
             isFacingRight = false;
+            //moveInputStatic = moveInput;
         }
     }
 
@@ -172,11 +203,14 @@ public class Mecro26 : Player
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed;
-        float accelerate = 0;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
+        //float accelerate;
 
         if (isGrounded)
-            accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
+            if (targetSpeed > 0.01f && rigidBody.velocity.x < -1f || targetSpeed < -0.01f && rigidBody.velocity.x > 1f)
+                accelerate = runDeccelerationAmount;
+            else
+                accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
         else
             accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount * accelerationInAir : runDeccelerationAmount * accelerationInAir;
 
@@ -187,6 +221,41 @@ public class Mecro26 : Player
             accelerate = 0;
         }
 
+
+        //else
+        //{
+        //    //accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
+        //    if (Mathf.Abs(targetSpeed)>0.01f)
+        //    {
+        //        accelerate = runAccelerationAmount;
+        //    }
+        //    else
+        //    {
+        //        accelerate = runDeccelerationAmount;
+        //    }
+        //    if (!isGrounded)
+        //    {
+        //        accelerate *= accelerationInAir;
+        //    }
+        //}
+        ///*if (accelerate == runDeccelerationAmount)
+        //{
+        //    moveInputStatic = moveInput;
+        //}*/
+        //if (moveSpeed < maxSpeed && rigidBody.velocity.x !=0)
+        //{
+        //    moveSpeed += acceleration26;
+        //    if (moveSpeed > maxSpeed)
+        //    {
+        //        moveSpeed = maxSpeed;
+        //    }
+        //    accelerated = true;
+        //}
+        //if (accelerated && moveInput == 0f)
+        //{
+        //    moveSpeed = defaultMoveSpeed;
+        //    accelerated = false;
+        //}
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
     }

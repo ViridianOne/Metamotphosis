@@ -54,7 +54,7 @@ public class Mecro71 : Player
             transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
         }*/
 
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0;
         if (isGrounded)
             accelerate = Mathf.Abs(targetSpeed) > 1f ? runAccelerationAmount : runDeccelerationAmount;
@@ -208,6 +208,7 @@ public class Mecro71 : Player
             }
 
             CheckVisability();
+            ChangeVelocity();
         }
         else
         {

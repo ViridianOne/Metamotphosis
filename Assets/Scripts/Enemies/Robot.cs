@@ -21,11 +21,14 @@ public class Robot : Enemy
     [SerializeField] private float attackTime;
     [SerializeField] private float fullAttackTime;
     private bool canTurnOffTheLights = true;
+    [SerializeField] private Transform attackPos1;
 
     [Header("Damage")]
     private bool isDamaged;
-    [SerializeField] private Vector2 damagePos, damageSize;
+    [SerializeField] private Transform damagePos;
+    [SerializeField] private Vector2 damageSize;
     private bool isActive = true;
+    [SerializeField] Transform respawnPoint;
 
     private void Update()
     {
@@ -58,11 +61,8 @@ public class Robot : Enemy
                     ChangeDirection(Directions.left, -1);
                 }
             }
-            UpdateMovementAnimation();
-            attackPos.x = transform.position.x;
-            canDamagePlayer = Physics2D.OverlapBox(attackPos, attackSize, 0f, masksAbleToDamage);
-            damagePos.x = transform.position.x;
-            isDamaged = Physics2D.OverlapBox(damagePos, damageSize, 0f, masksAbleToDamage);
+            canDamagePlayer = Physics2D.OverlapBox(attackPos1.position, attackSize, 0f, masksToDamage);
+            isDamaged = Physics2D.OverlapBox(damagePos.position, damageSize, 0f, masksAbleToDamage);
             if ((isDamaged || isDamaged && canDamagePlayer) 
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
                 TakeDamage();
@@ -71,9 +71,9 @@ public class Robot : Enemy
             {
                 StartCoroutine(DamagePlayer());
             }
-            if (velocityCoef != 1)
-                StartCoroutine(ChangeVelocity(velocityChangeTime));
+            ChangeVelocity();
         }
+        UpdateMovementAnimation();
     }
 
     private IEnumerator Attack()
@@ -150,57 +150,34 @@ public class Robot : Enemy
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(damagePos, damageSize);
+        Gizmos.DrawWireCube(damagePos.position, damageSize);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos, attackSize);
+        Gizmos.DrawWireCube(attackPos1.position, attackSize);
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        ChangeDirection(Directions.none, 0);
-    //        isActive = false;
-    //        Player.instance.MiniJump(12f);
-    //        //rigidBody.gravityScale = 0;
-    //        //gameObject.GetComponent<Collider2D>().enabled = false;
-    //        StartCoroutine(TurnOff());
-    //    }
-    //}
 
     private void TakeDamage()
     {
-        //masksAbleToDamage = LayerMask.NameToLayer("NoDamage");
         ChangeDirection(Directions.none, 0);
         isActive = false;
+        canDamagePlayer = false;
         Player.instance.MiniJump(12f);
-        if (Darkness.instance.gameObject != null)
+        /*if (Darkness.instance.gameObject != null)
         {
             Darkness.instance.TurnOn(false);
             canTurnOffTheLights = !canTurnOffTheLights;
-        }
-        //rigidBody.gravityScale = 0;
-        //gameObject.GetComponent<Collider2D>().enabled = false;
+        }*/
         StartCoroutine(TurnOff());
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.transform.CompareTag("Player"))
-    //        Player.instance.DamagePlayer();
-    //    if (!gameObject.activeInHierarchy)
-    //        gameObject.SetActive(true);
-    //    ChangeDirection(Directions.none, 0);
-    //    stateChangeTimer = stateChangeTime;
-    //}
 
     protected override IEnumerator DamagePlayer()
     {
         isActive = false;
+        canDamagePlayer = false;
         Player.instance.DamagePlayer();
         ChangeDirection(Directions.none, 0);
         stateChangeTimer = stateChangeTime;
         yield return new WaitForSeconds(1.5f);
+        transform.position = respawnPoint.position;
         isActive = true;
     }
 }

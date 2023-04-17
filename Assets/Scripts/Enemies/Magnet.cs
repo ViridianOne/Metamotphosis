@@ -108,14 +108,13 @@ public class Magnet : Enemy
             }
 
             canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksAbleToDamage);
+                transform.position.y + attackPos.y), attackSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksToDamage);
             if (canDamagePlayer
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());
             }
-            if (velocityCoef != 1)
-                StartCoroutine(ChangeVelocity(velocityChangeTime));
+            ChangeVelocity();
         }
     }
 

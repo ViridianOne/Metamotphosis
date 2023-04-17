@@ -58,11 +58,12 @@ public class Dart : Enemy
 
             if (isAttacking 
                 && Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y),
-                    attackSize, 0f, masksAbleToDamage)
+                    attackSize, 0f, masksToDamage)
                 && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
             {
                 StartCoroutine(DamagePlayer());
             }
+            ChangeVelocity();
         }
     }
 
@@ -98,7 +99,7 @@ public class Dart : Enemy
         isAttacking = true;
         isInverted = !isInverted;
         anim.SetTrigger("attack");
-        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1) * velocityCoef;
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 

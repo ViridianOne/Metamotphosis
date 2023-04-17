@@ -18,7 +18,7 @@ public class Mecro251 : Player
     [SerializeField] private float timeBeforeShoot, timeAfterShoot;
     [SerializeField] private Bullet251 speedUpBullet, slowDownBullet;
     [SerializeField] private Transform bulletStartPos;
-    [SerializeField] private float yInput;
+    private float yInput;
     private Directions direction;
     private float angle;
     [SerializeField] private Vector3[] bulletStartPositions;
@@ -104,6 +104,7 @@ public class Mecro251 : Player
                 isGrounded = false;
             }
             CheckVisability();
+            ChangeVelocity();
         }
     }
 
@@ -198,7 +199,7 @@ public class Mecro251 : Player
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0;
 
         if (isGrounded)
