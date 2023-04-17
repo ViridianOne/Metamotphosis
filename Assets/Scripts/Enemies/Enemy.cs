@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float fadingFrameTime;
     private float fadingTimer;
     private float fadingFrameTimer;
-    [SerializeField] private int animationLayer;
+    [SerializeField] protected int animationLayer;
 
     public EnemyType type;
 
@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
         spriteColor = holderSprite.color;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         state = EnemyState.Idle;
         if (animationLayer == 0)

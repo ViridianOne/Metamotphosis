@@ -96,6 +96,7 @@ public class Mecro26 : Player
                 isGrounded = false;
             }
             CheckVisability();
+            ChangeVelocity();
         }
     }
 
@@ -202,7 +203,7 @@ public class Mecro26 : Player
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         //float accelerate;
 
         if (isGrounded)
