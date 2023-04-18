@@ -9,9 +9,9 @@ public class ElectricityTileChange : MonoBehaviour
     [SerializeField] private Tilemap map;
     [SerializeField] private GameObject grid;
     [SerializeField] private bool isVertical;
-    [SerializeField] private int firstMiddleTilePos, lastMiddleTilePos;
+    [SerializeField] private int firstTilePos, lastTilePos;
     [SerializeField] private int firstFrame, lastFrame;
-    [SerializeField] private AnimatedTile middleTile;
+    [SerializeField] private AnimatedTile middleTile, firstTile, lastTile;
     [SerializeField] private int constTilePos; //x or y position that is same for every tile in current tilemap 
 
     [Header("Diodes")]
@@ -33,10 +33,17 @@ public class ElectricityTileChange : MonoBehaviour
             rightDiode.SetLayerWeight(animationLayer, 100);
             rightDiode.SetLayerWeight(1, 0);
         }
-        for (int i = firstMiddleTilePos; i <= lastMiddleTilePos; i++)
+        for (int i = firstTilePos; i <= lastTilePos; i++)
         {
-            middleTile.m_AnimationStartFrame = Random.Range(firstFrame, lastFrame);
-            map.SetTile(new Vector3Int(isVertical ? constTilePos : i, isVertical ? i : constTilePos, 0), middleTile);
+            if (i == firstTilePos)
+                map.SetTile(new Vector3Int(isVertical ? constTilePos : i, isVertical ? i : constTilePos, 0), firstTile);
+            else if (i == lastTilePos)
+                map.SetTile(new Vector3Int(isVertical ? constTilePos : i, isVertical ? i : constTilePos, 0), lastTile);
+            else
+            {
+                middleTile.m_AnimationStartFrame = Random.Range(firstFrame, lastFrame);
+                map.SetTile(new Vector3Int(isVertical ? constTilePos : i, isVertical ? i : constTilePos, 0), middleTile);
+            }
         }
         grid.SetActive(false);
     }
