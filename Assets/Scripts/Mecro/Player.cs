@@ -76,6 +76,7 @@ public abstract class Player : MonoBehaviour
     protected virtual void Start()
     {
         playerCollider = GetComponent<Collider2D>();
+        Physics2D.IgnoreLayerCollision(6, 7, false);
         gravity = rigidBody.gravityScale;
         isActive = true;
         anim.SetBool("isLedgeGrabbing", false);
@@ -216,6 +217,7 @@ public abstract class Player : MonoBehaviour
         yield return new WaitForSeconds(respawnTime - 0.3f);
         if (!isActive)
         {
+            Physics2D.IgnoreLayerCollision(6, 7, false);
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
