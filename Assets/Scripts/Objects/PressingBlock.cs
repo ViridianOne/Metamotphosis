@@ -118,9 +118,15 @@ public class PressingBlock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Shiled" || collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Platform")
         {
             canClimb = true;
+            landingTime = 2f;
+        }
+        else if(collision.gameObject.tag == "Player" && MecroSelectManager.instance.GetIndex() == 7)
+        {
+            canClimb = true;
+            landingTime = 0;
         }
     }
 }
