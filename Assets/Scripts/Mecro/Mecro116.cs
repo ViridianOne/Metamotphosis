@@ -22,7 +22,7 @@ public class Mecro116 : Player
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed;
+        float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate;
 
         if (Mathf.Abs(rigidBody.velocity.x) > Mathf.Abs(targetSpeed)
@@ -90,6 +90,7 @@ public class Mecro116 : Player
             }
 
             CheckVisability();
+            ChangeVelocity();
         }
 
         if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[9].source.isPlaying)

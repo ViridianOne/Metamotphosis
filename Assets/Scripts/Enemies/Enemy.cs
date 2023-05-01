@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float fadingFrameTime;
     private float fadingTimer;
     private float fadingFrameTimer;
-    [SerializeField] private int animationLayer;
+    [SerializeField] protected int animationLayer;
 
     public EnemyType type;
 
@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
         spriteColor = holderSprite.color;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         state = EnemyState.Idle;
         if (animationLayer == 0)
@@ -62,21 +62,24 @@ public abstract class Enemy : MonoBehaviour
         rigidBody.gravityScale = 0;
         gameObject.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(damageTime);
-        fadingTimer = fadingTime;
-        fadingFrameTimer = 0;
-        while (fadingTimer > 0)
+        if (type != EnemyType.Spark && type != EnemyType.Flash)
         {
-            spriteColor = holderSprite.color;
-            if (fadingFrameTimer <= 0)
+            fadingTimer = fadingTime;
+            fadingFrameTimer = 0;
+            while (fadingTimer > 0)
             {
-                isFaded = !isFaded;
-                fadingFrameTimer = fadingFrameTime;
+                spriteColor = holderSprite.color;
+                if (fadingFrameTimer <= 0)
+                {
+                    isFaded = !isFaded;
+                    fadingFrameTimer = fadingFrameTime;
+                }
+                spriteColor.a = isFaded ? 0 : 1;
+                holderSprite.color = spriteColor;
+                fadingTimer -= Time.deltaTime;
+                fadingFrameTimer -= Time.deltaTime;
+                yield return null;
             }
-            spriteColor.a = isFaded ? 0 : 1;
-            holderSprite.color = spriteColor;
-            fadingTimer -= Time.deltaTime;
-            fadingFrameTimer -= Time.deltaTime;
-            yield return null;
         }
         gameObject.SetActive(false);
     }

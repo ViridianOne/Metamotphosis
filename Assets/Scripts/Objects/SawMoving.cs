@@ -50,7 +50,7 @@ public class SawMoving : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && MecroSelectManager.instance.GetIndex() != 7)
         {
             Player.instance.DamagePlayer();
         }
