@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ElectricityTileChange : MonoBehaviour
+public class ElectricityTileChange : MonoBehaviour, IPoolObject
 {
     [Header("Tilemap")]
     [SerializeField] private Tilemap map;
@@ -12,7 +12,7 @@ public class ElectricityTileChange : MonoBehaviour
     [SerializeField] private int firstTilePos, lastTilePos;
     [SerializeField] private int firstFrame, lastFrame;
     [SerializeField] private AnimatedTile middleTile, firstTile, lastTile;
-    [SerializeField] private int constTilePos; //x or y position that is same for every tile in current tilemap 
+    [SerializeField] private int constTilePos; //x or y position that is same for every tile in current tilemap
 
     [Header("Diodes")]
     [SerializeField] private Animator leftDiode;
@@ -26,13 +26,7 @@ public class ElectricityTileChange : MonoBehaviour
     {
         activeTimer = 0;
         disableTimer = disableTime;
-        if (animationLayer != 1)
-        {
-            leftDiode.SetLayerWeight(animationLayer, 100);
-            leftDiode.SetLayerWeight(1, 0);
-            rightDiode.SetLayerWeight(animationLayer, 100);
-            rightDiode.SetLayerWeight(1, 0);
-        }
+        SetAnimationLayer(animationLayer);
         for (int i = firstTilePos; i <= lastTilePos; i++)
         {
             if (i == firstTilePos)
@@ -82,5 +76,36 @@ public class ElectricityTileChange : MonoBehaviour
         yield return new WaitForSeconds(turningOnTime);
         grid.SetActive(true);
         activeTimer = activeTime;
+    }
+
+    private void SetAnimationLayer(int index)
+    {
+        for (var i = 1; i < leftDiode.layerCount; i++)
+        {
+            leftDiode.SetLayerWeight(i, index == i ? 100 : 0);
+            rightDiode.SetLayerWeight(i, index == i ? 100 : 0);
+        }
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolElectricityData(isVertical, middleTile, firstTile, lastTile, 
+            firstTilePos, lastTilePos, constTilePos, animationLayer);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var electricityData = objectData as PoolElectricityData;
+
+        isVertical = electricityData.isVertical;
+        middleTile = electricityData.middleTile;
+        firstTile = electricityData.firstTile;
+        lastTile = electricityData.lastTile;
+        firstTilePos = electricityData.firstTilePos;
+        lastTilePos = electricityData.lastTilePos;
+        constTilePos = electricityData.constTilePos;
+        animationLayer = electricityData.animationLayer;
+
+        SetAnimationLayer(animationLayer);
     }
 }

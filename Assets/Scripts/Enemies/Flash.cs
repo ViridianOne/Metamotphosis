@@ -24,14 +24,11 @@ public class Flash : Enemy
     [SerializeField] private float delayAfterRelocating, explosionTime, returnTime , delayBetweenAttacks;
 
     private Tuple<Color, Color> changedColor;
-    private Dictionary<int, Tuple<string, string>> changedColors = new Dictionary<int, Tuple<string, string>>
+    private readonly Dictionary<int, Tuple<string, string>> changedColors = new()
         { { 0, Tuple.Create("#FFE880", "#CCA800") },
           { 1, Tuple.Create("#80FFA9", "#00CC41") },
           { 2, Tuple.Create("#8097FF", "#0025CC") },
           { 3, Tuple.Create("#FF80D7", "#CC008C") } };
-
-    [Header("Damage")]
-    private bool isActive = true;
 
     protected override void Start()
     {
@@ -201,5 +198,14 @@ public class Flash : Enemy
         Gizmos.DrawWireSphere(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, checkPlayerAreaSize);
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        isAttacking = false;
+        attacksCount = 0;
+        currentAttackRadius = attackRadius;
     }
 }

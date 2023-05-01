@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SawMoving : MonoBehaviour
+public class SawMoving : MonoBehaviour, IPoolObject
 {
-    [SerializeField] bool isMoving;
-    public Transform pos1, pos2;
-    public float speed;
-    public Transform startPos;
     private Vector3 nextPos;
-    [SerializeField] bool isSmall;
-    private Animator anim;
+    private Vector3 position1, position2;
     private CircleCollider2D circleCollider;
+    [SerializeField] private bool isMoving;
+    [SerializeField] private bool isSmall;
+    [SerializeField] private Transform pos1, pos2;
+    [SerializeField] private Transform startPos;
+    [SerializeField] private float speed;
 
-    //[SerializeField] private SpriteRenderer holder;
+    private Animator anim;
+    private SpriteRenderer spriteRender;
     [SerializeField] private Sprite bigSawSprite, smallSawSprite;
 
     private void Awake()
     {
+        position1 = pos1.position;
+        position2 = pos2.position;
+        nextPos = startPos.position;
         anim = GetComponent<Animator>();
         circleCollider = GetComponent<CircleCollider2D>();
+        spriteRender = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -32,13 +37,13 @@ public class SawMoving : MonoBehaviour
     {
         if (isMoving)
         {
-            if (transform.position == pos1.position)
+            if (transform.position == position1)
             {
-                nextPos = pos2.position;
+                nextPos = position2;
             }
-            if (transform.position == pos2.position)
+            if (transform.position == position2)
             {
-                nextPos = pos1.position;
+                nextPos = position1;
             }
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         }
@@ -46,7 +51,11 @@ public class SawMoving : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(pos1.position, pos2.position);
+        if (isMoving)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(pos1.position, pos2.position);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,6 +67,33 @@ public class SawMoving : MonoBehaviour
 
     private void OnValidate()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = isSmall ? smallSawSprite : bigSawSprite;
+        GetComponent<SpriteRenderer>().sprite = isSmall ? smallSawSprite : bigSawSprite;
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolSawData(position1, position2, startPos.position, isMoving, isSmall);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var sawData = objectData as PoolSawData;
+
+        transform.position = sawData.startPosition;
+        position1 = sawData.position1;
+        position2 = sawData.position2;
+        nextPos = sawData.startPosition == sawData.position1 ?
+            sawData.position2 : sawData.position1;
+        isMoving = sawData.isMoving;
+        isSmall = sawData.isSmall;
+
+        UpdateSize();
+    }
+
+    private void UpdateSize()
+    {
+        spriteRender.sprite = isSmall ? smallSawSprite : bigSawSprite;
+        anim.SetBool("isSmall", isSmall);
+        circleCollider.radius = isSmall ? 1.25f : 2.5f;
     }
 }

@@ -264,6 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258772340811661360}
   - component: {fileID: 1258772340811661363}
+  - component: {fileID: 753318662127285025}
   m_Layer: 0
   m_Name: Electricity Current
   m_TagString: Untagged
@@ -318,6 +319,19 @@ MonoBehaviour:
   disableTime: 6
   turningOnTime: 1.46
   animationLayer: 1
+--- !u!114 &753318662127285025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258772340811661361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90ddf9ad93a3124aba05af106835c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
 --- !u!1 &1258772340825988437
 GameObject:
   m_ObjectHideFlags: 0

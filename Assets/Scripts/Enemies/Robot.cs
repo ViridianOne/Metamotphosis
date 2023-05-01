@@ -27,8 +27,6 @@ public class Robot : Enemy
     private bool isDamaged;
     [SerializeField] private Transform damagePos;
     [SerializeField] private Vector2 damageSize;
-    private bool isActive = true;
-    [SerializeField] Transform respawnPoint;
 
     private void Update()
     {
@@ -177,7 +175,5 @@ public class Robot : Enemy
         ChangeDirection(Directions.none, 0);
         stateChangeTimer = stateChangeTime;
         yield return new WaitForSeconds(1.5f);
-        transform.position = respawnPoint.position;
-        isActive = true;
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 265507638138497547}
   - component: {fileID: 265507638138497551}
   - component: {fileID: 265507638138497548}
+  - component: {fileID: 2852646519138617519}
   m_Layer: 6
   m_Name: Trampoline 1
   m_TagString: Ground
@@ -153,3 +154,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1152
   animationLayer: 1
+--- !u!114 &2852646519138617519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265507638138497544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90ddf9ad93a3124aba05af106835c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3

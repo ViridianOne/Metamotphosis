@@ -31,8 +31,6 @@ public class Blob : Enemy
     private bool isDamaged;
     [SerializeField] private Transform damagePos;
     [SerializeField] private Vector2 damageSize;
-    private bool isActive = true;
-    [SerializeField] Transform respawnPoint;
 
     [SerializeField]private bool isGrounded;
     [SerializeField]private bool wasOnGround;
@@ -46,7 +44,6 @@ public class Blob : Enemy
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float timeBetweenJump;
     private bool isJumpCharged = false;
-    public float gravity;
     [SerializeField] private float minJumpTime;
     private bool isChargingJump = false;
     [SerializeField] protected float accelerationInAir;
@@ -57,7 +54,7 @@ public class Blob : Enemy
         isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
         if (!wasOnGround && isGrounded)
         {
-            rigidBody.gravityScale = gravity;
+            rigidBody.gravityScale = gravityScale;
             betweenJumpTimer = timeBetweenJump;
             jumpTimer = 0f;
             isJumpCharged = false;
@@ -166,6 +163,7 @@ public class Blob : Enemy
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
+
     IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds)
     {
         Vector3 originSize = Vector3.one;
