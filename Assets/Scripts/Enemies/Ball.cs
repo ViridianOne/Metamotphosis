@@ -55,8 +55,7 @@ public class Ball : Enemy
                 isPlayerNear = Physics2D.OverlapCircle(transform.position, attackAreaRadius, masksAbleToDamage);
                 if (isPlayerNear)
                 {
-                    //anim.SetTrigger("attack");
-                    //Jump();
+                    Jump();
                     StartCoroutine(AttackPlayer());
                 }
             }
@@ -126,6 +125,8 @@ public class Ball : Enemy
 
     public void Jump()
     {
+        anim.SetTrigger("attack");
+        anim.SetBool("landingMoment", true);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpTimer = 0;
@@ -170,7 +171,7 @@ public class Ball : Enemy
             anim.SetBool("isMoving", true);
             state = EnemyState.Moving;
         }*/
-        if (Mathf.Abs(rigidBody.velocity.x) > 0.5f)
+        if (Mathf.Abs(rigidBody.velocity.x) > 0.2f)
         {
             anim.SetBool("isMoving", true);
             anim.speed = !isGrounded ? 1 : Mathf.Abs(rigidBody.velocity.normalized.x);
