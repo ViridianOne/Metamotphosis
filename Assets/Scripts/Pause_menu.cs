@@ -36,6 +36,8 @@ public class Pause_menu : MonoBehaviour
     public GameObject deletePage;
     public GameObject quitPage;
 
+    public GameObject mapContainer;
+
     public GameObject pauseBG;
     public DialogueSystem dialogues;
 
@@ -62,6 +64,8 @@ public class Pause_menu : MonoBehaviour
             activePage.SetActive(false);
             activeButtonState = ActiveButtonState.None;
             activePage = null;
+            mapContainer.SetActive(false);
+            
         }
         pauseMenuButtons.SetActive(false);
         pauseBG.SetActive(false);
@@ -127,18 +131,20 @@ public class Pause_menu : MonoBehaviour
     {
         if (activeButtonState == ActiveButtonState.Map)
         {
-            //if (activePage == mapPage)
-            //{
-            //    activePage.SetActive(false);
-            //    activePage = null;
-            //    return;
-            //}
-            //else if (activePage != null)
-            //{
-            //    activePage.SetActive(false);
-            //}
-            //mapPage.SetActive(true);
-            //activePage = mapPage;
+            if (activePage == mapPage)
+            {
+                activePage.SetActive(false);
+                activePage = null;
+                mapContainer.SetActive(false);
+                return;
+            }
+            else if (activePage != null)
+            {
+                activePage.SetActive(false);
+            }
+            mapContainer.SetActive(true);
+            mapPage.SetActive(true);
+            activePage = mapPage;
         }
         else
             return;

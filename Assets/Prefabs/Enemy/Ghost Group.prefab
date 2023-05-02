@@ -178,13 +178,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade5ea32c32737640be60ef2a0bc6f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   holder: {fileID: 8949074472613683248}
+  holderSprite: {fileID: 0}
   fadingTime: 3
   fadingFrameTime: 0.25
   animationLayer: 1
   type: 7
+  velocityCoef: 0
+  velocityChangeTime: 0
   damageTime: 0.533
   masksAbleToDamage:
+    serializedVersion: 2
+    m_Bits: 1152
+  masksToDamage:
     serializedVersion: 2
     m_Bits: 128
   attackPos: {x: 0.05, y: 0}
