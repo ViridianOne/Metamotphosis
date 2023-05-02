@@ -19,11 +19,13 @@ public class RoomActiveZone : MonoBehaviour
     [SerializeField] private GameObject virtualCamera;
     [SerializeField] private RoomObjectsManager roomObjectsManager;
     [SerializeField] private RoomEnemiesManager roomEnemiesManager;
+    private bool isInRoom;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        if (!isInRoom && other.CompareTag("Player") && !other.isTrigger)
         {
+            isInRoom = true;
             currentRooms.Add(this);
             virtualCamera.SetActive(true);
             if (roomObjectsManager != null)
@@ -35,7 +37,7 @@ public class RoomActiveZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        if (!MecroSelectManager.instance.isChanged && other.CompareTag("Player") && !other.isTrigger)
         {
             currentRooms.Remove(this);
             virtualCamera.SetActive(false);
@@ -43,6 +45,7 @@ public class RoomActiveZone : MonoBehaviour
                 roomObjectsManager.RecycleObjects();
             if (roomEnemiesManager != null)
                 roomEnemiesManager.DeactivateEnemies();
+            isInRoom = false;
         }
     }
 }

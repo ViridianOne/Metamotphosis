@@ -5,7 +5,7 @@ using UnityEngine;
 public class Platform_new : MonoBehaviour, IPoolObject
 {
     private bool lightsOn;
-    private bool isSleeping;
+    [SerializeField] private bool isSleeping;
     private bool isActiveZone;
     private Vector3 nextPos;
     private Vector3 position1, position2;
@@ -125,7 +125,7 @@ public class Platform_new : MonoBehaviour, IPoolObject
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
+        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
         {
             anim.SetBool("isPlayerOnPlatform", false);
             collision.transform.SetParent(null);
