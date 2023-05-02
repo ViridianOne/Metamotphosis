@@ -2,38 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform_new : MonoBehaviour
+public class Platform_new : MonoBehaviour, IPoolObject
 {
-    [SerializeField] private bool isMoving;
-    public Transform pos1, pos2;
-    public float speed;
-    public Transform startPos;
-    private Vector3 nextPos;
-    [HideInInspector] public Animator anim;
-    public bool isSleeping;
     private bool lightsOn;
+    private bool isSleeping;
+    private bool isActiveZone;
+    private Vector3 nextPos;
+    private Vector3 position1, position2;
+    [SerializeField] private bool isMoving;
+    [SerializeField] private Transform pos1, pos2;
+    [SerializeField] private Transform startPos;
     [SerializeField] private Vector2 activeZonePos, activeZoneSize;
     [SerializeField] private LayerMask playerMask;
-    private bool isActiveZone;
-    [SerializeField] private int animationLayer;
+    [SerializeField] private float speed;
     [HideInInspector] public float velocityChangeTime;
     [HideInInspector] public float velocityCoef;
+
+    [SerializeField] private int animationLayer;
+    [HideInInspector] public Animator anim;
     [HideInInspector] public SpriteRenderer sprite;
 
     private void Awake()
     {
+        position1 = pos1.position;
+        position2 = pos2.position;
+        nextPos = startPos.position;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
-        nextPos = pos1.position;
-        if (animationLayer != 1)
-        {
-            anim.SetLayerWeight(1, 0);
-            anim.SetLayerWeight(animationLayer, 100);
-        }
+        SetAnimationLayer(animationLayer);
         anim.SetFloat("sleepingCoef", isSleeping ? 1 : 0);
         anim.SetBool("isSleeping", isSleeping);
         lightsOn = !isSleeping;
@@ -42,7 +42,7 @@ public class Platform_new : MonoBehaviour
     void Update()
     {
         isActiveZone = Physics2D.OverlapBox(activeZonePos, activeZoneSize, 0, playerMask);
-        if(isActiveZone && isSleeping && MecroSelectManager.instance.GetIndex() == 0)
+        if (isActiveZone && isSleeping && MecroSelectManager.instance.GetIndex() == 0)
         {
             lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
             anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
@@ -50,13 +50,13 @@ public class Platform_new : MonoBehaviour
         }
         if (isMoving && isActiveZone && lightsOn)
         {
-            if (transform.position == pos1.position || nextPos == pos2.position)
+            if (transform.position == position1 || nextPos == position2)
             {
-                nextPos = pos2.position;
+                nextPos = position2;
             }
-            if (transform.position == pos2.position || nextPos == pos1.position)
+            if (transform.position == position2 || nextPos == position1)
             {
-                nextPos = pos1.position;
+                nextPos = position1;
             }
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * velocityCoef * Time.deltaTime);
         }
@@ -65,7 +65,11 @@ public class Platform_new : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(pos1.position, pos2.position);
+        if (isMoving)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(pos1.position, pos2.position);
+        }
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireCube(activeZonePos, activeZoneSize);
@@ -128,6 +132,14 @@ public class Platform_new : MonoBehaviour
         }
     }
 
+    private void SetAnimationLayer(int index)
+    {
+        for (var i = 1; i < anim.layerCount; i++)
+        {
+            anim.SetLayerWeight(i, index == i ? 100 : 0);
+        }
+    }
+
     protected void ChangeVelocity()
     {
         if (velocityChangeTime > 0)
@@ -138,5 +150,29 @@ public class Platform_new : MonoBehaviour
             anim.speed = 1;
             sprite.color = new Color(1, 1, 1, 1);
         }
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolPlatformData(position1, position2, startPos.position, isMoving, isSleeping, 
+            animationLayer, activeZonePos, activeZoneSize);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var platformData = objectData as PoolPlatformData;
+
+        transform.position = platformData.startPosition;
+        position1 = platformData.position1;
+        position2 = platformData.position2;
+        nextPos = platformData.startPosition == platformData.position1 ? 
+            platformData.position2 : platformData.position1;
+        isMoving = platformData.isMoving;
+        isSleeping = platformData.isSleeping;
+        animationLayer = platformData.animationLayer;
+        activeZonePos = platformData.activeZonePos;
+        activeZoneSize = platformData.activeZoneSize;
+
+        SetAnimationLayer(animationLayer);
     }
 }

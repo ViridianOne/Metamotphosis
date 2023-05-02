@@ -76,6 +76,7 @@ public abstract class Player : MonoBehaviour
     protected virtual void Start()
     {
         playerCollider = GetComponent<Collider2D>();
+        Physics2D.IgnoreLayerCollision(6, 7, false);
         gravity = rigidBody.gravityScale;
         isActive = true;
         anim.SetBool("isLedgeGrabbing", false);
@@ -203,7 +204,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         isActive = false;
-        playerCollider.enabled = false;
+        //playerCollider.enabled = false;
         MiniJump(12f);
         StartCoroutine(Respawn());
     }
@@ -216,6 +217,7 @@ public abstract class Player : MonoBehaviour
         yield return new WaitForSeconds(respawnTime - 0.3f);
         if (!isActive)
         {
+            Physics2D.IgnoreLayerCollision(6, 7, false);
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
@@ -224,6 +226,7 @@ public abstract class Player : MonoBehaviour
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
         }
+        RoomActiveZone.RecoverEnemies();
     }
 
     protected abstract void StopMoving();

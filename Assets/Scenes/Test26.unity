@@ -2251,7 +2251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350467939650575433, guid: 2a1feca9a2161624db1e759d8f88c304, type: 3}
       propertyPath: startMecro
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 350467939650575433, guid: 2a1feca9a2161624db1e759d8f88c304, type: 3}
       propertyPath: respawnPoint
@@ -2909,33 +2909,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1842155208, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842155208, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: m_TagString
-      value: Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 157238605332762542, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0215
-      objectReference: {fileID: 0}
     - target: {fileID: 157238606358128082, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
       propertyPath: m_Name
       value: Mecro26
       objectReference: {fileID: 0}
     - target: {fileID: 157238606358128082, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 157238606358128082, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 157238606358128082, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 157238606358128087, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
       propertyPath: m_RootOrder
@@ -2980,10 +2960,6 @@ PrefabInstance:
     - target: {fileID: 157238606358128087, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 157238606358128089, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}
-      propertyPath: jumpForce
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 387894b4878f86241b9467b69ed6ac4f, type: 3}

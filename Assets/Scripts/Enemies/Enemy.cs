@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    public EnemyType type;
+    protected EnemyState state;
+
+    [Header("Anim")]
     [HideInInspector] public Animator anim;
     [SerializeField] protected GameObject holder;
     [HideInInspector] public SpriteRenderer holderSprite;
@@ -15,17 +19,21 @@ public abstract class Enemy : MonoBehaviour
     private float fadingFrameTimer;
     [SerializeField] protected int animationLayer;
 
-    public EnemyType type;
-
+    [Header("Psycics")]
     protected Rigidbody2D rigidBody;
     protected Collider2D enemyCollider;
-    protected EnemyState state;
+    [SerializeField] protected float gravityScale = 4f;
     [HideInInspector] public float velocityCoef;
     [HideInInspector] public float velocityChangeTime;
 
+    [Header("Damage")]
+    protected bool isActive = true;
+    [HideInInspector] public bool isDefeated = false;
+    [SerializeField] protected Transform respawnPoint;
     [SerializeField] private float damageTime;
     [SerializeField] protected LayerMask masksAbleToDamage, masksToDamage;
 
+    [Header("Attack")]
     protected bool canDamagePlayer;
     [SerializeField] protected Vector2 attackPos, attackSize;
 
@@ -54,13 +62,32 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void Move();
 
+    protected abstract IEnumerator DamagePlayer();
+
+    public void SetActive(bool state)
+    {
+        gameObject.SetActive(state);
+    }
+
+    protected void ChangeVelocity()
+    {
+        if (velocityChangeTime > 0)
+            velocityChangeTime -= Time.deltaTime;
+        else if (velocityChangeTime <= 0 && velocityCoef != 1)
+        {
+            velocityCoef = 1;
+            anim.speed = 1;
+            holderSprite.color = new Color(1, 1, 1, 1);
+        }
+    }
+
     //protected abstract void TakeDamage();
     protected IEnumerator TurnOff()
     {
         anim.SetTrigger("damage");
         rigidBody.velocity = Vector2.zero;
         rigidBody.gravityScale = 0;
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        enemyCollider.enabled = false;
         yield return new WaitForSeconds(damageTime);
         if (type != EnemyType.Spark && type != EnemyType.Flash)
         {
@@ -81,20 +108,21 @@ public abstract class Enemy : MonoBehaviour
                 yield return null;
             }
         }
-        gameObject.SetActive(false);
+        isDefeated = true;
+        SetActive(false);
     }
 
-    protected abstract IEnumerator DamagePlayer();
-
-    protected void ChangeVelocity()
+    public virtual void Recover()
     {
-        if (velocityChangeTime > 0)
-            velocityChangeTime -= Time.deltaTime;
-        else if (velocityChangeTime <= 0 && velocityCoef != 1)
-        {
-            velocityCoef = 1;
-            anim.speed = 1;
-            holderSprite.color = new Color(1, 1, 1, 1);
-        }
+        anim.SetTrigger("recover");
+
+        isActive = true;
+        isDefeated = false;
+        transform.position = respawnPoint.position;
+        rigidBody.gravityScale = gravityScale;
+        enemyCollider.enabled = true;
+        
+        state = EnemyState.Idle;
+        SetActive(true);
     }
 }

@@ -23,10 +23,6 @@ public class Ghost : Enemy
     [SerializeField] private float attackAreaRadius;
     [SerializeField] private float attackTime;
 
-    [Header("Damage")]
-    private bool isActive = true;
-    [SerializeField] private Transform respawnPoint;
-
 
     private void Update()
     {
@@ -174,6 +170,13 @@ public class Ghost : Enemy
         Player.instance.DamagePlayer();
         TakeDamage();
         yield return new WaitForSeconds(0f);
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        canAttack = true;
     }
 }
 

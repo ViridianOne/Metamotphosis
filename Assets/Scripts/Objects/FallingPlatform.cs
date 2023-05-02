@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
     public bool playerTouchedPlatform = false;
     public float timeRemaining = 5;
     public SpriteRenderer platform;
     public PlatformEffector2D effector;
     public Collider2D collider2;
     public float timeRemainingBeforeRespawning = 0;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (playerTouchedPlatform)
