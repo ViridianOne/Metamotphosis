@@ -105,8 +105,8 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
             //isChanged = true;
             Player.instance.DisableAbility();
-            Player.instance.gameObject.SetActive(false);
             isChanged = true;
+            Player.instance.gameObject.SetActive(false);
             instantiatedMecros[(int)mecroState].respawnPoint = respawnPoint;
             instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
@@ -114,7 +114,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
                 instantiatedMecros[(int)mecroState].InvertGravity();
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
-            Physics2D.IgnoreLayerCollision(7, 9, false);
+            //Physics2D.IgnoreLayerCollision(7, 9, false);
             currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
         }

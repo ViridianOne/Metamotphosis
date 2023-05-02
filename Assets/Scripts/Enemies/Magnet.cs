@@ -5,12 +5,10 @@ using UnityEngine;
 public class Magnet : Enemy
 {
     [Header("Physics")]
-    private bool isGravitySet = false;
     private bool isPlacedOnWall = false;
     private float stateChangeTimer = 0f;
     private int moveInput = 0;
     private bool isMoveDirectionChanged = false;
-    [SerializeField] private float gravityScale = 4f;
     [SerializeField] private Directions gravityDirection = Directions.down;
     [SerializeField] private Transform leftBottomPos, rightTopPos;
     [SerializeField] private float stateChangeTime;
@@ -20,8 +18,9 @@ public class Magnet : Enemy
     [SerializeField] protected float runDecceleration;
     [SerializeField] protected float runAccelerationAmount;
     [SerializeField] protected float runDeccelerationAmount;
-    private Quaternion[] rotations = { Quaternion.Euler(180, 0, 0), Quaternion.Euler(0, 0, 90), Quaternion.Euler(0, 0, 0),Quaternion.Euler(0, 180, 90),
-                                       Quaternion.Euler(180, 180, 0), Quaternion.Euler(0, 180, -90), Quaternion.Euler(0, 180, 0), Quaternion.Euler(0, 0, -90) };
+    private readonly Quaternion[] rotations = 
+        { Quaternion.Euler(180, 0, 0), Quaternion.Euler(0, 0, 90), Quaternion.Euler(0, 0, 0),Quaternion.Euler(0, 180, 90),
+          Quaternion.Euler(180, 180, 0), Quaternion.Euler(0, 180, -90), Quaternion.Euler(0, 180, 0), Quaternion.Euler(0, 0, -90) };
 
     [Header("Attack")]
     [SerializeField] private float attackTime;
@@ -32,9 +31,15 @@ public class Magnet : Enemy
 
     [Header("Damage")]
     private bool isDamaged;
-    private bool isActive = true;
     [SerializeField] private Vector2 damagePos, damageSize;
 
+
+    protected override void Start()
+    {
+        base.Start();
+
+        UpdateGravity();
+    }
 
     private void Update()
     {
@@ -46,22 +51,6 @@ public class Magnet : Enemy
             }
             if (stateChangeTimer <= 0f)
             {
-                if (!isGravitySet)
-                {
-                    if (gravityDirection == Directions.right || gravityDirection == Directions.left)
-                    {
-                        gravityScale = rigidBody.gravityScale;
-                        rigidBody.gravityScale = 0;
-                        isPlacedOnWall = true;
-                    }
-                    else
-                    {
-                        rigidBody.gravityScale = 4f * (gravityDirection == Directions.down ? 1f : -1f);
-                    }
-                    transform.rotation = rotations[(int)gravityDirection];
-                    isGravitySet = true;
-                }
-
                 state = (EnemyState)Random.Range(0, 3);
                 stateChangeTimer = stateChangeTime;
                 moveInput = 0;
@@ -172,6 +161,20 @@ public class Magnet : Enemy
         Gizmos.DrawWireCube(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackSize);
     }
 
+    private void UpdateGravity()
+    {
+        if (gravityDirection == Directions.right || gravityDirection == Directions.left)
+        {
+            rigidBody.gravityScale = 0;
+            isPlacedOnWall = true;
+        }
+        else
+        {
+            rigidBody.gravityScale = 4f * (gravityDirection == Directions.down ? 1f : -1f);
+        }
+        transform.rotation = rotations[(int)gravityDirection];
+    }
+
     private bool CheckPosition(Vector2 pos)
     {
         if (isPlacedOnWall)
@@ -223,5 +226,12 @@ public class Magnet : Enemy
         yield return new WaitForSeconds(1f);
         stateChangeTimer = 0;
         isActive = true;
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        UpdateGravity();
     }
 }

@@ -28,12 +28,10 @@ public class Spark : Enemy
     [SerializeField] private float predictionScale = 10000;
 
     [Header("Damage")]
-    private bool isActive = true;
     private bool isDamaged = false;
     private bool canTakeDamage = false;
     [SerializeField] protected Vector2 damagePos, damageSize;
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private Transform respawnPoint;
 
 
     private void Update()

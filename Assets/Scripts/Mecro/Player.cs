@@ -204,7 +204,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         isActive = false;
-        playerCollider.enabled = false;
+        //playerCollider.enabled = false;
         MiniJump(12f);
         StartCoroutine(Respawn());
     }
@@ -226,6 +226,7 @@ public abstract class Player : MonoBehaviour
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
         }
+        RoomActiveZone.RecoverEnemies();
     }
 
     protected abstract void StopMoving();

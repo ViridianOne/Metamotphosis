@@ -226,6 +226,8 @@ MonoBehaviour:
   isMoving: 1
   pos1: {fileID: 6016499692852912017}
   pos2: {fileID: 6016499694112348919}
+  position1: {x: 0, y: -3.76, z: 0}
+  position2: {x: 9.99, y: -3.76, z: 0}
   speed: 3
   startPos: {fileID: 6016499694112348919}
   anim: {fileID: 0}
@@ -248,6 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6016499693953035633}
+  - component: {fileID: 7419306168003506055}
   m_Layer: 0
   m_Name: Platform Small
   m_TagString: Untagged
@@ -273,6 +276,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7419306168003506055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016499693953035634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90ddf9ad93a3124aba05af106835c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!1 &6016499694112348912
 GameObject:
   m_ObjectHideFlags: 0
