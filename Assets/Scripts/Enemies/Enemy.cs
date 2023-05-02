@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
         state = EnemyState.Idle;
         if (animationLayer == 0)
             animationLayer = 1;
-        for (int i = 1; i < anim.layerCount; i++)
+        for (int i = 1; i < 5; i++)
         {
             if (i == animationLayer)
                 anim.SetLayerWeight(i, 1);

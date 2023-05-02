@@ -29,12 +29,10 @@ public class Ball : Enemy
     [SerializeField] Vector2 playerDetectorSize;
 
     [Header("Damage")]
-    [SerializeField] private bool isActive = true;
     private bool isDamaged = false;
     [SerializeField] private Transform damagePos;
     [SerializeField] private Vector2 damageSize;
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private Transform respawnPoint;
 
     private float accelerate = 0;
 
@@ -77,8 +75,8 @@ public class Ball : Enemy
             {
                 TakeDamage();
             }
-            UpdateMovementAnimation();
             ChangeVelocity();
+            UpdateMovementAnimation();
         }
     }
 
@@ -172,7 +170,7 @@ public class Ball : Enemy
         if (Mathf.Abs(rigidBody.velocity.x) > 0.2f)
         {
             anim.SetBool("isMoving", true);
-            anim.speed = !isGrounded ? 1 : Mathf.Abs(rigidBody.velocity.normalized.x);
+            anim.speed = Mathf.Abs(rigidBody.velocity.normalized.x);
         }
         else
         {
@@ -190,7 +188,7 @@ public class Ball : Enemy
         state = EnemyState.Attack;
 
         CalculateMoveDirection();
-        UpdateMovementAnimation();
+        //UpdateMovementAnimation();
 
         yield return new WaitForSeconds(attackTime);
         //TakeDamage();
