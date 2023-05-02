@@ -6,8 +6,6 @@ public class Ball : Enemy
 {
     [Header("Physics")]
     private float moveInput;
-    private Vector2 direction = Vector2.right;
-    private float currentSpeed;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxSpeed;
     [SerializeField] protected float runAcceleration;
@@ -16,27 +14,23 @@ public class Ball : Enemy
     [SerializeField] protected float runDeccelerationAmount;
     [SerializeField] protected float accelerationInAir;
     [SerializeField] private bool isGrounded;
-    [SerializeField] private bool wasOnGround;
     [SerializeField] private Transform feetPos;
     [SerializeField] private Vector2 feetDetectorSize;
-    private float jumpTimer;
     [SerializeField] private float jumpForce;
 
     [Header("Attack")]
     private bool canAttack = true;
     private bool isPlayerNear = false;
     [SerializeField] private bool isAttacking = false;
-    private Vector3 predictedPlayerPos;
     private Vector2 vectorToPlayer;
-    private Vector2 vectorFromPlayer;
-    [SerializeField] private float attackAreaRadius;
     [SerializeField] private float delayBetweenAttacks;
     [SerializeField] private float attackTime;
+    [SerializeField] Transform playerDetectorPos;
+    [SerializeField] Vector2 playerDetectorSize;
 
     [Header("Damage")]
     [SerializeField] private bool isActive = true;
     private bool isDamaged = false;
-    private bool canTakeDamage = false;
     [SerializeField] private Transform damagePos;
     [SerializeField] private Vector2 damageSize;
     [SerializeField] private LayerMask groundMask;
@@ -46,20 +40,26 @@ public class Ball : Enemy
 
     private void Update()
     {
-        wasOnGround = isGrounded;
         isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
         if (isActive)
         {
+            isPlayerNear = Physics2D.OverlapBox(playerDetectorPos.position, playerDetectorSize, 0f, masksAbleToDamage);
             if (canAttack)
             {
-                isPlayerNear = Physics2D.OverlapCircle(transform.position, attackAreaRadius, masksAbleToDamage);
                 if (isPlayerNear)
                 {
                     Jump();
                     StartCoroutine(AttackPlayer());
                 }
             }
-            else if (isAttacking)
+            if(!isPlayerNear)
+            {
+                isAttacking = false;
+                canAttack = true;
+                moveInput = 0;
+                state = EnemyState.Idle;
+            }
+            if (isAttacking)
             {
                 CalculateMoveDirection();
                 //UpdateMovementAnimation();
@@ -92,7 +92,6 @@ public class Ball : Enemy
 
     protected override void Move()
     {
-        currentSpeed = rigidBody.velocity.magnitude * moveInput;
         float targetSpeed = moveInput * moveSpeed * velocityCoef;
 
         if (isGrounded)
@@ -129,7 +128,6 @@ public class Ball : Enemy
         anim.SetBool("landingMoment", true);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        jumpTimer = 0;
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
@@ -243,5 +241,11 @@ public class Ball : Enemy
         yield return new WaitForSeconds(1.5f);
         //transform.position = respawnPoint.position;
         //isActive = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(playerDetectorPos.position, playerDetectorSize);
     }
 }
