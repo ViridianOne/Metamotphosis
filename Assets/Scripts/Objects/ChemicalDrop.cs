@@ -22,7 +22,8 @@ public class ChemicalDrop : MonoBehaviour
     {
         if (drop.transform.position.y <= pos2.position.y)
         {
-            drop.transform.position = pos2.position;
+            //drop.transform.position = pos2.position;
+            drop.SetActive(false);
         }
         if (disableTimer > 0f)
         {
@@ -41,7 +42,7 @@ public class ChemicalDrop : MonoBehaviour
         }
         else if (activeTimer <= 0f && isActive)
         {
-            drop.SetActive(false);
+            //drop.SetActive(false);
             disableTimer = disableTime;
         }
     }
