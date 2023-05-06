@@ -319,6 +319,13 @@ MonoBehaviour:
   disableTime: 6
   turningOnTime: 1.46
   animationLayer: 1
+  rightDiodePos: {x: 0, y: 0}
+  leftDiodePos: {x: 0, y: 0}
+  leftDiodeObj: {fileID: 1258772341328920593}
+  rightDiodeObj: {fileID: 1258772340929371310}
+  electricityCollider: {fileID: 1258772340338669824}
+  colliderZonePos: {x: 0.2, y: 0}
+  colliderZoneSize: {x: 3.9, y: 0.3}
 --- !u!114 &753318662127285025
 MonoBehaviour:
   m_ObjectHideFlags: 0

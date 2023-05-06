@@ -65,6 +65,9 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected Collider2D ledgeDecetror;
     [SerializeField] protected float ledgeCancelTime;
 
+    public Color defaultColor;
+    private SpriteRenderer currentColor;
+
     private void Awake()
     {
         instance = this;
@@ -79,6 +82,7 @@ public abstract class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, false);
         gravity = rigidBody.gravityScale;
         isActive = true;
+        currentColor = holder.GetComponent<SpriteRenderer>();
         anim.SetBool("isLedgeGrabbing", false);
         anim.SetBool("isMoving", false);
         anim.SetBool("isJumping", false);
@@ -218,6 +222,8 @@ public abstract class Player : MonoBehaviour
         if (!isActive)
         {
             Physics2D.IgnoreLayerCollision(6, 7, false);
+            //instance.GetHolder().GetComponent<SpriteRenderer>().color = defaultColor;
+            currentColor.color = defaultColor;
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
@@ -315,5 +321,9 @@ public abstract class Player : MonoBehaviour
             anim.speed = 1;
             holderSprite.color = new Color(1, 1, 1, 1);
         }
+    }
+    public GameObject GetHolder()
+    {
+        return holder;
     }
 }
