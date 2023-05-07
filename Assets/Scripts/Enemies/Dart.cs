@@ -7,11 +7,10 @@ public class Dart : Enemy
     [Header("Physics")]
     private bool isApproachingGround;
     private bool wasApproachingGround;
-    private bool isGravitySet = false;
+    private bool wasInvertedAtStart;
     [SerializeField] private bool isInverted;
     [SerializeField] private Vector2 groundDetecrotPos, groundDetectorSize;
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float gravity;
 
     [Header("Attack")]
     private bool isAttacking = false;
@@ -19,19 +18,21 @@ public class Dart : Enemy
     [SerializeField] private Vector2 triggerDetectorSize;
 
     [Header("Damage")]
-    private bool isActive = true;
     [SerializeField] private Vector2 damagePos, damageSize;
+
+
+    protected override void Start()
+    {
+        base.Start();
+
+        wasInvertedAtStart = isInverted;
+        rigidBody.gravityScale = gravityScale * (isInverted ? -1 : 1);
+    }
 
     private void Update()
     {
         if (isActive)
         {
-            if (!isGravitySet)
-            {
-                rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
-                isGravitySet = true;
-            }
-
             if (!isAttacking
                 && (isInverted && Physics2D.OverlapBox(bottomTriggerPos.position, triggerDetectorSize, 0f, masksAbleToDamage)
                 || !isInverted && Physics2D.OverlapBox(topTriggerPos.position, triggerDetectorSize, 0f, masksAbleToDamage)) 
@@ -99,7 +100,7 @@ public class Dart : Enemy
         isAttacking = true;
         isInverted = !isInverted;
         anim.SetTrigger("attack");
-        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1) * velocityCoef;
+        rigidBody.gravityScale = gravityScale * (isInverted ? -1 : 1) * velocityCoef;
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
@@ -146,5 +147,14 @@ public class Dart : Enemy
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(topTriggerPos.position, triggerDetectorSize);
         Gizmos.DrawWireCube(bottomTriggerPos.position, triggerDetectorSize);
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        isInverted = wasInvertedAtStart;
+        rigidBody.gravityScale = gravityScale * (wasInvertedAtStart ? -1 : 1);
+        Flip();
     }
 }

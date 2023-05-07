@@ -42,6 +42,7 @@ public class VisibilityManager : MonoBehaviour
                 if (obj != null)
                 {
                     obj.sortingLayerID = SortingLayer.NameToID(isVisibilityActivated ? "Visible" : "Invisible");
+                    obj.enabled = isVisibilityActivated;
                 }
             }
         }
