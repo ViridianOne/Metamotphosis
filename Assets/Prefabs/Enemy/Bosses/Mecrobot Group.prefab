@@ -1650,12 +1650,12 @@ MonoBehaviour:
   gravityAddition: 0
   leftPos: {fileID: 6187045074829473936}
   rightPos: {fileID: 5021118496929822326}
-  moveSpeed: 8
-  maxSpeed: 10
-  runAcceleration: 1
-  runDecceleration: 1
-  runAccelerationAmount: 5
-  runDeccelerationAmount: 5
+  moveSpeed: 12
+  maxSpeed: 12
+  runAcceleration: 2
+  runDecceleration: 2
+  runAccelerationAmount: 8.333333
+  runDeccelerationAmount: 8.333333
   accelerationInAir: 1.25
   respawnPoint: {fileID: 1783054453760070455}
   timeToDamageFlask: 30
@@ -1664,7 +1664,7 @@ MonoBehaviour:
   damageSize: {x: 3, y: 2}
   masksAbleToDamage:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 33920
   attackPos: {x: 0, y: -0.85}
   attackSize: {x: 5.3, y: 7}
   attackAreaPos: {x: 0, y: 0}
