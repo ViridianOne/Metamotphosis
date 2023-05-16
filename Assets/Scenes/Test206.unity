@@ -400,6 +400,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1529823326808543511, guid: a54a07576a907f94b8d5004243dbc107, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529823326808543511, guid: a54a07576a907f94b8d5004243dbc107, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -835726235
+      objectReference: {fileID: 0}
     - target: {fileID: 5813761373528100718, guid: a54a07576a907f94b8d5004243dbc107, type: 3}
       propertyPath: isRight
       value: 0
@@ -427,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4339278667547363502, guid: 69e761876406efe45a1c006297664a15, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4339278667547363503, guid: 69e761876406efe45a1c006297664a15, type: 3}
       propertyPath: m_RootOrder
@@ -593,6 +601,10 @@ PrefabInstance:
     - target: {fileID: 3209772439469234456, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209772439469234456, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5075e6adba4d00b4f98c5057bfe7bc48, type: 3}
@@ -901,6 +913,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1364863666211693353, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364863666211693353, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1364863666211693399, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
       propertyPath: m_Name
       value: Trampoline Finished
@@ -965,6 +985,14 @@ PrefabInstance:
     - target: {fileID: 1364863666211693353, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364863666211693353, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364863666211693353, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -835726235
       objectReference: {fileID: 0}
     - target: {fileID: 1364863666211693399, guid: 48a4ff35b73fcde448b6dc8eddb3ba3b, type: 3}
       propertyPath: m_Name
@@ -1372,7 +1400,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456547535
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bbb0b90a6695ad3498a216a684b34b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2064,7 +2092,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456547535
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fe8d03cbc42f1ee488df7064d62fb947, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

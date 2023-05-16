@@ -110,8 +110,9 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
             instantiatedMecros[(int)mecroState].respawnPoint = respawnPoint;
             instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
-            if (Player.instance.IsInverted)
+            if (Player.instance.IsGravityInverted)
                 instantiatedMecros[(int)mecroState].InvertGravity();
+            instantiatedMecros[(int)mecroState].InvertMovement(Player.instance.IsMovementInverted);
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
             //Physics2D.IgnoreLayerCollision(7, 9, false);
