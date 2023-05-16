@@ -1,0 +1,2471 @@
+fileFormatVersion: 2
+guid: d5a1f1315398a344f90b0ca18b27a808
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 22
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e354c679dbfab194996d0bed66f3d1c0
+      internalID: -2055005080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe00e92c72ac9a44a0ca60cb182ff11
+      internalID: 1708342490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8167467b5f094a04fa3a40124f35261a
+      internalID: 1882432634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1756665f7c9e1f48a327097a4576aba
+      internalID: -1440481138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_4
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5303b52d77a8674c8e240ed8db6b9ce
+      internalID: 139443494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 627
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef4b4cbaf22bf449b78ba2e819bb946
+      internalID: 1971403896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0380f1010837c9a4d9be6b914c654bde
+      internalID: 1675065485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_7
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7623c52dd0f767e43af24e071c27b03d
+      internalID: -1155617608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d108dab3dda56b9438e3deb98c125ad2
+      internalID: -46255069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_9
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8984441570337459147e197a4d23ed
+      internalID: 1659828097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7107041de3d9033489dc5f1a29df53db
+      internalID: -92186137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_11
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 594
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cab5aa3897ebc24f85de71c791a5e9e
+      internalID: -1717535653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b7e40935c7580499412fc1ce150d63
+      internalID: -1489772464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_13
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af83f9d5999199e4fbc1b6008175459b
+      internalID: -1431187512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_14
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7393dba50b03d44db2a9b04574fe34d
+      internalID: -102706787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_15
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c209e0a856b811e4bac19bcc40131406
+      internalID: 1598237650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_16
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c081226ac1ebdc4fac55b1957bdb006
+      internalID: -2102628420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_17
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 561
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c859633b8fe87741ae5852da14f9f21
+      internalID: -2135856803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43371dddffa2e2949b7690c78b23ca81
+      internalID: -1670927146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_19
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec59c5d2c7e09fb40b3ee2286e9b2ad4
+      internalID: 484094572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_20
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e06ac57c5f3b94da4a8e65737ca3d8
+      internalID: 209438776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_21
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e36a09aec47284887ff0c1ebdf4343
+      internalID: 126940085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_22
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b37c82114bfb814a8e8da8db080987d
+      internalID: 2085230201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_23
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 528
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b848c16ce5ac5a458f63ec1109bdf8c
+      internalID: -1301230215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a3b00ff628713438706de1afaad30e
+      internalID: -433799718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_25
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 495
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0101325754bdd884680103a93cc674b5
+      internalID: 1482714344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e66fd4a8d7c6f4e9a38ecc23d1b274
+      internalID: -2113722909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_27
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4a149b8188ca245bbff7f112423e9b
+      internalID: -469997269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_28
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe58cedcb1365248bde205b7e4c4579
+      internalID: 582336446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_29
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115ea5a654b939d41b7f980c28eafd95
+      internalID: 665350391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_30
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c354f1ec01b4a4499c0dc7452fba42
+      internalID: 759293465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_31
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 462
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb3b0eee97ad6540a362052cb90285d
+      internalID: -81417355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57c93dba2b25384897cc7fa65b0674d
+      internalID: 143342998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_33
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d94c69d4204e84ea7582b52faf38bf
+      internalID: -1258319629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_34
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38267247266ce0d4a992516462b10617
+      internalID: -206867335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_35
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3391ef7dde60c2746ad366c335057cf3
+      internalID: -293634217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_36
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ce685ec91effc4186444d14b298b4b
+      internalID: -414903383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_37
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 429
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca943ab2bf4cd8488501f0afeba4e94
+      internalID: -31093635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16dd2fb4e919d1a4e8ccc334e7bcbc9a
+      internalID: 788373371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_39
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cff294ed268824aa941797725f0125
+      internalID: -633816929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_40
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d2f932cacdbd34db1ff915d154d38b
+      internalID: -1117013427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_41
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c070e51d0f80fed4b979b014a65a07a0
+      internalID: -688055215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_42
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6168fa037de0794ab580409d43786e5
+      internalID: -1514693002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_43
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 396
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e47e09147708849babda08eea0d906
+      internalID: 727890088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e831593e726908a4d94ad70ed8200e4c
+      internalID: -648552883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_45
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1225c5ac6d11414bbe7ff292291f5cc
+      internalID: -2028218659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_46
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c6cf1c5e8d3964ea1f4de20a540a5f
+      internalID: 1638809426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_47
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e580ce2864cdfee4182699c000aa83fe
+      internalID: -379606899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_48
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3da290fed021a949910e6dc6e53b537
+      internalID: 991759601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_49
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 363
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad0f7937cce7f94d93e74cc678fd559
+      internalID: -1547296707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 330
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbf526d2681d9343966ebffdbe7da2c
+      internalID: 863299478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_51
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 330
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8985b9463a5837a48947f84b0eaa973d
+      internalID: -23027717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8432eac74f7ce4dbc84fd690405d9b
+      internalID: 153959078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_53
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fdf471cee89ec46b656f761c6e5852
+      internalID: 105799994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_54
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70babc046039748438faf14a397d4c9a
+      internalID: -956329119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_55
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4625ae995c6c5b944ac58e72e5415364
+      internalID: -1333985861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_56
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4bc36d3b9c8b840b361b67b171b32b
+      internalID: -956043914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_57
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 297
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0555ad8be04c2d244b1a23e39affb3ab
+      internalID: -485582813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4073a41f900f2d141a2727bceb91e59a
+      internalID: -873536922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_59
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5832cd8866b6d2f4ba80f25ea8347e49
+      internalID: -1019107558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_60
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e15e281e79ba2f4c84f40555222f3ba
+      internalID: -1486593694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_61
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d250c521f26def4489be67a383e48258
+      internalID: -1582356346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_62
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5da7d2886f2ef4cbebdef810d90c7e
+      internalID: -973694312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_63
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 264
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4332584463b3a47bd0f8141f89de44
+      internalID: -1370048932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f23439f568432843956aa3954fcdda5
+      internalID: 614538734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_65
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a31a9587292684495b1af07c7d42ee
+      internalID: -933561697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_66
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70aa7e49a1b360142817498899c8aa1b
+      internalID: 1587949722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_67
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a43d56de08eef44bc35175c0cde19d
+      internalID: -2032865736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_68
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1864b7401cf835347ad33048fc1df4cd
+      internalID: 636256496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_69
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 231
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bca87d849dc0a4aad5a47c04811723
+      internalID: 452760171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef35e4cf6cf53d64e8eb6bc0d24a1b36
+      internalID: -1788256901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_71
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8a3cb0df4c1b04682c710b57ac056c
+      internalID: 220092648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_72
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1946c6da78810c442bd358c3a6519dee
+      internalID: 404076234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_73
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7d1302608d89d4ea5f423ebd3d8d23
+      internalID: 1308123056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_74
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceffcf0c36ab8c6439a027aeb77829ca
+      internalID: -1391649413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_75
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 198
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67b31055fff0fd4bb54a12a94e77b3d
+      internalID: 851929407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728da5790ba070843ad72bebe574da7f
+      internalID: -1528043742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_77
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 165
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7da895c3b977684a8da02d260a617db
+      internalID: -1064079036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20dd3bcb35166a446a1f925e6648ba49
+      internalID: 2042365585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_79
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4773be07daf2e4aaf4e36e0f79b53e
+      internalID: -310995411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_80
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b3545584f4c9940a454d0b9c131610
+      internalID: -1786888345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_81
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8face460580e0468a75d37f45614a5
+      internalID: 594463931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_82
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8494aa42dad7a724c8e9c25ae1dacaad
+      internalID: -1950495625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_83
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 132
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc957d479e153f446b864feaf7e9b6e6
+      internalID: 1215763620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ca9661eb0f5ea46af76a7463871f5b
+      internalID: 1355367217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_85
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29acdc728d381e14689dd39b6c6a78de
+      internalID: 1607733722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_86
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425305ea3b452874eacd04a7b0ab41d8
+      internalID: -1442508390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_87
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e23a8d8ecac6094b9c1fedceef44d33
+      internalID: -805676616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_88
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10910e484c95b7948af68decf4be5b32
+      internalID: 2067466550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_89
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 99
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00884d7c898c1954ba4150afe753351f
+      internalID: -1777498871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b43455fa3660b478c8f6559b2e19d3
+      internalID: 2110524008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_91
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc32c6f0d06a6f04890a6ab4c1e389fb
+      internalID: -1077335990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_92
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53c9b110af93d549ba4cd014184ee26
+      internalID: 1937912280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_93
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbef3691c3f3db4b98ebcfb5d6fe7b8
+      internalID: -150890214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_94
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695e66b8d94af5e45bd857a3ba4c34bf
+      internalID: 1625956161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_95
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 66
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5356482d5bae54148b6eb8efe7bfbd4b
+      internalID: 1528063714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b33b87eebd9329419cfb447b338bc8c
+      internalID: 2097720970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_97
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5fc80a7013a1a418f5b1d38eecd1f9
+      internalID: 687847063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_98
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f96824a5f9f9174a951eda82b8a71f6
+      internalID: -310234606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_99
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15eadf425dff4a140a77013fc255c9e8
+      internalID: 1846865220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_100
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030e9f9ea188ee04e99ce9149bb9177f
+      internalID: 1020078709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_101
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 33
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6119b921f3e09914383c622144d0b56d
+      internalID: -376821358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd484a432605cc647adbaa4ae69c58ad
+      internalID: 276105142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESTROYING PLATFORM_103
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 110
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22922d44df085104788b2b9f649b1327
+      internalID: -589534806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DESTROYING PLATFORM_103: -589534806
+      DESTROYING PLATFORM_98: -310234606
+      DESTROYING PLATFORM_30: 759293465
+      DESTROYING PLATFORM_10: -92186137
+      DESTROYING PLATFORM_44: -648552883
+      DESTROYING PLATFORM_48: 991759601
+      DESTROYING PLATFORM_73: 1308123056
+      DESTROYING PLATFORM_5: 1971403896
+      DESTROYING PLATFORM_38: 788373371
+      DESTROYING PLATFORM_7: -1155617608
+      DESTROYING PLATFORM_61: -1582356346
+      DESTROYING PLATFORM_23: -1301230215
+      DESTROYING PLATFORM_28: 582336446
+      DESTROYING PLATFORM_82: -1950495625
+      DESTROYING PLATFORM_29: 665350391
+      DESTROYING PLATFORM_65: -933561697
+      DESTROYING PLATFORM_49: -1547296707
+      DESTROYING PLATFORM_84: 1355367217
+      DESTROYING PLATFORM_94: 1625956161
+      DESTROYING PLATFORM_33: -1258319629
+      DESTROYING PLATFORM_25: 1482714344
+      DESTROYING PLATFORM_32: 143342998
+      DESTROYING PLATFORM_75: 851929407
+      DESTROYING PLATFORM_4: 139443494
+      DESTROYING PLATFORM_90: 2110524008
+      DESTROYING PLATFORM_42: -1514693002
+      DESTROYING PLATFORM_91: -1077335990
+      DESTROYING PLATFORM_15: 1598237650
+      DESTROYING PLATFORM_41: -688055215
+      DESTROYING PLATFORM_50: 863299478
+      DESTROYING PLATFORM_78: 2042365585
+      DESTROYING PLATFORM_60: -1486593694
+      DESTROYING PLATFORM_93: -150890214
+      DESTROYING PLATFORM_102: 276105142
+      DESTROYING PLATFORM_11: -1717535653
+      DESTROYING PLATFORM_100: 1020078709
+      DESTROYING PLATFORM_76: -1528043742
+      DESTROYING PLATFORM_79: -310995411
+      DESTROYING PLATFORM_36: -414903383
+      DESTROYING PLATFORM_86: -1442508390
+      DESTROYING PLATFORM_8: -46255069
+      DESTROYING PLATFORM_26: -2113722909
+      DESTROYING PLATFORM_64: 614538734
+      DESTROYING PLATFORM_81: 594463931
+      DESTROYING PLATFORM_17: -2135856803
+      DESTROYING PLATFORM_21: 126940085
+      DESTROYING PLATFORM_2: 1882432634
+      DESTROYING PLATFORM_31: -81417355
+      DESTROYING PLATFORM_52: 153959078
+      DESTROYING PLATFORM_92: 1937912280
+      DESTROYING PLATFORM_88: 2067466550
+      DESTROYING PLATFORM_34: -206867335
+      DESTROYING PLATFORM_67: -2032865736
+      DESTROYING PLATFORM_74: -1391649413
+      DESTROYING PLATFORM_97: 687847063
+      DESTROYING PLATFORM_56: -956043914
+      DESTROYING PLATFORM_3: -1440481138
+      DESTROYING PLATFORM_13: -1431187512
+      DESTROYING PLATFORM_101: -376821358
+      DESTROYING PLATFORM_77: -1064079036
+      DESTROYING PLATFORM_63: -1370048932
+      DESTROYING PLATFORM_66: 1587949722
+      DESTROYING PLATFORM_69: 452760171
+      DESTROYING PLATFORM_51: -23027717
+      DESTROYING PLATFORM_68: 636256496
+      DESTROYING PLATFORM_89: -1777498871
+      DESTROYING PLATFORM_47: -379606899
+      DESTROYING PLATFORM_95: 1528063714
+      DESTROYING PLATFORM_46: 1638809426
+      DESTROYING PLATFORM_80: -1786888345
+      DESTROYING PLATFORM_53: 105799994
+      DESTROYING PLATFORM_54: -956329119
+      DESTROYING PLATFORM_12: -1489772464
+      DESTROYING PLATFORM_19: 484094572
+      DESTROYING PLATFORM_72: 404076234
+      DESTROYING PLATFORM_70: -1788256901
+      DESTROYING PLATFORM_22: 2085230201
+      DESTROYING PLATFORM_14: -102706787
+      DESTROYING PLATFORM_27: -469997269
+      DESTROYING PLATFORM_37: -31093635
+      DESTROYING PLATFORM_1: 1708342490
+      DESTROYING PLATFORM_35: -293634217
+      DESTROYING PLATFORM_40: -1117013427
+      DESTROYING PLATFORM_18: -1670927146
+      DESTROYING PLATFORM_83: 1215763620
+      DESTROYING PLATFORM_85: 1607733722
+      DESTROYING PLATFORM_58: -873536922
+      DESTROYING PLATFORM_59: -1019107558
+      DESTROYING PLATFORM_45: -2028218659
+      DESTROYING PLATFORM_99: 1846865220
+      DESTROYING PLATFORM_20: 209438776
+      DESTROYING PLATFORM_62: -973694312
+      DESTROYING PLATFORM_39: -633816929
+      DESTROYING PLATFORM_55: -1333985861
+      DESTROYING PLATFORM_0: -2055005080
+      DESTROYING PLATFORM_57: -485582813
+      DESTROYING PLATFORM_9: 1659828097
+      DESTROYING PLATFORM_87: -805676616
+      DESTROYING PLATFORM_16: -2102628420
+      DESTROYING PLATFORM_24: -433799718
+      DESTROYING PLATFORM_6: 1675065485
+      DESTROYING PLATFORM_71: 220092648
+      DESTROYING PLATFORM_43: 727890088
+      DESTROYING PLATFORM_96: 2097720970
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
