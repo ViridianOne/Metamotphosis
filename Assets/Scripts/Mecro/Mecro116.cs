@@ -50,26 +50,26 @@ public class Mecro116 : Player
         {
             if (isAbleToMove)
             {
-                moveInput = Input.GetAxisRaw("Horizontal");
+                moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
 
                 wasOnGround = isGrounded;
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
-                    rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+                    rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
                     StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
                 }
                 if (isGrounded && Input.GetButtonDown("Jump"))
                 {
                     jumpTimer = Time.time + jumpDelay;
                 }
-                if ((rigidBody.velocity.y < 0f && isInverted || rigidBody.velocity.y > 0f && !isInverted) && Input.GetButton("Jump"))
+                if ((rigidBody.velocity.y < 0f && isGravityInverted || rigidBody.velocity.y > 0f && !isGravityInverted) && Input.GetButton("Jump"))
                 {
-                    if (rigidBody.gravityScale > minGravity && isInverted)
+                    if (rigidBody.gravityScale > minGravity && isGravityInverted)
                     {
                         rigidBody.gravityScale = -minGravity;
                     }
-                    else if (rigidBody.gravityScale < minGravity && !isInverted)
+                    else if (rigidBody.gravityScale < minGravity && !isGravityInverted)
                     {
                         rigidBody.gravityScale = minGravity;
                     }
@@ -115,7 +115,7 @@ public class Mecro116 : Player
             }
             if (!isGrounded)
             {
-                if (isInverted)
+                if (isGravityInverted)
                 {
                     if (rigidBody.velocity.y > 0 && rigidBody.gravityScale > -maxGravity)
                         rigidBody.gravityScale *= gravityMultiplier;
@@ -145,7 +145,7 @@ public class Mecro116 : Player
             anim.SetBool("isJumping", false);
             anim.SetBool("landingMoment", false);
         }
-        if ((rigidBody.velocity.y >= 0 && isInverted || rigidBody.velocity.y <= 0 && !isInverted) && !isGrounded)
+        if ((rigidBody.velocity.y >= 0 && isGravityInverted || rigidBody.velocity.y <= 0 && !isGravityInverted) && !isGrounded)
         {
             anim.SetBool("landingMoment", true);
             AudioManager.instance.Play(8);
@@ -168,14 +168,14 @@ public class Mecro116 : Player
             isFacingRight = false;
         }
 
-        transform.localRotation = Quaternion.Euler(isInverted ? 180 : 0, isFacingRight ? 0 : 180, 0);
+        transform.localRotation = Quaternion.Euler(isGravityInverted ? 180 : 0, isFacingRight ? 0 : 180, 0);
     }
 
     private void GravityJump()
     {
-        isInverted = !isInverted;
+        isGravityInverted = !isGravityInverted;
         InvertLedgeDifferencies();
-        rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+        rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
         //feetPos.localPosition = new Vector3(feetPos.localPosition.x, -feetPos.localPosition.y, feetPos.localPosition.z);
     }
 
@@ -183,7 +183,7 @@ public class Mecro116 : Player
     {
         jumpTimer = 0;
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
-        rigidBody.AddForce((isInverted ? Vector2.up : Vector2.down) * jumpForce, ForceMode2D.Impulse);
+        rigidBody.AddForce((isGravityInverted ? Vector2.up : Vector2.down) * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
@@ -227,11 +227,11 @@ public class Mecro116 : Player
 
     public override void DisableAbility()
     {
-        if (isInverted)
+        if (isGravityInverted)
         {
             InvertLedgeDifferencies();
         }
-        isInverted = false;
+        isGravityInverted = false;
         isAbilityActivated = false;
         rigidBody.gravityScale = gravity;
         UpdateMovementAnimation();

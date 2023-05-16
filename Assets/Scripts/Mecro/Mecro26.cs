@@ -30,7 +30,7 @@ public class Mecro26 : Player
         {
             if (isAbleToMove)
             {
-                moveInput = Input.GetAxisRaw("Horizontal");
+                moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
                 /*if (!moveInputAssigned)
                 {
                     moveInputStatic = moveInput;

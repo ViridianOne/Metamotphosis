@@ -45,7 +45,8 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected float runAccelerationAmount;
     [SerializeField] protected float runDeccelerationAmount;
     [SerializeField] protected float accelerationInAir;
-    protected bool isInverted = false;
+    protected bool isGravityInverted = false;
+    protected bool isMovementInverted = false;
     [SerializeField] protected Transform headPos;
     [SerializeField] protected Vector2 headDetectorSize;
     [SerializeField] protected LayerMask groundMask;
@@ -100,7 +101,7 @@ public abstract class Player : MonoBehaviour
         }
         if (ledgeDetected && !canClimbLedge)
         {
-            rigidBody.gravityScale = gravity * (isInverted ? -1 : 1);
+            rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
             canClimbLedge = true;
             anim.SetBool("isGrabbed", true);
         }
@@ -194,7 +195,7 @@ public abstract class Player : MonoBehaviour
     public void MiniJump(float miniJumpForce) 
     {
         rigidBody.velocity = Vector2.zero;
-        rigidBody.AddForce((isInverted ? Vector2.down : Vector2.up) * miniJumpForce, ForceMode2D.Impulse);
+        rigidBody.AddForce((isGravityInverted ? Vector2.down : Vector2.up) * miniJumpForce, ForceMode2D.Impulse);
     }
 
     public void DamagePlayer()
@@ -215,7 +216,7 @@ public abstract class Player : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        rigidBody.gravityScale = 4 * (isInverted ? -1 : 1);
+        rigidBody.gravityScale = 4 * (isGravityInverted ? -1f : 1f);
         yield return new WaitForSeconds(0.3f);
         rigidBody.gravityScale = 0;
         yield return new WaitForSeconds(respawnTime - 0.3f);
@@ -228,7 +229,7 @@ public abstract class Player : MonoBehaviour
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
             isActive = true;
-            isInverted = false;
+            isGravityInverted = false;
             playerCollider.enabled = true;
             anim.SetBool("isDamaged", false);
         }
@@ -282,25 +283,30 @@ public abstract class Player : MonoBehaviour
 
     public void AddJumpForce(float jumpForceCoef)
     {
-        rigidBody.AddForce(Vector2.up * jumpForceCoef, ForceMode2D.Impulse);
+        rigidBody.AddForce((isGravityInverted ? Vector2.down : Vector2.up) * jumpForceCoef, ForceMode2D.Impulse);
     }
 
     public bool IsGrounded { get => isGrounded; }
 
-    public bool IsInverted { get => isInverted; }
-
+    public bool IsGravityInverted { get => isGravityInverted; }
     public virtual void InvertGravity()
     {
-        isInverted = !isInverted;
+        isGravityInverted = !isGravityInverted;
         rigidBody.gravityScale = -rigidBody.gravityScale;
     }
 
     protected virtual void CheckCeilingTouch()
     {
-        if (isInverted && Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask))
+        if (isGravityInverted && Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask))
         {
             InvertGravity();
         }
+    }
+
+    public bool IsMovementInverted { get => isMovementInverted; }
+    public void InvertMovement(bool state)
+    {
+        isMovementInverted = state;
     }
 
     public void ReactToFlashExplosion(float effectOnPlayerTime, float speedChangeCoef, Color changeColor)
@@ -322,8 +328,14 @@ public abstract class Player : MonoBehaviour
             holderSprite.color = new Color(1, 1, 1, 1);
         }
     }
+
     public GameObject GetHolder()
     {
         return holder;
+    }
+
+    public void SetPosition(Vector2 pos)
+    {
+        transform.position = pos;
     }
 }
