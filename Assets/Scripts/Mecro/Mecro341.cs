@@ -62,7 +62,7 @@ public class Mecro341 : Player
                 if (isOn60 || isOn90)
                 {
                     rigidBody.gravityScale = 0;
-                    moveInput = Input.GetAxisRaw("Vertical");
+                    moveInput = Input.GetAxisRaw("Vertical") * (isMovementInverted ? -1f : 1f);
                     //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
                     //if(isOn90)
                     //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, 90 * ceilCoef);
@@ -76,8 +76,8 @@ public class Mecro341 : Player
                 }
                 else
                 {
-                    rigidBody.gravityScale = 4 * ceilCoef * (isInverted ? -1 : 1);
-                    moveInput = Input.GetAxisRaw("Horizontal");
+                    rigidBody.gravityScale = 4 * ceilCoef * (isGravityInverted ? -1f : 1f);
+                    moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
                     //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
                     //holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef == 1 ? 0 : 180);
                     rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
@@ -243,6 +243,6 @@ public class Mecro341 : Player
 
     public override void InvertGravity()
     {
-        isInverted = !isInverted;
+        isGravityInverted = !isGravityInverted;
     }
 }

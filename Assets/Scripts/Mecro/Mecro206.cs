@@ -41,7 +41,7 @@ public class Mecro206 : Player
         {
             if (isAbleToMove)
             {
-                moveInput = Input.GetAxisRaw("Horizontal");
+                moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
 
                 if (Input.GetButtonDown("Fire1"))
                 {

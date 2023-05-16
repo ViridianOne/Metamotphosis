@@ -31,7 +31,7 @@ public class Mecro296 : Player
         {
             if (isAbleToMove)
             {
-                moveInput = Input.GetAxisRaw("Horizontal");
+                moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
 
                 wasOnGround = isGrounded;
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
