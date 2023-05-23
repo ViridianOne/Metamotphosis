@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoolObject : MonoBehaviour
 {
     public ObjectPooling Pool { get; private set; }
-    [SerializeField] public ObjectType type;
+    public ObjectType type;
 
     public void SetPool(ObjectPooling pool)
     {

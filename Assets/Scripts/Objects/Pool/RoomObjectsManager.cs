@@ -47,6 +47,23 @@ public class RoomObjectsManager : MonoBehaviour
                 component = poolObject.GetComponentInChildren<ElectricityTileChange>();
                 break;
 
+            case ObjectType.PlatformsWheel2:
+            case ObjectType.PlatformsWheel3:
+                component = poolObject.GetComponentInChildren<PlatformsWheel>();
+                break;
+
+            case ObjectType.Bomb:
+                component = poolObject.GetComponentInChildren<Bomb>();
+                break;
+
+            case ObjectType.LaserBot:
+                component = poolObject.GetComponentInChildren<LaserBot>();
+                break;
+
+            case ObjectType.DestroyingPlatform:
+                component = poolObject.GetComponentInChildren<DestroyingPlatform>();
+                break;
+
             case ObjectType.Fittings:
             case ObjectType.FallingPlatform:
                 data = new PoolObjectData();
@@ -97,6 +114,23 @@ public class RoomObjectsManager : MonoBehaviour
 
             case ObjectType.Electricity:
                 component = poolObject.GetComponentInChildren<ElectricityTileChange>();
+                break;
+
+            case ObjectType.PlatformsWheel2:
+            case ObjectType.PlatformsWheel3:
+                component = poolObject.GetComponentInChildren<PlatformsWheel>();
+                break;
+
+            case ObjectType.Bomb:
+                component = poolObject.GetComponentInChildren<Bomb>();
+                break;
+
+            case ObjectType.LaserBot:
+                component = poolObject.GetComponentInChildren<LaserBot>();
+                break;
+
+            case ObjectType.DestroyingPlatform:
+                component = poolObject.GetComponentInChildren<DestroyingPlatform>();
                 break;
 
             default:
