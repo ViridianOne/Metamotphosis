@@ -818,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035634, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6016499694112348919, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8432,6 +8432,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1075331805, guid: c7a6e7bcf06bd1b4384883707ca31de6, type: 3}
+      propertyPath: movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075331805, guid: c7a6e7bcf06bd1b4384883707ca31de6, type: 3}
+      propertyPath: rotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1222571259029387614, guid: c7a6e7bcf06bd1b4384883707ca31de6, type: 3}
       propertyPath: m_Name
       value: 3 Platforms Wheel
@@ -8499,7 +8507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654000557456454833, guid: 40b72ab85c9e2af4a938b6e2fcf3dfa6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5322768438935249567, guid: 40b72ab85c9e2af4a938b6e2fcf3dfa6, type: 3}
       propertyPath: m_RootOrder
@@ -8560,7 +8568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1928052175117197445, guid: 8d816c819140f1546b000e76992d1f57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2137513630235921201, guid: 8d816c819140f1546b000e76992d1f57, type: 3}
       propertyPath: m_RootOrder
@@ -8605,6 +8613,10 @@ PrefabInstance:
     - target: {fileID: 2137513630235921201, guid: 8d816c819140f1546b000e76992d1f57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964701242209919117, guid: 8d816c819140f1546b000e76992d1f57, type: 3}
+      propertyPath: layersToAttack.m_Bits
+      value: 33920
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d816c819140f1546b000e76992d1f57, type: 3}

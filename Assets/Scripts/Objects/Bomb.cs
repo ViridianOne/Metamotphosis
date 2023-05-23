@@ -56,9 +56,10 @@ public class Bomb : MonoBehaviour, IPoolObject
     private IEnumerator Explode()
     {
         isExploding = true;
+        anim.SetTrigger("explode");
         yield return new WaitForSecondsRealtime(explosionDelay);
         
-        if (Physics2D.OverlapCircle(transform.position, lethalExplosionRadius, layersToAttack))
+        if (Physics2D.OverlapCircle(transform.position, lethalExplosionRadius, layersToAttack) && MecroSelectManager.instance.GetIndex() != 7)
         {
             Player.instance.DamagePlayer();
         }
@@ -68,7 +69,6 @@ public class Bomb : MonoBehaviour, IPoolObject
             Player.instance.AddForce(Mathf.Clamp(explosionReclainRadius - vectorToPlayer.magnitude, 0, explosionReclainRadius) 
                 / explosionReclainRadius * explosionReclainForce * vectorToPlayer);
         }
-        anim.SetTrigger("explode");
         anim.SetBool("isDisabled", true);
         explosionObject.SetActive(true);
         yield return new WaitForSecondsRealtime(explosionTime);
