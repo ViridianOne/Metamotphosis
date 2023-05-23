@@ -11,4 +11,9 @@ public enum ObjectType
     Fittings,
     Electricity,
     FallingPlatform,
+    PlatformsWheel2,
+    PlatformsWheel3,
+    Bomb,
+    LaserBot,
+    DestroyingPlatform,
 }

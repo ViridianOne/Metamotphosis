@@ -208,6 +208,7 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isDamaged", true);
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
+        DisableAbility();
         isActive = false;
         //playerCollider.enabled = false;
         MiniJump(12f);
@@ -281,9 +282,19 @@ public abstract class Player : MonoBehaviour
         return rigidBody.velocity;
     }
 
+    public void AddForce(Vector2 force, ForceMode2D forceMode = ForceMode2D.Impulse)
+    {
+        rigidBody.AddForce(force, forceMode);
+    }
+
     public void AddJumpForce(float jumpForceCoef)
     {
-        rigidBody.AddForce((isGravityInverted ? Vector2.down : Vector2.up) * jumpForceCoef, ForceMode2D.Impulse);
+        AddForce((isGravityInverted ? Vector2.down : Vector2.up) * jumpForceCoef, ForceMode2D.Impulse);
+    }
+
+    public void AddGravityForce(Vector2 gravity)
+    {
+        AddForce(gravity);
     }
 
     public bool IsGrounded { get => isGrounded; }

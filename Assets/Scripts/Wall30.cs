@@ -18,7 +18,7 @@ public class Wall30 : MonoBehaviour
                     Player.instance.isOn30 = !Player.instance.isOn60;
                     Player.instance.isVertical = transform.localRotation.x == 0 ? Player.instance.isVertical : !Player.instance.isVertical;
                     Player.instance.ceilCoef = !Player.instance.isVertical ? 1 : -1;
-                    Player.instance.transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+                    //Player.instance.transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
                     turnSwitch = true;
                 }
             }
