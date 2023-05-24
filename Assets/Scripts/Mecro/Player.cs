@@ -18,7 +18,7 @@ public abstract class Player : MonoBehaviour
     [SerializeField] float respawnTime;
     private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
-    protected bool isActive;
+    public bool isActive { get; protected set; }
     [HideInInspector] public bool isAbilityActivated = false;
     public bool isOnMovingPlatform = false;
     [HideInInspector] public bool isOnArcPlatform, isOn30, isOn60, isOn90 = false;

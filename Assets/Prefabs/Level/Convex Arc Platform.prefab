@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1179845330789517264}
   - component: {fileID: 1179845330789517230}
   - component: {fileID: 1179845330789517231}
-  - component: {fileID: 1179845330789517228}
   - component: {fileID: 1179845330789517266}
+  - component: {fileID: 584130264}
   m_Layer: 6
   m_Name: Convex Arc Platform
   m_TagString: Ground
@@ -127,19 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23be7f030cfa84f49903f5dbff33ed2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1179845330789517228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179845330789517229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb92ef29e9bdaef479224558a7b3c4ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: -1
 --- !u!61 &1179845330789517266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +138,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.5, y: 0.5}
   m_SpriteTilingProperty:
@@ -166,6 +153,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
+--- !u!250 &584130264
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179845330789517229}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_ForceMagnitude: -5
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1 &1179845331154541432
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +184,7 @@ GameObject:
   - component: {fileID: 1179845331154541435}
   - component: {fileID: 1179845331154541437}
   - component: {fileID: 1179845331154541434}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: 30Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,8 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConvex: 1
-  gravityChangeCoef: 1
+  gravityChangeCoef: 1.25
   isOnFirstOrThirdQuater: 1
+  possibleClockwiseDirection: {x: 1, y: -1}
 --- !u!1 &1179845331648743723
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179845331648743723}
   m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 1.5, y: 1.5, z: 0}
+  m_LocalPosition: {x: 1.52, y: 1.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -318,7 +326,7 @@ PointEffector2D:
   m_ForceSource: 0
   m_ForceTarget: 0
   m_ForceMode: 0
-  m_Drag: 50
+  m_Drag: 100
   m_AngularDrag: 0
 --- !u!61 &1179845331648743724
 BoxCollider2D:
