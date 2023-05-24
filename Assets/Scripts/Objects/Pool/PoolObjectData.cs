@@ -83,10 +83,13 @@ public class PoolElectricityData : PoolObjectData
     public readonly int firstTilePos, lastTilePos, constTilePos;
     public readonly AnimatedTile middleTile, firstTile, lastTile;
     public readonly int animationLayer;
+    public readonly Vector2 colliderSize, colliderPos;
+    public readonly Vector3 leftDroidPos, rightDroidPos;
 
     public PoolElectricityData(bool isVertical,
         AnimatedTile middleTile, AnimatedTile firstTile, AnimatedTile lastTile,
-        int firstTilePos, int lastTilePos, int constTilePos, int animationLayer)
+        int firstTilePos, int lastTilePos, int constTilePos, int animationLayer,
+        Vector2 colliderSize, Vector2 colliderPos, Vector3 leftDroidPos, Vector3 rightDroidPos)
     {
         this.isVertical = isVertical;
         this.firstTilePos = firstTilePos;
@@ -96,6 +99,10 @@ public class PoolElectricityData : PoolObjectData
         this.firstTile = firstTile;
         this.lastTile = lastTile;
         this.animationLayer = animationLayer;
+        this.colliderSize = colliderSize;
+        this.colliderPos = colliderPos;
+        this.leftDroidPos = leftDroidPos;
+        this.rightDroidPos = rightDroidPos;
     }
 }
 

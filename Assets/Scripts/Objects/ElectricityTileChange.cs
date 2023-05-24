@@ -13,6 +13,7 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
     [SerializeField] private int firstFrame, lastFrame;
     [SerializeField] private AnimatedTile middleTile, firstTile, lastTile;
     [SerializeField] private int constTilePos; //x or y position that is same for every tile in current tilemap
+    [SerializeField] private BoxCollider2D electricityCollider;
 
     [Header("Diodes")]
     [SerializeField] private Animator leftDiode;
@@ -21,6 +22,7 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
     private float activeTimer, disableTimer;
     private bool isActive;
     [SerializeField] private int animationLayer;
+    [SerializeField] private Transform leftDroidPos, rightDroidPos;
 
     void Start()
     {
@@ -90,7 +92,8 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
     public PoolObjectData GetObjectData()
     {
         return new PoolElectricityData(isVertical, middleTile, firstTile, lastTile, 
-            firstTilePos, lastTilePos, constTilePos, animationLayer);
+            firstTilePos, lastTilePos, constTilePos, animationLayer, 
+            electricityCollider.size, electricityCollider.offset, leftDroidPos.position, rightDroidPos.position);
     }
 
     public void SetObjectData(PoolObjectData objectData)
@@ -105,6 +108,10 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
         lastTilePos = electricityData.lastTilePos;
         constTilePos = electricityData.constTilePos;
         animationLayer = electricityData.animationLayer;
+        electricityCollider.size = electricityData.colliderSize;
+        electricityCollider.offset = electricityData.colliderPos;
+        leftDroidPos.position = electricityData.leftDroidPos;
+        rightDroidPos.position = electricityData.rightDroidPos;
 
         SetAnimationLayer(animationLayer);
     }

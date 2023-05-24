@@ -313,19 +313,15 @@ MonoBehaviour:
   firstTile: {fileID: 11400000, guid: 008a71ba45f4ab04197c97a3d86c0507, type: 2}
   lastTile: {fileID: 11400000, guid: fada1ee9e94aa154ba6faf2e1183c956, type: 2}
   constTilePos: -5
+  electricityCollider: {fileID: 1258772340338669824}
   leftDiode: {fileID: 1258772341328920592}
   rightDiode: {fileID: 1258772340929371304}
   activeTime: 5
   disableTime: 6
   turningOnTime: 1.46
   animationLayer: 1
-  rightDiodePos: {x: 0, y: 0}
-  leftDiodePos: {x: 0, y: 0}
-  leftDiodeObj: {fileID: 1258772341328920593}
-  rightDiodeObj: {fileID: 1258772340929371310}
-  electricityCollider: {fileID: 1258772340338669824}
-  colliderZonePos: {x: 0.2, y: 0}
-  colliderZoneSize: {x: 3.9, y: 0.3}
+  leftDroidPos: {fileID: 1258772341328920595}
+  rightDroidPos: {fileID: 1258772340929371305}
 --- !u!114 &753318662127285025
 MonoBehaviour:
   m_ObjectHideFlags: 0

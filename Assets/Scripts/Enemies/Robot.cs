@@ -159,11 +159,11 @@ public class Robot : Enemy
         isActive = false;
         canDamagePlayer = false;
         Player.instance.MiniJump(12f);
-        /*if (Darkness.instance.gameObject != null)
+        if (Darkness.instance.gameObject != null)
         {
             Darkness.instance.TurnOn(false);
             canTurnOffTheLights = !canTurnOffTheLights;
-        }*/
+        }
         StartCoroutine(TurnOff());
     }
 
