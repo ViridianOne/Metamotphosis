@@ -26,6 +26,8 @@ public class Mecro71 : Player
     public bool started_flying = false;
     public Vector2 direction;
 
+    private float xMoveInput;
+    private float yMoveInput;
     private bool isCeilingHit;
     [SerializeField] private float accelerationCoefficient;
 
@@ -98,35 +100,36 @@ public class Mecro71 : Player
 
     private void ChooseDirection()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        xMoveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
+        yMoveInput = Input.GetAxisRaw("Vertical") * (isGravityInverted || isMovementInverted ? -1f : 1f);
+        if (xMoveInput > 0)
         {
             directionArrow = Directions.right;
-            moveInput = Input.GetAxisRaw("Horizontal");
+            moveInput = xMoveInput;
             directionChosen = true;
             direction = Vector2.right;
             AudioManager.instance.Play(16);
-
         }
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (xMoveInput < 0)
         {
             directionArrow = Directions.left;
-            moveInput = Input.GetAxisRaw("Horizontal");
+            moveInput = xMoveInput;
             directionChosen = true;
             direction = Vector2.right;
             AudioManager.instance.Play(16);
         }
-        if ((Input.GetAxisRaw("Vertical") < 0 && !isInverted) || (Input.GetAxisRaw("Vertical") > 0 && isInverted))
+        if (yMoveInput < 0)
         {
             directionArrow = Directions.down;
-            moveInput = Input.GetAxisRaw("Vertical") * (isInverted ? -1 : 1);
+            moveInput = yMoveInput;
             directionChosen = true;
             direction = Vector2.up;
             AudioManager.instance.Play(16);
         }
-        if ((Input.GetAxisRaw("Vertical") > 0 && !isInverted) || (Input.GetAxisRaw("Vertical") < 0 && isInverted))
+        if (yMoveInput > 0)
         {
             directionArrow = Directions.up;
-            moveInput = Input.GetAxisRaw("Vertical") * (isInverted ? -1 : 1);
+            moveInput = yMoveInput;
             directionChosen = true;
             direction = Vector2.up;
             AudioManager.instance.Play(16);
@@ -301,13 +304,13 @@ public class Mecro71 : Player
 
     public override void InvertGravity()
     {
-        isInverted = true;
+        isGravityInverted = true;
         StartCoroutine(WaitAndInvertGravity());
     }
 
     private IEnumerator WaitAndInvertGravity()
     {
         yield return new WaitForSeconds(4f);
-        isInverted = false;
+        isGravityInverted = false;
     }
 }

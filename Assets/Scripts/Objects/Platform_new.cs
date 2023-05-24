@@ -7,7 +7,7 @@ public class Platform_new : MonoBehaviour, IPoolObject
     private bool lightsOn;
     [SerializeField] private bool isSleeping;
     private bool isActiveZone;
-    private Vector3 nextPos;
+    private Vector3 nextPosition;
     private Vector3 position1, position2;
     [SerializeField] private bool isMoving;
     [SerializeField] private Transform pos1, pos2;
@@ -26,7 +26,7 @@ public class Platform_new : MonoBehaviour, IPoolObject
     {
         position1 = pos1.position;
         position2 = pos2.position;
-        nextPos = startPos.position;
+        nextPosition = startPos.position;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -50,15 +50,15 @@ public class Platform_new : MonoBehaviour, IPoolObject
         }
         if (isMoving && isActiveZone && lightsOn)
         {
-            if (transform.position == position1 || nextPos == position2)
+            if (transform.position == position1 || nextPosition == position2)
             {
-                nextPos = position2;
+                nextPosition = position2;
             }
-            if (transform.position == position2 || nextPos == position1)
+            if (transform.position == position2 || nextPosition == position1)
             {
-                nextPos = position1;
+                nextPosition = position1;
             }
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * velocityCoef * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * velocityCoef * Time.deltaTime);
         }
         ChangeVelocity();
     }
@@ -165,7 +165,7 @@ public class Platform_new : MonoBehaviour, IPoolObject
         transform.position = platformData.startPosition;
         position1 = platformData.position1;
         position2 = platformData.position2;
-        nextPos = platformData.startPosition == platformData.position1 ? 
+        nextPosition = platformData.startPosition == platformData.position1 ? 
             platformData.position2 : platformData.position1;
         isMoving = platformData.isMoving;
         isSleeping = platformData.isSleeping;

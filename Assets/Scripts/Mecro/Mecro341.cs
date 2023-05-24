@@ -18,12 +18,6 @@ public class Mecro341 : Player
     private float xGravity;
     public float deffectTime;
 
-    //[Header("PLatform Pull Up")]
-    //[SerializeField] private Vector2 ledgePlatPos1, ledgePlatPos2;
-    //[SerializeField] private Vector2 diffPlat1, diffPlat2, diffPlat3, diffPlat4;
-    //[SerializeField] private float platformGrabbingTime;
-    //private float platformGrabbingTimer;
-
     void Update()
     {
         if(isActive)
@@ -57,17 +51,10 @@ public class Mecro341 : Player
                     isOn90 = isOn60;
                     isOn0 = !isGrounded || isOn30;
                 }
-                //if (!isOnArcPlatform || (isOn30 && !isOn60))
-                //    moveInput = Input.GetAxisRaw("Horizontal");
                 if (isOn60 || isOn90)
                 {
                     rigidBody.gravityScale = 0;
-                    moveInput = Input.GetAxisRaw("Vertical");
-                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90 * ceilCoef);
-                    //if(isOn90)
-                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, 90 * ceilCoef);
-                    //else if (isOn60)
-                    //    holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef > 0 ? 0 : 180);
+                    moveInput = Input.GetAxisRaw("Vertical") * (isMovementInverted ? -1f : 1f);;
                     if(ceilCoef > 0)
                         xGravity = rigidBody.velocity.x <= counteractingForce ? counteractingForce : 5;
                     else
@@ -76,10 +63,8 @@ public class Mecro341 : Player
                 }
                 else
                 {
-                    rigidBody.gravityScale = 4 * ceilCoef * (isInverted ? -1 : 1);
-                    moveInput = Input.GetAxisRaw("Horizontal");
-                    //transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, ceilCoef == 1 ? 0 : 180);
-                    //holder.transform.rotation = Quaternion.Euler(0, transform.rotation.y, ceilCoef == 1 ? 0 : 180);
+                    rigidBody.gravityScale = 4 * ceilCoef * (isGravityInverted ? -1f : 1f);
+                    moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
                     rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
                 }
                 if (moveInput == 0 && !isOn0)
@@ -97,7 +82,6 @@ public class Mecro341 : Player
                 }
             }
             UpdateLedegGrabbing();
-            //UpdatePlatformGrabbing();
             if (isTouchingLedge)
             {
                 isGrounded = false;
@@ -137,7 +121,6 @@ public class Mecro341 : Player
                 transform.rotation = Quaternion.Euler(0, 0, 90 * ceilCoef);
             else
                 transform.rotation = Quaternion.Euler(0, 0, ceilCoef == 1 ? 0 : 180);
-            //transform.localScale = new Vector3(1f, 1f, 1f);
             isFacingRight = true;
         }
         else if (moveInput * ceilCoef < 0f)
@@ -146,7 +129,6 @@ public class Mecro341 : Player
                 transform.rotation = Quaternion.Euler(180, 0, 90 * ceilCoef);
             else
                 transform.rotation = Quaternion.Euler(0, 180, ceilCoef == 1 ? 0 : 180);
-            //transform.localScale = new Vector3(-1f, 1f, 1f);
             isFacingRight = false;
         }
     }
@@ -191,11 +173,6 @@ public class Mecro341 : Player
         }
 
         float moveForce = 0;
-        //if (!isOnArcPlatform || (isOn30 && !isOn60))
-        //{
-        //    moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
-        //    rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
-        //}
         if (isOn60 || isOn90)
         {
             moveForce = (targetSpeed - rigidBody.velocity.y) * accelerate;
@@ -227,7 +204,6 @@ public class Mecro341 : Player
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        //Gizmos.DrawWireCube(wheelPos.position, wheelDetectorSize);
         Gizmos.DrawWireSphere(wheelPos.position, wheelRadius);
     }
 
@@ -243,6 +219,6 @@ public class Mecro341 : Player
 
     public override void InvertGravity()
     {
-        isInverted = !isInverted;
+        isGravityInverted = !isGravityInverted;
     }
 }
