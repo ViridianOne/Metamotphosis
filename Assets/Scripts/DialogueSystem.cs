@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 using static Form_switch_controller;
+using UnityEngine.Playables;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -25,15 +26,23 @@ public class DialogueSystem : MonoBehaviour
     private int sentenceIndex;
     private int charIndex;
     private bool waitForNext;
+    private bool isStarted = false;
 
     public bool isFinal = false;
     public float yPos = -313f;
     [SerializeField] private GameObject victoryScreen;
 
-    //private void Awake()
-    //{
-    //    ToggleWindow(false);
-    //}
+    private void Start()
+    {
+        foreach( var item in sentences)
+        {
+            if(item.scene != null)
+            {
+                item.scene.played += CutsceneStarted;
+                item.scene.stopped += CutsceneStopped;
+            }
+        }
+    }
 
     private void ToggleWindow(bool state)
     {
@@ -89,7 +98,15 @@ public class DialogueSystem : MonoBehaviour
             StartCoroutine(DialogueWriting());
         }
         else
+        {
+            if (sentences[sentenceIndex].scene != null)
+            {
+                yield return new WaitForSeconds(0.6f);
+                sentences[sentenceIndex].scene.Play();
+            }
             waitForNext = true;
+        }
+            
     }
 
     void Update()
@@ -104,7 +121,12 @@ public class DialogueSystem : MonoBehaviour
             sentenceIndex++;
 
             if (sentenceIndex < sentences.Length)
-                GetDialogue(sentenceIndex);
+            {
+                if (isStarted == false)
+                    GetDialogue(sentenceIndex);
+
+                
+            }               
             else
                 EndDialogue();
         }
@@ -112,12 +134,28 @@ public class DialogueSystem : MonoBehaviour
         {
             dialogueSpeed = 0;
         }
+
+        
     }
+
+    private void CutsceneStopped(PlayableDirector obj)
+    {
+        isStarted = false;
+        ToggleWindow(true);
+    }
+
+    private void CutsceneStarted(PlayableDirector obj)
+    {
+        ToggleWindow(false);
+        isStarted = true;
+    }
+
 
     [Serializable]
     public struct NpcFrase
     {
         public string text;
         public Sprite fraseBackground;
+        public PlayableDirector scene;
     }
 }
