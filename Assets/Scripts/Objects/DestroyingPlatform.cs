@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyingPlatform : MonoBehaviour, IPoolObject
 {
     [Header("Components")]
-    private Collider2D[] colliders;
+    [SerializeField] private Collider2D[] colliders;
     private PlatformEffector2D effector;
  
     [Header("Anim")]
@@ -27,15 +27,13 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        colliders = GetComponents<Collider2D>();
         effector = GetComponent<PlatformEffector2D>();
     }
 
     private void Start()
     {
-        phaseTimer = phaseTime;
         SetAnimationLayer(animationLayer);
-        anim.SetFloat("phase", 0);
+        Recover();
     }
 
     void Update()
@@ -76,31 +74,11 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (!isRecovering)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                isPlayerTouchedPlatform = false;
-            }
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("impulse");
-            other.transform.SetParent(transform);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player") && other.gameObject.activeInHierarchy)
-        {
-            other.transform.SetParent(null);
         }
     }
 

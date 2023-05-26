@@ -16,4 +16,5 @@ public enum ObjectType
     Bomb,
     LaserBot,
     DestroyingPlatform,
+    PressingBlock,
 }

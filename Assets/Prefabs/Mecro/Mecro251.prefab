@@ -133,7 +133,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -92619846, guid: 0b8659e085da37349a935a6604431b54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -248,7 +248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: -1880696376, guid: 12a1eaafa1d36fd429a1fa297b95fe95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -391,7 +391,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7424137841785495752}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   ledgeCancelTime: 1
   jumpForce: 10
   feetPos: {fileID: 7424137842235016111}
-  feetDetectorSize: {x: 0.5, y: 0.3}
+  feetDetectorSize: {x: 0.45, y: 0.3}
   jumpDelay: 0.02
   jumpChargingTime: 100
   timeBeforeShoot: 0.4
@@ -480,7 +480,6 @@ MonoBehaviour:
   speedUpBullet: {fileID: 5374912993229767358, guid: e40fc477af83d7e4badfcf5743130e79, type: 3}
   slowDownBullet: {fileID: 2848615038024311220, guid: 027998b6b85346247959aedf19ed0608, type: 3}
   bulletStartPos: {fileID: 7424137840900134882}
-  yInput: 0
   bulletStartPositions:
   - {x: -1.266, y: 0.607, z: 0}
   - {x: -0.02399999, y: 1.6485, z: 0}

@@ -41,7 +41,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1842155208}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: -265479368, guid: 09da86840f47083479f24f03debe3f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -291,7 +291,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 157238606358128082}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   ledgeCancelTime: 1
   jumpForce: 10
   feetPos: {fileID: 157238605332762542}
-  feetDetectorSize: {x: 0.5, y: 0.3}
+  feetDetectorSize: {x: 0.45, y: 0.3}
   jumpDelay: 0.02
   jumpChargingTime: 100
   acceleration26: 0.1
@@ -536,7 +536,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 363238385, guid: 32d644a6576e09f458ee60264240e9bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

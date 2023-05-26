@@ -146,8 +146,9 @@ MonoBehaviour:
   gravityScale: 4
   velocityCoef: 0
   velocityChangeTime: 0
+  isDefeated: 0
   respawnPoint: {fileID: 4086957122270305638}
-  damageTime: 0.533
+  damageTime: 0.8
   masksAbleToDamage:
     serializedVersion: 2
     m_Bits: 1152
@@ -166,6 +167,8 @@ MonoBehaviour:
   attackAreaRadius: 8
   delayBetweenAttacks: 1
   predictionScale: 5000
+  detectorSize: {x: 0, y: 0}
+  detectorOffset: {x: 0, y: 0}
   damagePos: {x: 0, y: 0}
   damageSize: {x: 1.25, y: 1.25}
   groundMask:

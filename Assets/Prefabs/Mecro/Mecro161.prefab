@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 520462003863146410}
   - component: {fileID: 520462003863146411}
-  - component: {fileID: 520462003863146408}
   - component: {fileID: 520462003863146409}
   - component: {fileID: 520462003863146414}
   - component: {fileID: 3450869942097810174}
@@ -126,32 +125,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &520462003863146408
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520462003863146404}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0019263029, y: 0.32958674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.45188355, y: 2.1367455}
-  m_EdgeRadius: 0
 --- !u!50 &520462003863146409
 Rigidbody2D:
   serializedVersion: 4
@@ -221,13 +194,14 @@ MonoBehaviour:
   difference2: {x: 0.225, y: 0.775, z: 0}
   difference3: {x: -0.375, y: 1, z: 0}
   difference4: {x: -0.225, y: 0.775, z: 0}
+  platformDif1: {x: -10.33, y: -3, z: 0}
+  platformDif2: {x: -10.4, y: -3, z: 0}
   movingPlatDif: {x: 0, y: 0}
   ledgeDecetror: {fileID: 5371900988097854746}
   ledgeCancelTime: 1
-  defaultColor: {r: 0, g: 0.85882354, b: 0.5882353, a: 1}
   feetPos: {fileID: 520462003214590728}
   radius: 0.3
-  feetDetectorSize: {x: 0.5, y: 0.3}
+  feetDetectorSize: {x: 0.45, y: 0.3}
   jumpForce: 11
   jumpDelay: 0.02
   jumpChargingTime: 100
@@ -240,7 +214,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 520462003863146404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

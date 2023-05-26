@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressingBlock : MonoBehaviour
+public class PressingBlock : MonoBehaviour, IPoolObject
 {
     [Header("Physics")]
     [SerializeField] private float gravity;
@@ -128,5 +128,25 @@ public class PressingBlock : MonoBehaviour
             canClimb = true;
             landingTime = 0;
         }
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolPressingBlock(detectorSize, transform.position, detectorPos.position, gravity, 
+            climbSpeed, triggerTime, landingTime, animationLayer);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var pressingBlockData = objectData as PoolPressingBlock;
+
+        detectorSize = pressingBlockData.detectorSize;
+        transform.position = pressingBlockData.blockPos;
+        detectorPos.position = pressingBlockData.detectorPos;
+        gravity = pressingBlockData.gravity;
+        climbSpeed = pressingBlockData.climbSpeed;
+        triggerTime = pressingBlockData.triggerTime;
+        landingTime = pressingBlockData.landingTime;
+        animationLayer = pressingBlockData.animationLayer;
     }
 }

@@ -440,6 +440,7 @@ MonoBehaviour:
   gravityScale: 4
   velocityCoef: 0
   velocityChangeTime: 0
+  isDefeated: 0
   respawnPoint: {fileID: 1320695338}
   damageTime: 0.5
   masksAbleToDamage:
@@ -480,9 +481,8 @@ MonoBehaviour:
   feetDetectorSize: {x: 0.3, y: 0.3}
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8256
   timeBetweenJump: 0.15
-  gravity: 4
   minJumpTime: 0.05
   accelerationInAir: 1.25
 --- !u!58 &1101459715

@@ -445,7 +445,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: -1516786032, guid: 42fe22793c1856e4591c2c84f0ae3e74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -695,7 +695,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7280123948819870361}
-  - component: {fileID: 7280123948819870367}
   - component: {fileID: 7280123948819870366}
   - component: {fileID: 7280123948819870365}
   - component: {fileID: 7280123948819870364}
@@ -730,32 +729,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7280123948819870367
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280123948819870435}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00057709217, y: 0.6572409}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.75, y: 1.21875}
-    newSize: {x: 0.75, y: 1.21875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5441735, y: 1.3144819}
-  m_EdgeRadius: 0
 --- !u!50 &7280123948819870366
 Rigidbody2D:
   serializedVersion: 4
@@ -814,6 +787,11 @@ MonoBehaviour:
   runAccelerationAmount: 12.5
   runDeccelerationAmount: 12.5
   accelerationInAir: 1.25
+  headPos: {fileID: 7280123947654826000}
+  headDetectorSize: {x: 0.3, y: 0.3}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 12352
   isTouchingLedge: 0
   ledgeGrabbingTime: 0.66
   difference1: {x: 0.3, y: 1.3, z: 0}
@@ -824,16 +802,11 @@ MonoBehaviour:
   ledgeDecetror: {fileID: 1722000280172493421}
   ledgeCancelTime: 1
   feetPos: {fileID: 7280123949123715799}
-  feetDetectorSize: {x: 0.5, y: 0.2}
+  feetDetectorSize: {x: 0.45, y: 0.2}
   radius: 0.3
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 12352
   noPlatfromMask:
     serializedVersion: 2
     m_Bits: 4160
-  headPos: {fileID: 7280123947654826000}
-  headDetectorSize: {x: 0.3, y: 0.3}
   jumpForce: 11.5
   timeBetweenJump: 0.25
   minJumpTime: 0.05
@@ -870,7 +843,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7280123948819870435}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1055,7 +1028,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -127242710, guid: 0715c9f6b8b229040bf5071cbc4c422f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -95,27 +95,21 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     {
         if (isMecroUnlocked[(int)mecroState] && currentMecro != mecroState)
         {
-            //Vector3 mecroPos = Player.instance.transform.position;
-            //Quaternion mecroRot = Player.instance.transform.localRotation;
-            //Destroy(Player.instance.gameObject);
-            //currentMecro = Instantiate(mecros[mecroListIndex], mecroPos, mecroRot);
-            /*currentMecro = mecros[mecroListIndex];
-            currentMecro.gameObject.SetActive(true);
-            currentMecro.respawnPoint = respawnPoint;*/
-            //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
-            //isChanged = true;
             Player.instance.DisableAbility();
             isChanged = true;
+            if(Player.instance.transform.parent != null && Player.instance.transform.parent.tag == "Platform")
+            {
+                Player.instance.transform.SetParent(null);
+            }
             Player.instance.gameObject.SetActive(false);
             instantiatedMecros[(int)mecroState].respawnPoint = respawnPoint;
-            instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
+            instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position + new Vector3(0.2f, 0.2f, 0f);
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
             if (Player.instance.IsGravityInverted)
                 instantiatedMecros[(int)mecroState].InvertGravity();
             instantiatedMecros[(int)mecroState].InvertMovement(Player.instance.IsMovementInverted);
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
-            //Physics2D.IgnoreLayerCollision(7, 9, false);
             currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
         }

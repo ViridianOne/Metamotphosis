@@ -64,6 +64,10 @@ public class RoomObjectsManager : MonoBehaviour
                 component = poolObject.GetComponentInChildren<DestroyingPlatform>();
                 break;
 
+            case ObjectType.PressingBlock:
+                component = poolObject.GetComponentInChildren<PressingBlock>();
+                break;
+
             case ObjectType.Fittings:
             case ObjectType.FallingPlatform:
                 data = new PoolObjectData();
@@ -131,6 +135,10 @@ public class RoomObjectsManager : MonoBehaviour
 
             case ObjectType.DestroyingPlatform:
                 component = poolObject.GetComponentInChildren<DestroyingPlatform>();
+                break;
+
+            case ObjectType.PressingBlock:
+                component = poolObject.GetComponentInChildren<PressingBlock>();
                 break;
 
             default:

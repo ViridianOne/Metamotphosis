@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2124199693
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 621410135, guid: 9aa5598db7f49284dafa2767499d3c21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5772419249652849750}
   - component: {fileID: 5772419249652849745}
-  - component: {fileID: 5772419249652849746}
   - component: {fileID: 5772419249652849747}
   - component: {fileID: 5772419249652849744}
+  - component: {fileID: 3974703219537308236}
   m_Layer: 7
   m_Name: Mecro71
   m_TagString: Player
@@ -143,32 +143,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &5772419249652849746
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5772419249652849751}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0015748739, y: -0.30169702}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5481403, y: 1.2642183}
-  m_EdgeRadius: 0
 --- !u!50 &5772419249652849747
 Rigidbody2D:
   serializedVersion: 4
@@ -227,6 +201,11 @@ MonoBehaviour:
   runAccelerationAmount: 20
   runDeccelerationAmount: 5
   accelerationInAir: 1
+  headPos: {fileID: 5772419249819723160}
+  headDetectorSize: {x: 0.75, y: 0.75}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 12352
   isTouchingLedge: 0
   ledgeGrabbingTime: 0.66
   difference1: {x: 0.3, y: 0.5, z: 0}
@@ -238,9 +217,6 @@ MonoBehaviour:
   ledgeCancelTime: 1
   radius: 1
   feetDetectorSize: {x: 1, y: 1}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 12352
   jumpForce: 11
   jumpDelay: 0.05
   acceleration: 5
@@ -252,9 +228,23 @@ MonoBehaviour:
   directionChosen: 0
   started_flying: 0
   direction: {x: 0, y: 0}
-  headPos: {fileID: 5772419249819723160}
-  headDetectorSize: {x: 0.75, y: 0.75}
   accelerationCoefficient: 4.5
+--- !u!70 &3974703219537308236
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772419249652849751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 56067d142d12e034db798330376ca9b1, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.29998648}
+  m_Size: {x: 0.5, y: 1.2634323}
+  m_Direction: 0
 --- !u!1 &5772419249819723161
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +422,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1431124145
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1837258904, guid: 2ce6942735d0b75468616f81defa4d69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

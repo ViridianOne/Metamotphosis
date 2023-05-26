@@ -85,11 +85,13 @@ public class PoolElectricityData : PoolObjectData
     public readonly int animationLayer;
     public readonly Vector2 colliderSize, colliderPos;
     public readonly Vector3 leftDroidPos, rightDroidPos;
+    public readonly Quaternion gridRotationAngle, leftDroidAngle, rightDroidAngle;
 
     public PoolElectricityData(bool isVertical,
         AnimatedTile middleTile, AnimatedTile firstTile, AnimatedTile lastTile,
         int firstTilePos, int lastTilePos, int constTilePos, int animationLayer,
-        Vector2 colliderSize, Vector2 colliderPos, Vector3 leftDroidPos, Vector3 rightDroidPos)
+        Vector2 colliderSize, Vector2 colliderPos, Vector3 leftDroidPos, Vector3 rightDroidPos, 
+        Quaternion gridRotationAngle, Quaternion leftDroidAngle, Quaternion rightDroidAngle)
     {
         this.isVertical = isVertical;
         this.firstTilePos = firstTilePos;
@@ -103,6 +105,9 @@ public class PoolElectricityData : PoolObjectData
         this.colliderPos = colliderPos;
         this.leftDroidPos = leftDroidPos;
         this.rightDroidPos = rightDroidPos;
+        this.gridRotationAngle = gridRotationAngle;
+        this.leftDroidAngle = leftDroidAngle;
+        this.rightDroidAngle = rightDroidAngle;
     }
 }
 
@@ -192,6 +197,28 @@ public class PoolDestroyingPlatformData : PoolObjectData
     {
         this.phaseTime = phaseTime;
         this.timeToRecover = timeToRecover;
+        this.animationLayer = animationLayer;
+    }
+}
+
+public class PoolPressingBlock : PoolObjectData
+{
+    public readonly Vector2 detectorSize;
+    public readonly Vector3 blockPos, detectorPos;
+    public readonly float gravity, climbSpeed;
+    public readonly float triggerTime, landingTime;
+    public readonly int animationLayer;
+
+    public PoolPressingBlock(Vector2 detectorSize,Vector3 blockPos, Vector3 detectorPos, 
+        float gravity, float climbSpeed, float triggerTime, float landingTime, int animationLayer)
+    {
+        this.detectorSize = detectorSize;
+        this.blockPos = blockPos;
+        this.detectorPos = detectorPos;
+        this.gravity = gravity;
+        this.climbSpeed = climbSpeed;
+        this.triggerTime = triggerTime;
+        this.landingTime = landingTime;
         this.animationLayer = animationLayer;
     }
 }

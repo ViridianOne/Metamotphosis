@@ -29,7 +29,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
     [Header("Attacking")]
     private bool isTurnOn = false;
     private bool isPlayerDamaged = false;
-    private float laserDistance;
+    [SerializeField] private float laserDistance;
     private Vector2 laserDirection;
     private Vector3 laserEndPosition;
     private ContactFilter2D layersToAttackCF;
@@ -61,7 +61,6 @@ public class LaserBot : MonoBehaviour, IPoolObject
     {
         nextPosition = startPos.position;
         laserDirection = laserEnd.position - laserStart.position;
-        laserDistance = laserDirection.magnitude;
         laserStartFixVector = new Vector3(0, laserDirection.y > 0 ? 0.01f : -0.01f, 0);
         layersToAttackCF = new ContactFilter2D { layerMask = layersToAttack };
 
@@ -210,7 +209,6 @@ public class LaserBot : MonoBehaviour, IPoolObject
 
         nextPosition = laserBotData.startPosition;
         laserDirection = laserEnd.position - laserStart.position;
-        laserDistance = laserDirection.magnitude;
         laserStartFixVector = new Vector3(0, laserDirection.y > 0 ? 0.01f : -0.01f, 0);
 
         isPlayerDamaged = false;
