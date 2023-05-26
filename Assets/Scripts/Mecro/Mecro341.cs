@@ -82,6 +82,7 @@ public class Mecro341 : Player
                     StartCoroutine(TakeDeffect());
                 }
             }
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
             {

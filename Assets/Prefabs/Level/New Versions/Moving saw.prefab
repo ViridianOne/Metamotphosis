@@ -165,7 +165,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,10 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
+  isSmall: 0
   pos1: {fileID: 3569011434789117810}
   pos2: {fileID: 3569011435994782748}
-  speed: 2
   startPos: {fileID: 3569011434789117810}
-  isSmall: 0
+  speed: 2
   bigSawSprite: {fileID: 1326173548, guid: 01f92744ad60d19468645d178fd0ad83, type: 3}
   smallSawSprite: {fileID: 775597598, guid: 6d831b690583a414ba178f9e17297f07, type: 3}

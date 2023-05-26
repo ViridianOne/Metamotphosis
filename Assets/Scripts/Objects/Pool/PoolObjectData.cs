@@ -222,3 +222,8 @@ public class PoolPressingBlock : PoolObjectData
         this.animationLayer = animationLayer;
     }
 }
+
+public class PoolChemical : PoolObjectData
+{
+
+}

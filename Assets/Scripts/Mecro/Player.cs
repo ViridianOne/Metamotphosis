@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -65,6 +66,10 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected float ledgeCancelTime;
     private bool isOnPlatformLedge;
 
+    [Header("Rendering")]
+    [SerializeField] protected Light2D playerLight;
+    [SerializeField] protected float lightInnerRadius, lightOuterRadius;
+
     //public Color defaultColor;
     //private SpriteRenderer currentColor;
 
@@ -82,6 +87,9 @@ public abstract class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, false);
         gravity = rigidBody.gravityScale;
         isActive = true;
+        playerLight.pointLightInnerRadius = lightInnerRadius;
+        playerLight.pointLightOuterRadius = lightOuterRadius;
+        playerLight.intensity = 0;
         //currentColor = holder.GetComponent<SpriteRenderer>();
         anim.SetBool("isLedgeGrabbing", false);
         anim.SetBool("isMoving", false);

@@ -16,13 +16,19 @@ public class RoomActiveZone : MonoBehaviour
         }
     }
 
+    [Header("Rendering")]
     [SerializeField] private GameObject virtualCamera;
+    [SerializeField] private bool isDark;
+
+    [Header("Objects Pool")]
     [SerializeField] private RoomObjectsManager roomObjectsManager;
     [SerializeField] private RoomEnemiesManager roomEnemiesManager;
-    [HideInInspector] public bool isInRoom;
+
+    [Header("Map")]
     [SerializeField] private Location location;
     [SerializeField] private int roomNumber;
     [SerializeField] private Vector3Int positionOnMap;
+    [HideInInspector] public bool isInRoom;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -35,6 +41,7 @@ public class RoomActiveZone : MonoBehaviour
                 roomObjectsManager.PlaceObjects();
             if (roomEnemiesManager != null)
                 roomEnemiesManager.ActivateEnemies();
+            LevelManager.instance.SetGlobalLightItensity(isDark ? 0 : 1);
             LevelManager.instance.SetMapInfo(location, roomNumber, positionOnMap);
         }
     }

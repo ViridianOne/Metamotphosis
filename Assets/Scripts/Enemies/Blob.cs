@@ -105,6 +105,7 @@ public class Blob : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
         UpdateMovementAnimation();
     }
 

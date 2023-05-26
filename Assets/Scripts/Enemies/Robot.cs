@@ -71,6 +71,7 @@ public class Robot : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
         UpdateMovementAnimation();
     }
 
@@ -79,11 +80,8 @@ public class Robot : Enemy
         ChangeDirection(Directions.none, 0);
         anim.SetTrigger("attack");
         yield return new WaitForSeconds(attackTime);
-        if (Darkness.instance.gameObject != null)
-        {
-            Darkness.instance.TurnOn(canTurnOffTheLights);
-            canTurnOffTheLights = !canTurnOffTheLights;
-        }
+        LevelManager.instance.SetGlobalLightItensity(canTurnOffTheLights ? 0 : 1);
+        canTurnOffTheLights = !canTurnOffTheLights;
         yield return new WaitForSeconds(fullAttackTime - attackTime);
         stateChangeTimer = 0;
     }
@@ -159,11 +157,7 @@ public class Robot : Enemy
         isActive = false;
         canDamagePlayer = false;
         Player.instance.MiniJump(12f);
-        if (Darkness.instance.gameObject != null)
-        {
-            Darkness.instance.TurnOn(false);
-            canTurnOffTheLights = !canTurnOffTheLights;
-        }
+        LevelManager.instance.SetGlobalLightItensity(1);
         StartCoroutine(TurnOff());
     }
 

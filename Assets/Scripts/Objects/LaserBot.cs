@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 public class LaserBot : MonoBehaviour, IPoolObject
@@ -9,6 +10,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
     private BoxCollider2D laserCollider;
     [SerializeField] private GameObject engine;
     [SerializeField] private GameObject laserBody;
+    [SerializeField] private Light2D laserLight;
 
     [Header("Anim")]
     private Animator anim;
@@ -99,6 +101,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
             }
             transform.position = Vector3.MoveTowards(transform.position, nextPosition, movementSpeed * velocityCoef * Time.deltaTime);
         }
+        laserLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()

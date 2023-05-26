@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PressingBlock : MonoBehaviour, IPoolObject
 {
@@ -19,6 +20,9 @@ public class PressingBlock : MonoBehaviour, IPoolObject
     [Header("Animation")]
     [SerializeField] private int animationLayer;
     private Animator anim;
+
+    [Header("Rendering")]
+    [SerializeField] private Light2D objectLight;
 
     private void Awake()
     {
@@ -81,6 +85,7 @@ public class PressingBlock : MonoBehaviour, IPoolObject
             Player.instance.DamagePlayer();
             rigidBody.velocity = Vector2.zero;
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private IEnumerator Attack()

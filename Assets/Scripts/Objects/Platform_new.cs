@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Platform_new : MonoBehaviour, IPoolObject
 {
@@ -21,6 +22,8 @@ public class Platform_new : MonoBehaviour, IPoolObject
     [SerializeField] private int animationLayer;
     [HideInInspector] public Animator anim;
     [HideInInspector] public SpriteRenderer sprite;
+
+    [SerializeField] private Light2D objectLight;
 
     private void Awake()
     {
@@ -61,6 +64,8 @@ public class Platform_new : MonoBehaviour, IPoolObject
             transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * velocityCoef * Time.deltaTime);
         }
         ChangeVelocity();
+        if(objectLight != null)
+            objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()

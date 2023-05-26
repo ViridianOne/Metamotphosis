@@ -51,6 +51,7 @@ public class Ghost : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()

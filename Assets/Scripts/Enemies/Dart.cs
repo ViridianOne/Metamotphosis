@@ -66,6 +66,7 @@ public class Dart : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     protected override void Move() {}

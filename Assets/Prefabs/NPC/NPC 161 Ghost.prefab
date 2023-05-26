@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -379,11 +379,16 @@ MonoBehaviour:
   npcSentences:
   - text: Since U Been Gone
     fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
   - text: I can breathe for the first time
     fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
   - text: I'm so moving on, yeah, yeah
     fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
   - text: Such a classic song
     fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+    scene: {fileID: 0}
   pressButtonMessage: {fileID: 4000293335824748223}
   mecroToUnlock: 1
+  isFinal: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlatformsWheel : MonoBehaviour, IPoolObject
 {
@@ -37,6 +38,9 @@ public class PlatformsWheel : MonoBehaviour, IPoolObject
     [SerializeField] private bool isMoving;
     [SerializeField] private float movementSpeed;
     [SerializeField] private Transform pos1, pos2, startPos;
+
+    [Header("Rendering")]
+    [SerializeField] private Light2D objectLight;
 
 
     private void Awake()
@@ -112,6 +116,7 @@ public class PlatformsWheel : MonoBehaviour, IPoolObject
                 RotatePlatform(platforms[i], rotationAngles[i] * rotationSpeed * velocityCoef * platformSpeed);
             }
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()

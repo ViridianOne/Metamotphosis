@@ -78,6 +78,7 @@ public class Ball : Enemy
             ChangeVelocity();
             UpdateMovementAnimation();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Trampoline : MonoBehaviour, IPoolObject
 {
@@ -14,6 +15,8 @@ public class Trampoline : MonoBehaviour, IPoolObject
     
     private Animator anim;
     [SerializeField] private int animationLayer;
+
+    [SerializeField] private Light2D objectLight;
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class Trampoline : MonoBehaviour, IPoolObject
             lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
             anim.SetBool("isSleeping", !lightsOn);
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

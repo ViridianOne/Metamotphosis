@@ -42,7 +42,6 @@ public class Mecro206 : Player
             if (isAbleToMove)
             {
                 moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
-
                 if (Input.GetButtonDown("Fire1"))
                 {
                     isAbilityActivated = !isAbilityActivated;
@@ -73,7 +72,7 @@ public class Mecro206 : Player
                 UpdateMovementAnimation();
                 CheckCeilingTouch();
             }
-
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
             {

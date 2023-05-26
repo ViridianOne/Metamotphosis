@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DestroyingPlatform : MonoBehaviour, IPoolObject
 {
@@ -22,6 +23,7 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
     [SerializeField] private float phaseTime;
     [SerializeField] private float timeToRecover;
 
+    [SerializeField] private Light2D objectLight;
 
     private void Awake()
     {
@@ -64,6 +66,7 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
                 }
             }
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

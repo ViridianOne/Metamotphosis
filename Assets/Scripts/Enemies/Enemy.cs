@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public abstract class Enemy : MonoBehaviour
     [Header("Attack")]
     protected bool canDamagePlayer;
     [SerializeField] protected Vector2 attackPos, attackSize;
+
+    [Header("Rendering")]
+    [SerializeField] protected Light2D enemyLight;
 
     private void Awake()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 public class ElectricityTileChange : MonoBehaviour, IPoolObject
@@ -23,6 +24,7 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
     private bool isActive;
     [SerializeField] private int animationLayer;
     [SerializeField] private Transform leftDroidPos, rightDroidPos;
+    [SerializeField] private Light2D leftDroidLight, rightDroidLight;
 
     void Start()
     {
@@ -69,6 +71,8 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
             grid.SetActive(false);
             disableTimer = disableTime;
         }
+        leftDroidLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
+        rightDroidLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private IEnumerator TurnOn()

@@ -74,6 +74,7 @@ public class Flash : Enemy
                 StartCoroutine(DamagePlayer());
             }
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     protected override void Move() {}

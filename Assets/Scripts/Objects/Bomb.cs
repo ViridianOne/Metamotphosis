@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Bomb : MonoBehaviour, IPoolObject
 {
@@ -20,6 +21,8 @@ public class Bomb : MonoBehaviour, IPoolObject
     [SerializeField] private float explosionReclainForce;
     [SerializeField] private float lethalExplosionRadius, explosionReclainRadius;
     [SerializeField] private Vector2 triggerAreaPos, triggerAreaSize;
+
+    [SerializeField] private Light2D bombLight;
 
 
     void Awake()
@@ -41,6 +44,7 @@ public class Bomb : MonoBehaviour, IPoolObject
                 StartCoroutine(Explode());
             }
         }
+        bombLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()
