@@ -41,10 +41,11 @@ public class Mecro341 : Player
                         force = originalForce;
                         spriteAngle = 0;
                     }
+                    rigidBody.gravityScale = 0;
                     isOn90 = false;
                     isOn0 = false;
                 }
-                if(!isOnArcPlatform)
+                else
                 {
                     force = originalForce;
                     spriteAngle = 0;
