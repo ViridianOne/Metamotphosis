@@ -9,6 +9,10 @@ public class MecrobotActiveZone : MonoBehaviour
     [SerializeField] private GameObject bossRoomEnter;
     [SerializeField] private Transform startPlayerPos;
 
+    [SerializeField] private Location location;
+    [SerializeField] private int roomNumber;
+    [SerializeField] private Vector3Int positionOnMap; 
+
     private void Start()
     {
         boss = bossGroup.GetComponentInChildren<Mecrobot>();
@@ -25,6 +29,7 @@ public class MecrobotActiveZone : MonoBehaviour
                 bossRoomEnter.SetActive(true);
                 Player.instance.SetPosition(startPlayerPos.position);
                 boss.RestoreInitialStates();
+                LevelManager.instance.SetMapInfo(location, roomNumber, positionOnMap);
             }
         }
     }

@@ -8,21 +8,23 @@ using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
+public enum Location
+{
+    location26,
+    location71,
+    location116,
+    location161,
+    location206,
+    location251,
+    locztion296,
+    location341,
+    locationCenter,
+    None,
+}
+
 public class MapController : MonoBehaviour
 {
-    public enum Location
-    {
-        location26,
-        location71,
-        location116,
-        location161,
-        location206,
-        location251,
-        locztion296,
-        location341,
-        locationCenter,
-        None,
-    }
+    public static MapController instance;
 
     private Location PlayerLocation;
     private Vector3Int PlayerPosition;
@@ -39,13 +41,20 @@ public class MapController : MonoBehaviour
     [SerializeField] TextMeshProUGUI SectionText;
     [SerializeField] TextMeshProUGUI RoomText;
 
+    private void Awake()
+    {
+        instance = this;
+        PlayerLocation = Location.None;
+        SectorsCoordinates = GetSectorsCoordinates();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerLocation = Location.None;
-        SectorsCoordinates = GetSectorsCoordinates();
         ResetBordersColors();
+        /*PlayerLocation = Location.None;
+        SectorsCoordinates = GetSectorsCoordinates();
+        ResetBordersColors();*/
         //MovePlayer(Location.location161, "161-5", new Vector3Int(11, -8, 0));
         //MovePlayer(Location.location161, "161-2", new Vector3Int(11, -7, 0));
         //MovePlayer(Location.location341, "341-9", new Vector3Int(8, 5, 0));
@@ -57,7 +66,7 @@ public class MapController : MonoBehaviour
     /// </summary>
     /// <param name="newLocation">Новая локация игрока</param>
     /// <param name="position">Новые координаты игрока на карте</param>
-    public void MovePlayer(Location newLocation, string roomName, Vector3Int position)
+    public void MovePlayer(Location newLocation, int roomNumber, Vector3Int position)
     {
         if (PlayerLocation == Location.None)
         {
@@ -87,57 +96,57 @@ public class MapController : MonoBehaviour
 
             PlayerPosition = position;
         }
-        SetLocationText(newLocation, roomName);
+        SetLocationText(newLocation, roomNumber);
     }
 
 
-    private void SetLocationText(Location location, string roomName)
+    private void SetLocationText(Location location, int roomNumber)
     {
         switch (location)
         {
             case Location.location26:
                 SectionText.text = "Location: " + "<color=#E56300>26</color>";
-                RoomText.text = "Room: " + "<color=#E56300>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#E56300>26-" + roomNumber + "</color>";
                 break;
 
             case Location.location71:
                 SectionText.text = "Location: " + "<color=#BBE500>71</color>";
-                RoomText.text = "Room: " + "<color=#BBE500>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#BBE500>71-" + roomNumber + "</color>";
                 break;
 
             case Location.location116:
                 SectionText.text = "Location: " + "<color=#0FE500>116</color>";
-                RoomText.text = "Room: " + "<color=#0FE500>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#0FE500>116-" + roomNumber + "</color>";
                 break;
 
             case Location.location161:
                 SectionText.text = "Location: " + "<color=#00E59C>161</color>";
-                RoomText.text = "Room: " + "<color=#00E59C>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#00E59C>161-" + roomNumber + "</color>";
                 break;
 
             case Location.location206:
                 SectionText.text = "Location: " + "<color=#0082E5>206</color>";
-                RoomText.text = "Room: " + "<color=#0082E5>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#0082E5>206-" + roomNumber + "</color>";
                 break;
 
             case Location.location251:
                 SectionText.text = "Location: " + "<color=#2A00E5>251</color>";
-                RoomText.text = "Room: " + "<color=#2A00E5>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#2A00E5>251-" + roomNumber + "</color>";
                 break;
 
             case Location.locztion296:
                 SectionText.text = "Location: " + "<color=#D600E5>296</color>";
-                RoomText.text = "Room: " + "<color=#D600E5>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#D600E5>296-" + roomNumber + "</color>";
                 break;
 
             case Location.location341:
                 SectionText.text = "Location: " + "<color=#E50049>341</color>";
-                RoomText.text = "Room: " + "<color=#E50049>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#E50049>341-" + roomNumber + "</color>";
                 break;
 
             case Location.locationCenter: //цвета и номера для локаций центра нет в фигме
                 SectionText.text = "Location: " + "<color=#2A00E5>251</color>";
-                RoomText.text = "Room: " + "<color=#2A00E5>" + roomName + "</color>";
+                RoomText.text = "Room: " + "<color=#2A00E5>" + roomNumber + "</color>";
                 break;
         }
         
@@ -163,8 +172,6 @@ public class MapController : MonoBehaviour
     {
         if (PlayerLocation == newLocation)
             return;
-        Debug.Log(SectorsCoordinates[(int)newLocation]);
-        Debug.Log((int)newLocation);
         foreach (var tileCoordinate in SectorsCoordinates[(int)newLocation])
         {
             Sectors.SetColor(tileCoordinate, new Color(1, 1, 1, 1));
