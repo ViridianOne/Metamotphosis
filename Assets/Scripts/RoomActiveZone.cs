@@ -19,7 +19,7 @@ public class RoomActiveZone : MonoBehaviour
     [SerializeField] private GameObject virtualCamera;
     [SerializeField] private RoomObjectsManager roomObjectsManager;
     [SerializeField] private RoomEnemiesManager roomEnemiesManager;
-    private bool isInRoom;
+    public bool isInRoom;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
