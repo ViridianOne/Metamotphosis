@@ -74,6 +74,7 @@ public class Bomb : MonoBehaviour, IPoolObject
                 / explosionReclainRadius * explosionReclainForce * vectorToPlayer);
         }
         anim.SetBool("isDisabled", true);
+        AudioManager.instance.Play(18);
         explosionObject.SetActive(true);
         yield return new WaitForSecondsRealtime(explosionTime);
 

@@ -56,6 +56,7 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
                 else if (phaseTimer <= 0)
                 {
                     currentPhase += 1;
+                    AudioManager.instance.Play(19);
                     anim.SetTrigger("impulse");
                     anim.SetFloat("phase", currentPhase);
 
@@ -81,6 +82,7 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.Play(19);
             anim.SetTrigger("impulse");
         }
     }
@@ -110,6 +112,7 @@ public class DestroyingPlatform : MonoBehaviour, IPoolObject
 
     private void Destroy()
     {
+        AudioManager.instance.Play(6);
         isRecovering = true;
         foreach (var collider in colliders)
             collider.enabled = false;

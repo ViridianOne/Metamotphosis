@@ -82,6 +82,7 @@ public class Robot : Enemy
         yield return new WaitForSeconds(attackTime);
         LevelManager.instance.SetGlobalLightItensity(canTurnOffTheLights ? 0 : 1);
         canTurnOffTheLights = !canTurnOffTheLights;
+        AudioManager.instance.Play(29);
         yield return new WaitForSeconds(fullAttackTime - attackTime);
         stateChangeTimer = 0;
     }
@@ -139,6 +140,10 @@ public class Robot : Enemy
         }
         else
             anim.SetBool("isMoving", false);
+        if (state == EnemyState.Moving && rigidBody.velocity.y == 0)
+            AudioManager.instance.Play(10);
+        if (state != EnemyState.Moving && AudioManager.instance.sounds[10].source.isPlaying)
+            AudioManager.instance.Stop(10);
     }
 
     private bool CheckPosition(float xPos) => transform.position.x - xPos >= -0.25f && transform.position.x - xPos <= 0.25f;
@@ -158,6 +163,8 @@ public class Robot : Enemy
         canDamagePlayer = false;
         Player.instance.MiniJump(12f);
         LevelManager.instance.SetGlobalLightItensity(1);
+        AudioManager.instance.Stop(10);
+        AudioManager.instance.Play(6);
         StartCoroutine(TurnOff());
     }
 

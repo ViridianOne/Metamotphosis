@@ -125,6 +125,7 @@ public class Ball : Enemy
     {
         anim.SetTrigger("attack");
         anim.SetBool("landingMoment", true);
+        AudioManager.instance.Play(19);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
@@ -178,7 +179,10 @@ public class Ball : Enemy
             anim.SetBool("isMoving", false);
             anim.speed = 1;
         }
-
+        if(rigidBody.velocity != Vector2.zero && isGrounded)
+            AudioManager.instance.Play(28);
+        else
+            AudioManager.instance.Stop(28);
         Flip();
     }
 
@@ -203,6 +207,8 @@ public class Ball : Enemy
         state = EnemyState.Destroying;
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(28);
+        AudioManager.instance.Play(6);
         if (!gameObject.activeInHierarchy)
             gameObject.SetActive(true);
         StartCoroutine(TurnOff());

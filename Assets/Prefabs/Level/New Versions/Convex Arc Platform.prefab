@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179845330789517267}
   - component: {fileID: 1179845330789517264}
+  - component: {fileID: 4201711194862525047}
   - component: {fileID: 1179845330789517230}
   - component: {fileID: 1179845330789517231}
   - component: {fileID: 1179845330789517266}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 456547535
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 971176139, guid: 5f814848e6eef824cbc01517e082bced, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,6 +91,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &4201711194862525047
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179845330789517229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2, y: -2}
+      - {x: -2, y: 2}
+      - {x: -1.5, y: 2}
+      - {x: 0.8, y: 0.8}
+      - {x: 2, y: -1.5}
+      - {x: 2, y: -2}
 --- !u!68 &1179845330789517230
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -97,7 +129,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179845330789517229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -320,7 +352,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 1024
-  m_ForceMagnitude: 100
+  m_ForceMagnitude: -100
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0

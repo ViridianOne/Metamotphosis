@@ -98,6 +98,10 @@ public class Mecro26 : Player
             }
             CheckVisability();
             ChangeVelocity();
+            if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[28].source.isPlaying)
+            {
+                AudioManager.instance.Stop(28);
+            }
         }
     }
 
@@ -145,9 +149,9 @@ public class Mecro26 : Player
             anim.SetBool("isMoving", false);
             anim.speed = 1;
         }
-        if (moveInput != 0f && !AudioManager.instance.sounds[9].source.isPlaying)
+        if (moveInput != 0f && !AudioManager.instance.sounds[28].source.isPlaying)
         {
-            AudioManager.instance.Play(9);
+            AudioManager.instance.Play(28);
         }
             Flip();
     }

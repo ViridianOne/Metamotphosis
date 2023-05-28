@@ -5,6 +5,7 @@ using UnityEngine;
 public class Magnet : Enemy
 {
     [Header("Physics")]
+    [SerializeField] bool isMoving;
     private bool isPlacedOnWall = false;
     private float stateChangeTimer = 0f;
     private int moveInput = 0;
@@ -67,14 +68,14 @@ public class Magnet : Enemy
                         StartCoroutine(Attack());
                     }
                 }
-                else if (state == EnemyState.Moving)
+                else if (state == EnemyState.Moving && isMoving)
                 {
                     moveInput = (isMoveDirectionChanged ? -1 : 1);
                     anim.SetBool("isMoving", true);
                 }
             }
 
-            if (state == EnemyState.Moving)
+            if (state == EnemyState.Moving && isMoving)
             {
                 if ((moveInput < 0 && CheckPosition(leftBottomPos.position)) || (moveInput > 0 && CheckPosition(rightTopPos.position)))
                 {
@@ -104,6 +105,10 @@ public class Magnet : Enemy
                 StartCoroutine(DamagePlayer());
             }
             ChangeVelocity();
+            if(rigidBody.velocity != Vector2.zero)
+                AudioManager.instance.Play(9);
+            else
+                AudioManager.instance.Stop(9);
         }
         enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
@@ -204,8 +209,10 @@ public class Magnet : Enemy
     {
         anim.SetBool("isAttacking", true);
         pointEffector.SetActive(true);
+        AudioManager.instance.Play(26);
         yield return new WaitForSeconds(attackTime);
         pointEffector.SetActive(false);
+        AudioManager.instance.Stop(26);
         anim.SetBool("isAttacking", false);
         stateChangeTimer = 0f;
     }
@@ -217,6 +224,9 @@ public class Magnet : Enemy
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         Player.instance.MiniJump(12f);
+        AudioManager.instance.Stop(26);
+        AudioManager.instance.Stop(9);
+        AudioManager.instance.Play(6);
         StartCoroutine(TurnOff());
     }
 

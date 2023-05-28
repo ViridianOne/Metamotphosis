@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1794567763
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -26763223, guid: 7cbf39c3acac21b4d8f2d7c1ecd3f8d3, type: 3}
+  m_Sprite: {fileID: 1936010097, guid: d5cbdf4dddc888c48aa8137e45b8cc1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -350,7 +350,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17563164}
+  m_Offset: {x: 0, y: 0.057989955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -361,7 +361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 2.2}
+  m_Size: {x: 4, y: 3.0940764}
   m_EdgeRadius: 0
 --- !u!114 &4000293336948289013
 MonoBehaviour:
@@ -377,18 +377,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 0}
   npcSentences:
-  - text: Since U Been Gone
+  - text: Good morning, Mecro...
     fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
     scene: {fileID: 0}
-  - text: I can breathe for the first time
-    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
-    scene: {fileID: 0}
-  - text: I'm so moving on, yeah, yeah
-    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
-    scene: {fileID: 0}
-  - text: Such a classic song
+  - text: (
     fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
     scene: {fileID: 0}
+  - text: What are you scared of? I'm just a ghost. I'm not gonna kill you.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: '?'
+    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+    scene: {fileID: 0}
+  - text: No, you're alive. But you need to get out of here as soon as possible.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: '-'
+    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+    scene: {fileID: 0}
+  - text: You can trust me. I've got nothing to lose and I don't need anything from
+      you.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: Is it enough for you to make you believe in me?
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: +
+    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+    scene: {fileID: 0}
+  - text: Alright. You need to jump into this abyss.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: '?'
+    fraseBackground: {fileID: 21300000, guid: cad4d6f4dfe783440b760c60190258aa, type: 3}
+    scene: {fileID: 0}
+  - text: Yes, it's pretty strange, but it's the only way out.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: There's darkness in the next rooms. But don't worry.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: Your species can switch the lights around you, so you won't be lost in
+      the darkness.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: And don't forget that your light can charge some objects like platforms
+      and trampolines.
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
+  - text: Good luck! I will wait for you in one of the next rooms...
+    fraseBackground: {fileID: 21300000, guid: 69f18eb9a7fd42e4da1768723a196edf, type: 3}
+    scene: {fileID: 0}
   pressButtonMessage: {fileID: 4000293335824748223}
-  mecroToUnlock: 1
+  mecroToUnlock: 8
   isFinal: 0
+  guardForm: 0

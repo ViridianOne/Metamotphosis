@@ -124,7 +124,6 @@ public class Pause_menu : MonoBehaviour
             }
             helpPage.SetActive(true);
             activePage = helpPage;
-            print('s');
         }
         else
             return;

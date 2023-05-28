@@ -45,9 +45,14 @@ public class Platform_new : MonoBehaviour, IPoolObject
     void Update()
     {
         isActiveZone = Physics2D.OverlapBox(activeZonePos, activeZoneSize, 0, playerMask);
-        if (isActiveZone && isSleeping && MecroSelectManager.instance.GetIndex() == 0)
+        if (isActiveZone && isSleeping)
         {
-            lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
+            if (MecroSelectManager.instance.GetIndex() == 0)
+            {
+                lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
+            }
+            else
+                lightsOn = false;
             anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
             anim.SetBool("isSleeping", !lightsOn);
         }
@@ -65,7 +70,7 @@ public class Platform_new : MonoBehaviour, IPoolObject
         }
         ChangeVelocity();
         if(objectLight != null)
-            objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
+            objectLight.intensity = LevelManager.instance.isDarknessOn && !isSleeping ? 1 : 0;
     }
 
     private void OnDrawGizmos()
@@ -84,18 +89,9 @@ public class Platform_new : MonoBehaviour, IPoolObject
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.instance.Play(19);
             anim.SetTrigger("impulse");
             anim.SetBool("isPlayerOnPlatform", lightsOn);
-            //if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
-            //{
-            //    Player.instance.isOnMovingPlatform = true;
-            //    Player.instance.movingPlatDif = new Vector2(0, 0.005f);
-            //}
-            //else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
-            //{
-            //    Player.instance.isOnMovingPlatform = true;
-            //    Player.instance.movingPlatDif = new Vector2(0, -0.005f);
-            //}
             collision.transform.SetParent(transform);
         }
     }

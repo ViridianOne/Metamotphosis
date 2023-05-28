@@ -90,6 +90,10 @@ public class Mecro341 : Player
             }
             CheckVisability();
             ChangeVelocity();
+            if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[28].source.isPlaying)
+            {
+                AudioManager.instance.Stop(28);
+            }
         }
     }
 
@@ -107,9 +111,9 @@ public class Mecro341 : Player
         {
             anim.SetBool("isMoving", false);
         }
-        if (moveInput != 0f && !AudioManager.instance.sounds[9].source.isPlaying)
+        if (moveInput != 0f && !AudioManager.instance.sounds[28].source.isPlaying)
         {
-            AudioManager.instance.Play(9);
+            AudioManager.instance.Play(28);
         }
         anim.SetBool("isFalling", !isGrounded);
         Flip();
@@ -146,12 +150,15 @@ public class Mecro341 : Player
     public override void DisableAbility()
     {
         isAbilityActivated = false;
+        isOnArcPlatform = false;
         isOn0 = true;
         isOn30 = false;
         isOn60 = false;
         isOn90 = false;
         gravity = 4;
         transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
+        isGravityInverted = false;
+        ceilCoef = 1;
     }
 
     protected override void Move()
@@ -193,7 +200,7 @@ public class Mecro341 : Player
         anim.SetBool("landingMoment", false);
         anim.SetBool("isLedgeGrabbing", false);
         rigidBody.velocity = Vector2.zero;
-        AudioManager.instance.Stop(9);
+        AudioManager.instance.Stop(28);
     }
 
     protected override IEnumerator TurnLedgeDetectorOff()
@@ -221,6 +228,6 @@ public class Mecro341 : Player
 
     public override void InvertGravity()
     {
-        isGravityInverted = !isGravityInverted;
+        isGravityInverted = false;
     }
 }

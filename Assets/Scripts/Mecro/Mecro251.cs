@@ -106,6 +106,10 @@ public class Mecro251 : Player
             }
             CheckVisability();
             ChangeVelocity();
+            if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[9].source.isPlaying)
+            {
+                AudioManager.instance.Stop(9);
+            }
         }
     }
 
@@ -268,12 +272,14 @@ public class Mecro251 : Player
             speedUpBullet.transform.position = bulletStartPos.position;
             speedUpBullet.gameObject.SetActive(true);
             speedUpBullet.Shoot(direction == Directions.up || direction == Directions.right ? 1 : -1, direction);
+            AudioManager.instance.Play(21);
         }
         else if(bulletType == BulletType.SlowDown)
         {
             slowDownBullet.transform.position = bulletStartPos.position;
             slowDownBullet.gameObject.SetActive(true);
             slowDownBullet.Shoot(direction == Directions.up || direction == Directions.right ? 1 : -1, direction);
+            AudioManager.instance.Play(22);
         }
         yield return new WaitForSeconds(timeAfterShoot);
         rigidBody.gravityScale = 4;

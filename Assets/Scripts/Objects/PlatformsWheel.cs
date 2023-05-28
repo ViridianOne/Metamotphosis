@@ -116,7 +116,11 @@ public class PlatformsWheel : MonoBehaviour, IPoolObject
                 RotatePlatform(platforms[i], rotationAngles[i] * rotationSpeed * velocityCoef * platformSpeed);
             }
         }
-        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
+        if(isLightsOn && !AudioManager.instance.sounds[20].source.isPlaying)
+            AudioManager.instance.Play(20);
+        else
+            AudioManager.instance.Stop(20);
+        objectLight.intensity = LevelManager.instance.isDarknessOn && isLightsOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()

@@ -38,7 +38,7 @@ public class Trampoline : MonoBehaviour, IPoolObject
             lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
             anim.SetBool("isSleeping", !lightsOn);
         }
-        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
+        objectLight.intensity = LevelManager.instance.isDarknessOn && !isSleeping ? 1 : 0;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -49,6 +49,7 @@ public class Trampoline : MonoBehaviour, IPoolObject
             effectSwitch = false;
             Player.instance.AddJumpForce(jumpAdditionForce);
             anim.SetTrigger("jump");
+            AudioManager.instance.Play(4);
         }
     }
 

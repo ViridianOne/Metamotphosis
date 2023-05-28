@@ -84,7 +84,10 @@ public class Spark : Enemy
             if (Mathf.Abs(currentSpeed) < 0.5f)
             {
                 rigidBody.velocity = Vector2.zero;
+                AudioManager.instance.Stop(16);
             }
+            if(rigidBody.velocity != Vector2.zero)
+                AudioManager.instance.Play(16);
         }
     }
 
@@ -128,6 +131,8 @@ public class Spark : Enemy
         anim.SetBool("isFlying", false);
         anim.SetFloat("idleCoef", 0);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(16);
+        AudioManager.instance.Play(29);
         StartCoroutine(TurnOff());
     }
 

@@ -5,6 +5,7 @@ using TMPro;
 
 public class NPC : MonoBehaviour
 {
+    private Animator anim;
     [SerializeField] private DialogueSystem dialogueSystem;
     [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
@@ -15,8 +16,16 @@ public class NPC : MonoBehaviour
     [SerializeField] private MecroStates mecroToUnlock;
     [SerializeField] private bool isFinal = false;
 
+    [SerializeField] MecroStates guardForm;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Start()
     {
+        anim.SetFloat("guard", (float)guardForm);
         pressButtonMessage.SetActive(false);
         wasDialogue = false;
     }

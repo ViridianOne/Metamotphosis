@@ -68,6 +68,10 @@ public class RoomObjectsManager : MonoBehaviour
                 component = poolObject.GetComponentInChildren<PressingBlock>();
                 break;
 
+            case ObjectType.Chemical:
+                component = poolObject.GetComponentInChildren<ChemicalDrop>();
+                break;
+
             case ObjectType.Fittings:
             case ObjectType.FallingPlatform:
                 data = new PoolObjectData();
@@ -139,6 +143,10 @@ public class RoomObjectsManager : MonoBehaviour
 
             case ObjectType.PressingBlock:
                 component = poolObject.GetComponentInChildren<PressingBlock>();
+                break;
+
+            case ObjectType.Chemical:
+                component = poolObject.GetComponentInChildren<ChemicalDrop>();
                 break;
 
             default:

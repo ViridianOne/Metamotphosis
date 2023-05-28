@@ -143,6 +143,7 @@ public class Flash : Enemy
     {
         isExploding = true;
         anim.SetTrigger("attack");
+        AudioManager.instance.Play(25);
 
         yield return new WaitForSeconds(1.2f);   // 72 frames
 

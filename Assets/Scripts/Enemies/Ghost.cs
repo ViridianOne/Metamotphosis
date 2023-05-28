@@ -129,7 +129,8 @@ public class Ghost : Enemy
             anim.SetBool("isChasing", true);
             state = EnemyState.Moving;
         }
-
+        if(rigidBody.velocity != Vector2.zero)
+            AudioManager.instance.Play(27);
         Flip();
     }
 
@@ -141,6 +142,7 @@ public class Ghost : Enemy
         state = EnemyState.Destroying;
         anim.SetBool("isChasing", false);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(27);
         if (!gameObject.activeInHierarchy)
             gameObject.SetActive(true);
         StartCoroutine(TurnOff());

@@ -16,6 +16,7 @@ public class PressingBlock : MonoBehaviour, IPoolObject
     [SerializeField] LayerMask playerMask;
     [SerializeField] float triggerTime, landingTime;
     private bool isPlayerUnderneath, canDamagePlayer, canAttack, canClimb, isClimbing, ableToDamege;
+    private bool isSoundOn;
 
     [Header("Animation")]
     [SerializeField] private int animationLayer;
@@ -105,9 +106,15 @@ public class PressingBlock : MonoBehaviour, IPoolObject
         rigidBody.bodyType = RigidbodyType2D.Kinematic;
         rigidBody.velocity = Vector2.zero;
         anim.SetBool("isLanded", true);
+        if (!isSoundOn)
+        {
+            AudioManager.instance.Play(18);
+            isSoundOn = true;
+        }
 
         yield return new WaitForSeconds(landingTime);
 
+        isSoundOn = false;
         canClimb = false;
         isClimbing = true;
     }

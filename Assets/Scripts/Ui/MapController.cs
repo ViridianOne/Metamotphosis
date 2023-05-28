@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using UnityEditor.SceneTemplate;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public enum Location
 {

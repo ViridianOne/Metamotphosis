@@ -147,8 +147,10 @@ public class LaserBot : MonoBehaviour, IPoolObject
         yield return new WaitForSecondsRealtime(turningOnTime);
 
         laserBody.SetActive(true);
+        AudioManager.instance.Play(23);
         yield return new WaitForSecondsRealtime(activeTime);
 
+        AudioManager.instance.Stop(23);
         isTurnOn = false;
         anim.SetBool("isAttacking", false);
         laserBody.SetActive(false);

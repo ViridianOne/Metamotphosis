@@ -27,6 +27,8 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public bool isVertical = false;
     [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
 
+    public bool isInBossRoom = false;
+
     [Header("Physics")]
     protected bool isGrounded;
     protected Rigidbody2D rigidBody;
@@ -217,15 +219,20 @@ public abstract class Player : MonoBehaviour
         {
             CancelLedegeGrabbing();
         }
+        isActive = false;
+        if (transform.parent != null && transform.parent.tag == "Platform")
+        {
+            transform.SetParent(null);
+        }
         anim.SetBool("isDamaged", true);
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         DisableAbility();
-        isActive = false;
-        Physics2D.IgnoreLayerCollision(7, 9);
-        Physics2D.IgnoreLayerCollision(7, 17);
+        Physics2D.IgnoreLayerCollision(7, 9, true);
+        Physics2D.IgnoreLayerCollision(7, 17, true);
         MiniJump(12f);
-        StartCoroutine(Respawn());
+        if(gameObject.activeInHierarchy)
+            StartCoroutine(Respawn());
     }
 
     private IEnumerator Respawn()
@@ -239,6 +246,10 @@ public abstract class Player : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 7, false);
             //instance.GetHolder().GetComponent<SpriteRenderer>().color = defaultColor;
             //currentColor.color = defaultColor;
+            if (transform.parent != null && transform.parent.tag == "Platform")
+            {
+                transform.SetParent(null);
+            }
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;
@@ -248,6 +259,7 @@ public abstract class Player : MonoBehaviour
             Physics2D.IgnoreLayerCollision(7, 9, false);
             Physics2D.IgnoreLayerCollision(7, 17, false);
             anim.SetBool("isDamaged", false);
+            //isInBossRoom = false;
         }
         RoomActiveZone.RecoverEnemies();
     }
@@ -341,6 +353,14 @@ public abstract class Player : MonoBehaviour
         velocityCoef = speedChangeCoef;
         anim.speed = speedChangeCoef;
         holderSprite.color = changeColor;
+    }
+
+    public IEnumerator ReactToChemical(float effectTime, Color changedColor)
+    {
+        holderSprite.color = changedColor;
+        yield return new WaitForSeconds(effectTime);
+        holderSprite.color = new Color(1, 1, 1, 1);
+        DamagePlayer();
     }
 
     protected void ChangeVelocity()

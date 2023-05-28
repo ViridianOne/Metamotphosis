@@ -225,5 +225,15 @@ public class PoolPressingBlock : PoolObjectData
 
 public class PoolChemical : PoolObjectData
 {
+    public readonly float animationLayer;
+    public readonly Color changedColor;
+    public readonly Vector3 upperPos, downPos;
 
+    public PoolChemical(float animationLayer, Color changedColor, Vector3 upperPos, Vector3 downPos)
+    {
+        this.animationLayer = animationLayer;
+        this.changedColor = changedColor;
+        this.upperPos = upperPos;
+        this.downPos = downPos;
+    }
 }

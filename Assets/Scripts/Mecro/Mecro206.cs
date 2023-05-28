@@ -71,6 +71,11 @@ public class Mecro206 : Player
 
                 UpdateMovementAnimation();
                 CheckCeilingTouch();
+
+                if ((moveInput == 0 || !isGrounded) && AudioManager.instance.sounds[27].source.isPlaying)
+                {
+                    AudioManager.instance.Stop(27);
+                }
             }
             playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
@@ -90,6 +95,10 @@ public class Mecro206 : Player
     {
         anim.SetBool("isMoving", moveInput != 0f);
         anim.SetBool("isFalling", !isGrounded);
+        if (moveInput != 0f && !AudioManager.instance.sounds[27].source.isPlaying)
+        {
+            AudioManager.instance.Play(27);
+        }
         Flip();
     }
 
