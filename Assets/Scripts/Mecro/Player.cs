@@ -250,6 +250,8 @@ public abstract class Player : MonoBehaviour
             {
                 transform.SetParent(null);
             }
+            ceilCoef = 1;
+            isVertical = false;
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
             rigidBody.velocity = Vector2.zero;

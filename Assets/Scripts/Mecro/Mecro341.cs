@@ -158,6 +158,7 @@ public class Mecro341 : Player
         gravity = 4;
         transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
         isGravityInverted = false;
+        isVertical = false;
         ceilCoef = 1;
     }
 

@@ -48,6 +48,8 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
         }
         Player.instance = instantiatedMecros[(int)startMecro];
         Physics2D.IgnoreLayerCollision(7, 9, false);
+        Player.instance.ceilCoef = 1;
+        Player.instance.isVertical = false;
         Player.instance.gameObject.SetActive(true);
     }
 
