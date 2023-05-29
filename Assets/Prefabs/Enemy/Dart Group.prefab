@@ -292,11 +292,11 @@ MonoBehaviour:
   attackSize: {x: 2.3, y: 1.5}
   enemyLight: {fileID: 754762150463944059}
   isInverted: 1
-  groundDetecrotPos: {x: 0, y: -6}
-  groundDetectorSize: {x: 1.5, y: 0.5}
+  groundDetecrotPos: {x: 0, y: 0.22}
+  groundDetectorSize: {x: 1.5, y: 1.5}
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 12352
   topTriggerPos: {fileID: 3848665504857241699}
   bottomTriggerPos: {fileID: 3848665504716576144}
   triggerDetectorSize: {x: 4, y: 2}

@@ -149,6 +149,8 @@ public class Dart : Enemy
         //Gizmos.DrawWireCube(attackPos, attackSize);
         //Gizmos.color = Color.blue;
         //Gizmos.DrawWireCube(feetPos, feetDetectorSize);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + groundDetecrotPos, groundDetectorSize);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(topTriggerPos.position, triggerDetectorSize);
         Gizmos.DrawWireCube(bottomTriggerPos.position, triggerDetectorSize);

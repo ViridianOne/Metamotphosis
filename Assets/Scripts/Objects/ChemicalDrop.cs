@@ -55,8 +55,8 @@ public class ChemicalDrop : MonoBehaviour, IPoolObject
                 disableTimer -= Time.deltaTime;
         }
 
-        if(isTouchingChemical || isTouchingDrop)
-            StartCoroutine(Player.instance.ReactToChemical(effectTime, newPlayerColor));
+        if (isTouchingChemical || isTouchingDrop)
+            Player.instance.DamagePlayer();
     }
 
     private IEnumerator Splash()

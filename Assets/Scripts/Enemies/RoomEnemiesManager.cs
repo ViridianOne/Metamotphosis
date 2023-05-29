@@ -33,7 +33,7 @@ public class RoomEnemiesManager : MonoBehaviour
     {
         foreach (var enemy in enemies)
         {
-            if (enemy.type != EnemyType.Spark && enemy.type != EnemyType.Ghost)
+            if (enemy.type != EnemyType.Spark && enemy.type != EnemyType.Ghost && enemy.type != EnemyType.Flash)
                 enemy.Recover();
         }
     }

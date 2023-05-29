@@ -155,11 +155,12 @@ public class Mecro341 : Player
         isOn30 = false;
         isOn60 = false;
         isOn90 = false;
-        gravity = 4;
         transform.rotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0);
         isGravityInverted = false;
         isVertical = false;
         ceilCoef = 1;
+        gravity = 4;
+        rigidBody.gravityScale = 4;
     }
 
     protected override void Move()

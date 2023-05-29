@@ -30,6 +30,7 @@ public class MecrobotActiveZone : MonoBehaviour
                 enterDetector.enabled = true;
                 boss.RestoreInitialStates();
                 LevelManager.instance.SetMapInfo(location, roomNumber, positionOnMap);
+                Player.instance.respawnPoint = startPlayerPos;
                 Physics2D.IgnoreLayerCollision(9, 13, true);
             }
         }

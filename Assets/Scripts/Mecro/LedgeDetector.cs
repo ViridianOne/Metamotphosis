@@ -29,4 +29,15 @@ public class LedgeDetector : MonoBehaviour
                 Player.instance.GrabLedge(transform.position, isRight, coefficient, isOnPlatform);
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Ledge Grabbing" && !Player.instance.isTouchingLedge)
+        {
+            if (isOnPlatform && Player.instance.transform.parent != null)
+            {
+                Player.instance.transform.SetParent(null);
+            }
+        }
+    }
 }

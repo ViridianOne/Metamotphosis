@@ -220,7 +220,7 @@ public abstract class Player : MonoBehaviour
             CancelLedegeGrabbing();
         }
         isActive = false;
-        if (transform.parent != null && transform.parent.tag == "Platform")
+        if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
         {
             transform.SetParent(null);
         }
@@ -246,7 +246,7 @@ public abstract class Player : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 7, false);
             //instance.GetHolder().GetComponent<SpriteRenderer>().color = defaultColor;
             //currentColor.color = defaultColor;
-            if (transform.parent != null && transform.parent.tag == "Platform")
+            if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
             {
                 transform.SetParent(null);
             }
@@ -254,6 +254,7 @@ public abstract class Player : MonoBehaviour
             isVertical = false;
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
+            transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, 0);
             rigidBody.velocity = Vector2.zero;
             isActive = true;
             isGravityInverted = false;
