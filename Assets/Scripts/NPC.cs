@@ -7,9 +7,9 @@ public class NPC : MonoBehaviour
 {
     private Animator anim;
     [SerializeField] private DialogueSystem dialogueSystem;
-    [SerializeField] private DialogueSystem.NpcFrase[] npcSentences;
+    [SerializeField] private DialogueSystem.NpcPhrase[] npcSentences;
     [SerializeField] private GameObject pressButtonMessage;
-    private DialogueSystem.NpcFrase[] empty;
+    private DialogueSystem.NpcPhrase[] empty;
     private bool canTalk;
     private bool wasDialogue;
 

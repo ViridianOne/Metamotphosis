@@ -10,4 +10,8 @@ public class DiskCollection : MonoBehaviour
     {
         DiskCount++;
     }
+    public int getDiskCount()
+    {
+        return DiskCount;
+    }
 }

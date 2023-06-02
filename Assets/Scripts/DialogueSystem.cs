@@ -9,7 +9,7 @@ using UnityEngine.Playables;
 
 public class DialogueSystem : MonoBehaviour
 {
-    [HideInInspector] public NpcFrase[] sentences;
+    [HideInInspector] public NpcPhrase[] sentences;
 
     public GameObject dialogue;
 
@@ -152,7 +152,7 @@ public class DialogueSystem : MonoBehaviour
 
 
     [Serializable]
-    public struct NpcFrase
+    public struct NpcPhrase
     {
         public string text;
         public Sprite fraseBackground;
