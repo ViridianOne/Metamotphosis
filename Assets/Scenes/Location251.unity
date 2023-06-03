@@ -155,14 +155,11 @@ Transform:
   - {fileID: 475528085}
   - {fileID: 224538823}
   - {fileID: 1763876857}
-  - {fileID: 958321099}
-  - {fileID: 86756105}
-  - {fileID: 1572947037}
   - {fileID: 1867712180}
   - {fileID: 457139219}
   - {fileID: 1583314578}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3087578
 Rigidbody2D:
@@ -1453,12 +1450,10 @@ Transform:
   - {fileID: 1327309608}
   - {fileID: 1242611870}
   - {fileID: 1909650253}
-  - {fileID: 704865958}
-  - {fileID: 622298565}
   - {fileID: 1386722535}
   - {fileID: 2105020209}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &54855283
 Rigidbody2D:
@@ -1714,7 +1709,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 300772964}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -1726,11 +1721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.75
+      value: -84.25
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1770,7 +1765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (5)
+      value: Electricity Lvl 8 3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -2381,7 +2376,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3087577}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -2401,15 +2396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.88
+      value: -59.12
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.75
+      value: -50.25
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2445,7 +2440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (3)
+      value: Electricity Lvl 13 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -4210,7 +4205,7 @@ Transform:
   - {fileID: 956320646}
   - {fileID: 1385407515}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &152133388
 Rigidbody2D:
@@ -13588,7 +13583,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 383905718}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -13600,7 +13595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13608,7 +13603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13644,7 +13639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (2)
+      value: Electricity Lvl 3 3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -13985,7 +13980,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 300772964}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -13997,11 +13992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.97
+      value: -108.97
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14041,7 +14036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (3)
+      value: Electricity Lvl 8 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -14614,7 +14609,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 383905718}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -14626,7 +14621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14634,7 +14629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14670,7 +14665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current
+      value: Electricity Lvl 3 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -14857,7 +14852,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2047463523}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -14869,15 +14864,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.950002
+      value: -43.95
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66999745
+      value: -35.33
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14889,15 +14884,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14913,7 +14908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (4)
+      value: Electricity Lvl 4 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -15484,13 +15479,10 @@ Transform:
   - {fileID: 1414966072}
   - {fileID: 1261558272}
   - {fileID: 142717165}
-  - {fileID: 252844114}
-  - {fileID: 1345358233}
-  - {fileID: 68389559}
   - {fileID: 337621986}
   - {fileID: 2037398204}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &300772965
 Rigidbody2D:
@@ -15750,7 +15742,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17598,10 +17590,6 @@ Transform:
   - {fileID: 1349795319}
   - {fileID: 193571671}
   - {fileID: 1489566780}
-  - {fileID: 129055360}
-  - {fileID: 1224418514}
-  - {fileID: 239481419}
-  - {fileID: 1222040577}
   - {fileID: 844630464}
   - {fileID: 690448903}
   - {fileID: 1749254991}
@@ -17609,7 +17597,7 @@ Transform:
   - {fileID: 646199208}
   - {fileID: 1198004073}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &383905719
 Rigidbody2D:
@@ -17667,7 +17655,7 @@ Transform:
   - {fileID: 365470194}
   - {fileID: 1226805199}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &384547409
 Rigidbody2D:
@@ -18144,7 +18132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28768,7 +28756,7 @@ Transform:
   - {fileID: 1236728438}
   - {fileID: 1138619804}
   m_Father: {fileID: 886397681}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &570800264
 PrefabInstance:
@@ -33896,7 +33884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34195,37 +34183,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ec8c254c1764e4a990d4ba14d632fb, type: 3}
---- !u!1 &697124527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 697124528}
-  m_Layer: 0
-  m_Name: Electricity(Vertical)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &697124528
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697124527}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 886397681}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &697259660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34958,7 +34915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38442,7 +38399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39246,7 +39203,7 @@ Transform:
   - {fileID: 450310204}
   - {fileID: 2057102910}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &874035966
 Rigidbody2D:
@@ -39611,7 +39568,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 697124528}
   - {fileID: 569057823}
   - {fileID: 2016686679}
   m_Father: {fileID: 0}
@@ -40453,7 +40409,7 @@ PrefabInstance:
       objectReference: {fileID: -714629481, guid: 5f814848e6eef824cbc01517e082bced, type: 3}
     - target: {fileID: 1179845330789517267, guid: fd4483084a1d9c746986dcf4c4fc879f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1179845330789517267, guid: fd4483084a1d9c746986dcf4c4fc879f, type: 3}
       propertyPath: m_LocalScale.y
@@ -40523,7 +40479,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2047463523}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -40535,15 +40491,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.950001
+      value: -43.95
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0999985
+      value: -37.1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40579,7 +40535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (3)
+      value: Electricity Lvl 4 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -41948,7 +41904,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3087577}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -41968,15 +41924,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6199994
+      value: -62.38
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.75
+      value: -50.25
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42012,7 +41968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (2)
+      value: Electricity Lvl 13 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -43312,7 +43268,7 @@ Transform:
   - {fileID: 584983322}
   - {fileID: 1398882729}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1016723729
 Rigidbody2D:
@@ -44056,7 +44012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49073,7 +49029,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 383905718}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -49085,7 +49041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49093,7 +49049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49129,7 +49085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (1)
+      value: Electricity Lvl 3 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: isVertical
@@ -49757,7 +49713,7 @@ Transform:
   - {fileID: 463428946}
   - {fileID: 1307051810}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1237891609
 Rigidbody2D:
@@ -50479,6 +50435,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2043017600}
+  - {fileID: 1668924397}
   - {fileID: 1910353249}
   - {fileID: 152133387}
   - {fileID: 383905718}
@@ -52857,7 +52814,7 @@ Transform:
   - {fileID: 322083958}
   - {fileID: 871337851}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1337882179
 Rigidbody2D:
@@ -52942,7 +52899,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 300772964}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -52954,11 +52911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.97
+      value: -108.97
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52998,7 +52955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (4)
+      value: Electricity Lvl 8 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -54487,7 +54444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56858,7 +56815,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58439,7 +58396,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3087577}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -58459,15 +58416,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.36
+      value: -55.64
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.75
+      value: -50.25
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58503,7 +58460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (4)
+      value: Electricity Lvl 13 3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -58585,7 +58542,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63676,6 +63633,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1589406843374932947, guid: e546e97ca0dce3148b6c131d768ae409, type: 3}
   m_PrefabInstance: {fileID: 1666146998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668924396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668924397}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668924397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668924396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 129055360}
+  - {fileID: 1224418514}
+  - {fileID: 239481419}
+  - {fileID: 1222040577}
+  - {fileID: 916605201}
+  - {fileID: 274858638}
+  - {fileID: 252844114}
+  - {fileID: 1345358233}
+  - {fileID: 68389559}
+  - {fileID: 704865958}
+  - {fileID: 622298565}
+  - {fileID: 958321099}
+  - {fileID: 86756105}
+  - {fileID: 1572947037}
+  m_Father: {fileID: 1260673210}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1669359254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64860,7 +64862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65119,7 +65121,7 @@ Transform:
   - {fileID: 1961638782}
   - {fileID: 1794925449}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1720557475
 Rigidbody2D:
@@ -65379,7 +65381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 256988331706202052, guid: 50eec99e3c7791a4f8fba94e3a1bdc92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66133,7 +66135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6016499693953035633, guid: 10e37d50367399a46b672614b55047c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75483,7 +75485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556858818566071242, guid: 54f56bfdf59911b4cb38babd1dbf3f21, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5556858818566071242, guid: 54f56bfdf59911b4cb38babd1dbf3f21, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79200,7 +79202,7 @@ Transform:
   - {fileID: 1060928729}
   - {fileID: 1463040890}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1910353250
 Rigidbody2D:
@@ -79699,7 +79701,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 383905718}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340338669824, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Size.x
@@ -79711,7 +79713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79719,7 +79721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64
+      value: -38.64
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79731,15 +79733,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -79755,7 +79757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (3)
+      value: Electricity Lvl 3 4
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661363, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: lastTilePos
@@ -79885,19 +79887,19 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 54855282}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5699997
+      value: -101.57
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79933,7 +79935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current
+      value: Electricity Lvl 9 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
@@ -82827,7 +82829,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2053853468185527282, guid: e57d9cec7ef1b954db3bdcb53a386114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87590,7 +87592,7 @@ Transform:
   - {fileID: 1304760477}
   - {fileID: 1309516681}
   m_Father: {fileID: 886397681}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017685545
 PrefabInstance:
@@ -87825,19 +87827,19 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 54855282}
+    m_TransformParent: {fileID: 1668924397}
     m_Modifications:
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9100037
+      value: -93.09
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661360, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -87873,7 +87875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258772340811661361, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
       propertyPath: m_Name
-      value: Electricity Current (1)
+      value: Electricity Lvl 9 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd1ae9efc2c01a9428e2cb01b6974fb6, type: 3}
@@ -88548,12 +88550,10 @@ Transform:
   - {fileID: 847002537}
   - {fileID: 394000598}
   - {fileID: 1139933394}
-  - {fileID: 916605201}
-  - {fileID: 274858638}
   - {fileID: 1437829499}
   - {fileID: 1100501545}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2047463524
 Rigidbody2D:
@@ -89455,7 +89455,7 @@ Transform:
   - {fileID: 1588430333}
   - {fileID: 1555345226}
   m_Father: {fileID: 1260673210}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2088589842
 Rigidbody2D:
