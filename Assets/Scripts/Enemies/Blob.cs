@@ -58,6 +58,7 @@ public class Blob : Enemy
             betweenJumpTimer = timeBetweenJump;
             jumpTimer = 0f;
             isJumpCharged = false;
+            AudioManager.instance.Play(17);
             StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
         }
         if (isActive)
@@ -105,6 +106,7 @@ public class Blob : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
         UpdateMovementAnimation();
     }
 
@@ -159,6 +161,7 @@ public class Blob : Enemy
 
     public void Jump()
     {
+        AudioManager.instance.Play(17);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
@@ -244,6 +247,7 @@ public class Blob : Enemy
         isActive = false;
         canDamagePlayer = false;
         Player.instance.MiniJump(12f);
+        AudioManager.instance.Play(31);
         StartCoroutine(TurnOff());
     }
 

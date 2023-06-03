@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -20,12 +21,13 @@ public abstract class Player : MonoBehaviour
     [HideInInspector] public Transform respawnPoint;
     public bool isActive { get; protected set; }
     [HideInInspector] public bool isAbilityActivated = false;
-    public bool isOnMovingPlatform = false;
     [HideInInspector] public bool isOnArcPlatform, isOn30, isOn60, isOn90 = false;
     [HideInInspector] public bool isOn0 = true;
     [HideInInspector] public int ceilCoef = 1;
     [HideInInspector] public bool isVertical = false;
     [HideInInspector] public bool enableVelocityRight, enableVelocityLeft = false;
+
+    public bool isInBossRoom = false;
 
     [Header("Physics")]
     protected bool isGrounded;
@@ -61,10 +63,14 @@ public abstract class Player : MonoBehaviour
     private float ledgeGrabbingTimer;
     [SerializeField] private float ledgeGrabbingTime;
     [SerializeField] protected Vector3 difference1, difference2, difference3, difference4;
-    public Vector2 movingPlatDif = Vector2.zero;
     protected bool isClimbing = false;
     [SerializeField] protected Collider2D ledgeDecetror;
     [SerializeField] protected float ledgeCancelTime;
+    private bool isOnPlatformLedge;
+
+    [Header("Rendering")]
+    [SerializeField] protected Light2D playerLight;
+    [SerializeField] protected float lightInnerRadius, lightOuterRadius;
 
     //public Color defaultColor;
     //private SpriteRenderer currentColor;
@@ -83,6 +89,9 @@ public abstract class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, false);
         gravity = rigidBody.gravityScale;
         isActive = true;
+        playerLight.pointLightInnerRadius = lightInnerRadius;
+        playerLight.pointLightOuterRadius = lightOuterRadius;
+        playerLight.intensity = 0;
         //currentColor = holder.GetComponent<SpriteRenderer>();
         anim.SetBool("isLedgeGrabbing", false);
         anim.SetBool("isMoving", false);
@@ -107,9 +116,10 @@ public abstract class Player : MonoBehaviour
         }
         if (canClimbLedge)
         {
-            if (isOnMovingPlatform)
-                ledgePos1 -= movingPlatDif;
-            transform.position = ledgePos1;
+            if (isOnPlatformLedge)
+                transform.localPosition = ledgePos1;
+            else
+                transform.position = ledgePos1;
             if(Input.GetButtonDown("Jump"))
             {
                 isClimbing = true;
@@ -138,13 +148,16 @@ public abstract class Player : MonoBehaviour
     {
         canClimbLedge = false;
         isClimbing = false;
-        movingPlatDif = Vector2.zero;
         rigidBody.velocity = Vector2.zero;
-        isOnMovingPlatform = false;
         ledgeDetected = false;
         isAbleToMove = true;
         isTouchingLedge = false;
         anim.SetBool("isGrabbed", false);
+        if(isOnPlatformLedge)
+        {
+            transform.SetParent(null);
+            isOnPlatformLedge = false;
+        }
         StartCoroutine(TurnLedgeDetectorOff());
     }
 
@@ -154,20 +167,21 @@ public abstract class Player : MonoBehaviour
     {
         canClimbLedge = false;
         isClimbing = false;
-        transform.position = ledgePos2;
-        movingPlatDif = Vector2.zero;
-        //ledgeFlag = false;
+        if (isOnPlatformLedge)
+            transform.localPosition = ledgePos2;
+        else
+            transform.position = ledgePos2;
         rigidBody.velocity = Vector2.zero;
-        isOnMovingPlatform = false;
         ledgeDetected = false;
         isAbleToMove = true;
         isTouchingLedge = false;
         anim.SetBool("isLedgeGrabbing", false);
     }
 
-    public void GrabLedge(Vector3 grabPos, bool isRight, float coefficient)
+    public void GrabLedge(Vector3 grabPos, bool isRight, float coefficient, bool isOnPlatform = false)
     {
         isAbleToMove = false;
+        isOnPlatformLedge = isOnPlatform;
         if (!isRight && !isFacingRight || isRight && isFacingRight)
         {
             if (!isRight)
@@ -205,14 +219,20 @@ public abstract class Player : MonoBehaviour
         {
             CancelLedegeGrabbing();
         }
+        isActive = false;
+        if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
+        {
+            transform.SetParent(null);
+        }
         anim.SetBool("isDamaged", true);
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         DisableAbility();
-        isActive = false;
-        //playerCollider.enabled = false;
+        Physics2D.IgnoreLayerCollision(7, 9, true);
+        Physics2D.IgnoreLayerCollision(7, 17, true);
         MiniJump(12f);
-        StartCoroutine(Respawn());
+        if(gameObject.activeInHierarchy)
+            StartCoroutine(Respawn());
     }
 
     private IEnumerator Respawn()
@@ -226,13 +246,23 @@ public abstract class Player : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 7, false);
             //instance.GetHolder().GetComponent<SpriteRenderer>().color = defaultColor;
             //currentColor.color = defaultColor;
+            if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
+            {
+                transform.SetParent(null);
+            }
+            ceilCoef = 1;
+            isVertical = false;
             rigidBody.gravityScale = gravity;
             transform.position = respawnPoint.position;
+            transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, 0);
             rigidBody.velocity = Vector2.zero;
             isActive = true;
             isGravityInverted = false;
-            playerCollider.enabled = true;
+            //playerCollider.enabled = true;
+            Physics2D.IgnoreLayerCollision(7, 9, false);
+            Physics2D.IgnoreLayerCollision(7, 17, false);
             anim.SetBool("isDamaged", false);
+            //isInBossRoom = false;
         }
         RoomActiveZone.RecoverEnemies();
     }
@@ -326,6 +356,14 @@ public abstract class Player : MonoBehaviour
         velocityCoef = speedChangeCoef;
         anim.speed = speedChangeCoef;
         holderSprite.color = changeColor;
+    }
+
+    public IEnumerator ReactToChemical(float effectTime, Color changedColor)
+    {
+        holderSprite.color = changedColor;
+        yield return new WaitForSeconds(effectTime);
+        holderSprite.color = new Color(1, 1, 1, 1);
+        DamagePlayer();
     }
 
     protected void ChangeVelocity()

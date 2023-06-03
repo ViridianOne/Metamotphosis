@@ -22,6 +22,7 @@ public class Ghost : Enemy
     private Vector2 vectorToPlayer;
     [SerializeField] private float attackAreaRadius;
     [SerializeField] private float attackTime;
+    [SerializeField] private Vector2 detectorOffset, detectorSize;
 
 
     private void Update()
@@ -30,7 +31,7 @@ public class Ghost : Enemy
         {
             if (canAttack)
             {
-                isPlayerNear = Physics2D.OverlapCircle(transform.position, attackAreaRadius, masksAbleToDamage);
+                isPlayerNear = Physics2D.OverlapBox(transform.position.AsVector2() + detectorOffset, detectorSize, 0, masksAbleToDamage);
                 if (isPlayerNear)
                 {
                     StartCoroutine(AttackPlayer());
@@ -42,8 +43,7 @@ public class Ghost : Enemy
                 UpdateMovementAnimation();
             }
 
-            canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
+            canDamagePlayer = Physics2D.OverlapBox(transform.position.AsVector2() + attackPos, attackSize, 0f, masksAbleToDamage);
             if (canDamagePlayer)
             {
                 StartCoroutine(DamagePlayer());
@@ -51,6 +51,7 @@ public class Ghost : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()
@@ -128,7 +129,8 @@ public class Ghost : Enemy
             anim.SetBool("isChasing", true);
             state = EnemyState.Moving;
         }
-
+        if(rigidBody.velocity != Vector2.zero)
+            AudioManager.instance.Play(27);
         Flip();
     }
 
@@ -140,6 +142,7 @@ public class Ghost : Enemy
         state = EnemyState.Destroying;
         anim.SetBool("isChasing", false);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(27);
         if (!gameObject.activeInHierarchy)
             gameObject.SetActive(true);
         StartCoroutine(TurnOff());
@@ -177,6 +180,15 @@ public class Ghost : Enemy
         base.Recover();
 
         canAttack = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + attackPos, attackSize);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + detectorOffset, detectorSize);
     }
 }
 

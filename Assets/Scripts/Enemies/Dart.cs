@@ -66,6 +66,7 @@ public class Dart : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     protected override void Move() {}
@@ -101,12 +102,15 @@ public class Dart : Enemy
         isInverted = !isInverted;
         anim.SetTrigger("attack");
         rigidBody.gravityScale = gravityScale * (isInverted ? -1 : 1) * velocityCoef;
+        if(!AudioManager.instance.sounds[22].source.isPlaying)
+            AudioManager.instance.Play(22);
         StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f));
     }
 
     private IEnumerator Land()
     {
         anim.SetBool("landingMoment", true);
+        AudioManager.instance.Play(30);
         yield return new WaitForSeconds(0.35f);  // длительность анимации gravity change
         anim.SetBool("landingMoment", false);
         isAttacking = false;
@@ -120,6 +124,7 @@ public class Dart : Enemy
         isActive = false;
         anim.SetTrigger("damage");
         Player.instance.MiniJump(12f);
+        AudioManager.instance.Play(6);
         StartCoroutine(TurnOff());
     }
 
@@ -144,6 +149,8 @@ public class Dart : Enemy
         //Gizmos.DrawWireCube(attackPos, attackSize);
         //Gizmos.color = Color.blue;
         //Gizmos.DrawWireCube(feetPos, feetDetectorSize);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + groundDetecrotPos, groundDetectorSize);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(topTriggerPos.position, triggerDetectorSize);
         Gizmos.DrawWireCube(bottomTriggerPos.position, triggerDetectorSize);

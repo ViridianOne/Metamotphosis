@@ -135,6 +135,7 @@ public class Bullet251 : MonoBehaviour
         rigidBody.velocity = Vector2.zero;
         anim.SetBool("isRecovered", false);
         anim.SetTrigger("explode");
+        AudioManager.instance.Play(type == BulletType.SpeedUp ? 21 : 22);
         yield return new WaitForSeconds(explosionTime);
         gameObject.SetActive(false);
     }

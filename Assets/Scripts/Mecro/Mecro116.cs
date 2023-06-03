@@ -82,7 +82,7 @@ public class Mecro116 : Player
 
                 UpdateMovementAnimation();
             }
-
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
             {

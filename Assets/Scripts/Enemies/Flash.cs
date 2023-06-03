@@ -74,6 +74,7 @@ public class Flash : Enemy
                 StartCoroutine(DamagePlayer());
             }
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     protected override void Move() {}
@@ -142,6 +143,7 @@ public class Flash : Enemy
     {
         isExploding = true;
         anim.SetTrigger("attack");
+        AudioManager.instance.Play(25);
 
         yield return new WaitForSeconds(1.2f);   // 72 frames
 

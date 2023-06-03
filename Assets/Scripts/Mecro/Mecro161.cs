@@ -9,24 +9,17 @@ public class Mecro161 : Player
     [SerializeField] private float radius;
     [SerializeField] private Vector2 feetDetectorSize;
     [SerializeField] private float jumpForce;
-    private bool isJumping = false;
     [SerializeField] private float jumpDelay = 0.25f;
     private float jumpTimer;
-    //public GameObject holder;
     private bool wasOnGround;
     [SerializeField] private float jumpChargingTime;
     private float jumpChargingTimer;
-    //private bool lightSwitcher = false;
-    //[SerializeField] private GameObject lightEffect;
-    //[SerializeField] private float acceleration;
 
+    [Header("Rendering")]
+    [SerializeField] private float strongInnerRadius, strongOuterRadius;
 
     protected override void Move()
     {
-        //Version 1
-        /*movementForce = moveInput * moveSpeed;
-        rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);*/
-
         float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0;
 
@@ -61,16 +54,19 @@ public class Mecro161 : Player
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
                         AudioManager.instance.Play(1);
+                        playerLight.pointLightInnerRadius = strongInnerRadius;
+                        playerLight.pointLightOuterRadius = strongOuterRadius;
                     }
                     else
                     {
                         anim.SetLayerWeight(1, 100);
                         anim.SetLayerWeight(2, 0);
                         AudioManager.instance.Play(2);
+                        playerLight.pointLightInnerRadius = lightInnerRadius;
+                        playerLight.pointLightOuterRadius = lightOuterRadius;
                     }
                 }
                 wasOnGround = isGrounded;
-                //isGrounded = Physics2D.OverlapCircle(feetPos.position, radius, groundMask);
                 isGrounded = Physics2D.OverlapBox(feetPos.position, feetDetectorSize, 0f, groundMask);
                 if (!wasOnGround && isGrounded)
                 {
@@ -79,7 +75,6 @@ public class Mecro161 : Player
                 }
                 if (isGrounded && Input.GetButtonDown("Jump"))
                 {
-                    //isJumping = true;
                     jumpTimer = Time.time + jumpDelay;
                     jumpChargingTimer = jumpChargingTime;
                 }
@@ -122,6 +117,7 @@ public class Mecro161 : Player
                 UpdateMovementAnimation();
                 CheckCeilingTouch();
             }
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
             {
@@ -262,6 +258,8 @@ public class Mecro161 : Player
 
     public override void DisableAbility()
     {
+        playerLight.pointLightInnerRadius = lightInnerRadius;
+        playerLight.pointLightOuterRadius = lightOuterRadius;
         isAbilityActivated = false;
         anim.SetLayerWeight(1, 100);
         anim.SetLayerWeight(2, 0);

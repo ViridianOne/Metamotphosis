@@ -77,6 +77,7 @@ public class Mecro296 : Player
                 UpdateMovementAnimation();
                 CheckCeilingTouch();
             }
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
             {

@@ -38,7 +38,7 @@ public class Detector30 : MonoBehaviour
 
     private void Update()
     {
-        if (!Player.instance.isActive)
+        if (!Player.instance.isActive || MecroSelectManager.instance.isChanged)
             preivousTurn = Vector2.zero;
     }
 

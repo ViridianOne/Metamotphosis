@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class PressingBlock : MonoBehaviour
+public class PressingBlock : MonoBehaviour, IPoolObject
 {
     [Header("Physics")]
     [SerializeField] private float gravity;
@@ -15,10 +16,14 @@ public class PressingBlock : MonoBehaviour
     [SerializeField] LayerMask playerMask;
     [SerializeField] float triggerTime, landingTime;
     private bool isPlayerUnderneath, canDamagePlayer, canAttack, canClimb, isClimbing, ableToDamege;
+    private bool isSoundOn;
 
     [Header("Animation")]
     [SerializeField] private int animationLayer;
     private Animator anim;
+
+    [Header("Rendering")]
+    [SerializeField] private Light2D objectLight;
 
     private void Awake()
     {
@@ -81,6 +86,7 @@ public class PressingBlock : MonoBehaviour
             Player.instance.DamagePlayer();
             rigidBody.velocity = Vector2.zero;
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private IEnumerator Attack()
@@ -100,9 +106,15 @@ public class PressingBlock : MonoBehaviour
         rigidBody.bodyType = RigidbodyType2D.Kinematic;
         rigidBody.velocity = Vector2.zero;
         anim.SetBool("isLanded", true);
+        if (!isSoundOn)
+        {
+            AudioManager.instance.Play(18);
+            isSoundOn = true;
+        }
 
         yield return new WaitForSeconds(landingTime);
 
+        isSoundOn = false;
         canClimb = false;
         isClimbing = true;
     }
@@ -128,5 +140,25 @@ public class PressingBlock : MonoBehaviour
             canClimb = true;
             landingTime = 0;
         }
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolPressingBlock(detectorSize, transform.position, detectorPos.position, gravity, 
+            climbSpeed, triggerTime, landingTime, animationLayer);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var pressingBlockData = objectData as PoolPressingBlock;
+
+        detectorSize = pressingBlockData.detectorSize;
+        transform.position = pressingBlockData.blockPos;
+        detectorPos.position = pressingBlockData.detectorPos;
+        gravity = pressingBlockData.gravity;
+        climbSpeed = pressingBlockData.climbSpeed;
+        triggerTime = pressingBlockData.triggerTime;
+        landingTime = pressingBlockData.landingTime;
+        animationLayer = pressingBlockData.animationLayer;
     }
 }

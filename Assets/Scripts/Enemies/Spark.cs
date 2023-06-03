@@ -26,6 +26,7 @@ public class Spark : Enemy
     [SerializeField] private float attackAreaRadius;
     [SerializeField] private float delayBetweenAttacks;
     [SerializeField] private float predictionScale = 10000;
+    [SerializeField] private Vector2 detectorSize, detectorOffset;
 
     [Header("Damage")]
     private bool isDamaged = false;
@@ -47,7 +48,7 @@ public class Spark : Enemy
             }
             else if (canAttack)
             {
-                isPlayerNear = Physics2D.OverlapCircle(transform.position, attackAreaRadius, masksAbleToDamage);
+                isPlayerNear = Physics2D.OverlapBox(transform.position.AsVector2() + detectorOffset, detectorSize, 0, masksAbleToDamage);
                 if (isPlayerNear && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
                 {
                     StartCoroutine(AttackPlayer());
@@ -72,6 +73,7 @@ public class Spark : Enemy
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()
@@ -82,7 +84,10 @@ public class Spark : Enemy
             if (Mathf.Abs(currentSpeed) < 0.5f)
             {
                 rigidBody.velocity = Vector2.zero;
+                AudioManager.instance.Stop(16);
             }
+            if(rigidBody.velocity != Vector2.zero)
+                AudioManager.instance.Play(16);
         }
     }
 
@@ -126,6 +131,8 @@ public class Spark : Enemy
         anim.SetBool("isFlying", false);
         anim.SetFloat("idleCoef", 0);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(16);
+        AudioManager.instance.Play(29);
         StartCoroutine(TurnOff());
     }
 
@@ -230,5 +237,17 @@ public class Spark : Enemy
         Player.instance.DamagePlayer();
         TakeDamage();
         yield return new WaitForSeconds(0f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + attackPos, attackSize);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + damagePos, damageSize);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + detectorOffset, detectorSize);
     }
 }

@@ -43,11 +43,13 @@ public class FormSwitchIconChanger : MonoBehaviour
             BackgroundRing.gameObject.SetActive(true);
             var angle = GetAngle();
             SetFormProperties(angle);
+            Time.timeScale = 0.25f;
         }
         else
         {
             if (Input.GetMouseButtonUp(0))
             {
+                Time.timeScale = 1;
                 ChangeForm(CurrentColorCode, CurrentState);
             }
             BackgroundRing.gameObject.SetActive(false);

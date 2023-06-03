@@ -9,7 +9,10 @@ public class DeleteProgressMenu : MonoBehaviour
     public Pause_menu menu;
     public void DeleteSaves()
     {
-        DataManager.instance.NewGame();
+        //DataManager.instance.NewGame();
+        Checkpoints.instance.currentCheckpoint = 0;
+        Player.instance.respawnPoint.position = Checkpoints.instance.first.position;
+        Player.instance.transform.position = Checkpoints.instance.first.position;
         menu.Resume();
     }
 
