@@ -17,13 +17,15 @@ public class Main_menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             music.Stop();
-            SceneManager.LoadScene(nextScene);
-        }*/
+            SceneManager.LoadScene(location161);
+        }
     }
 
+
+    //То, что ниже, использовать не нужно
     public void OpenLocation161()
     {
         music.Stop();

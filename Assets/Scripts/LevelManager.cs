@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Light2D globalLight;
     public bool isDarknessOn { get; private set; }
 
+    public int disksCount { get; private set; }
+    public int maxDisksAmount;
+
     private void Awake()
     {
         instance = this;
@@ -36,5 +39,10 @@ public class LevelManager : MonoBehaviour
     {
         globalLight.intensity = intensity;
         isDarknessOn = intensity == 0;
+    }
+
+    public void CollectDick()
+    {
+        disksCount++;
     }
 }

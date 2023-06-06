@@ -31,6 +31,11 @@ public class DialogueSystem : MonoBehaviour
     public bool isFinal = false;
     public float yPos = -313f;
     [SerializeField] private GameObject victoryScreen;
+    
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private RectTransform animationPos;
+    [SerializeField] private float guardAnimationXPos, mecroAnimationXPos;
 
     private void Start()
     {
@@ -71,6 +76,12 @@ public class DialogueSystem : MonoBehaviour
         dialogueWindow.sprite = sentences[index].fraseBackground;
         dialogueText.text = string.Empty;
         AudioManager.instance.Play(15);
+        animationPos.localPosition = new Vector3(sentences[sentenceIndex].character == MecroStates.none 
+            ? mecroAnimationXPos : guardAnimationXPos, animationPos.localPosition.y, 0);
+        animator.SetFloat("characterNumber", (float)sentences[sentenceIndex].character);
+        animator.SetFloat("actionNumber", (float)sentences[sentenceIndex].action);
+        animator.SetBool("isTalking", true);
+        animator.SetTrigger("action");
         StartCoroutine(DialogueWriting());
     }
 
@@ -104,6 +115,7 @@ public class DialogueSystem : MonoBehaviour
                 yield return new WaitForSeconds(0.6f);
                 sentences[sentenceIndex].scene.Play();
             }
+            animator.SetBool("isTalking", false);
             waitForNext = true;
         }
             
@@ -157,5 +169,7 @@ public class DialogueSystem : MonoBehaviour
         public string text;
         public Sprite fraseBackground;
         public PlayableDirector scene;
+        public CharacterAction action;
+        public MecroStates character; //Mecro is a 'none' form
     }
 }
