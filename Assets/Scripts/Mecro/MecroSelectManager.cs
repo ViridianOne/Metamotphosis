@@ -8,13 +8,14 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     private bool canSelect;
     [SerializeField] private MecroStates startMecro = MecroStates.form161;
     private MecroStates currentMecro;
-    [SerializeField] public Transform respawnPoint;
+    public Transform respawnPoint;
+    [SerializeField] float respawnTime;
     [SerializeField] private float selectTime;
 
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
     [HideInInspector] public Player[] instantiatedMecros;
-    [SerializeField] public bool[] isMecroUnlocked = { true, false, false, false, false, false, false, false };
+    public bool[] isMecroUnlocked = { true, false, false, false, false, false, false, false };
 
     public bool isChanged;
 
@@ -131,6 +132,10 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     {
         return (int)currentMecro;
     }
+
+    public float GetRespawnTime() => respawnTime;
+
+    public bool IsPlayerInvisible { get => instantiatedMecros[(int)MecroStates.form206].isAbilityActivated; }
 
     public void LoadData(GameData data)
     {

@@ -16,8 +16,6 @@ public abstract class Player : MonoBehaviour
     protected bool isFacingRight = true;
 
     protected Collider2D playerCollider;
-    [SerializeField] float respawnTime;
-    private float respawnTimer;
     [HideInInspector] public Transform respawnPoint;
     public bool isActive { get; protected set; }
     [HideInInspector] public bool isAbilityActivated = false;
@@ -110,7 +108,8 @@ public abstract class Player : MonoBehaviour
         }
         if (ledgeDetected && !canClimbLedge)
         {
-            rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
+            //rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
+            rigidBody.gravityScale = 0;
             canClimbLedge = true;
             anim.SetBool("isGrabbed", true);
         }
@@ -180,6 +179,8 @@ public abstract class Player : MonoBehaviour
 
     public void GrabLedge(Vector3 grabPos, bool isRight, float coefficient, bool isOnPlatform = false)
     {
+        if (!isActive) return;
+
         isAbleToMove = false;
         isOnPlatformLedge = isOnPlatform;
         if (!isRight && !isFacingRight || isRight && isFacingRight)
@@ -220,7 +221,9 @@ public abstract class Player : MonoBehaviour
             CancelLedegeGrabbing();
         }
         isActive = false;
-        if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
+        ledgeGrabbingTimer = 0;
+        isTouchingLedge = ledgeDetected = canClimbLedge = false;
+        if (transform.parent != null && (transform.parent.CompareTag("Platform") || transform.parent.CompareTag("Ground")))
         {
             transform.SetParent(null);
         }
@@ -240,20 +243,19 @@ public abstract class Player : MonoBehaviour
         rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
         yield return new WaitForSeconds(0.3f);
         rigidBody.gravityScale = 0;
-        yield return new WaitForSeconds(respawnTime - 0.3f);
+        yield return new WaitForSeconds(MecroSelectManager.instance.GetRespawnTime() - 0.3f);
         if (!isActive)
         {
             Physics2D.IgnoreLayerCollision(6, 7, false);
             //instance.GetHolder().GetComponent<SpriteRenderer>().color = defaultColor;
             //currentColor.color = defaultColor;
-            if (transform.parent != null && (transform.parent.tag == "Platform" || transform.parent.tag == "Ground"))
-            {
-                transform.SetParent(null);
-            }
+            //if (transform.parent != null && (transform.parent.CompareTag("Platform") || transform.parent.CompareTag("Ground")))
+            //{
+            //    transform.SetParent(null);
+            //}
             ceilCoef = 1;
             isVertical = false;
             rigidBody.gravityScale = gravity;
-            transform.position = respawnPoint.position;
             transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, 0);
             rigidBody.velocity = Vector2.zero;
             isActive = true;
