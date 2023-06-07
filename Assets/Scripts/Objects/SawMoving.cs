@@ -17,6 +17,8 @@ public class SawMoving : MonoBehaviour, IPoolObject
     private SpriteRenderer spriteRender;
     [SerializeField] private Sprite bigSawSprite, smallSawSprite;
 
+    public bool isInBossRoom;
+
     private void Awake()
     {
         position1 = pos1.position;
@@ -61,6 +63,7 @@ public class SawMoving : MonoBehaviour, IPoolObject
     {
         if (collision.tag == "Player" && MecroSelectManager.instance.GetIndex() != 7)
         {
+            Player.instance.isInBossRoom = isInBossRoom;
             Player.instance.DamagePlayer();
         }
     }

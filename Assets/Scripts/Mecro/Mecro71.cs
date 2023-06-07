@@ -142,74 +142,46 @@ public class Mecro71 : Player
         //if (jumpCount == 0) with space
         if (isActive)
         {
-            if (directionChosen == false && rigidBody.velocity == Vector2.zero)
-                ChooseDirection();
-
             if (isAbleToMove)
             {
+                if (directionChosen == false && rigidBody.velocity == Vector2.zero)
+                    ChooseDirection();
+
                 UpdateMovementAnimation();
+
+                var damageCount = 0;
+                isCeilingHit = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);     //for collision detection
+                if (isCeilingHit && !ledgeDetected)
+                {
+                    //Player.instance.StartCoroutine(Respawn());
+                    StopFlying();
+                    DamagePlayer();
+                    damageCount = 1;
+                }
+                if (ledgeDetected)
+                {
+                    StopFlying();
+                }
+
+                //Starting flying right after arrow (with directionChosen)
+                if (directionChosen)
+                {
+                    isFlying = true;
+                    moveSpeed = maxSpeed;
+                    //started_flying = true;
+                }
+                if (Input.GetButtonDown("Jump") || damageCount == 1)
+                {
+                    directionChosen = false;
+                    isFlying = false;
+                    moveSpeed = 0;
+                    AudioManager.instance.Stop(16);
+                }
             }
+            playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)
                 isGrounded = false;
-
-            var damageCount = 0;
-            isCeilingHit = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, groundMask);     //for collision detection
-            if (isCeilingHit && !ledgeDetected)
-            {
-                //Player.instance.StartCoroutine(Respawn());
-                StopFlying();
-                DamagePlayer();
-                damageCount = 1;                
-            }
-            if (ledgeDetected)
-            {
-                StopFlying();
-            }
-            //var jump_count = 0;
-            // Starting flying with Space
-            /*if (Input.GetButtonDown("Jump") && jumpCount == 0)  //bool and count for knowing if it's start of flying
-            {
-                isFlying = true;
-                jumpCount = 1;
-                //Move();
-                //if (moveSpeed < maxSpeed)
-                //moveSpeed += acceleration * Time.deltaTime;
-            }
-            else if (Input.GetButtonDown("Jump") && jumpCount == 1)
-            {
-                isFlying = false;
-                jumpCount = 0;
-            }
-            if (isFlying)
-            {
-                Move();
-                if (moveSpeed < maxSpeed)
-                    moveSpeed += acceleration * Time.deltaTime;
-                anim.SetBool("isFlying", true);
-            }
-            else
-            {
-                anim.SetBool("isFlying", false);
-                moveSpeed = defaultMoveSpeed;
-                rigidBody.velocity = new Vector2(0, 0);
-            }*/
-
-            //Starting flying right after arrow (with directionChosen)
-            if (directionChosen)
-            {
-                isFlying = true;
-                moveSpeed = maxSpeed;
-                //started_flying = true;
-            }
-            if (Input.GetButtonDown("Jump") || damageCount == 1)
-            {
-                directionChosen = false;
-                isFlying = false;
-                moveSpeed = 0;
-                AudioManager.instance.Stop(16);
-            }
-
             CheckVisability();
             ChangeVelocity();
         }

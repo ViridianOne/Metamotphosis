@@ -7,7 +7,12 @@ public class MecrobotActiveZone : MonoBehaviour
     private Mecrobot boss;
     [SerializeField] private GameObject bossGroup;
     [SerializeField] private GameObject bossRoomEnter;
+    [SerializeField] private Collider2D enterDetector;
     [SerializeField] private Transform startPlayerPos;
+
+    [SerializeField] private Location location;
+    [SerializeField] private int roomNumber;
+    [SerializeField] private Vector3Int positionOnMap; 
 
     private void Start()
     {
@@ -22,9 +27,11 @@ public class MecrobotActiveZone : MonoBehaviour
             if (!boss.IsFightStarted)
             {
                 bossGroup.SetActive(true);
-                bossRoomEnter.SetActive(true);
-                Player.instance.SetPosition(startPlayerPos.position);
+                enterDetector.enabled = true;
                 boss.RestoreInitialStates();
+                LevelManager.instance.SetMapInfo(location, roomNumber, positionOnMap);
+                Player.instance.respawnPoint = startPlayerPos;
+                Physics2D.IgnoreLayerCollision(9, 13, true);
             }
         }
     }
@@ -33,10 +40,16 @@ public class MecrobotActiveZone : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            if (boss.IsPlayerDefeated)
+            if (boss.IsPlayerDefeated || Player.instance.isInBossRoom)
+            {
+                boss.DamagePlayer();
+                bossGroup.SetActive(false);
+            }
+            if (boss.IsPlayerDefeated || boss.isBossDefeated)
             {
                 bossRoomEnter.SetActive(false);
-                bossGroup.SetActive(false);
+                enterDetector.enabled = false;
+                Physics2D.IgnoreLayerCollision(9, 13, false);
             }
         }
     }

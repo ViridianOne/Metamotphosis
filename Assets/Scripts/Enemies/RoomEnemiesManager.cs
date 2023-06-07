@@ -17,7 +17,9 @@ public class RoomEnemiesManager : MonoBehaviour
         foreach (var enemy in enemies)
         {
             if (!enemy.isDefeated)
+            {
                 enemy.SetActive(true);
+            }
         }
     }
 
@@ -33,7 +35,12 @@ public class RoomEnemiesManager : MonoBehaviour
     {
         foreach (var enemy in enemies)
         {
-            enemy.Recover();
+            if (enemy.type != EnemyType.Spark && enemy.type != EnemyType.Ghost && enemy.type != EnemyType.Flash)
+            {
+                enemy.SetActive(false); // to reset the animator
+                enemy.SetActive(true);
+                enemy.Recover();
+            }
         }
     }
 }

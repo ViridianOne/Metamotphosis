@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -28,14 +29,18 @@ public abstract class Enemy : MonoBehaviour
 
     [Header("Damage")]
     protected bool isActive = true;
+    protected bool canTakeDamage = true;
     [HideInInspector] public bool isDefeated = false;
     [SerializeField] protected Transform respawnPoint;
     [SerializeField] private float damageTime;
     [SerializeField] protected LayerMask masksAbleToDamage, masksToDamage;
 
     [Header("Attack")]
-    protected bool canDamagePlayer;
+    protected bool canDamagePlayer = true;
     [SerializeField] protected Vector2 attackPos, attackSize;
+
+    [Header("Rendering")]
+    [SerializeField] protected Light2D enemyLight;
 
     private void Awake()
     {
@@ -51,12 +56,14 @@ public abstract class Enemy : MonoBehaviour
         state = EnemyState.Idle;
         if (animationLayer == 0)
             animationLayer = 1;
-        for (int i = 1; i < 5; i++)
+        SetAnimationLayer(animationLayer);
+    }
+
+    protected virtual void SetAnimationLayer(int layerIndex)
+    {
+        for (var i = 1; i < anim.layerCount; i++)
         {
-            if (i == animationLayer)
-                anim.SetLayerWeight(i, 1);
-            else
-                anim.SetLayerWeight(i, 0);
+            anim.SetLayerWeight(i, layerIndex == i ? 1 : 0);
         }
     }
 
@@ -67,6 +74,8 @@ public abstract class Enemy : MonoBehaviour
     public void SetActive(bool state)
     {
         gameObject.SetActive(state);
+        if (state)
+            SetAnimationLayer(animationLayer);
     }
 
     protected void ChangeVelocity()
@@ -84,11 +93,13 @@ public abstract class Enemy : MonoBehaviour
     //protected abstract void TakeDamage();
     protected IEnumerator TurnOff()
     {
+        canTakeDamage = false;
         anim.SetTrigger("damage");
         rigidBody.velocity = Vector2.zero;
         rigidBody.gravityScale = 0;
         enemyCollider.enabled = false;
         yield return new WaitForSeconds(damageTime);
+        rigidBody.velocity = Vector2.zero;
         if (type != EnemyType.Spark && type != EnemyType.Flash)
         {
             fadingTimer = fadingTime;
@@ -114,15 +125,20 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Recover()
     {
-        anim.SetTrigger("recover");
+        //anim.SetTrigger("recover");  // there is no need to set a trigger, because
+        //the animator resets itself to the default state when the object is deactivated
 
         isActive = true;
+        canTakeDamage = canDamagePlayer = true;
         isDefeated = false;
+        state = EnemyState.Idle;
         transform.position = respawnPoint.position;
         rigidBody.gravityScale = gravityScale;
         enemyCollider.enabled = true;
-        
-        state = EnemyState.Idle;
-        SetActive(true);
+
+        var color = holderSprite.color;
+        color.a = 1;
+        holderSprite.color = color;
+        //SetActive(true);
     }
 }

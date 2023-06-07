@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ghost : Enemy
 {
     [Header("Physics")]
-    private float moveInput;
+    private float moveDirectionCoef;
     private float currentSpeed;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxSpeed;
@@ -16,12 +16,14 @@ public class Ghost : Enemy
     [SerializeField] protected float accelerationInAir;
 
     [Header("Attack")]
+    private bool isPlayerNear;
+    private bool isPlayerDamaged;
     private bool canAttack = true;
-    private bool isPlayerNear = false;
     private bool isAttacking = false;
     private Vector2 vectorToPlayer;
     [SerializeField] private float attackAreaRadius;
     [SerializeField] private float attackTime;
+    [SerializeField] private Vector2 detectorOffset, detectorSize;
 
 
     private void Update()
@@ -30,7 +32,7 @@ public class Ghost : Enemy
         {
             if (canAttack)
             {
-                isPlayerNear = Physics2D.OverlapCircle(transform.position, attackAreaRadius, masksAbleToDamage);
+                isPlayerNear = Physics2D.OverlapBox(transform.position.AsVector2() + detectorOffset, detectorSize, 0, masksAbleToDamage);
                 if (isPlayerNear)
                 {
                     StartCoroutine(AttackPlayer());
@@ -42,15 +44,18 @@ public class Ghost : Enemy
                 UpdateMovementAnimation();
             }
 
-            canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
             if (canDamagePlayer)
             {
-                StartCoroutine(DamagePlayer());
-                StopAttacking();
+                isPlayerDamaged = Physics2D.OverlapBox(transform.position.AsVector2() + attackPos, attackSize, 0f, masksAbleToDamage);
+                if (isPlayerDamaged && Player.instance.isActive)
+                {
+                    StartCoroutine(DamagePlayer());
+                    StopAttacking();
+                }
             }
             ChangeVelocity();
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()
@@ -67,9 +72,9 @@ public class Ghost : Enemy
 
     protected override void Move()
     {
-        currentSpeed = rigidBody.velocity.magnitude * moveInput;
+        currentSpeed = rigidBody.velocity.magnitude * moveDirectionCoef;
 
-        var targetSpeed = moveSpeed * moveInput * velocityCoef;
+        var targetSpeed = moveSpeed * moveDirectionCoef * velocityCoef;
         float accelerate;
 
         if (Mathf.Abs(currentSpeed) > Mathf.Abs(targetSpeed)
@@ -84,17 +89,8 @@ public class Ghost : Enemy
         }
 
         var moveForce = (targetSpeed - currentSpeed) * accelerate;
-        rigidBody.AddForce(moveForce * vectorToPlayer * moveInput, ForceMode2D.Force);
+        rigidBody.AddForce(moveForce * vectorToPlayer * moveDirectionCoef, ForceMode2D.Force);
         rigidBody.velocity = vectorToPlayer * rigidBody.velocity.magnitude;
-    }
-
-    private void OnValidate()
-    {
-        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
-        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
-
-        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
-        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
     }
 
     private IEnumerator AttackPlayer()
@@ -113,12 +109,12 @@ public class Ghost : Enemy
     private void CalculateMoveDirection()
     {
         vectorToPlayer = Vector3.Normalize(Player.instance.transform.position - transform.position);
-        moveInput = vectorToPlayer.x > 0 ? 1 : -1;
+        moveDirectionCoef = vectorToPlayer.x > 0 ? 1 : -1;
     }
 
     private void UpdateMovementAnimation()
     {
-        if (moveInput == 0)
+        if (moveDirectionCoef == 0)
         {
             anim.SetBool("isChasing", false);
             state = EnemyState.Idle;
@@ -128,18 +124,21 @@ public class Ghost : Enemy
             anim.SetBool("isChasing", true);
             state = EnemyState.Moving;
         }
-
+        if(rigidBody.velocity != Vector2.zero)
+            AudioManager.instance.Play(27);
         Flip();
     }
 
     private void TakeDamage()
     {
         isActive = canAttack = isAttacking = false;
-        moveInput = 0;
+        canTakeDamage = canDamagePlayer = false;
+        moveDirectionCoef = 0;
         rigidBody.velocity = Vector2.zero;
         state = EnemyState.Destroying;
         anim.SetBool("isChasing", false);
         anim.SetTrigger("damage");
+        AudioManager.instance.Stop(27);
         if (!gameObject.activeInHierarchy)
             gameObject.SetActive(true);
         StartCoroutine(TurnOff());
@@ -147,11 +146,11 @@ public class Ghost : Enemy
 
     private void Flip()
     {
-        if (moveInput == 1f)
+        if (moveDirectionCoef == 1f)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (moveInput == -1f)
+        else if (moveDirectionCoef == -1f)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
@@ -160,7 +159,7 @@ public class Ghost : Enemy
     private void StopAttacking()
     {
         canAttack = isAttacking = false;
-        moveInput = 0;
+        moveDirectionCoef = 0;
         state = EnemyState.Idle;
         anim.SetBool("isChasing", false);        
     }
@@ -169,7 +168,7 @@ public class Ghost : Enemy
     {
         Player.instance.DamagePlayer();
         TakeDamage();
-        yield return new WaitForSeconds(0f);
+        yield break;
     }
 
     public override void Recover()
@@ -177,6 +176,28 @@ public class Ghost : Enemy
         base.Recover();
 
         canAttack = true;
+        isAttacking = false;
+        moveDirectionCoef = 0;
+        state = EnemyState.Idle;
+        anim.SetBool("isChasing", false);
+    }
+
+    private void OnValidate()
+    {
+        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
+        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
+
+        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
+        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + attackPos, attackSize);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(transform.position.AsVector2() + detectorOffset, detectorSize);
     }
 }
 

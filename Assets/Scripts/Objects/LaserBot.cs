@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 public class LaserBot : MonoBehaviour, IPoolObject
@@ -9,6 +10,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
     private BoxCollider2D laserCollider;
     [SerializeField] private GameObject engine;
     [SerializeField] private GameObject laserBody;
+    [SerializeField] private Light2D laserLight;
 
     [Header("Anim")]
     private Animator anim;
@@ -29,7 +31,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
     [Header("Attacking")]
     private bool isTurnOn = false;
     private bool isPlayerDamaged = false;
-    private float laserDistance;
+    [SerializeField] private float laserDistance;
     private Vector2 laserDirection;
     private Vector3 laserEndPosition;
     private ContactFilter2D layersToAttackCF;
@@ -61,7 +63,6 @@ public class LaserBot : MonoBehaviour, IPoolObject
     {
         nextPosition = startPos.position;
         laserDirection = laserEnd.position - laserStart.position;
-        laserDistance = laserDirection.magnitude;
         laserStartFixVector = new Vector3(0, laserDirection.y > 0 ? 0.01f : -0.01f, 0);
         layersToAttackCF = new ContactFilter2D { layerMask = layersToAttack };
 
@@ -100,6 +101,7 @@ public class LaserBot : MonoBehaviour, IPoolObject
             }
             transform.position = Vector3.MoveTowards(transform.position, nextPosition, movementSpeed * velocityCoef * Time.deltaTime);
         }
+        laserLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void OnDrawGizmos()
@@ -145,8 +147,10 @@ public class LaserBot : MonoBehaviour, IPoolObject
         yield return new WaitForSecondsRealtime(turningOnTime);
 
         laserBody.SetActive(true);
+        AudioManager.instance.Play(23);
         yield return new WaitForSecondsRealtime(activeTime);
 
+        AudioManager.instance.Stop(23);
         isTurnOn = false;
         anim.SetBool("isAttacking", false);
         laserBody.SetActive(false);
@@ -210,7 +214,6 @@ public class LaserBot : MonoBehaviour, IPoolObject
 
         nextPosition = laserBotData.startPosition;
         laserDirection = laserEnd.position - laserStart.position;
-        laserDistance = laserDirection.magnitude;
         laserStartFixVector = new Vector3(0, laserDirection.y > 0 ? 0.01f : -0.01f, 0);
 
         isPlayerDamaged = false;

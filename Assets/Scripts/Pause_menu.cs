@@ -41,6 +41,9 @@ public class Pause_menu : MonoBehaviour
     public GameObject pauseBG;
     public DialogueSystem dialogues;
 
+    public Image background;
+    public Sprite mapBackground;
+
     void Update()
     {
         
@@ -121,7 +124,6 @@ public class Pause_menu : MonoBehaviour
             }
             helpPage.SetActive(true);
             activePage = helpPage;
-            print('s');
         }
         else
             return;
@@ -133,6 +135,7 @@ public class Pause_menu : MonoBehaviour
         {
             if (activePage == mapPage)
             {
+                background.sprite = null;
                 activePage.SetActive(false);
                 activePage = null;
                 mapContainer.SetActive(false);
@@ -142,8 +145,12 @@ public class Pause_menu : MonoBehaviour
             {
                 activePage.SetActive(false);
             }
+            background.sprite = mapBackground;
             mapContainer.SetActive(true);
             mapPage.SetActive(true);
+            MapController.instance.MovePlayer(LevelManager.instance.currentLocation,
+                LevelManager.instance.currentRoomNumber,
+                LevelManager.instance.currentPositionOnMap);
             activePage = mapPage;
         }
         else

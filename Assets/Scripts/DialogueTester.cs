@@ -6,7 +6,7 @@ using static DialogueSystem;
 public class DialogueTester : MonoBehaviour
 {
     public DialogueSystem dialogeSystem;
-    public NpcFrase[] npcSentences;
+    public NpcPhrase[] npcSentences;
 
     public void Update()
     {

@@ -2,56 +2,120 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChemicalDrop : MonoBehaviour
+public class ChemicalDrop : MonoBehaviour, IPoolObject
 {
-    [SerializeField] private float activeTime, disableTime, turningOnTime;
-    private float activeTimer, disableTimer;
-    private bool isActive;
+    [Header("Animation")]
+    [SerializeField] float animationLayer;
+    private Animator anim;
+
+    [Header("Drop")]
     [SerializeField] private GameObject drop;
-    [SerializeField] private Transform pos1, pos2;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Rigidbody2D dropRB;
+    [SerializeField] private float dropRadius;
+    [SerializeField] private Vector3 dropOffset;
+    [SerializeField] private float disableTime, splashTime, turnOnTime;
+    private float disableTimer;
+    private bool isActive;
+
+    [Header("Effect")]
+    [SerializeField] LayerMask playerMask;
+    [SerializeField] private Transform upper, down;
+    [SerializeField] Vector2 upperDetectorSize, downDetectorSize;
+    [SerializeField] Vector3 upperDetectorOffset, downDetectorOffset;
+    [SerializeField] Color newPlayerColor;
+    [SerializeField] float effectTime;
+    private bool isTouchingChemical, isTouchingDrop;
+
+    private void Awake()
     {
-        activeTimer = 0;
-        disableTimer = disableTime;
-        drop.SetActive(false);
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        anim.SetFloat("animationLayer", animationLayer);
+        isActive = false;
+        drop.SetActive(false);
+        drop.transform.position = upper.position;
+    }
+
     void Update()
     {
-        if (drop.transform.position.y <= pos2.position.y)
+        isTouchingChemical = Physics2D.OverlapBox(upper.position + upperDetectorOffset, upperDetectorSize, 0, playerMask)
+            || Physics2D.OverlapBox(down.position + downDetectorOffset, downDetectorSize, 0, playerMask);
+        isTouchingDrop = Physics2D.OverlapCircle(drop.transform.position + dropOffset, dropRadius, playerMask) && isActive;
+        if (drop.transform.position.y <= down.position.y || isTouchingDrop)
+            StartCoroutine(Splash());
+
+        if (!isActive)
         {
-            //drop.transform.position = pos2.position;
-            drop.SetActive(false);
-        }
-        if (disableTimer > 0f)
-        {
-            disableTimer -= Time.deltaTime;
-            isActive = false;
-        }
-        else if (disableTimer <= 0f && !isActive)
-        {
-            StartCoroutine(TurnOn());
+            if (disableTimer <= 0)
+                StartCoroutine(TurnOn());
+            else
+                disableTimer -= Time.deltaTime;
         }
 
-        if (activeTimer > 0f)
+        if (isTouchingChemical || isTouchingDrop)
+            Player.instance.DamagePlayer();
+    }
+
+    private IEnumerator Splash()
+    {
+        dropRB.gravityScale = 0;
+        dropRB.velocity = Vector2.zero;
+        anim.SetBool("isSplashing", true);
+        yield return new WaitForSeconds(splashTime);
+        if (isActive)
         {
-            activeTimer -= Time.deltaTime;
-            isActive = true;
-        }
-        else if (activeTimer <= 0f && isActive)
-        {
-            //drop.SetActive(false);
+            AudioManager.instance.Play(31);
+            drop.SetActive(false);
+            anim.SetBool("isSplashing", false);
+            drop.transform.position = upper.position;
+            isActive = false;
             disableTimer = disableTime;
         }
     }
 
     private IEnumerator TurnOn()
     {
-        drop.transform.position = pos1.position;
-        yield return new WaitForSeconds(turningOnTime);
-        drop.SetActive(true);
-        activeTimer = activeTime;
+        if (!isActive)
+        {
+            AudioManager.instance.Play(17);
+            dropRB.gravityScale = 2;
+            drop.SetActive(true);
+            anim.SetBool("isFalling", true);
+            isActive = true;
+        }
+        yield return new WaitForSeconds(turnOnTime);
+        anim.SetBool("isFalling", false);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(down.position + downDetectorOffset, downDetectorSize);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(upper.position + upperDetectorOffset, upperDetectorSize);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(drop.transform.position + dropOffset, dropRadius);
+    }
+
+    public PoolObjectData GetObjectData()
+    {
+        return new PoolChemical(animationLayer, newPlayerColor, upper.position, down.position);
+    }
+
+    public void SetObjectData(PoolObjectData objectData)
+    {
+        var chemical = objectData as PoolChemical;
+
+        animationLayer = chemical.animationLayer;
+        newPlayerColor = chemical.changedColor;
+        upper.position = chemical.upperPos;
+        down.position = chemical.downPos;
+
+        anim.SetFloat("animationLayer", animationLayer);
     }
 }

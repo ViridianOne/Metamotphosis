@@ -7,8 +7,9 @@ public class Magnet : Enemy
     [Header("Physics")]
     private bool isPlacedOnWall = false;
     private float stateChangeTimer = 0f;
-    private int moveInput = 0;
+    private int moveDirectionCoef = 0;
     private bool isMoveDirectionChanged = false;
+    [SerializeField] bool isMoving;
     [SerializeField] private Directions gravityDirection = Directions.down;
     [SerializeField] private Transform leftBottomPos, rightTopPos;
     [SerializeField] private float stateChangeTime;
@@ -23,6 +24,7 @@ public class Magnet : Enemy
           Quaternion.Euler(180, 180, 0), Quaternion.Euler(0, 180, -90), Quaternion.Euler(0, 180, 0), Quaternion.Euler(0, 0, -90) };
 
     [Header("Attack")]
+    private bool isPlayerDamaged;
     [SerializeField] private float attackTime;
     [SerializeField] private float forceMagnitude = -30f;
     [SerializeField] private float maxForceMagnitude = -50f;
@@ -38,6 +40,7 @@ public class Magnet : Enemy
     {
         base.Start();
 
+        stateChangeTimer = stateChangeTime;
         UpdateGravity();
     }
 
@@ -51,14 +54,14 @@ public class Magnet : Enemy
             }
             if (stateChangeTimer <= 0f)
             {
-                state = (EnemyState)Random.Range(0, 3);
+                moveDirectionCoef = 0;
                 stateChangeTimer = stateChangeTime;
-                moveInput = 0;
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isMoving", false);
+                state = (EnemyState)Random.Range(0, 3);
                 if (state == EnemyState.Attack)
                 {
-                    if (MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+                    if (MecroSelectManager.instance.IsPlayerInvisible)
                     {
                         state = EnemyState.Idle;
                     }
@@ -67,19 +70,19 @@ public class Magnet : Enemy
                         StartCoroutine(Attack());
                     }
                 }
-                else if (state == EnemyState.Moving)
+                else if (state == EnemyState.Moving && isMoving)
                 {
-                    moveInput = (isMoveDirectionChanged ? -1 : 1);
+                    moveDirectionCoef = (isMoveDirectionChanged ? -1 : 1);
                     anim.SetBool("isMoving", true);
                 }
             }
 
-            if (state == EnemyState.Moving)
+            if (state == EnemyState.Moving && isMoving)
             {
-                if ((moveInput < 0 && CheckPosition(leftBottomPos.position)) || (moveInput > 0 && CheckPosition(rightTopPos.position)))
+                if ((moveDirectionCoef < 0 && CheckPosition(leftBottomPos.position)) || (moveDirectionCoef > 0 && CheckPosition(rightTopPos.position)))
                 {
                     isMoveDirectionChanged = !isMoveDirectionChanged;
-                    moveInput = -moveInput;
+                    moveDirectionCoef = -moveDirectionCoef;
                     Flip();
                 }
             }
@@ -88,23 +91,34 @@ public class Magnet : Enemy
                 pointEffectorComponent.forceMagnitude = Player.instance.IsGrounded ? maxForceMagnitude : forceMagnitude;
             }
 
-            isDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + damagePos.x,
-                transform.position.y + damagePos.y), damageSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksAbleToDamage);
-            if (isDamaged && state != EnemyState.Attack
-                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+            if (canTakeDamage && state != EnemyState.Attack && Player.instance.isActive 
+                && !MecroSelectManager.instance.IsPlayerInvisible)
             {
-                TakeDamage();
+                isDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + damagePos.x, transform.position.y + damagePos.y),
+                    damageSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksAbleToDamage);
+                if (isDamaged)
+                {
+                    TakeDamage();
+                }
             }
 
-            canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksToDamage);
-            if (canDamagePlayer
-                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+            if (canDamagePlayer && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible)
             {
-                StartCoroutine(DamagePlayer());
+                isPlayerDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), 
+                    attackSize, gravityDirection == Directions.up || gravityDirection == Directions.down ? 0f : 90f, masksToDamage);
+                if (isPlayerDamaged)
+                {
+                    StartCoroutine(DamagePlayer());
+                }
             }
+
             ChangeVelocity();
+            if(rigidBody.velocity != Vector2.zero)
+                AudioManager.instance.Play(9);
+            else
+                AudioManager.instance.Stop(9);
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     private void FixedUpdate()
@@ -117,7 +131,7 @@ public class Magnet : Enemy
 
     protected override void Move()
     {
-        float targetSpeed = moveSpeed * moveInput * velocityCoef;
+        float targetSpeed = moveSpeed * moveDirectionCoef * velocityCoef;
         float currentSpeed = isPlacedOnWall ? rigidBody.velocity.y : rigidBody.velocity.x;
         float accelerate;
 
@@ -142,23 +156,6 @@ public class Magnet : Enemy
         {
             rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
         }
-    }
-
-    private void OnValidate()
-    {
-        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
-        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
-
-        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
-        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(new Vector2(transform.position.x + damagePos.x, transform.position.y + damagePos.y), damageSize);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackSize);
     }
 
     private void UpdateGravity()
@@ -189,11 +186,11 @@ public class Magnet : Enemy
 
     private void Flip()
     {
-        if (moveInput > 0f)
+        if (moveDirectionCoef > 0f)
         {
             transform.rotation = rotations[(int)gravityDirection];
         }
-        else if (moveInput < 0f)
+        else if (moveDirectionCoef < 0f)
         {
             transform.rotation = rotations[(int)gravityDirection + 4];
         }
@@ -203,35 +200,69 @@ public class Magnet : Enemy
     {
         anim.SetBool("isAttacking", true);
         pointEffector.SetActive(true);
+        AudioManager.instance.Play(26);
         yield return new WaitForSeconds(attackTime);
-        pointEffector.SetActive(false);
+
         anim.SetBool("isAttacking", false);
-        stateChangeTimer = 0f;
+        pointEffector.SetActive(false);
+        AudioManager.instance.Stop(26);
+        stateChangeTimer = 0;
     }
 
     private void TakeDamage()
     {
         isActive = false;
-        moveInput = 0;
+        canTakeDamage = canDamagePlayer = false;
+        moveDirectionCoef = 0;
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
         Player.instance.MiniJump(12f);
+        AudioManager.instance.Stop(26);
+        AudioManager.instance.Stop(9);
+        AudioManager.instance.Play(6);
         StartCoroutine(TurnOff());
     }
 
     protected override IEnumerator DamagePlayer()
     {
+        moveDirectionCoef = 0;
         isActive = false;
+        canTakeDamage = canDamagePlayer = false;
         Player.instance.DamagePlayer();
-        yield return new WaitForSeconds(1f);
-        stateChangeTimer = 0;
-        isActive = true;
+        yield break;
     }
 
     public override void Recover()
     {
         base.Recover();
 
+        isMoveDirectionChanged = false;
+        moveDirectionCoef = 0;
+        stateChangeTimer = 0;
+        state = EnemyState.Idle;
+        stateChangeTimer = stateChangeTime;
+        pointEffectorComponent.forceMagnitude = forceMagnitude;
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isMoving", false);
+        pointEffector.SetActive(false);
+        Flip();
         UpdateGravity();
+    }
+
+    private void OnValidate()
+    {
+        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
+        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
+
+        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
+        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(new Vector2(transform.position.x + damagePos.x, transform.position.y + damagePos.y), damageSize);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackSize);
     }
 }

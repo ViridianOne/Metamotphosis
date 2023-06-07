@@ -5,6 +5,7 @@ using UnityEngine;
 public class LedgeDetector : MonoBehaviour
 {
     public bool isRight;
+    public bool isOnPlatform;
     private float coefficient;
 
     private void Start()
@@ -17,9 +18,26 @@ public class LedgeDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Ledge Grabbing")
+        if(collision.tag == "Ledge Grabbing" && !Player.instance.isTouchingLedge)
         {
-            Player.instance.GrabLedge(transform.position, isRight, coefficient);
+            if (isOnPlatform)
+            {
+                Player.instance.transform.SetParent(transform.parent);
+                Player.instance.GrabLedge(transform.localPosition, isRight, coefficient, isOnPlatform);
+            }
+            else
+                Player.instance.GrabLedge(transform.position, isRight, coefficient, isOnPlatform);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Ledge Grabbing" && !Player.instance.isTouchingLedge)
+        {
+            if (isOnPlatform && Player.instance.transform.parent != null)
+            {
+                Player.instance.transform.SetParent(null);
+            }
         }
     }
 }

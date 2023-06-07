@@ -8,13 +8,14 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     private bool canSelect;
     [SerializeField] private MecroStates startMecro = MecroStates.form161;
     private MecroStates currentMecro;
-    [SerializeField] public Transform respawnPoint;
+    public Transform respawnPoint;
+    [SerializeField] float respawnTime;
     [SerializeField] private float selectTime;
 
     //private Player currentMecro;
     [SerializeField] private Player[] mecros;
     [HideInInspector] public Player[] instantiatedMecros;
-    [SerializeField] public bool[] isMecroUnlocked = { true, false, false, false, false, false, false, false };
+    public bool[] isMecroUnlocked = { true, false, false, false, false, false, false, false };
 
     public bool isChanged;
 
@@ -48,6 +49,8 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
         }
         Player.instance = instantiatedMecros[(int)startMecro];
         Physics2D.IgnoreLayerCollision(7, 9, false);
+        Player.instance.ceilCoef = 1;
+        Player.instance.isVertical = false;
         Player.instance.gameObject.SetActive(true);
     }
 
@@ -95,27 +98,21 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     {
         if (isMecroUnlocked[(int)mecroState] && currentMecro != mecroState)
         {
-            //Vector3 mecroPos = Player.instance.transform.position;
-            //Quaternion mecroRot = Player.instance.transform.localRotation;
-            //Destroy(Player.instance.gameObject);
-            //currentMecro = Instantiate(mecros[mecroListIndex], mecroPos, mecroRot);
-            /*currentMecro = mecros[mecroListIndex];
-            currentMecro.gameObject.SetActive(true);
-            currentMecro.respawnPoint = respawnPoint;*/
-            //instantiatedMecros[mecroListIndex].respawnPoint = respawnPoint;
-            //isChanged = true;
             Player.instance.DisableAbility();
             isChanged = true;
+            if(Player.instance.transform.parent != null && Player.instance.transform.parent.tag == "Platform")
+            {
+                Player.instance.transform.SetParent(null);
+            }
             Player.instance.gameObject.SetActive(false);
             instantiatedMecros[(int)mecroState].respawnPoint = respawnPoint;
-            instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position;
+            instantiatedMecros[(int)mecroState].transform.position = Player.instance.transform.position + new Vector3(0.2f, 0.2f, 0f);
             instantiatedMecros[(int)mecroState].transform.localRotation = Player.instance.transform.localRotation;
             if (Player.instance.IsGravityInverted)
                 instantiatedMecros[(int)mecroState].InvertGravity();
             instantiatedMecros[(int)mecroState].InvertMovement(Player.instance.IsMovementInverted);
             Player.instance = instantiatedMecros[(int)mecroState];
             Player.instance.gameObject.SetActive(true);
-            //Physics2D.IgnoreLayerCollision(7, 9, false);
             currentMecro = mecroState;
             StartCoroutine(WaitAfterSelect());
         }
@@ -135,6 +132,10 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     {
         return (int)currentMecro;
     }
+
+    public float GetRespawnTime() => respawnTime;
+
+    public bool IsPlayerInvisible { get => instantiatedMecros[(int)MecroStates.form206].isAbilityActivated; }
 
     public void LoadData(GameData data)
     {

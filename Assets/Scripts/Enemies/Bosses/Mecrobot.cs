@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Mecrobot : MonoBehaviour
 {
     [Header("Anim")]
-    private List<SpriteRenderer> spritesToHideInDarkness;
-    private SpriteRenderer mecrobotSprite, flaskSprite, bot296Sprite, mecrobotBGSprite;
     [HideInInspector] private Animator anim;
     [SerializeField] private GameObject holder;
 
@@ -19,8 +18,8 @@ public class Mecrobot : MonoBehaviour
     [SerializeField] private GameObject ceilingTraps;
     [SerializeField] private GameObject platforms;
     [SerializeField] private GameObject groundTraps;
-    [SerializeField] private GameObject bossRoomEnter;
     [SerializeField] private SpriteRenderer flashEffect;
+    [SerializeField] GameObject victoryScreen;
 
     [Header("Psycics")]
     private Rigidbody2D rigidBody;
@@ -65,9 +64,14 @@ public class Mecrobot : MonoBehaviour
     [SerializeField] private LayerMask masksToAttack;
     [SerializeField] private float darknessAttackTime, flashAttackTime,
         shownCeilingTrapsTime, shownFloorTrapsTime;
+    [SerializeField] private Light2D bot161Light;
+    [SerializeField] private Light2D bossLight;
+    [SerializeField] private float strongInnerRadius, strongOuterRadius;
+    [SerializeField] protected float lightInnerRadius, lightOuterRadius;
 
     [Header("Jumping")]
     private int moveInput;
+    private int directionCoef;
     private bool wasOnGround, isGrounded;
     private float betweenJumpTimer = 0f;
     [SerializeField] private Vector2 feetPos, feetDetectorSize;
@@ -80,7 +84,7 @@ public class Mecrobot : MonoBehaviour
     private MecroStates currentBot;
     private MecroStates previousBot;
     private MecroStates currentFlask;
-    private bool isBossDefeated = false;
+    public bool isBossDefeated { get; private set; }
     public bool IsFightStarted { get; private set; }
     public bool IsPlayerDefeated { get; private set; }
 
@@ -90,15 +94,10 @@ public class Mecrobot : MonoBehaviour
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         bossCollider = GetComponent<CapsuleCollider2D>();
-        mecrobotSprite = holder.GetComponent<SpriteRenderer>();
-        flaskSprite = flask.GetComponent<SpriteRenderer>();
-        bot296Sprite = bot296.GetComponent<SpriteRenderer>();
-        mecrobotBGSprite = mecrobotBG.GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
-        spritesToHideInDarkness = new List<SpriteRenderer>() { mecrobotSprite, flaskSprite, bot296Sprite, mecrobotBGSprite };
         (startColliderOffset, startColliderSize) = (bossCollider.offset, bossCollider.size);
         (extendedColliderOffset, extendedColliderSize) = (new Vector2(0, -1.05f), new Vector2(5f, 7.2f));
         (reducedColliderOffset, reducedColliderSize) = (new Vector2(0, -0.8f), new Vector2(5f, 6.65f));
@@ -111,7 +110,11 @@ public class Mecrobot : MonoBehaviour
         flask.transform.localPosition = Vector2.zero;
         IsFightStarted = false;
         IsPlayerDefeated = false;
+        isBossDefeated = false;
         currentBot = previousBot = MecroStates.none;
+        if (bot161Light != null)
+            bot161Light.intensity = 0;
+        bossLight.intensity = 0;
     }
 
     void Update()
@@ -131,7 +134,7 @@ public class Mecrobot : MonoBehaviour
                     EndBreakthrough();
                 }
                 rigidBody.gravityScale = gravityScale;
-                StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f, true));
+                StartCoroutine(JumpSqueeze(1, 1, 0.05f, true));
             }
 
             if (isFlaskHidden)
@@ -157,22 +160,25 @@ public class Mecrobot : MonoBehaviour
                 {
                     if (CheckPosition(leftPos.position.x))
                     {
-                        moveInput = 1;
+                        moveInput = directionCoef = 1;
                     }
                     else if (CheckPosition(rightPos.position.x))
                     {
-                        moveInput = -1;
+                        moveInput = directionCoef = -1;
                     }
                 }
 
-                if (Physics2D.OverlapCapsule(attackPos.Add(transform.position), attackSize, CapsuleDirection2D.Vertical, 0f, masksToAttack))
+                if (!IsPlayerDefeated 
+                    && Physics2D.OverlapCapsule(attackPos.Add(transform.position), attackSize, CapsuleDirection2D.Vertical, 0f, masksToAttack))
                 {
-                    DamagePlayer();
+                    Player.instance.DamagePlayer();
+                    IsPlayerDefeated = true;
                 }
             }
             else if (ableToTakeDamage)
             {
-                if (Physics2D.OverlapBox(damagePos.Add(transform.position), damageSize, 0, masksAbleToDamage))
+                if (Physics2D.OverlapBox(new Vector2((damagePos.x * directionCoef) + transform.position.x, 
+                    damagePos.y + transform.position.y), damageSize, 0, masksAbleToDamage))
                 {
                     StartCoroutine(TakeDamage());
                 }
@@ -261,9 +267,10 @@ public class Mecrobot : MonoBehaviour
 
     private void Jump(float jumpForce)
     {
+        AudioManager.instance.Play(jumpForce == maxJumpForce ? 18 : 5);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        StartCoroutine(JumpSqueeze(0.8f, 1.15f, 0.05f, false));
+        StartCoroutine(JumpSqueeze(1, 1, 0.05f, false));
     }
 
     private IEnumerator JumpSqueeze(float xSqueeze, float ySqueeze, float seconds, bool isLandingMoment)
@@ -322,11 +329,11 @@ public class Mecrobot : MonoBehaviour
     private void Attack()
     {
         attacksCount += 1;
-        var state = Random.Range(0, 4);
+        var state = 1; // Random.Range(0, 4);
         if (state < 2 && bossDamageCount < 3)
         {
             currentBot = MecroStates.form161;
-            moveInput = ChooseDirection();
+            moveInput = directionCoef = ChooseDirection();
             if (state == 0 || attacksCount % 3 == 0)
                 StartCoroutine(DarknessAttack());
             else
@@ -337,7 +344,7 @@ public class Mecrobot : MonoBehaviour
             currentBot = MecroStates.form296;
             if (state == 2 || attacksCount % 3 == 0)
             {
-                moveInput = ChooseDirection();
+                moveInput = directionCoef = ChooseDirection();
                 StartHardLanding();
             }
             else
@@ -355,16 +362,27 @@ public class Mecrobot : MonoBehaviour
         anim.SetInteger("attackNumber", 0);
         yield return new WaitForSeconds(0.5f);
 
-        Darkness.instance.TurnOn(true);
-        HideInDarkness();
+        AudioManager.instance.Play(24);
+        TurnOffTheLights(false);
         yield return new WaitForSeconds(darknessAttackTime);
 
         anim.SetBool("isAttacking", false);
         (previousBot, currentBot) = (currentBot, MecroStates.none);
-        Darkness.instance.TurnOn(false);
-        ShowFromDarkness();
+        TurnOffTheLights(true);
         if (attacksCount % 3 == 0)
             StartCoroutine(ShowFlask());
+    }
+
+    private void TurnOffTheLights(bool areLightOff)
+    {
+        if (bot161Light != null)
+        {
+            bot161Light.pointLightOuterRadius = areLightOff ? lightOuterRadius : strongOuterRadius;
+            bot161Light.pointLightInnerRadius = areLightOff ? lightInnerRadius : strongInnerRadius;
+            bot161Light.intensity = areLightOff ? 0 : 1;
+        }
+        bossLight.intensity = areLightOff ? 0 : 1;
+        LevelManager.instance.SetGlobalLightItensity(areLightOff ? 1 : 0);
     }
 
     private IEnumerator FlashAttack()
@@ -372,6 +390,7 @@ public class Mecrobot : MonoBehaviour
         anim.SetInteger("attackNumber", 1);
         yield return new WaitForSeconds(0.5f);
 
+        AudioManager.instance.Play(24);
         flashEffect.enabled = true;
         Player.instance.InvertMovement(true);
         yield return new WaitForSeconds(flashAttackTime);
@@ -403,6 +422,7 @@ public class Mecrobot : MonoBehaviour
 
     private IEnumerator EndHardLanding()
     {
+        AudioManager.instance.Play(18);
         isHardLandingAttack = false;
         anim.SetBool("isAttacking", false);
         (previousBot, currentBot) = (currentBot, MecroStates.none);
@@ -415,8 +435,7 @@ public class Mecrobot : MonoBehaviour
 
         TransformCollider(startColliderOffset, startColliderSize);
         yield return new WaitForSeconds(shownCeilingTrapsTime - 0.55f);
-        StartCoroutine(
-                HideCeilingTraps());
+        StartCoroutine(HideCeilingTraps(false));
     }
 
     private IEnumerator StartBreakthrough()
@@ -430,8 +449,7 @@ public class Mecrobot : MonoBehaviour
         ShowFloorTraps();
         TransformCollider(startColliderOffset, startColliderSize);
         yield return new WaitForSeconds(shownFloorTrapsTime);
-        StartCoroutine(
-                HideFloorTraps());
+        StartCoroutine(HideFloorTraps(false));
     }
 
     private void EndBreakthrough()
@@ -439,18 +457,6 @@ public class Mecrobot : MonoBehaviour
         isBreakthroughAttack = false;
         anim.SetBool("isAttacking", false);
         (previousBot, currentBot) = (currentBot, MecroStates.none);
-    }
-
-    private void HideInDarkness()
-    {
-        foreach (var sprite in spritesToHideInDarkness)
-            sprite.sortingLayerID = 0;
-    }
-
-    private void ShowFromDarkness()
-    {
-        foreach (var sprite in spritesToHideInDarkness)
-            sprite.sortingLayerName = "Enemies";
     }
 
     private void ShowCeilingTraps()
@@ -463,14 +469,20 @@ public class Mecrobot : MonoBehaviour
         }
     }
 
-    private IEnumerator HideCeilingTraps()
+    private IEnumerator HideCeilingTraps(bool shouldMoveInstantly)
     {
         if (isCeilingTrapsShown)
         {
             isCeilingTrapsShown = false; 
-            StartCoroutine(ceilingTraps.MoveObjectSmoothly(ceilingTraps.transform.localPosition + Vector3.up * 4, 2f));
-            yield return new WaitForSeconds(2.1f);
-
+            if (shouldMoveInstantly)
+            {
+                ceilingTraps.transform.localPosition += Vector3.up * 4;
+            }
+            else
+            {
+                StartCoroutine(ceilingTraps.MoveObjectSmoothly(ceilingTraps.transform.localPosition + Vector3.up * 4, 2f));
+                yield return new WaitForSeconds(IsFightStarted ? 2.1f : 0);
+            }
             ceilingTraps.SetActive(false);
         }
     }
@@ -486,15 +498,22 @@ public class Mecrobot : MonoBehaviour
         }
     }
 
-    private IEnumerator HideFloorTraps()
+    private IEnumerator HideFloorTraps(bool shouldMoveInstantly)
     {
         if (isFloorTrapsShown)
         {
             isFloorTrapsShown = false;
-            StartCoroutine(platforms.MoveObjectSmoothly(platforms.transform.localPosition + Vector3.down * 7, 1.5f));
-            StartCoroutine(groundTraps.MoveObjectSmoothly(groundTraps.transform.localPosition + Vector3.down * 7, 1.5f));
-            yield return new WaitForSeconds(1.6f);
-
+            if (shouldMoveInstantly)
+            {
+                platforms.transform.localPosition += Vector3.down * 7;
+                groundTraps.transform.localPosition += Vector3.down * 7;
+            }
+            else
+            {
+                StartCoroutine(platforms.MoveObjectSmoothly(platforms.transform.localPosition + Vector3.down * 7, 1.5f));
+                StartCoroutine(groundTraps.MoveObjectSmoothly(groundTraps.transform.localPosition + Vector3.down * 7, 1.5f));
+                yield return new WaitForSeconds(IsFightStarted ? 1.6f : 0);
+            }
             groundTraps.SetActive(false);
         }
     }
@@ -511,10 +530,10 @@ public class Mecrobot : MonoBehaviour
             ? activeFlaskPosition : new Vector2(0.8f, 2.4f), 1f));
         yield return new WaitForSeconds(timeToDamageFlask);
 
-        HideFlask();
+        HideFlask(false);
     }
 
-    private void HideFlask()
+    private void HideFlask(bool shouldMoveInstantly)
     {
         if (!isFlaskHidden)
         {
@@ -522,13 +541,17 @@ public class Mecrobot : MonoBehaviour
             anim.SetTrigger("recover");
             anim.SetBool("isDamaged", false);
             ableToTakeDamage = isFlaskHidden = true;
-            StartCoroutine(flask.MoveObjectSmoothly(Vector3.zero, 1f));
             Physics2D.IgnoreLayerCollision(enemyLayerMask, playerLayerMask, false);
+            if (shouldMoveInstantly)
+                flask.transform.localPosition = Vector3.zero;
+            else
+                StartCoroutine(flask.MoveObjectSmoothly(Vector3.zero, 1f));
         }
     }
 
     private IEnumerator TakeDamage()
     {
+        AudioManager.instance.Play(18);
         ableToTakeDamage = false;
         bossDamageCount += 1;
         anim.SetInteger("damageCount", (bossDamageCount + 1) / 2);
@@ -547,7 +570,7 @@ public class Mecrobot : MonoBehaviour
             Player.instance.AddJumpForce(10f);
             yield return new WaitForSeconds(3f);
 
-            HideFlask();
+            HideFlask(false);
         }
     }
 
@@ -561,23 +584,20 @@ public class Mecrobot : MonoBehaviour
         bossCollider.enabled = false;
         yield return new WaitForSeconds(bossDefeatTime);
 
-        bossRoomEnter.SetActive(false);
-        StartCoroutine(HideCeilingTraps());
-        StartCoroutine(HideFloorTraps());
+        AudioManager.instance.Play(18);
+        victoryScreen.SetActive(true);
         SetActive(false);
     }
 
-    private void DamagePlayer()
+    public void DamagePlayer()
     {
         isActive = false;
         IsFightStarted = false;
         IsPlayerDefeated = true;
-        ShowFromDarkness();
-        Darkness.instance.TurnOn(false);
+        TurnOffTheLights(true);
         Player.instance.InvertMovement(false);
         Physics2D.IgnoreLayerCollision(enemyLayerMask, playerLayerMask, false);
         Physics2D.IgnoreLayerCollision(enemyLayerMask, platformLayerMask, false);
-        Player.instance.DamagePlayer();
     }
 
     public void RestoreInitialStates()
@@ -586,10 +606,11 @@ public class Mecrobot : MonoBehaviour
         {
             IsFightStarted = true;
             IsPlayerDefeated = false;
+            Player.instance.isInBossRoom = false;
             isActive = true;
             ableToTakeDamage = true;
-            isFlaskHidden = true;
             moveInput = 0;
+            directionCoef = 1;
             attacksCount = 0;
             bossDamageCount = 0;
             previousBot = currentBot = MecroStates.none;
@@ -603,9 +624,9 @@ public class Mecrobot : MonoBehaviour
 
             bot161.SetActive(true);
             Physics2D.IgnoreLayerCollision(enemyLayerMask, platformLayerMask, true);
-            HideFlask();
-            StartCoroutine(HideCeilingTraps());
-            StartCoroutine(HideFloorTraps());
+            HideFlask(true);
+            StartCoroutine(HideCeilingTraps(true));
+            StartCoroutine(HideFloorTraps(true));
             SetActive(true);
         }
     }
@@ -623,8 +644,10 @@ public class Mecrobot : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        directionCoef = directionCoef == 0 ? 1 : directionCoef;
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(damagePos.Add(transform.position), damageSize);
+        Gizmos.DrawWireCube(new Vector2((damagePos.x * directionCoef) + transform.position.x, 
+            damagePos.y + transform.position.y), damageSize);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.Add(transform.position), attackSize);
         Gizmos.color = Color.yellow;

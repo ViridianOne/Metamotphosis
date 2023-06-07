@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Platform_new : MonoBehaviour, IPoolObject
 {
@@ -22,6 +23,8 @@ public class Platform_new : MonoBehaviour, IPoolObject
     [HideInInspector] public Animator anim;
     [HideInInspector] public SpriteRenderer sprite;
 
+    [SerializeField] private Light2D objectLight;
+
     private void Awake()
     {
         position1 = pos1.position;
@@ -42,9 +45,14 @@ public class Platform_new : MonoBehaviour, IPoolObject
     void Update()
     {
         isActiveZone = Physics2D.OverlapBox(activeZonePos, activeZoneSize, 0, playerMask);
-        if (isActiveZone && isSleeping && MecroSelectManager.instance.GetIndex() == 0)
+        if (isActiveZone && isSleeping)
         {
-            lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
+            if (MecroSelectManager.instance.GetIndex() == 0)
+            {
+                lightsOn = MecroSelectManager.instance.instantiatedMecros[MecroSelectManager.instance.GetIndex()].isAbilityActivated;
+            }
+            else
+                lightsOn = false;
             anim.SetFloat("sleepingCoef", lightsOn ? 0 : 1);
             anim.SetBool("isSleeping", !lightsOn);
         }
@@ -61,6 +69,8 @@ public class Platform_new : MonoBehaviour, IPoolObject
             transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * velocityCoef * Time.deltaTime);
         }
         ChangeVelocity();
+        if(objectLight != null)
+            objectLight.intensity = LevelManager.instance.isDarknessOn && !isSleeping ? 1 : 0;
     }
 
     private void OnDrawGizmos()
@@ -75,57 +85,21 @@ public class Platform_new : MonoBehaviour, IPoolObject
         Gizmos.DrawWireCube(activeZonePos, activeZoneSize);
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        anim.SetTrigger("impulse");
-    //        anim.SetBool("isPlayerOnPlatform", lightsOn);
-    //        //if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
-    //        //{
-    //        //    Player.instance.isOnMovingPlatform = true;
-    //        //    Player.instance.movingPlatDif = new Vector2(0, 0.005f);
-    //        //}
-    //        //else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
-    //        //{
-    //        //    Player.instance.isOnMovingPlatform = true;
-    //        //    Player.instance.movingPlatDif = new Vector2(0, -0.005f);
-    //        //}
-    //        collision.transform.SetParent(transform);
-    //    }
-    //}
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player" && (collision.gameObject.activeInHierarchy || MecroSelectManager.instance.isChanged))
-    //    {
-    //        anim.SetBool("isPlayerOnPlatform", false);
-    //        collision.transform.SetParent(null);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.instance.Play(19);
             anim.SetTrigger("impulse");
             anim.SetBool("isPlayerOnPlatform", lightsOn);
-            //if (nextPos == pos1.position && pos1.position.y != pos2.position.y)
-            //{
-            //    Player.instance.isOnMovingPlatform = true;
-            //    Player.instance.movingPlatDif = new Vector2(0, 0.005f);
-            //}
-            //else if (nextPos == pos2.position && pos2.position.y != pos1.position.y)
-            //{
-            //    Player.instance.isOnMovingPlatform = true;
-            //    Player.instance.movingPlatDif = new Vector2(0, -0.005f);
-            //}
             collision.transform.SetParent(transform);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy)
+        if (collision.gameObject.tag == "Player" && collision.gameObject.activeInHierarchy 
+            && !Player.instance.isTouchingLedge)
         {
             anim.SetBool("isPlayerOnPlatform", false);
             collision.transform.SetParent(null);

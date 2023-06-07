@@ -9,20 +9,6 @@ public class Flash : Enemy
     [Header("Animation")]
     private SpriteRenderer holder2Sprite;
     [SerializeField] private GameObject holder2;
-
-    [Header("Attack")]
-    private bool isPlayerNear = false;
-    private bool isAttacking = false, isExploding = false;
-    private int attacksCount = 0;
-    private float explosionTimer;
-    [SerializeField] private float currentAttackRadius;
-    [SerializeField] private float attackRadius, maxAttackRadius;
-    [SerializeField] private Vector2 checkPlayerAreaSize;
-    [SerializeField] private float minDistanceToPlayer, maxDistanceToPlayer;  // after teleportation
-    [SerializeField] private float effectOnPlayerTime = 4f;
-    [SerializeField] private float slowingSpeedChangeCoef, acceleratingSpeedChangeCoef;
-    [SerializeField] private float delayAfterRelocating, explosionTime, returnTime , delayBetweenAttacks;
-
     private Tuple<Color, Color> changedColor;
     private readonly Dictionary<int, Tuple<string, string>> changedColors = new()
         { { 0, Tuple.Create("#FFE880", "#CCA800") },
@@ -30,13 +16,27 @@ public class Flash : Enemy
           { 2, Tuple.Create("#8097FF", "#0025CC") },
           { 3, Tuple.Create("#FF80D7", "#CC008C") } };
 
+    [Header("Attack")]
+    private bool isPlayerDamaged;
+    private bool isPlayerNear = false;
+    private bool isAttacking = false, isExploding = false;
+    private int attacksCount = 0;
+    private float explosionTimer;
+    private float currentAttackRadius;
+    [SerializeField] private float attackRadius, maxAttackRadius;
+    [SerializeField] private Vector2 checkPlayerAreaSize;
+    [SerializeField] private float minDistanceToPlayer, maxDistanceToPlayer;  // after teleportation
+    [SerializeField] private float effectOnPlayerTime = 4f;
+    [SerializeField] private float slowingSpeedChangeCoef, acceleratingSpeedChangeCoef;
+    [SerializeField] private float delayAfterRelocating, explosionTime, returnTime , delayBetweenAttacks;
+
+
     protected override void Start()
     {
         base.Start();
 
-        Color colorA, colorB;
-        ColorUtility.TryParseHtmlString(changedColors[animationLayer].Item1, out colorA);
-        ColorUtility.TryParseHtmlString(changedColors[animationLayer].Item2, out colorB);
+        ColorUtility.TryParseHtmlString(changedColors[animationLayer].Item1, out Color colorA);
+        ColorUtility.TryParseHtmlString(changedColors[animationLayer].Item2, out Color colorB);
         changedColor = Tuple.Create(colorA, colorB);
 
         holder2Sprite = holder2.GetComponent<SpriteRenderer>();
@@ -58,22 +58,27 @@ public class Flash : Enemy
                 currentAttackRadius = Mathf.Lerp(attackRadius, maxAttackRadius, explosionTimer / 1.2f);
             }
          
-            if (!isAttacking)
+            if (!isAttacking && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible)
             {
                 isPlayerNear = Physics2D.OverlapBox(transform.position, checkPlayerAreaSize, 0f, masksToDamage);
-                if (isPlayerNear && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+                if (isPlayerNear)
                 {
                     StartCoroutine(AttackPlayer());
                 }
             }
 
-            canDamagePlayer = Physics2D.OverlapCircle(
-                new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), currentAttackRadius, masksToDamage);
-            if (canDamagePlayer && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated && MecroSelectManager.instance.GetIndex() != 7)
+            if (canDamagePlayer && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible
+                && MecroSelectManager.instance.GetIndex() != 7)
             {
-                StartCoroutine(DamagePlayer());
+                isPlayerDamaged = Physics2D.OverlapCircle(
+                    new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), currentAttackRadius, masksToDamage);
+                if (isPlayerDamaged)
+                {
+                    StartCoroutine(DamagePlayer());
+                }
             }
         }
+        enemyLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
     protected override void Move() {}
@@ -82,27 +87,24 @@ public class Flash : Enemy
     {
         isAttacking = true;
         state = EnemyState.Attack;
-
         StartCoroutine(Relocate());
-
         yield return new WaitForSeconds(delayAfterRelocating);
 
         if(attacksCount >= 2)
             TakeDamage();
         else
             StartCoroutine(Explode());
-
         yield return new WaitForSeconds(explosionTime);
 
         if (attacksCount < 2)
         {
             ReturnAfterExplosion();
-
             yield return new WaitForSeconds(returnTime);
 
             state = EnemyState.Idle;
             attacksCount++;
             yield return new WaitForSeconds(delayBetweenAttacks);
+
             StartCoroutine(AttackPlayer());
         }
     }
@@ -121,18 +123,14 @@ public class Flash : Enemy
     private IEnumerator Relocate()
     {
         anim.SetTrigger("relocate");
-
         var newPos = GetNearToPlayerPosition();
-
         holder2Sprite.enabled = true;
         holder2.transform.position = newPos;
-
         yield return new WaitForSeconds(0.57f);
 
         holder.transform.position = transform.position;
         transform.position = newPos;
         holder2.transform.localPosition = Vector3.zero;
-
         yield return new WaitForSeconds(0.43f);
 
         holder.transform.localPosition = Vector3.zero;
@@ -142,13 +140,12 @@ public class Flash : Enemy
     {
         isExploding = true;
         anim.SetTrigger("attack");
-
+        AudioManager.instance.Play(25);
         yield return new WaitForSeconds(1.2f);   // 72 frames
 
         isExploding = false;
         currentAttackRadius = 0;
         explosionTimer = 0;
-
         yield return new WaitForSeconds(explosionTime - 1.2f);
 
         ChangePlayerVelocity(Random.Range(0, 2));
@@ -174,6 +171,7 @@ public class Flash : Enemy
 
     protected override IEnumerator DamagePlayer()
     {
+        canTakeDamage = canDamagePlayer = false; 
         Player.instance.DamagePlayer();
         yield return new WaitForSeconds(0f);
         attacksCount = 3;
@@ -182,6 +180,7 @@ public class Flash : Enemy
     private void TakeDamage()
     {
         isActive = false;
+        canTakeDamage = canDamagePlayer = false; 
         state = EnemyState.Destroying;
 
         isExploding = false;
@@ -192,20 +191,26 @@ public class Flash : Enemy
         StartCoroutine(TurnOff());
     }
 
+    public override void Recover()
+    {
+        base.Recover();
+
+        isAttacking = isExploding = false;
+        attacksCount = 0;
+        explosionTimer = 0;
+        state = EnemyState.Idle;
+        currentAttackRadius = attackRadius;
+
+        holder2Sprite.enabled = false;
+        holder.transform.localPosition = Vector3.zero;
+        holder2.transform.localPosition = Vector3.zero;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y), attackRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, checkPlayerAreaSize);
-    }
-
-    public override void Recover()
-    {
-        base.Recover();
-
-        isAttacking = false;
-        attacksCount = 0;
-        currentAttackRadius = attackRadius;
     }
 }

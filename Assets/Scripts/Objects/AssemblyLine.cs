@@ -37,6 +37,6 @@ public class AssemblyLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        AudioManager.instance.Play(20);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VictoryScreen : MonoBehaviour
 {
@@ -18,8 +19,7 @@ public class VictoryScreen : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                Player.instance.transform.position = Player.instance.respawnPoint.position;
-                gameObject.SetActive(false);
+                SceneManager.LoadScene("Main menu");
             }
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Checkpoint : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Checkpoint : MonoBehaviour
     public int index;
     [SerializeField]private int currentIndex;
     [SerializeField]private int previousIndex;
+    [SerializeField] Light2D objectLight;
     //public Sprite notActiveCheck;
     /* good but checkpoints disabled right away
     private void OnTriggerEnter2D(Collider2D other)
@@ -60,7 +62,7 @@ public class Checkpoint : MonoBehaviour
             Checkpoints.instance.currentCheckpoint = index;
             Checkpoints.instance.previousCheckpoint = index - 1;
             currentCheck = true;
-            DataManager.instance.SaveGame();
+            //DataManager.instance.SaveGame();
         }
     }
     public void Update()
@@ -76,6 +78,7 @@ public class Checkpoint : MonoBehaviour
             notActiveCheck.SetActive(true);
             currentCheck = false;
         }
+        objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
 
 }
