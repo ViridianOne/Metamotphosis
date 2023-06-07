@@ -46,14 +46,14 @@ public class Pause_menu : MonoBehaviour
 
     void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
                 Resume();
             }
-            else
+            else if(!isPaused && !Metro_system.instance.isOpen)
             {
                 Pause();
             }
@@ -242,4 +242,5 @@ public class Pause_menu : MonoBehaviour
             return;
         //Application.Quit();
     }
+
 }

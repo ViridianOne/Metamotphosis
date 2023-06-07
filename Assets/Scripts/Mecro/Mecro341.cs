@@ -64,7 +64,7 @@ public class Mecro341 : Player
                 }
                 else
                 {
-                    rigidBody.gravityScale = 4 * ceilCoef * (isGravityInverted ? -1f : 1f);
+                    rigidBody.gravityScale = gravity * ceilCoef * (isGravityInverted ? -1f : 1f);
                     moveInput = Input.GetAxisRaw("Horizontal") * (isMovementInverted ? -1f : 1f);
                     rigidBody.velocity = new Vector2(enableVelocityRight || enableVelocityLeft ? counteractingForce * moveInput * -3 : rigidBody.velocity.x, rigidBody.velocity.y);
                 }
@@ -159,8 +159,8 @@ public class Mecro341 : Player
         isGravityInverted = false;
         isVertical = false;
         ceilCoef = 1;
-        gravity = 4;
-        rigidBody.gravityScale = 4;
+        //gravity = 4;
+        rigidBody.gravityScale = gravity;
     }
 
     protected override void Move()

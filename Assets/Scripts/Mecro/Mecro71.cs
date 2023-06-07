@@ -16,10 +16,6 @@ public class Mecro71 : Player
     public bool isFlying;
     public int jumpCount = 0;
     public float defaultMoveSpeed; //equal to starting MoveSpeed
-    /*public bool movingRight = false;
-    public bool movingLeft = false;
-    public bool movingUp = false;
-    public bool movingDown = false;*/
     public Directions directionArrow;
     private float rotationSpeed = 720;
     public bool directionChosen = false;
@@ -33,28 +29,8 @@ public class Mecro71 : Player
 
     protected override void Move()
     {
-        //if (moveSpeed > maxSpeed)
-        //moveSpeed = maxSpeed;
-        //while(moveSpeed<maxSpeed)
-        //moveSpeed += acceleration * Time.deltaTime;
-        //rigidBody.velocity = new Vector2(movementForce, rigidBody.velocity.y);
-        //moveSpeed = Mathf.MoveTowards(moveSpeed, maxSpeed, acceleration);
-        //if (movingRight == true && isFlying)
-        //rigidBody.velocity = new Vector2(moveSpeed, rigidBody.velocity.y); neeeded maybe
-        // else if (movingLeft == true && isFlying)
-        //rigidBody.velocity = new Vector2(-moveSpeed, rigidBody.velocity.y);
-
         bool isHorizontal = directionArrow == Directions.right || directionArrow == Directions.left;
         bool isVertical = directionArrow == Directions.up || directionArrow == Directions.down;
-
-        /*if (directionArrow == Directions.up)
-        {
-            transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
-        }
-        else if (directionArrow == Directions.down)
-        {
-            transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
-        }*/
 
         float targetSpeed = moveInput * moveSpeed * velocityCoef;
         float accelerate = 0;
@@ -79,23 +55,6 @@ public class Mecro71 : Player
         else if (isVertical)
             moveForce = (targetSpeed - rigidBody.velocity.y) * accelerate;
         rigidBody.AddForce(moveForce * direction, ForceMode2D.Force);
-        /*switch (directionArrow)
-        {
-            case "right":
-                rigidBody.velocity = new Vector2(moveSpeed, 0);
-                break;
-            case "left":
-                rigidBody.velocity = new Vector2(-moveSpeed, 0);
-                break;
-            case "up":
-                transform.rotation = Quaternion.Euler(Vector3.forward * 90);
-                rigidBody.velocity = new Vector2(0, moveSpeed);
-                break;
-            case "down":
-                transform.rotation = Quaternion.Euler(Vector3.forward * -90);
-                rigidBody.velocity = new Vector2(0, -moveSpeed);
-                break;
-        }*/
     }
 
     private void ChooseDirection()
