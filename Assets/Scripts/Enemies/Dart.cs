@@ -13,6 +13,8 @@ public class Dart : Enemy
     [SerializeField] private LayerMask groundMask;
 
     [Header("Attack")]
+    private bool isDamaged;
+    private bool isPlayerDamaged;
     private bool isAttacking = false;
     [SerializeField] private Transform topTriggerPos, bottomTriggerPos;
     [SerializeField] private Vector2 triggerDetectorSize;
@@ -35,8 +37,8 @@ public class Dart : Enemy
         {
             if (!isAttacking
                 && (isInverted && Physics2D.OverlapBox(bottomTriggerPos.position, triggerDetectorSize, 0f, masksAbleToDamage)
-                || !isInverted && Physics2D.OverlapBox(topTriggerPos.position, triggerDetectorSize, 0f, masksAbleToDamage)) 
-                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+                || !isInverted && Physics2D.OverlapBox(topTriggerPos.position, triggerDetectorSize, 0f, masksAbleToDamage))
+                && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible)
             {
                 Attack();
             }
@@ -49,20 +51,24 @@ public class Dart : Enemy
                 StartCoroutine(Land());
             }
 
-            if (!isAttacking
-                && Physics2D.OverlapBox(new Vector2(transform.position.x + damagePos.x, transform.position.y + damagePos.y),
-                    damageSize, 0f, masksAbleToDamage)
-                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+            if (canTakeDamage && !isAttacking && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible)
             {
-                TakeDamage();
+                isDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + damagePos.x, transform.position.y + damagePos.y),
+                        damageSize, 0f, masksAbleToDamage);
+                if (isDamaged)
+                {
+                    TakeDamage();
+                }
             }
 
-            if (isAttacking 
-                && Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y),
-                    attackSize, 0f, masksToDamage)
-                && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
+            if (canDamagePlayer && isAttacking && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible)
             {
-                StartCoroutine(DamagePlayer());
+                isPlayerDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x, transform.position.y + attackPos.y),
+                        attackSize, 0f, masksToDamage);
+                if (isPlayerDamaged)
+                {
+                    StartCoroutine(DamagePlayer());
+                }
             }
             ChangeVelocity();
         }
@@ -122,6 +128,7 @@ public class Dart : Enemy
     private void TakeDamage()
     {
         isActive = false;
+        canTakeDamage = canDamagePlayer = false;
         anim.SetTrigger("damage");
         Player.instance.MiniJump(12f);
         AudioManager.instance.Play(6);
@@ -131,6 +138,7 @@ public class Dart : Enemy
     protected override IEnumerator DamagePlayer()
     {
         isActive = false;
+        canTakeDamage = canDamagePlayer = false; 
         Player.instance.DamagePlayer();
         yield return new WaitForSeconds(1.5f);
         isActive = true;
@@ -139,6 +147,16 @@ public class Dart : Enemy
     private void InvertPlayerGravity()
     {
         Player.instance.InvertGravity();
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        isAttacking = false;
+        isInverted = wasInvertedAtStart;
+        rigidBody.gravityScale = gravityScale * (wasInvertedAtStart ? -1 : 1);
+        Flip();
     }
 
     private void OnDrawGizmos()
@@ -154,14 +172,5 @@ public class Dart : Enemy
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(topTriggerPos.position, triggerDetectorSize);
         Gizmos.DrawWireCube(bottomTriggerPos.position, triggerDetectorSize);
-    }
-
-    public override void Recover()
-    {
-        base.Recover();
-
-        isInverted = wasInvertedAtStart;
-        rigidBody.gravityScale = gravityScale * (wasInvertedAtStart ? -1 : 1);
-        Flip();
     }
 }

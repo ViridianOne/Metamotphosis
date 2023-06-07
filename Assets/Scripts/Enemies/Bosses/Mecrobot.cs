@@ -71,6 +71,7 @@ public class Mecrobot : MonoBehaviour
 
     [Header("Jumping")]
     private int moveInput;
+    private int directionCoef;
     private bool wasOnGround, isGrounded;
     private float betweenJumpTimer = 0f;
     [SerializeField] private Vector2 feetPos, feetDetectorSize;
@@ -159,15 +160,16 @@ public class Mecrobot : MonoBehaviour
                 {
                     if (CheckPosition(leftPos.position.x))
                     {
-                        moveInput = 1;
+                        moveInput = directionCoef = 1;
                     }
                     else if (CheckPosition(rightPos.position.x))
                     {
-                        moveInput = -1;
+                        moveInput = directionCoef = -1;
                     }
                 }
 
-                if (Physics2D.OverlapCapsule(attackPos.Add(transform.position), attackSize, CapsuleDirection2D.Vertical, 0f, masksToAttack))
+                if (!IsPlayerDefeated 
+                    && Physics2D.OverlapCapsule(attackPos.Add(transform.position), attackSize, CapsuleDirection2D.Vertical, 0f, masksToAttack))
                 {
                     Player.instance.DamagePlayer();
                     IsPlayerDefeated = true;
@@ -175,7 +177,8 @@ public class Mecrobot : MonoBehaviour
             }
             else if (ableToTakeDamage)
             {
-                if (Physics2D.OverlapBox(damagePos.Add(transform.position), damageSize, 0, masksAbleToDamage))
+                if (Physics2D.OverlapBox(new Vector2((damagePos.x * directionCoef) + transform.position.x, 
+                    damagePos.y + transform.position.y), damageSize, 0, masksAbleToDamage))
                 {
                     StartCoroutine(TakeDamage());
                 }
@@ -326,11 +329,11 @@ public class Mecrobot : MonoBehaviour
     private void Attack()
     {
         attacksCount += 1;
-        var state = Random.Range(0, 4);
+        var state = 1; // Random.Range(0, 4);
         if (state < 2 && bossDamageCount < 3)
         {
             currentBot = MecroStates.form161;
-            moveInput = ChooseDirection();
+            moveInput = directionCoef = ChooseDirection();
             if (state == 0 || attacksCount % 3 == 0)
                 StartCoroutine(DarknessAttack());
             else
@@ -341,7 +344,7 @@ public class Mecrobot : MonoBehaviour
             currentBot = MecroStates.form296;
             if (state == 2 || attacksCount % 3 == 0)
             {
-                moveInput = ChooseDirection();
+                moveInput = directionCoef = ChooseDirection();
                 StartHardLanding();
             }
             else
@@ -432,8 +435,7 @@ public class Mecrobot : MonoBehaviour
 
         TransformCollider(startColliderOffset, startColliderSize);
         yield return new WaitForSeconds(shownCeilingTrapsTime - 0.55f);
-        StartCoroutine(
-                HideCeilingTraps());
+        StartCoroutine(HideCeilingTraps(false));
     }
 
     private IEnumerator StartBreakthrough()
@@ -447,8 +449,7 @@ public class Mecrobot : MonoBehaviour
         ShowFloorTraps();
         TransformCollider(startColliderOffset, startColliderSize);
         yield return new WaitForSeconds(shownFloorTrapsTime);
-        StartCoroutine(
-                HideFloorTraps());
+        StartCoroutine(HideFloorTraps(false));
     }
 
     private void EndBreakthrough()
@@ -468,14 +469,20 @@ public class Mecrobot : MonoBehaviour
         }
     }
 
-    private IEnumerator HideCeilingTraps()
+    private IEnumerator HideCeilingTraps(bool shouldMoveInstantly)
     {
         if (isCeilingTrapsShown)
         {
             isCeilingTrapsShown = false; 
-            StartCoroutine(ceilingTraps.MoveObjectSmoothly(ceilingTraps.transform.localPosition + Vector3.up * 4, 2f));
-            yield return new WaitForSeconds(IsFightStarted ? 2.1f : 0);
-
+            if (shouldMoveInstantly)
+            {
+                ceilingTraps.transform.localPosition += Vector3.up * 4;
+            }
+            else
+            {
+                StartCoroutine(ceilingTraps.MoveObjectSmoothly(ceilingTraps.transform.localPosition + Vector3.up * 4, 2f));
+                yield return new WaitForSeconds(IsFightStarted ? 2.1f : 0);
+            }
             ceilingTraps.SetActive(false);
         }
     }
@@ -491,15 +498,22 @@ public class Mecrobot : MonoBehaviour
         }
     }
 
-    private IEnumerator HideFloorTraps()
+    private IEnumerator HideFloorTraps(bool shouldMoveInstantly)
     {
         if (isFloorTrapsShown)
         {
             isFloorTrapsShown = false;
-            StartCoroutine(platforms.MoveObjectSmoothly(platforms.transform.localPosition + Vector3.down * 7, 1.5f));
-            StartCoroutine(groundTraps.MoveObjectSmoothly(groundTraps.transform.localPosition + Vector3.down * 7, 1.5f));
-            yield return new WaitForSeconds(IsFightStarted ? 1.6f : 0);
-
+            if (shouldMoveInstantly)
+            {
+                platforms.transform.localPosition += Vector3.down * 7;
+                groundTraps.transform.localPosition += Vector3.down * 7;
+            }
+            else
+            {
+                StartCoroutine(platforms.MoveObjectSmoothly(platforms.transform.localPosition + Vector3.down * 7, 1.5f));
+                StartCoroutine(groundTraps.MoveObjectSmoothly(groundTraps.transform.localPosition + Vector3.down * 7, 1.5f));
+                yield return new WaitForSeconds(IsFightStarted ? 1.6f : 0);
+            }
             groundTraps.SetActive(false);
         }
     }
@@ -516,10 +530,10 @@ public class Mecrobot : MonoBehaviour
             ? activeFlaskPosition : new Vector2(0.8f, 2.4f), 1f));
         yield return new WaitForSeconds(timeToDamageFlask);
 
-        HideFlask();
+        HideFlask(false);
     }
 
-    private void HideFlask()
+    private void HideFlask(bool shouldMoveInstantly)
     {
         if (!isFlaskHidden)
         {
@@ -527,8 +541,11 @@ public class Mecrobot : MonoBehaviour
             anim.SetTrigger("recover");
             anim.SetBool("isDamaged", false);
             ableToTakeDamage = isFlaskHidden = true;
-            StartCoroutine(flask.MoveObjectSmoothly(Vector3.zero, 1f));
             Physics2D.IgnoreLayerCollision(enemyLayerMask, playerLayerMask, false);
+            if (shouldMoveInstantly)
+                flask.transform.localPosition = Vector3.zero;
+            else
+                StartCoroutine(flask.MoveObjectSmoothly(Vector3.zero, 1f));
         }
     }
 
@@ -553,7 +570,7 @@ public class Mecrobot : MonoBehaviour
             Player.instance.AddJumpForce(10f);
             yield return new WaitForSeconds(3f);
 
-            HideFlask();
+            HideFlask(false);
         }
     }
 
@@ -568,8 +585,6 @@ public class Mecrobot : MonoBehaviour
         yield return new WaitForSeconds(bossDefeatTime);
 
         AudioManager.instance.Play(18);
-        StartCoroutine(HideCeilingTraps());
-        StartCoroutine(HideFloorTraps());
         victoryScreen.SetActive(true);
         SetActive(false);
     }
@@ -594,8 +609,8 @@ public class Mecrobot : MonoBehaviour
             Player.instance.isInBossRoom = false;
             isActive = true;
             ableToTakeDamage = true;
-            isFlaskHidden = true;
             moveInput = 0;
+            directionCoef = 1;
             attacksCount = 0;
             bossDamageCount = 0;
             previousBot = currentBot = MecroStates.none;
@@ -609,9 +624,9 @@ public class Mecrobot : MonoBehaviour
 
             bot161.SetActive(true);
             Physics2D.IgnoreLayerCollision(enemyLayerMask, platformLayerMask, true);
-            HideFlask();
-            StartCoroutine(HideCeilingTraps());
-            StartCoroutine(HideFloorTraps());
+            HideFlask(true);
+            StartCoroutine(HideCeilingTraps(true));
+            StartCoroutine(HideFloorTraps(true));
             SetActive(true);
         }
     }
@@ -629,8 +644,10 @@ public class Mecrobot : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        directionCoef = directionCoef == 0 ? 1 : directionCoef;
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(damagePos.Add(transform.position), damageSize);
+        Gizmos.DrawWireCube(new Vector2((damagePos.x * directionCoef) + transform.position.x, 
+            damagePos.y + transform.position.y), damageSize);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.Add(transform.position), attackSize);
         Gizmos.color = Color.yellow;

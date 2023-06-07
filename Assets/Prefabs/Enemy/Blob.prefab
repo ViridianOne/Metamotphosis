@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 1101459715}
   m_Layer: 9
   m_Name: Blob body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,40 +453,40 @@ MonoBehaviour:
   attackPos: {x: -2, y: -4.2}
   attackSize: {x: 1.75, y: 1.5}
   enemyLight: {fileID: 2472993036065915429}
-  leftPos: {fileID: 2569805923175095402}
-  rightPos: {fileID: 2569805923266050761}
+  isOnGround: 0
+  isGroundInFront: 0
   moveSpeed: 8
   maxSpeed: 8
   runAcceleration: 2
   runDecceleration: 2
   runAccelerationAmount: 12.5
   runDeccelerationAmount: 12.5
-  stateChangeTime: 5
-  downGroundPos: {fileID: 1122199084}
-  forwardGroundPos: {fileID: 942660864}
-  downGroundSize: {x: 3, y: -5.5}
-  playerDetectorSize: {x: 10, y: 6}
-  playerDetectorPos: {x: -7.61, y: -2.38}
-  isOnGround: 0
-  isGroundInFront: 0
-  attackTime: 0.5
-  fullAttackTime: 0.5
-  attackPos1: {fileID: 398885875}
-  damagePos: {fileID: 1215031498}
-  damageSize: {x: 1.7, y: 0.5}
-  isGrounded: 0
-  wasOnGround: 0
+  leftPos: {fileID: 2569805923175095402}
+  rightPos: {fileID: 2569805923266050761}
+  minJumpTime: 0.05
+  timeBetweenJump: 0.15
   jumpForce: 11.5
   maxGravity: 8
   gravityMultiplier: 1.2
+  accelerationInAir: 1.25
+  isGrounded: 0
+  wasOnGround: 0
+  downGroundPos: {fileID: 1122199084}
+  forwardGroundPos: {fileID: 942660864}
   feetPos: {fileID: 2569805924186828070}
+  downGroundSize: {x: 3, y: -5.5}
   feetDetectorSize: {x: 0.3, y: 0.3}
   groundMask:
     serializedVersion: 2
     m_Bits: 8256
-  timeBetweenJump: 0.15
-  minJumpTime: 0.05
-  accelerationInAir: 1.25
+  attackTime: 0.5
+  fullAttackTime: 0.5
+  attackPos1: {fileID: 398885875}
+  playerDetectorSize: {x: 10, y: 6}
+  playerDetectorPos: {x: -7.61, y: -2.38}
+  damagePos: {fileID: 1215031498}
+  damageSize: {x: 1.7, y: 0.5}
+  stateChangeTime: 5
 --- !u!58 &1101459715
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : Enemy
 {
     [Header("Physics")]
-    private float moveInput;
+    private float moveDirectionCoef;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxSpeed;
     [SerializeField] protected float runAcceleration;
@@ -19,6 +19,7 @@ public class Ball : Enemy
     [SerializeField] private float jumpForce;
 
     [Header("Attack")]
+    private bool isPlayerDamaged;
     private bool canAttack = true;
     private bool isPlayerNear = false;
     [SerializeField] private bool isAttacking = false;
@@ -42,19 +43,16 @@ public class Ball : Enemy
         if (isActive)
         {
             isPlayerNear = Physics2D.OverlapBox(playerDetectorPos.position, playerDetectorSize, 0f, masksAbleToDamage);
-            if (canAttack)
+            if (canAttack && isPlayerNear && Player.instance.isActive)
             {
-                if (isPlayerNear)
-                {
-                    Jump();
-                    StartCoroutine(AttackPlayer());
-                }
+                Jump();
+                StartCoroutine(AttackPlayer());
             }
             if(!isPlayerNear)
             {
                 isAttacking = false;
                 canAttack = true;
-                moveInput = 0;
+                moveDirectionCoef = 0;
                 state = EnemyState.Idle;
             }
             if (isAttacking)
@@ -63,17 +61,24 @@ public class Ball : Enemy
                 //UpdateMovementAnimation();
             }
 
-            canDamagePlayer = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
-                transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
-            if (canDamagePlayer)
+            if (canTakeDamage && Player.instance.isActive)
             {
-                StartCoroutine(DamagePlayer());
-                StopAttacking();
+                isDamaged = Physics2D.OverlapBox(damagePos.position, damageSize, 0f, masksToDamage);
+                if (isDamaged)
+                {
+                    TakeDamage();
+                }
             }
-            isDamaged = Physics2D.OverlapBox(damagePos.position, damageSize, 0f, masksToDamage);
-            if (isDamaged)
+            if (canDamagePlayer && Player.instance.isActive && !MecroSelectManager.instance.IsPlayerInvisible 
+                && MecroSelectManager.instance.GetIndex() != 7)
             {
-                TakeDamage();
+                isPlayerDamaged = Physics2D.OverlapBox(new Vector2(transform.position.x + attackPos.x,
+                    transform.position.y + attackPos.y), attackSize, 0f, masksAbleToDamage);
+                if (isPlayerDamaged)
+                {
+                    StartCoroutine(DamagePlayer());
+                    StopAttacking();
+                }
             }
             ChangeVelocity();
             UpdateMovementAnimation();
@@ -91,7 +96,7 @@ public class Ball : Enemy
 
     protected override void Move()
     {
-        float targetSpeed = moveInput * moveSpeed * velocityCoef;
+        float targetSpeed = moveDirectionCoef * moveSpeed * velocityCoef;
 
         if (isGrounded)
             if (targetSpeed > 0.01f && rigidBody.velocity.x < -1f || targetSpeed < -0.01f && rigidBody.velocity.x > 1f)
@@ -109,16 +114,7 @@ public class Ball : Enemy
         }
 
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
-        rigidBody.AddForce(moveForce * vectorToPlayer * moveInput, ForceMode2D.Force);
-    }
-
-    private void OnValidate()
-    {
-        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
-        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
-
-        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
-        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
+        rigidBody.AddForce(moveForce * vectorToPlayer * moveDirectionCoef, ForceMode2D.Force);
     }
 
     public void Jump()
@@ -154,7 +150,7 @@ public class Ball : Enemy
     private void CalculateMoveDirection()
     {
         vectorToPlayer = Vector3.Normalize(Player.instance.transform.position - transform.position);
-        moveInput = vectorToPlayer.x > 0 ? 1 : -1;
+        moveDirectionCoef = vectorToPlayer.x > 0 ? 1 : -1;
     }
 
     private void UpdateMovementAnimation()
@@ -202,7 +198,8 @@ public class Ball : Enemy
     private void TakeDamage()
     {
         isActive = canAttack = isAttacking = false;
-        moveInput = 0;
+        canTakeDamage = canDamagePlayer = false; 
+        moveDirectionCoef = 0;
         rigidBody.velocity = Vector2.zero;
         state = EnemyState.Destroying;
         anim.SetBool("isMoving", false);
@@ -216,11 +213,11 @@ public class Ball : Enemy
 
     private void Flip()
     {
-        if (moveInput == 1f)
+        if (moveDirectionCoef == 1f)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (moveInput == -1f)
+        else if (moveDirectionCoef == -1f)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
@@ -229,7 +226,7 @@ public class Ball : Enemy
     private IEnumerator StopAttacking()
     {
         canAttack = isAttacking = false;
-        moveInput = 0;
+        moveDirectionCoef = 0;
         state = EnemyState.Idle;
         //anim.SetBool("isMoving", false);
         yield return new WaitForSeconds(delayBetweenAttacks);
@@ -239,13 +236,29 @@ public class Ball : Enemy
     protected override IEnumerator DamagePlayer()
     {
         //isActive = false;
-        //canDamagePlayer = false;
-        if (MecroSelectManager.instance.GetIndex() != 7
-            && !MecroSelectManager.instance.instantiatedMecros[(int)MecroStates.form206].isAbilityActivated)
-        { Player.instance.DamagePlayer(); }
+        canTakeDamage = canDamagePlayer = false;
+        Player.instance.DamagePlayer();
         yield return new WaitForSeconds(1.5f);
-        //transform.position = respawnPoint.position;
         //isActive = true;
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        canAttack = true;
+        isAttacking = false;
+        moveDirectionCoef = 0;
+        state = EnemyState.Idle;
+    }
+
+    private void OnValidate()
+    {
+        runAccelerationAmount = (50 * runAcceleration) / maxSpeed;
+        runDeccelerationAmount = (50 * runDecceleration) / maxSpeed;
+
+        runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, maxSpeed);
+        runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, maxSpeed);
     }
 
     private void OnDrawGizmos()
