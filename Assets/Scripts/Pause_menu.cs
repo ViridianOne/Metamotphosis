@@ -46,7 +46,7 @@ public class Pause_menu : MonoBehaviour
 
     void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -242,4 +242,5 @@ public class Pause_menu : MonoBehaviour
             return;
         //Application.Quit();
     }
+
 }
