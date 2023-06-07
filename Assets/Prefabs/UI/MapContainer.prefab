@@ -2582,7 +2582,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 252
-    m_Data: {fileID: -1312396792, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+    m_Data: {fileID: -234444918, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 252
     m_Data:
@@ -5647,6 +5647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2495591986125541712}
+  - component: {fileID: 1518254218}
   m_Layer: 0
   m_Name: MapContainer
   m_TagString: Untagged
@@ -5671,6 +5672,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518254218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495591986125541719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc329276a4cbc32449021695df891611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLocation: 1
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  Rooms: {fileID: 2495591984900263994}
+  Sectors: {fileID: 2495591984974358852}
+  SpecialRooms: {fileID: 2495591986009499897}
+  Player: {fileID: 2495591985616274088}
+  PlayerSprites:
+  - {fileID: 1037733665, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: -206192257, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: 59287019, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: 840280935, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: 1366743711, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: 1826499304, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: -654348966, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: -2004898075, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: 1263288985, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  RoomsSprites:
+  - {fileID: -234444918, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  - {fileID: -1312396792, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
+  MapTexts:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4407564445958454380
 GameObject:
   m_ObjectHideFlags: 0
