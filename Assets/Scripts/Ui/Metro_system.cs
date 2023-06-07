@@ -2,53 +2,64 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static MapController;
 
 public class Metro_system : MonoBehaviour
 {
-    public bool isOpen = false;
+    public static Metro_system instance;
+
+    [HideInInspector] public bool isOpen = false;
+    [HideInInspector] public bool isAbleToOpen;
+    [HideInInspector] public bool hasPlayerChoosen;
+
+    public string currentScene;
 
     [SerializeField] private GameObject mapController;
     [SerializeField] public Pause_menu menu;
 
     public GameObject metroMenu;
+    public GameObject formSwitchController;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.M))
+        if (isAbleToOpen)
         {
-            if (menu.isPaused)
+            if (Input.GetKeyDown(KeyCode.M) && !menu.isPaused && !menu.dialogues.dialogueStarted && !hasPlayerChoosen)
             {
-                return;
+                ToggleActive(true);
             }
-            else
+            if (Input.GetKeyDown(KeyCode.Escape) && !menu.isPaused && !menu.dialogues.dialogueStarted)
             {
-                if (isOpen)
-                {
-                    isOpen = false;
-                    Close();
-                }
-                else
-                {
-                    isOpen = true;
-                    Open();
-                }
+                ToggleActive(false);
             }
         }
     }
 
-    private void Open()
+    public void ToggleActive(bool isActive)
     {
-        metroMenu.SetActive(true);
-        mapController.SetActive(true);
+        metroMenu.SetActive(isActive);
+        mapController.SetActive(isActive);
+        formSwitchController.SetActive(!isActive);
+        Time.timeScale = isActive ? 0 : 1;
+        isOpen = isActive;
     }
 
-    private void Close()
+    public void TransportPlayer(string locationScene)
     {
-        metroMenu.SetActive(false);
-        mapController.SetActive(false);
+        hasPlayerChoosen = true;
+        ToggleActive(false);
+        if (locationScene != currentScene)
+        {
+            hasPlayerChoosen = false;
+            SceneManager.LoadScene(locationScene);
+        }
     }
 }

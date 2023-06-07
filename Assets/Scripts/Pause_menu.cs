@@ -53,7 +53,7 @@ public class Pause_menu : MonoBehaviour
             {
                 Resume();
             }
-            else
+            else if(!isPaused && !Metro_system.instance.isOpen)
             {
                 Pause();
             }
