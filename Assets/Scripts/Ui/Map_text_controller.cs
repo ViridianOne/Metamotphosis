@@ -52,7 +52,7 @@ public class Map_text_controller : MonoBehaviour
                 RoomText.text = "Room: " + "<color=#E50049>341-" + roomNumber + "</color>";
                 break;
 
-            case Location.locationCenter:
+            case Location.centralLocation:
                 SectionText.text = "Location: " + "<color=#2A00E5>251</color>";
                 RoomText.text = "Room: " + "<color=#2A00E5>" + roomNumber + "</color>";
                 break;

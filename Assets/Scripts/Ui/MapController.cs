@@ -15,7 +15,7 @@ public enum Location
     location251,
     locztion296,
     location341,
-    locationCenter,
+    centralLocation,
     None,
 }
 
