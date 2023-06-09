@@ -22,6 +22,11 @@ public class MecrobotActiveZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (LevelManager.instance.isBossDefeated)
+        {
+            enterDetector.enabled = false;
+            return;
+        }
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             if (!boss.IsFightStarted)
@@ -30,7 +35,7 @@ public class MecrobotActiveZone : MonoBehaviour
                 enterDetector.enabled = true;
                 boss.RestoreInitialStates();
                 LevelManager.instance.SetMapInfo(location, roomNumber, positionOnMap);
-                Player.instance.respawnPoint = startPlayerPos;
+                // Player.instance.respawnPoint = startPlayerPos;
                 Physics2D.IgnoreLayerCollision(9, 13, true);
             }
         }

@@ -79,7 +79,7 @@ public class NPC : MonoBehaviour
                 wasDialogue = true;
                 if (mecroToUnlock != MecroStates.none)
                 {
-                    MecroSelectManager.instance.isMecroUnlocked[(int)mecroToUnlock] = true;
+                    MecroSelectManager.instance.SetMecroUnlock(mecroToUnlock, true);
                 }
             }
         }

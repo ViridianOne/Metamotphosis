@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistance
 {
     public static LevelManager instance;
 
-    public Location currentLocation { get; private set; }
+    private bool hasLocationSet = false;
+    [SerializeField] private Location startLocation;
+
+    public Location currentLocation { get; private set; } = Location.None;
     public int currentRoomNumber { get; private set; }
     public Vector3Int currentPositionOnMap { get; private set; }
     [SerializeField] private Light2D globalLight;
@@ -15,6 +18,12 @@ public class LevelManager : MonoBehaviour
 
     public int disksCount { get; private set; }
     public int maxDisksAmount;
+
+    public bool containsBoss = false;
+    [HideInInspector] public bool isBossDefeated = false;
+    [HideInInspector] public SerializableDictionary<string, bool> collectedDisks;
+    [HideInInspector] public bool isCompleted;
+
 
     private void Awake()
     {
@@ -30,9 +39,21 @@ public class LevelManager : MonoBehaviour
 
     public void SetMapInfo(Location location, int roomNumber, Vector3Int positionOnMap)
     {
+        hasLocationSet = true;
         currentLocation = location;
         currentRoomNumber = roomNumber;
         currentPositionOnMap = positionOnMap;
+
+        if (location == Location.location26 || location == Location.location116 || location == Location.locztion296)
+        {
+            if (roomNumber == 15)
+                isCompleted = true;
+        }
+        else
+        {
+            if (roomNumber == 14)
+                isCompleted = true;
+        }
     }
 
     public void SetGlobalLightItensity(float intensity)
@@ -41,8 +62,32 @@ public class LevelManager : MonoBehaviour
         isDarknessOn = intensity == 0;
     }
 
-    public void CollectDick()
+    public void CollectDisk()
     {
         disksCount++;
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (hasLocationSet && (int)currentLocation != data.lastLocation
+            || !hasLocationSet && (int)startLocation != data.lastLocation)
+        {
+            MecroSelectManager.instance.respawnPoint.position = data.lastCheckpoint = Checkpoints.instance.first.position;
+        }
+        if (containsBoss)
+            isBossDefeated = data.isBossDefeated;
+        disksCount = data.collectedDisksCount;
+        collectedDisks = data.collectedDisks;
+        isCompleted = data.completedLocations[(int)(hasLocationSet ? currentLocation : startLocation)];
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (containsBoss)
+            data.isBossDefeated = isBossDefeated;
+        data.lastLocation = (int)currentLocation;
+        data.collectedDisksCount = disksCount;
+        data.collectedDisks = collectedDisks;
+        data.completedLocations[(int)currentLocation] = isCompleted;
     }
 }

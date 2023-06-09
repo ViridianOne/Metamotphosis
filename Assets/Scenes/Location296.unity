@@ -38125,6 +38125,10 @@ PrefabInstance:
       value: Disk
       objectReference: {fileID: 0}
     - target: {fileID: 1587194312233092252, guid: 4fc7068c49a18ac46a17b460765f0c53, type: 3}
+      propertyPath: id
+      value: c6a2c609-9430-4848-8b6f-5755ab3d3d29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587194312233092252, guid: 4fc7068c49a18ac46a17b460765f0c53, type: 3}
       propertyPath: location
       value: 6
       objectReference: {fileID: 0}
@@ -53921,6 +53925,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e37d50367399a46b672614b55047c1, type: 3}
+--- !u!1001 &1663111486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 350416663499926715, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_Name
+      value: DataManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 953.32227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 471.1098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.20535
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944514021625597816, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fade1b7f398e7f4e8a7eecd11113315, type: 3}
 --- !u!1 &1667809171
 GameObject:
   m_ObjectHideFlags: 0
@@ -54026,6 +54087,14 @@ PrefabInstance:
       propertyPath: globalLight
       value: 
       objectReference: {fileID: 361479093}
+    - target: {fileID: 8037022397782732795, guid: 299680f27f572194e92beaca3f2aeee3, type: 3}
+      propertyPath: containsBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037022397782732795, guid: 299680f27f572194e92beaca3f2aeee3, type: 3}
+      propertyPath: startLocation
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 299680f27f572194e92beaca3f2aeee3, type: 3}
 --- !u!1001 &1685178758
@@ -55505,6 +55574,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
       propertyPath: guardForm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}
+      propertyPath: mecroToUnlock
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000293336948289013, guid: 246faa6f821222e4e8456195bf5db37b, type: 3}

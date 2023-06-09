@@ -10,22 +10,23 @@ public class Checkpoint : MonoBehaviour
     public GameObject notActiveCheck;
     public bool currentCheck = false;
     public int index;
-    [SerializeField]private int currentIndex;
-    [SerializeField]private int previousIndex;
+    [SerializeField] private int currentIndex;
+    [SerializeField] private int previousIndex;
     [SerializeField] Light2D objectLight;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !currentCheck)
         {
-            MecroSelectManager.instance.respawnPoint.position = other.transform.position;
+            MecroSelectManager.instance.respawnPoint.position = transform.position;
             AudioManager.instance.Play(0);
             Checkpoints.instance.currentCheckpoint = index;
             Checkpoints.instance.previousCheckpoint = index - 1;
             currentCheck = true;
-            //DataManager.instance.SaveGame();
+            DataManager.instance.SaveGame();
         }
     }
+
     public void Update()
     {
         if (index == Checkpoints.instance.currentCheckpoint)
@@ -41,5 +42,4 @@ public class Checkpoint : MonoBehaviour
         }
         objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
     }
-
 }

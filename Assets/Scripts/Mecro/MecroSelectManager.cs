@@ -137,16 +137,23 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
 
     public bool IsPlayerInvisible { get => instantiatedMecros[(int)MecroStates.form206].isAbilityActivated; }
 
+    public void SetMecroUnlock(MecroStates mecro, bool isUnlocked)
+    {
+        isMecroUnlocked[(int)mecro] = isUnlocked;
+        FormSwitchIconChanger.instance.SetPossibleState(mecro, isUnlocked);
+    }
+
     public void LoadData(GameData data)
     {
-        isMecroUnlocked = data.mecroFromsAvailabilty;
+        for (var i = 0; i < data.mecroFormsAvailabilty.Length; i++)
+            SetMecroUnlock((MecroStates)i, data.mecroFormsAvailabilty[i]);
         respawnPoint.position = data.lastCheckpoint;
         Player.instance.transform.position = respawnPoint.position;
     }
 
     public void SaveData(ref GameData data)
     {
-        data.mecroFromsAvailabilty = isMecroUnlocked;
+        data.mecroFormsAvailabilty = isMecroUnlocked;
         data.lastCheckpoint = respawnPoint.position;
     }
 }

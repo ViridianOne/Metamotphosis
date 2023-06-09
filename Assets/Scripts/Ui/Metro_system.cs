@@ -59,6 +59,7 @@ public class Metro_system : MonoBehaviour
         if (locationScene != currentScene)
         {
             hasPlayerChoosen = false;
+            DataManager.instance.SaveGame();
             SceneManager.LoadScene(locationScene);
         }
     }
