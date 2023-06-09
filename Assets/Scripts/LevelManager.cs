@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +17,14 @@ public class LevelManager : MonoBehaviour
 
     public int disksCount { get; private set; }
     public int maxDisksAmount;
+
+    public int AchievementsCount { get; set; }
+    public int maxAchievementsAmount;
+    [SerializeField] public CustomAchievement[] AchievementsList { get; private set; }
+
+    public int lossesCount { get; private set; }
+    public TimeSpan timePlaying { get; private set; }
+    
 
     private void Awake()
     {
@@ -44,5 +54,20 @@ public class LevelManager : MonoBehaviour
     public void CollectDick()
     {
         disksCount++;
+    }
+
+    public void CountLosses()
+    {
+        lossesCount++;
+    }
+
+    public void SetTime(TimeSpan time)
+    {
+        timePlaying = time;
+    }
+
+    public void UpdateAchievements(CustomAchievement[] achievementsList)
+    {
+        AchievementsList = achievementsList;
     }
 }
