@@ -282,7 +282,7 @@ public class Mecro251 : Player
             AudioManager.instance.Play(22);
         }
         yield return new WaitForSeconds(timeAfterShoot);
-        rigidBody.gravityScale = 4;
+        rigidBody.gravityScale = gravity;
         isAbleToMove = true;
     }
 

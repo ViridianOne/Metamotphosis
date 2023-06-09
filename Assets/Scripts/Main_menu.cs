@@ -1,44 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Main_menu : MonoBehaviour
 {
-    [SerializeField] private string location161, location71, location341;
+    private bool isLoadingScene = false;
+    [SerializeField] private string[] locations;
     [SerializeField] private AudioSource music;
+    [SerializeField] private TextMeshProUGUI tmp;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !isLoadingScene)
         {
+            isLoadingScene = true;
+            tmp.text = "Loading...";
             music.Stop();
-            SceneManager.LoadScene(nextScene);
-        }*/
+
+            var lastLocation = DataManager.instance.GetLocation();
+            if (lastLocation == null)
+            {
+                DataManager.instance.NewGame();
+                lastLocation = (int)Location.location161;
+            }
+
+            SceneManager.LoadSceneAsync(locations[(int)lastLocation]);
+        }
     }
 
+
+    //То, что ниже, использовать не нужно
     public void OpenLocation161()
     {
         music.Stop();
-        SceneManager.LoadScene(location161);
+        SceneManager.LoadScene("location161");
     }
 
     public void OpenLocation71()
     {
         music.Stop();
-        SceneManager.LoadScene(location71);
+        SceneManager.LoadScene("location71");
     }
 
     public void OpenLocation341()
     {
         music.Stop();
-        SceneManager.LoadScene(location341);
+        SceneManager.LoadScene("location341");
     }
 }

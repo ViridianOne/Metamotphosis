@@ -1,0 +1,2823 @@
+fileFormatVersion: 2
+guid: 9d4a89cc9aa516a4484ad021e1a94947
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 22
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: METRO STATION_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d995a9df7f296fa4eb43e39d6f9c4136
+      internalID: -1717461730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_1
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93fd2dbf9e8ec74ca86a477fc3305bf
+      internalID: -1896431888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b3cbe5ba3f93546a2159401a1e94d9
+      internalID: -565276948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_3
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccbed009a049204484c1246a9981b83
+      internalID: 63314310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_4
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef4b2014c3180844b814174fa906711
+      internalID: 835439294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_5
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67471f365bd241489f94f826c73e73f
+      internalID: 1070566431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_6
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e41d1a3fdd72b46b7257ba9e3a0646
+      internalID: 269156095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_7
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70565ad08f94f404b914c6d34a962004
+      internalID: 338262920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_8
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6c1974909580f4bacde7d4007d29a1
+      internalID: -737256878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_9
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59bd8f68ac38c54bb6d9d55c832203e
+      internalID: 1424133176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_10
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bb5c6708fb32a4ab6e80d8b8b9d617
+      internalID: 1538694082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_11
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe14cc01982c1c4da54de9d5edb6ab2
+      internalID: 1140356001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_12
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1296
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb6c3d08a8ed28489f8f1cc5c3fbef3
+      internalID: 170585337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997ace7adb8379c4597d11b3496aff07
+      internalID: -1135474243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_14
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6622cb7de0fca439c59b20bcc07d65
+      internalID: 936368247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25759a4da81f7441ae96ecb3c101477
+      internalID: 1714609212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_16
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363bc05231765ff44ab324986eb59f30
+      internalID: 1932917574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_17
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee3507cb85022c4b9722920a76596f7
+      internalID: 1471247560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_18
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585dc70ea8f5adb4695fb4b47975f3f9
+      internalID: -1517086062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_19
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac1424243c8fee4e878a34d57916b77
+      internalID: -357322889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_20
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee485c6274e9a0f4ba5d4a632a6aee96
+      internalID: -561000932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_21
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d7996282df8ad459e737bfdcfab526
+      internalID: -826353285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_22
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94d586c2c51c3848b8dad1a223ff834
+      internalID: 1270526063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_23
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8f681e5eff4a04eacc597d982bb303
+      internalID: -1252690897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_24
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d035768e78bfa418c8e72ca95125f4
+      internalID: 1213075989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_25
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1152
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b1300f0f0a1e1439f74712fb5c9b15
+      internalID: -1598505438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93540a261c8357346800d7c11ad61aa8
+      internalID: 1426479371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_27
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f0f6f7298b24d4fbc88a4793127fe3
+      internalID: -2060469385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_28
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f15d6d686ee1646862829e525fc8b7
+      internalID: -809009805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_29
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f9ba21a69b2dd48b453ed2d5460f6d
+      internalID: -420261886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_30
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de285213c5a9df40987eb3168a7b2b8
+      internalID: -1504228407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_31
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30397efabd5458740ab43048505b1e66
+      internalID: 845775865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_32
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698bcfca18f8a73428b55a80b1887363
+      internalID: 795975878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_33
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816da6549202c3046aa3e2db1b3440d9
+      internalID: 952166286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_34
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1e0e4799e44d34e87d80478e89e05b
+      internalID: 1574996156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_35
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbf242aa46231149a06205b9465b41b
+      internalID: -402269412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_36
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcc370abe8f1b047a465aa08d55ec7e
+      internalID: -1196812251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_37
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163cba4b4c466634ea86b7a9c1dbe012
+      internalID: -1269049885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_38
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1008
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b2f356bc5a88549a19792f3a1bfc72
+      internalID: -992646338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7227d2cf02dfb545a3c88c39e289fc4
+      internalID: -1029830826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_40
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d818951db5d148489d0307cbe2edc5a
+      internalID: 1782133422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_41
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b148f261d87d94cb1a5bef0dd2f9bf
+      internalID: -2128850468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_42
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8262aa33b79d21d4bb1824e65385e259
+      internalID: 484540361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_43
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b76d2765e02c6449c72d4ca9bfb780
+      internalID: 2146780585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_44
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc52f7212d3b814479908e990fa16b94
+      internalID: 277832285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_45
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ada4565543bb5c44916ba8469bf38b3
+      internalID: -1024503063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_46
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587d6b6e8798247499474c899311490a
+      internalID: -556694539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_47
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bf04510836fcc40b0681dce00848e0
+      internalID: 180468708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_48
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b70d67430ae3f479d01b732260de25
+      internalID: 609893769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_49
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489ea9ea5526161499ff5f8f93d34cfa
+      internalID: 1355481821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_50
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4befb2b59d1bd49b0c2c38be5a7792
+      internalID: 1301997127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_51
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 864
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d397dfdce118aa4e9b0aae2f93f2e56
+      internalID: -427128831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2fd3aa00baf3c4dbf0f783f268f3ff
+      internalID: -593326105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_53
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2d1b79f9b675a478d173e62d2083c0
+      internalID: -468521250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_54
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfab383309835b94e804268c98ee9cdd
+      internalID: -1177877453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_55
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f627b8ff2a387f844939c7d28f320e3e
+      internalID: 1394683069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_56
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f18518ae3a74a849bf93d280fb56a06
+      internalID: -1441948938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_57
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffac65fd7d7126448b48982091ff55d
+      internalID: -1549523294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_58
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183270dc5dcc15c4b866c7a9d02bcd45
+      internalID: -1871357094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_59
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f5587fc0edafc45a004f6b6afdffb8
+      internalID: -573152700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_60
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3171c0d5200c642b537ba88451d53e
+      internalID: 1974147840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_61
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bdf057a7d651f44aa7300ffae33406b
+      internalID: 1597155658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_62
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8163975e7ee0d5a4995d605fa31defde
+      internalID: 79588600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_63
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c4258d65439624bbcda49443aedda5
+      internalID: -722371105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_64
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 720
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541c2147cd244e545bf30e46f2a1d03e
+      internalID: 1568819123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0608449cf066ed49bd30de8cc12f399
+      internalID: 263896777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_66
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760ad17aea8740349b51a3b7ceb11192
+      internalID: -181399580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_67
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe1594875aa5864a8579d1c118b62b8
+      internalID: -924384156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_68
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd6f063d6e1f2342b8c187bb5f8d95c
+      internalID: -1334457661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_69
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7256b1ebfc77e40bcc17c665d11fb0
+      internalID: 1957911204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_70
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a890891532d2643459e60735b5b2caa6
+      internalID: 231656195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_71
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aeef54f707f57a418e426217f1a5793
+      internalID: 816920890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_72
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e96ef31c779ab649b6805f1eda01644
+      internalID: -1634612790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_73
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899d64d968dc6ae4f99f2df3343e47eb
+      internalID: 1519091110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_74
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1affe0e6fe36649870c6763e7329ee
+      internalID: -621647344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_75
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4545c465541e174291ea1e966677a1f
+      internalID: 1119899322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_76
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5c409eb69608d41b9118ce36bbc193
+      internalID: -1163934559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_77
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 576
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0ea3bea7b70864e95d6ca404eeda20
+      internalID: -119391399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1a07d780a8b4b40b506124e4296bee
+      internalID: 1850783127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_79
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53ecbc77ef636841bfd300695bb1c73
+      internalID: -420780619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_80
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadf8a2b4405b7644a0ce6d3282dbf6d
+      internalID: 930988288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_81
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfbceeb2f51bf64a9e7716e809ad96c
+      internalID: -1794579622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_82
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c6b127a303edf46bfd173ac760b1b9
+      internalID: 1978448832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_83
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fe8423a70635b4592e679ff5e8ebe6
+      internalID: 844842629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_84
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1a8fc34bd4c1642bcc9f05abbb018a
+      internalID: -2067351651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_85
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d109ed44b419e445bbd34c5d70be5c8
+      internalID: -1248608555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_86
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aba7a26952f4954f8fe3d36ae162790
+      internalID: -204238203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_87
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c330900702bcb428248a7b6ed1e7f9
+      internalID: 419320584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_88
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226fc6e05deb0c94a819768e22c3bdab
+      internalID: 448771895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_89
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b5e208f65a5c24b8a414914228cbba
+      internalID: 1845389009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_90
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 432
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bb5335284dedf49ac64e3c84ac43a0
+      internalID: 193579702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5345139a512671b49a99ffbb97ab6663
+      internalID: 1744462240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_92
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6170d31707166c419f78f693bee75c3
+      internalID: 1483655141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_93
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57c5f374a406a94e976449da1df07f5
+      internalID: 689403255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_94
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750d17bd99a177f45ad129dab6e8a748
+      internalID: 132171592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_95
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9467bd4ab1aeb9348866ddae85c5f945
+      internalID: -1807011298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_96
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71be98d7648e3474fbf1ff9d08cfa14e
+      internalID: 1696269630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_97
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f63242c26a0304e9081edada062f78
+      internalID: -1074941081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_98
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0a1012a3f10da4e8aafcddcf1b8eb7
+      internalID: 959895581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_99
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1171ce4fd7eccc2478672ac4bb3527ec
+      internalID: -1001936448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_100
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dafca9453b023249930026cfe0d906a
+      internalID: -491146190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_101
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c5e5dfba386b344936b38148d1949d
+      internalID: -1998784503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_102
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47126777ff540c94ca56dd11491bbb95
+      internalID: 1077372099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_103
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 288
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94debff024023684586152a72c69bfd5
+      internalID: -1340024972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d73c9311fc29647944b072f3c78b5f
+      internalID: 30393004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_105
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf172a98a14f394eac8da51b3f04fd8
+      internalID: 1284843110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_106
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa527f1441c5b848acf01fa92e7a4e9
+      internalID: 2129246303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_107
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12acc34bef7327e42a5c0a8dc9c56b7d
+      internalID: 640919437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_108
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3db73cd6e092cf4d85e9c78e519856a
+      internalID: 1664521341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_109
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97e6612a99b77542a792c9f502f84cf
+      internalID: 812620260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_110
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b723b8591193ce43a33c07e1050de02
+      internalID: 202183411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_111
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 144
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646e2d19d4c8eff49a12a11368da0948
+      internalID: -328440336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7333a6635d3cc4a4ea6fca7177932b9f
+      internalID: -113384449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_113
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e240f9fa69417c4dbd686d8bdcf810a
+      internalID: -781056651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_114
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1b93b56545a5c4db1a5eab8a8de437
+      internalID: 1520040201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_115
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbd0d4ec8ae7a64d965b0882e05b673
+      internalID: 1918608081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_116
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687b3df216eb0124d9e1f41813576c37
+      internalID: 2053085143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_117
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9078dd888dcf5a4ea45689cb1d79f4e
+      internalID: -700774889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_118
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e6d51f57061354e815f242dd1ddabf
+      internalID: -2110879359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: METRO STATION_119
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 0
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36168fb5bbbb55f42b3c9dd51cefa1d7
+      internalID: -1806358169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      METRO STATION_105: 1284843110
+      METRO STATION_66: -181399580
+      METRO STATION_93: 689403255
+      METRO STATION_1: -1896431888
+      METRO STATION_61: 1597155658
+      METRO STATION_31: 845775865
+      METRO STATION_41: -2128850468
+      METRO STATION_68: -1334457661
+      METRO STATION_40: 1782133422
+      METRO STATION_37: -1269049885
+      METRO STATION_75: 1119899322
+      METRO STATION_80: 930988288
+      METRO STATION_117: -700774889
+      METRO STATION_86: -204238203
+      METRO STATION_45: -1024503063
+      METRO STATION_35: -402269412
+      METRO STATION_109: 812620260
+      METRO STATION_36: -1196812251
+      METRO STATION_26: 1426479371
+      METRO STATION_46: -556694539
+      METRO STATION_50: 1301997127
+      METRO STATION_29: -420261886
+      METRO STATION_27: -2060469385
+      METRO STATION_56: -1441948938
+      METRO STATION_58: -1871357094
+      METRO STATION_119: -1806358169
+      METRO STATION_59: -573152700
+      METRO STATION_42: 484540361
+      METRO STATION_6: 269156095
+      METRO STATION_15: 1714609212
+      METRO STATION_70: 231656195
+      METRO STATION_20: -561000932
+      METRO STATION_81: -1794579622
+      METRO STATION_95: -1807011298
+      METRO STATION_99: -1001936448
+      METRO STATION_79: -420780619
+      METRO STATION_108: 1664521341
+      METRO STATION_55: 1394683069
+      METRO STATION_102: 1077372099
+      METRO STATION_101: -1998784503
+      METRO STATION_21: -826353285
+      METRO STATION_85: -1248608555
+      METRO STATION_57: -1549523294
+      METRO STATION_97: -1074941081
+      METRO STATION_71: 816920890
+      METRO STATION_13: -1135474243
+      METRO STATION_8: -737256878
+      METRO STATION_103: -1340024972
+      METRO STATION_94: 132171592
+      METRO STATION_88: 448771895
+      METRO STATION_3: 63314310
+      METRO STATION_73: 1519091110
+      METRO STATION_17: 1471247560
+      METRO STATION_115: 1918608081
+      METRO STATION_10: 1538694082
+      METRO STATION_30: -1504228407
+      METRO STATION_90: 193579702
+      METRO STATION_43: 2146780585
+      METRO STATION_114: 1520040201
+      METRO STATION_82: 1978448832
+      METRO STATION_33: 952166286
+      METRO STATION_18: -1517086062
+      METRO STATION_53: -468521250
+      METRO STATION_98: 959895581
+      METRO STATION_72: -1634612790
+      METRO STATION_111: -328440336
+      METRO STATION_52: -593326105
+      METRO STATION_104: 30393004
+      METRO STATION_112: -113384449
+      METRO STATION_5: 1070566431
+      METRO STATION_48: 609893769
+      METRO STATION_28: -809009805
+      METRO STATION_39: -1029830826
+      METRO STATION_25: -1598505438
+      METRO STATION_54: -1177877453
+      METRO STATION_16: 1932917574
+      METRO STATION_9: 1424133176
+      METRO STATION_51: -427128831
+      METRO STATION_87: 419320584
+      METRO STATION_78: 1850783127
+      METRO STATION_116: 2053085143
+      METRO STATION_12: 170585337
+      METRO STATION_34: 1574996156
+      METRO STATION_11: 1140356001
+      METRO STATION_19: -357322889
+      METRO STATION_64: 1568819123
+      METRO STATION_32: 795975878
+      METRO STATION_0: -1717461730
+      METRO STATION_2: -565276948
+      METRO STATION_91: 1744462240
+      METRO STATION_84: -2067351651
+      METRO STATION_4: 835439294
+      METRO STATION_14: 936368247
+      METRO STATION_63: -722371105
+      METRO STATION_23: -1252690897
+      METRO STATION_89: 1845389009
+      METRO STATION_83: 844842629
+      METRO STATION_22: 1270526063
+      METRO STATION_38: -992646338
+      METRO STATION_67: -924384156
+      METRO STATION_92: 1483655141
+      METRO STATION_24: 1213075989
+      METRO STATION_47: 180468708
+      METRO STATION_74: -621647344
+      METRO STATION_110: 202183411
+      METRO STATION_100: -491146190
+      METRO STATION_62: 79588600
+      METRO STATION_113: -781056651
+      METRO STATION_44: 277832285
+      METRO STATION_118: -2110879359
+      METRO STATION_106: 2129246303
+      METRO STATION_60: 1974147840
+      METRO STATION_49: 1355481821
+      METRO STATION_76: -1163934559
+      METRO STATION_7: 338262920
+      METRO STATION_96: 1696269630
+      METRO STATION_107: 640919437
+      METRO STATION_65: 263896777
+      METRO STATION_69: 1957911204
+      METRO STATION_77: -119391399
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

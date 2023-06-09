@@ -329,7 +329,7 @@ public class Mecrobot : MonoBehaviour
     private void Attack()
     {
         attacksCount += 1;
-        var state = 1; // Random.Range(0, 4);
+        var state = Random.Range(0, 4);
         if (state < 2 && bossDamageCount < 3)
         {
             currentBot = MecroStates.form161;
@@ -578,6 +578,7 @@ public class Mecrobot : MonoBehaviour
     {
         isActive = false;
         isBossDefeated = true;
+        LevelManager.instance.isBossDefeated = true;
         anim.SetTrigger("destroy");
         rigidBody.velocity = Vector2.zero;
         rigidBody.gravityScale = 0;
@@ -585,6 +586,8 @@ public class Mecrobot : MonoBehaviour
         yield return new WaitForSeconds(bossDefeatTime);
 
         AudioManager.instance.Play(18);
+        LevelManager.instance.isBossDefeated = true;
+        DataManager.instance.SaveGame();
         victoryScreen.SetActive(true);
         SetActive(false);
     }

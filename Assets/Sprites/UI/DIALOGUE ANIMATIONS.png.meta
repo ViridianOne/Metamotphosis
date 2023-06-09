@@ -1,0 +1,3945 @@
+fileFormatVersion: 2
+guid: 53330273a2792aa4b9776aea0bab1e60
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdefc598f3d45343bfff07736505741
+      internalID: -308903724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa776dbca549e84c865ae212a6c24d2
+      internalID: 2050651673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_2
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a70d7adbfc8834ba5b5747cb04a2c4
+      internalID: -2109932806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e888e26bfadde4c4cb0fb327fe690915
+      internalID: 377244362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_4
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8315cb688115445974914459bc48d5
+      internalID: 389927140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_5
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ab4b2cd421c6c4e869eaa33a823ce5
+      internalID: 1957487811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_6
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9bbfdde41779fe40bc47f5ea46c87f3
+      internalID: -1689674260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_7
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fcaeeb6d3b33c4da199d3884f1d800
+      internalID: -1181026709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_8
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d209e2ac995321418f50b26084a0d20
+      internalID: -1463164109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_9
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2bf42ebac84da459ca0eb4e1627b8a
+      internalID: 1367608395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_10
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8304bc2f453e4409a7369473132ac4
+      internalID: -605235570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_11
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106018f29219c1843a6e8763e5cc3337
+      internalID: 1508930901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_12
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096cc7bc7e3390e40a6e7195747052af
+      internalID: -1523120216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_13
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99be09871d3f5ba4e96511823814da77
+      internalID: 565112785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_14
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d527eee51a846764fac07aaae85550a6
+      internalID: -395051739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_15
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1462709fbd8b8f42965e46486b7907a
+      internalID: 1372774583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_16
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1372a8ed15ab274fbb8691dcded6ab1
+      internalID: -984176570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_17
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d680ebede437191419769577446df17c
+      internalID: 1094242118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_18
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 736
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6a75a28200218498a34ffccfb24c48
+      internalID: 1430622929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01abc141ef9959a44843d0f27bf0d00f
+      internalID: 242698269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_20
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d599a205e2a6404299bc5624d860590
+      internalID: -1518112931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_21
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f64dfdf11c75124bbafda2fc54db1c3
+      internalID: -1826754040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_22
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef003995203a7fe4c916cf56ccde1f63
+      internalID: 737307556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d765216d3b1774498756cdf52aa0a40
+      internalID: 1519364895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_24
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeaaeafbfbbe0e04280ff1ba3d5899e3
+      internalID: 1556284920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_25
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f30f54ae676a24fa6275b62560c68e
+      internalID: 1978764183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_26
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f6b88d39e8cfd46916a5d9f4a3c713
+      internalID: 1468895296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_27
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5849197d335a34ea7056df4a535db2
+      internalID: -1668334061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_28
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6795f6776f987448abbd94001d1457
+      internalID: -989444467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_29
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265032c9d43d85740b2463e0e90e26e0
+      internalID: -411343327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_30
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cba16f065683884ca69bb0575622362
+      internalID: 1353761557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_31
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73accd87aeaa6a42981e354020ead3f
+      internalID: 1434350835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_32
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94671767aa0a3c4eb7ede5d0bc2dd18
+      internalID: -1213486835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_33
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31ced1882847ea46927916b28af09c2
+      internalID: 1921967158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_34
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a159b61bf81644f859a1efc9e35513
+      internalID: 835980645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_35
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc40b76d79c1a814dafac4382ba42856
+      internalID: -1923814941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_36
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e8e7e1262164c448d490fb71ee78af
+      internalID: 188416241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_37
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39ac89614c6ec440bfb9941bd8260d6
+      internalID: -1144809260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdbb2fe508bedf46aa7fe3d2c5c6e40
+      internalID: 282742040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_39
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67dc165022638847a35ebdf6d06f96c
+      internalID: 1148025561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_40
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85192d6518252d429235b35fdbadf70
+      internalID: -999010557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_41
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f62a0b5058a1364e80c9e0d49c64d5e
+      internalID: -1822373435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_42
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0a6a1039114ba4c8a6a098ed80f069
+      internalID: 1143346250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_43
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b2a7b04d31ad644918411a416d30c8
+      internalID: 714168652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_44
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a960e0f753c72c54c9f9ded222a8ad19
+      internalID: 545975769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_45
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf946f831eb4e948bd4c286b2be711c
+      internalID: 2115942569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_46
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7b840721b181b41ac331d715af5820
+      internalID: 472448313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_47
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc7301b007c2364c907bfbda139d4dc
+      internalID: 1849458301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_48
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bee0c4ccf159a849b6effa5fa9a6a93
+      internalID: 540105766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_49
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b88f1e0545399846b68cb6e289d60ca
+      internalID: 1608190327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_50
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19dcfc7d2ae37942b414cbc2a13a009
+      internalID: 713127131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_51
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e8080e55854bc4d9e1833a88f06e4f
+      internalID: 1990283047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_52
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d77508dcdf71645a9678196e82a199
+      internalID: 330499783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_53
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f91798cc41b2e64ea7419f4a9387f58
+      internalID: -386627603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_54
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926c75775b78d27419f0d4c73919ccb5
+      internalID: -1368062354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_55
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbdf711c3a28f54791fd81904c7c7ce
+      internalID: -478350679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_56
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 552
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cad73755d5dfd4a9197f953f7e8532
+      internalID: -1741310141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466185f5537b8db4f9890251fb880c15
+      internalID: 334748085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_58
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df0afaec6c444f43af64d9b0aed404a
+      internalID: 704154790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_59
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d32d084686b5c947a63fe500030a4ad
+      internalID: 1798169177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_60
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f841527a5c940ca4cb110d620debc353
+      internalID: -680048230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_61
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda46a5c18e74e5459273a952bf47f04
+      internalID: -1971828732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_62
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a273ff960b0ba4290cb337c1cca221
+      internalID: -872015933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_63
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8475439d4dc8ce04785c7ba34a69317e
+      internalID: 915263339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_64
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacc4904d92a94b4f8dffb49f4b77f65
+      internalID: 1716421390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_65
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee114aebe0d14c42bd2f18c80e41323
+      internalID: -302226748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_66
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3d544617bcebc47a86e9c4508ece28
+      internalID: 1504917464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_67
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc22dc8ec25be32468045fc87c974cf0
+      internalID: -1807439670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_68
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf70ca4e8d7526b4bae177fe981ff175
+      internalID: -1026127894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_69
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31a74392b5970c4386e958cc6dee6f0
+      internalID: -1803198195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_70
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a73154f62568f441b94ae49b572743e
+      internalID: -928508376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_71
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3307e2ac802672649bfc0768c58d517a
+      internalID: -1585451522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_72
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7c95994471db44bbdb6ad1149dfa38
+      internalID: -1639676168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_73
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897a6ed8663d0324ca11caed65cc0c7f
+      internalID: -1735790924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_74
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8ae82686d4a654bbd90d05d069f9e6
+      internalID: 2070329713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_75
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 460
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f2d627d1bea434d8c5ea42f8c71a9d
+      internalID: -1520062689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5932e27410039fe4f8730b6a0c26850c
+      internalID: -1709651309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_77
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c39199944e5e9246acecc0ca9ff2447
+      internalID: -425725298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_78
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742a1ac2e88343640a8d605461468934
+      internalID: 908972395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_79
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7231bd7a36975a34e8cc28de9e1ccf4f
+      internalID: 782928087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_80
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ec9cb7a90b07c4b9dce8835f6cb0b6
+      internalID: -1362315378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_81
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2918b8a4ebba87744a8a1ea4c8a009cd
+      internalID: 1850446444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_82
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fb918f048c31e43a3d6e5c09fdac0b
+      internalID: 1316639256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_83
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d290bea9a8038540b2b01741ab75e83
+      internalID: 194333477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_84
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132de816c963a1141becc7dc46e2cf4f
+      internalID: -1586019768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_85
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d725cca75450e48aa29b2d0e17cf38
+      internalID: 156710532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_86
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00260ac21f9e5c34a8216dc69bea0d90
+      internalID: 1163957746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_87
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1264a95ce2f5abe41a7950cd4765afa6
+      internalID: -2074749894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_88
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c48c0466b20d04a81940f44854fd39
+      internalID: -1834573430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_89
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e26bd64bfdaf841af490a21b2ab899
+      internalID: 1888952979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_90
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7db395c791f46148b03d9d0dd2ff6bb
+      internalID: -1336028885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_91
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305fdc19bfa5aff4494c8bd78bbbdb68
+      internalID: 438713440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_92
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2416e5c39f3b5274bbea1162590a8593
+      internalID: -952620327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_93
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42840c7d7baabdc47b04ff9b5e665d7e
+      internalID: -1354667371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_94
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 368
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d313623a7b8e447ad6270bae1f73b1
+      internalID: 1018347458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd37ea9f593b0c24fb53d1cfd562962d
+      internalID: 1016797306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_96
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae61b3c58382334eafab2a3a0c98394
+      internalID: 144001417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_97
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898353e79f67f404099c0bbc9d8887b2
+      internalID: 2129736928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_98
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7348cc87ab7569341b412daad5aac60f
+      internalID: -350199871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_99
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d780236f5f954409b70c293a24ef2e
+      internalID: -2043721844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_100
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541c63ff83d089c44935db5291d9cf71
+      internalID: -1459578204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_101
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6529c1f43c35e48ad345ec10240354
+      internalID: -687874366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_102
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb4be1a90e06264bbfb9b4426bbb00e
+      internalID: -1129979335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_103
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6155ef1b40ce1498a1198c7ff8f01d
+      internalID: 273610300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_104
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d384c4c1bf1bdb45a65afcff9dd212a
+      internalID: -1985548002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_105
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d8f67c75be22349b77adb78f865ff9
+      internalID: 593026859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_106
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e937c831bf43a4a9342a6ff2f24aee
+      internalID: 1423228497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_107
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b4c44d1f15c7f43ab3fd214229bb90
+      internalID: -1278352800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_108
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c2f1427da4b234388e8cc11127d9a9
+      internalID: 345943957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_109
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030eff903bf1c5c479b7d9351daa95be
+      internalID: 702309089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_110
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2c54535a575654e9f7d87d6ad76688
+      internalID: 1006551798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_111
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e079d5ea4db4644db24bc01ceb7411d
+      internalID: -969703838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_112
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cc575f51fcdd94da5a72e16bcfb4dc
+      internalID: -20730166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_113
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 276
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37395c36ea2b16140aab4bca44cff96a
+      internalID: 1365020933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_114
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7a353c37d420e4f9f275f98aa4b207
+      internalID: -1581231480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_115
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55cc182e7f7cae4cb97d9ec150c56f2
+      internalID: -1071596527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_116
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f73a055b65c24449ed279f4114bf46
+      internalID: -296837619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_117
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d9765729d3bb24f87ab7d6cbf629bf
+      internalID: 581045281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_118
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a464de3c24ebd4581cddac5711511c
+      internalID: 1911742395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_119
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b05ab4d6d98a9c4cb42e92beeaeba9f
+      internalID: 2116449729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_120
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9beded75c301d62459deb90754895feb
+      internalID: -208599659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_121
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f974a383bc1144bafe63e1e9f111a0
+      internalID: 1859684194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_122
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec61b87b84e6a24eadf8523a8740c9c
+      internalID: 1693322493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_123
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c62744f664a2f84dafb014f81228abe
+      internalID: -1076851841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_124
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48328ca665911504a919e5f217879d79
+      internalID: 833740817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_125
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8147f5a5c28ef41800b2f727689c5f
+      internalID: 1198016587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_126
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7b6c36cc2f7144eaf9c5bb9ab8579a
+      internalID: 1675972130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_127
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87e5f697ad23ac48b4a7ed144bcd2ea
+      internalID: 1664111077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_128
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2255d8afd62907c4dae1a09ac1e906cc
+      internalID: 513146642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_129
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb2ea2af2069c648b6e2547782cfd26
+      internalID: -1413405336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_130
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8171ea37e8ab4f94c83b8dec4c90698b
+      internalID: 586555086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_131
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13d320a094cdc74aa8f3320a8fd676f
+      internalID: -934862305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_132
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 184
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485c01e841b126f42bbf7ab69c1e1adb
+      internalID: 788253347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64dfb7c9176a1cf48914a901d53d10f1
+      internalID: 190378034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_134
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae7c6cbc429ca946ac0fb175f4b6f48
+      internalID: 1124456043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_135
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2eab3b5864212d4b9da20ec2c5efbf7
+      internalID: -2061445434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_136
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10766860522311147a9ed952db18d022
+      internalID: 929496670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_137
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db2f027e83b45d448fcd0da5331a355
+      internalID: 1009761634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_138
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c227b848fbab18540b2f7e7c173f082e
+      internalID: 1540624474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_139
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e92390f48b5f4468f1cca5d13e829c
+      internalID: -1175071862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_140
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b257d7f99d98c3a448986bd1cbcd16e8
+      internalID: -1178847602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_141
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad2b85c931144e4fbb80bd3c4229210
+      internalID: 1638952941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_142
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3cbc4cb77c024458451dbf6131eca3
+      internalID: 1555643607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_143
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbaf477625a4f6b4fb212a439f9841e0
+      internalID: -1029234605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_144
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88567596930bea488da400d81b6c928
+      internalID: -257225443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_145
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee70077f8d02a746993fe820b61094f
+      internalID: 566443726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_146
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ad018924812a34f95f576591ef1a04
+      internalID: 291305870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_147
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df698d56d026f44e831713f5a742cb2
+      internalID: -218135029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_148
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b0e8a50a7d69c458898825ec9a848f
+      internalID: -2116413944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_149
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4a4f14069696541b328086ca971b2e
+      internalID: 984981366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_150
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01db1ba0c594f74c970d2bedbc4a251
+      internalID: -1437056077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_151
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 92
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6622f6341da4449babab079460fab7
+      internalID: -1479058893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_152
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d014d31ac18e8d448aace28fe82f88d
+      internalID: -1440748934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_153
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f894b4399277d0d4eb78883e2adf95d1
+      internalID: 2080003854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_154
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbec16ba4da41d641a5d242436743ae2
+      internalID: 738471125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_155
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b8c5b46b322b343ac720f7d5a8365f
+      internalID: 221711803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_156
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3496303b1fa3f1d43a15dfdaa9019596
+      internalID: 217465475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_157
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3d8150f8831ba4c97541edd86b3927
+      internalID: 201979808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_158
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a744534f3580eec4ead7368c5b0cdd00
+      internalID: 1806646482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_159
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f9737d8041b03458c5522a0f61eef8
+      internalID: 1533209925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_160
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6956514310b59864a83eb88143df6fd0
+      internalID: 1566372081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_161
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8809e71f4904047b7b61043658deab
+      internalID: 814060828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_162
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e47c737fa04fd429f917120c23c72a
+      internalID: 1698001803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_163
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168e06b1c23904d4e83ef65ddde065a6
+      internalID: -1030409414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_164
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e726de382c0a18f4697d2ec131ac8f65
+      internalID: 1567426249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_165
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e600c84939148f449370c365f1b6812
+      internalID: 1794116172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_166
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fc7a31d9300ef4aa4b100ce0f2de99
+      internalID: -1711722486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_167
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e85db473fa2cb4bbcc6bbbe1362499
+      internalID: -2130745796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_168
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c2e2df50cfeca40b0af825fa3ca5fd
+      internalID: 839131076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_169
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdab733ed03ec504c9826f5e4b41759b
+      internalID: 1189872074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DIALOGUE ANIMATIONS_170
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 0
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca46375e4812af42ac844af74ac7e8c
+      internalID: -1684423953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DIALOGUE ANIMATIONS_123: -1076851841
+      DIALOGUE ANIMATIONS_71: -1585451522
+      DIALOGUE ANIMATIONS_85: 156710532
+      DIALOGUE ANIMATIONS_109: 702309089
+      DIALOGUE ANIMATIONS_90: -1336028885
+      DIALOGUE ANIMATIONS_137: 1009761634
+      DIALOGUE ANIMATIONS_68: -1026127894
+      DIALOGUE ANIMATIONS_149: 984981366
+      DIALOGUE ANIMATIONS_97: 2129736928
+      DIALOGUE ANIMATIONS_128: 513146642
+      DIALOGUE ANIMATIONS_100: -1459578204
+      DIALOGUE ANIMATIONS_159: 1533209925
+      DIALOGUE ANIMATIONS_121: 1859684194
+      DIALOGUE ANIMATIONS_57: 334748085
+      DIALOGUE ANIMATIONS_143: -1029234605
+      DIALOGUE ANIMATIONS_156: 217465475
+      DIALOGUE ANIMATIONS_1: 2050651673
+      DIALOGUE ANIMATIONS_99: -2043721844
+      DIALOGUE ANIMATIONS_45: 2115942569
+      DIALOGUE ANIMATIONS_146: 291305870
+      DIALOGUE ANIMATIONS_141: 1638952941
+      DIALOGUE ANIMATIONS_67: -1807439670
+      DIALOGUE ANIMATIONS_5: 1957487811
+      DIALOGUE ANIMATIONS_82: 1316639256
+      DIALOGUE ANIMATIONS_2: -2109932806
+      DIALOGUE ANIMATIONS_58: 704154790
+      DIALOGUE ANIMATIONS_40: -999010557
+      DIALOGUE ANIMATIONS_72: -1639676168
+      DIALOGUE ANIMATIONS_126: 1675972130
+      DIALOGUE ANIMATIONS_59: 1798169177
+      DIALOGUE ANIMATIONS_91: 438713440
+      DIALOGUE ANIMATIONS_64: 1716421390
+      DIALOGUE ANIMATIONS_136: 929496670
+      DIALOGUE ANIMATIONS_103: 273610300
+      DIALOGUE ANIMATIONS_161: 814060828
+      DIALOGUE ANIMATIONS_69: -1803198195
+      DIALOGUE ANIMATIONS_79: 782928087
+      DIALOGUE ANIMATIONS_38: 282742040
+      DIALOGUE ANIMATIONS_167: -2130745796
+      DIALOGUE ANIMATIONS_158: 1806646482
+      DIALOGUE ANIMATIONS_33: 1921967158
+      DIALOGUE ANIMATIONS_9: 1367608395
+      DIALOGUE ANIMATIONS_112: -20730166
+      DIALOGUE ANIMATIONS_165: 1794116172
+      DIALOGUE ANIMATIONS_133: 190378034
+      DIALOGUE ANIMATIONS_124: 833740817
+      DIALOGUE ANIMATIONS_169: 1189872074
+      DIALOGUE ANIMATIONS_53: -386627603
+      DIALOGUE ANIMATIONS_104: -1985548002
+      DIALOGUE ANIMATIONS_37: -1144809260
+      DIALOGUE ANIMATIONS_116: -296837619
+      DIALOGUE ANIMATIONS_49: 1608190327
+      DIALOGUE ANIMATIONS_52: 330499783
+      DIALOGUE ANIMATIONS_0: -308903724
+      DIALOGUE ANIMATIONS_134: 1124456043
+      DIALOGUE ANIMATIONS_31: 1434350835
+      DIALOGUE ANIMATIONS_145: 566443726
+      DIALOGUE ANIMATIONS_125: 1198016587
+      DIALOGUE ANIMATIONS_34: 835980645
+      DIALOGUE ANIMATIONS_95: 1016797306
+      DIALOGUE ANIMATIONS_122: 1693322493
+      DIALOGUE ANIMATIONS_127: 1664111077
+      DIALOGUE ANIMATIONS_101: -687874366
+      DIALOGUE ANIMATIONS_94: 1018347458
+      DIALOGUE ANIMATIONS_17: 1094242118
+      DIALOGUE ANIMATIONS_4: 389927140
+      DIALOGUE ANIMATIONS_22: 737307556
+      DIALOGUE ANIMATIONS_23: 1519364895
+      DIALOGUE ANIMATIONS_32: -1213486835
+      DIALOGUE ANIMATIONS_108: 345943957
+      DIALOGUE ANIMATIONS_16: -984176570
+      DIALOGUE ANIMATIONS_139: -1175071862
+      DIALOGUE ANIMATIONS_135: -2061445434
+      DIALOGUE ANIMATIONS_118: 1911742395
+      DIALOGUE ANIMATIONS_168: 839131076
+      DIALOGUE ANIMATIONS_119: 2116449729
+      DIALOGUE ANIMATIONS_12: -1523120216
+      DIALOGUE ANIMATIONS_47: 1849458301
+      DIALOGUE ANIMATIONS_163: -1030409414
+      DIALOGUE ANIMATIONS_76: -1709651309
+      DIALOGUE ANIMATIONS_154: 738471125
+      DIALOGUE ANIMATIONS_120: -208599659
+      DIALOGUE ANIMATIONS_48: 540105766
+      DIALOGUE ANIMATIONS_66: 1504917464
+      DIALOGUE ANIMATIONS_142: 1555643607
+      DIALOGUE ANIMATIONS_115: -1071596527
+      DIALOGUE ANIMATIONS_88: -1834573430
+      DIALOGUE ANIMATIONS_41: -1822373435
+      DIALOGUE ANIMATIONS_36: 188416241
+      DIALOGUE ANIMATIONS_96: 144001417
+      DIALOGUE ANIMATIONS_60: -680048230
+      DIALOGUE ANIMATIONS_75: -1520062689
+      DIALOGUE ANIMATIONS_83: 194333477
+      DIALOGUE ANIMATIONS_114: -1581231480
+      DIALOGUE ANIMATIONS_50: 713127131
+      DIALOGUE ANIMATIONS_102: -1129979335
+      DIALOGUE ANIMATIONS_26: 1468895296
+      DIALOGUE ANIMATIONS_162: 1698001803
+      DIALOGUE ANIMATIONS_39: 1148025561
+      DIALOGUE ANIMATIONS_170: -1684423953
+      DIALOGUE ANIMATIONS_93: -1354667371
+      DIALOGUE ANIMATIONS_14: -395051739
+      DIALOGUE ANIMATIONS_20: -1518112931
+      DIALOGUE ANIMATIONS_166: -1711722486
+      DIALOGUE ANIMATIONS_43: 714168652
+      DIALOGUE ANIMATIONS_152: -1440748934
+      DIALOGUE ANIMATIONS_164: 1567426249
+      DIALOGUE ANIMATIONS_29: -411343327
+      DIALOGUE ANIMATIONS_54: -1368062354
+      DIALOGUE ANIMATIONS_153: 2080003854
+      DIALOGUE ANIMATIONS_11: 1508930901
+      DIALOGUE ANIMATIONS_6: -1689674260
+      DIALOGUE ANIMATIONS_56: -1741310141
+      DIALOGUE ANIMATIONS_77: -425725298
+      DIALOGUE ANIMATIONS_157: 201979808
+      DIALOGUE ANIMATIONS_132: 788253347
+      DIALOGUE ANIMATIONS_140: -1178847602
+      DIALOGUE ANIMATIONS_81: 1850446444
+      DIALOGUE ANIMATIONS_51: 1990283047
+      DIALOGUE ANIMATIONS_106: 1423228497
+      DIALOGUE ANIMATIONS_107: -1278352800
+      DIALOGUE ANIMATIONS_130: 586555086
+      DIALOGUE ANIMATIONS_10: -605235570
+      DIALOGUE ANIMATIONS_21: -1826754040
+      DIALOGUE ANIMATIONS_65: -302226748
+      DIALOGUE ANIMATIONS_70: -928508376
+      DIALOGUE ANIMATIONS_86: 1163957746
+      DIALOGUE ANIMATIONS_62: -872015933
+      DIALOGUE ANIMATIONS_78: 908972395
+      DIALOGUE ANIMATIONS_15: 1372774583
+      DIALOGUE ANIMATIONS_113: 1365020933
+      DIALOGUE ANIMATIONS_27: -1668334061
+      DIALOGUE ANIMATIONS_46: 472448313
+      DIALOGUE ANIMATIONS_18: 1430622929
+      DIALOGUE ANIMATIONS_150: -1437056077
+      DIALOGUE ANIMATIONS_74: 2070329713
+      DIALOGUE ANIMATIONS_160: 1566372081
+      DIALOGUE ANIMATIONS_87: -2074749894
+      DIALOGUE ANIMATIONS_110: 1006551798
+      DIALOGUE ANIMATIONS_25: 1978764183
+      DIALOGUE ANIMATIONS_98: -350199871
+      DIALOGUE ANIMATIONS_151: -1479058893
+      DIALOGUE ANIMATIONS_80: -1362315378
+      DIALOGUE ANIMATIONS_30: 1353761557
+      DIALOGUE ANIMATIONS_44: 545975769
+      DIALOGUE ANIMATIONS_105: 593026859
+      DIALOGUE ANIMATIONS_138: 1540624474
+      DIALOGUE ANIMATIONS_148: -2116413944
+      DIALOGUE ANIMATIONS_155: 221711803
+      DIALOGUE ANIMATIONS_42: 1143346250
+      DIALOGUE ANIMATIONS_131: -934862305
+      DIALOGUE ANIMATIONS_35: -1923814941
+      DIALOGUE ANIMATIONS_147: -218135029
+      DIALOGUE ANIMATIONS_61: -1971828732
+      DIALOGUE ANIMATIONS_92: -952620327
+      DIALOGUE ANIMATIONS_89: 1888952979
+      DIALOGUE ANIMATIONS_28: -989444467
+      DIALOGUE ANIMATIONS_55: -478350679
+      DIALOGUE ANIMATIONS_84: -1586019768
+      DIALOGUE ANIMATIONS_63: 915263339
+      DIALOGUE ANIMATIONS_129: -1413405336
+      DIALOGUE ANIMATIONS_8: -1463164109
+      DIALOGUE ANIMATIONS_13: 565112785
+      DIALOGUE ANIMATIONS_3: 377244362
+      DIALOGUE ANIMATIONS_7: -1181026709
+      DIALOGUE ANIMATIONS_24: 1556284920
+      DIALOGUE ANIMATIONS_111: -969703838
+      DIALOGUE ANIMATIONS_144: -257225443
+      DIALOGUE ANIMATIONS_117: 581045281
+      DIALOGUE ANIMATIONS_19: 242698269
+      DIALOGUE ANIMATIONS_73: -1735790924
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

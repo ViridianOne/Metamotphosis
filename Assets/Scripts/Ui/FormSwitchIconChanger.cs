@@ -7,16 +7,19 @@ using UnityEngine.UI;
 
 public class FormSwitchIconChanger : MonoBehaviour
 {
+    public static FormSwitchIconChanger instance;
+
     public Image BackgroundRing;
     private MecroStates CurrentState = MecroStates.form161;
     private string CurrentColorCode = "#13805D";
+    [SerializeField] public FormSelectionIcon[] ButtonImages;
+    [SerializeField] public List<MecroStates> PossibleStates = new();
 
-    [SerializeField]
-    public MecroStates[] PossibleStates;//сюда передать доступные формы
 
-    [SerializeField]
-    public FormSelectionIcon[] ButtonImages;
-
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -148,4 +151,26 @@ public class FormSwitchIconChanger : MonoBehaviour
         }
     }
 
+    public void SetPossibleState(MecroStates mecro, bool isUnlocked)
+    {
+        if (isUnlocked)
+        {
+            if (PossibleStates.Contains(mecro))
+                return;
+            
+            PossibleStates.Add(mecro);
+            foreach (var buttonImage in ButtonImages)
+            {
+                if (mecro == buttonImage.Name)
+                {
+                    buttonImage.Icon.gameObject.SetActive(true);
+                    return;
+                }
+            }            
+        }
+        else
+        {
+            PossibleStates.Remove(mecro);
+        }
+    }
 }

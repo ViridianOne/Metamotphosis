@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class FileDataHandler
 {
-    private string dataPath = "";
-    private string dataFileName = "";
+    private readonly string dataPath = "";
+    private readonly string dataFileName = "";
 
     public FileDataHandler(string dataPath, string dataFileName)
     {
@@ -24,9 +24,9 @@ public class FileDataHandler
             try
             {
                 string dataToLoad = "";
-                using(FileStream stream = new FileStream(fullPath, FileMode.Open))
+                using(var stream = new FileStream(fullPath, FileMode.Open))
                 {
-                    using(StreamReader reader = new StreamReader(stream))
+                    using(var reader = new StreamReader(stream))
                     {
                         dataToLoad = reader.ReadToEnd();
                     }

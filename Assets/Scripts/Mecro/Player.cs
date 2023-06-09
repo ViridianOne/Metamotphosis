@@ -240,7 +240,7 @@ public abstract class Player : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        rigidBody.gravityScale = 4 * (isGravityInverted ? -1f : 1f);
+        rigidBody.gravityScale = gravity * (isGravityInverted ? -1f : 1f);
         yield return new WaitForSeconds(0.3f);
         rigidBody.gravityScale = 0;
         yield return new WaitForSeconds(MecroSelectManager.instance.GetRespawnTime() - 0.3f);

@@ -226,41 +226,6 @@ public class Mecro26 : Player
             accelerate = 0;
         }
 
-
-        //else
-        //{
-        //    //accelerate = Mathf.Abs(targetSpeed) > 0.01f ? runAccelerationAmount : runDeccelerationAmount;
-        //    if (Mathf.Abs(targetSpeed)>0.01f)
-        //    {
-        //        accelerate = runAccelerationAmount;
-        //    }
-        //    else
-        //    {
-        //        accelerate = runDeccelerationAmount;
-        //    }
-        //    if (!isGrounded)
-        //    {
-        //        accelerate *= accelerationInAir;
-        //    }
-        //}
-        ///*if (accelerate == runDeccelerationAmount)
-        //{
-        //    moveInputStatic = moveInput;
-        //}*/
-        //if (moveSpeed < maxSpeed && rigidBody.velocity.x !=0)
-        //{
-        //    moveSpeed += acceleration26;
-        //    if (moveSpeed > maxSpeed)
-        //    {
-        //        moveSpeed = maxSpeed;
-        //    }
-        //    accelerated = true;
-        //}
-        //if (accelerated && moveInput == 0f)
-        //{
-        //    moveSpeed = defaultMoveSpeed;
-        //    accelerated = false;
-        //}
         float moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;
         rigidBody.AddForce(moveForce * Vector2.right, ForceMode2D.Force);
     }
