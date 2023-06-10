@@ -76,6 +76,7 @@ public class Pause_menu : MonoBehaviour
             formSwitchController.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
+        Timer.instance.StartTimer();
     }
 
     private void Pause()
@@ -85,6 +86,7 @@ public class Pause_menu : MonoBehaviour
         formSwitchController.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
+        Timer.instance.EndTimer();
     }
 
     public void OpenSettings()
@@ -161,18 +163,18 @@ public class Pause_menu : MonoBehaviour
     {
         if (activeButtonState == ActiveButtonState.Extras)
         {
-            //if (activePage == extrasPage)
-            //{
-            //    activePage.SetActive(false);
-            //    activePage = null;
-            //    return;
-            //}
-            //else if (activePage != null)
-            //{
-            //    activePage.SetActive(false);
-            //}
-            //extrasPage.SetActive(true);
-            //activePage = extrasPage;
+            if (activePage == extrasPage)
+            {
+                activePage.SetActive(false);
+                activePage = null;
+                return;
+            }
+            else if (activePage != null)
+            {
+                activePage.SetActive(false);
+            }
+            extrasPage.SetActive(true);
+            activePage = extrasPage;
         }
         else
             return;
