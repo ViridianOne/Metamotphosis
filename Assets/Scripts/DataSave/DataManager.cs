@@ -20,6 +20,9 @@ public class DataManager : MonoBehaviour
     private readonly int initialCollectedDisksCount = 0;
     private readonly SerializableDictionary<string, bool> initialCollectedDisks = new();
     private readonly SerializableDictionary<int, bool> initialCompletedLocations = new ();
+    private readonly bool[] initialCompletedAchievements = { false, false, false, false, false, false, false, false };
+    private readonly float elipsedTime = 0;
+    private readonly int playerLosses = 0;
 
     private List<IDataPersistance> dataPersistances;
 
@@ -72,14 +75,15 @@ public class DataManager : MonoBehaviour
     {
         if (Checkpoints.instance)
             Checkpoints.instance.currentCheckpoint = 0;
-        var locationCount = System.Enum.GetNames(typeof(Location)).Length - 2;
+        var locationCount = System.Enum.GetNames(typeof(Location)).Length - 1;
         for (var i = 0; i < locationCount; i++)
         {
-            initialCompletedLocations[i] = false;
+            initialCompletedLocations[i] = i == locationCount - 1;
         }
 
         data = new GameData(startPosition, mecroFormsAvailability, isBossDefeated, 
-            initialLocation, initialCollectedDisksCount, initialCollectedDisks, initialCompletedLocations);
+            initialLocation, initialCollectedDisksCount, initialCollectedDisks, initialCompletedLocations, 
+            initialCompletedAchievements, elipsedTime, playerLosses);
         dataHandler.Save(data);
 
         LoadGame();

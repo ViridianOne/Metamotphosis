@@ -17,6 +17,7 @@ public class Mecro341 : Player
     private float spriteAngle = 0;
     private float xGravity;
     public float deffectTime;
+    [SerializeField] private PointEffector2D diskAttractor;
 
     void Update()
     {
@@ -82,6 +83,7 @@ public class Mecro341 : Player
                     StartCoroutine(TakeDeffect());
                 }
             }
+            diskAttractor.forceMagnitude = LevelManager.instance.completedAchievements[4] ? -10 : 0;
             playerLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
             UpdateLedegGrabbing();
             if (isTouchingLedge)

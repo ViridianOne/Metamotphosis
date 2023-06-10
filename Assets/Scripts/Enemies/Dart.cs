@@ -121,7 +121,8 @@ public class Dart : Enemy
         anim.SetBool("landingMoment", false);
         isAttacking = false;
         Flip();
-        InvertPlayerGravity();
+        if (!(LevelManager.instance.completedAchievements[5] && MecroSelectManager.instance.GetIndex() == 5))
+            InvertPlayerGravity();
         StartCoroutine(JumpSqueeze(1.15f, 0.8f, 0.05f));
     }
 

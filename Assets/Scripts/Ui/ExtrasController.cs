@@ -19,27 +19,36 @@ public class ExtrasController : MonoBehaviour
     void Start()
     {
         instance = this;
-        LevelManager.instance.UpdateAchievements(AchievementsList);
-        LevelManager.instance.AchievementsList[3].SetCompleted();
-    }
-
-    private void Awake()
-    {
-        /*
+        UpdateAchievements();
         Disks.text = "<color=#E50049>Disks: </color>" + LevelManager.instance.disksCount + " / " + LevelManager.instance.maxDisksAmount;
         Losses.text = "<color=#E50049>Losses: </color>" + LevelManager.instance.lossesCount;
         AchievementsCount.text = "<color=#E50049>Achievements: </color>" + LevelManager.instance.AchievementsCount + " / " + LevelManager.instance.maxAchievementsAmount;
-        Time.text = "<color=#E50049>Time: </color>" + LevelManager.instance.timePlaying.ToString("mm':'ss':'ff");
-        */
+        Time.text = "<color=#E50049>Time: </color>" + LevelManager.instance.timePlaying.ToString(@"hh\:mm\:ss");
+    }
+
+    private void UpdateAchievements()
+    {
+        if (AchievementsList.Length == LevelManager.instance.completedAchievements.Length)
+        {
+            for (int i = 0; i < AchievementsList.Length; i++)
+                if (LevelManager.instance.completedAchievements[i])
+                    AchievementsList[i].SetCompleted();
+        }
+    }
+
+    public void UpdateData()
+    {
+        UpdateAchievements();
+        Disks.text = "<color=#E50049>Disks: </color>" + LevelManager.instance.disksCount + " / " + LevelManager.instance.maxDisksAmount;
+        Losses.text = "<color=#E50049>Losses: </color>" + LevelManager.instance.lossesCount;
+        AchievementsCount.text = "<color=#E50049>Achievements: </color>" + LevelManager.instance.AchievementsCount + " / " + LevelManager.instance.maxAchievementsAmount;
+        Time.text = "<color=#E50049>Time: </color>" + LevelManager.instance.timePlaying.ToString(@"hh\:mm\:ss");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Disks.text = "<color=#E50049>Disks: </color>" + LevelManager.instance.disksCount + " / " + LevelManager.instance.maxDisksAmount;
-        Losses.text = "<color=#E50049>Losses: </color>" + LevelManager.instance.lossesCount;
-        AchievementsCount.text = "<color=#E50049>Achievements: </color>" + LevelManager.instance.AchievementsCount + " / " + LevelManager.instance.maxAchievementsAmount;
-        Time.text = "<color=#E50049>Time: </color>" + LevelManager.instance.timePlaying.ToString("mm':'ss':'ff");
+        
     }
 
 }

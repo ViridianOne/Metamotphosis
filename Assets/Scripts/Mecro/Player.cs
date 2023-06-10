@@ -230,6 +230,10 @@ public abstract class Player : MonoBehaviour
         anim.SetBool("isDamaged", true);
         anim.SetBool("isMoving", false);
         anim.SetTrigger("damage");
+        LevelManager.instance.CountLosses();
+        LevelManager.instance.UpdateSafeAndSoundStats();
+        if (isGravityInverted && isOn0)
+            LevelManager.instance.UpdateLifeAtTheCeilStats();
         DisableAbility();
         Physics2D.IgnoreLayerCollision(7, 9, true);
         Physics2D.IgnoreLayerCollision(7, 17, true);

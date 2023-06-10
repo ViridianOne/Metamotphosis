@@ -166,7 +166,9 @@ public class Ghost : Enemy
 
     protected override IEnumerator DamagePlayer()
     {
-        Player.instance.DamagePlayer();
+        if (!(LevelManager.instance.completedAchievements[3] && MecroSelectManager.instance.GetIndex() == 4 
+            || LevelManager.instance.completedAchievements[7] && MecroSelectManager.instance.GetIndex() == 7))
+            Player.instance.DamagePlayer();
         TakeDamage();
         yield break;
     }

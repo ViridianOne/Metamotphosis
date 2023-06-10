@@ -148,7 +148,8 @@ public class Flash : Enemy
         explosionTimer = 0;
         yield return new WaitForSeconds(explosionTime - 1.2f);
 
-        ChangePlayerVelocity(Random.Range(0, 2));
+        if (!(LevelManager.instance.completedAchievements[6] && MecroSelectManager.instance.GetIndex() == 6))
+            ChangePlayerVelocity(Random.Range(0, 2));
     }
 
     private void ChangePlayerVelocity(int variety)
@@ -187,7 +188,8 @@ public class Flash : Enemy
         currentAttackRadius = 0;
         explosionTimer = 0;
 
-        ChangePlayerVelocity(Random.Range(0, 2));
+        if (!(LevelManager.instance.completedAchievements[5] && MecroSelectManager.instance.GetIndex() == 5))
+            ChangePlayerVelocity(Random.Range(0, 2));
         StartCoroutine(TurnOff());
     }
 

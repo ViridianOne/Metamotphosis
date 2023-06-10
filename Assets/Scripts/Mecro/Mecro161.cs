@@ -54,8 +54,9 @@ public class Mecro161 : Player
                         anim.SetLayerWeight(1, 0);
                         anim.SetLayerWeight(2, 100);
                         AudioManager.instance.Play(1);
-                        playerLight.pointLightInnerRadius = strongInnerRadius;
-                        playerLight.pointLightOuterRadius = strongOuterRadius;
+                        playerLight.pointLightInnerRadius = LevelManager.instance.completedAchievements[0] ? strongInnerRadius + 4 : strongInnerRadius;
+                        playerLight.pointLightOuterRadius = LevelManager.instance.completedAchievements[0] ? strongOuterRadius + 5 : strongOuterRadius;
+                        LevelManager.instance.UpdateDarkVisionStats();
                     }
                     else
                     {

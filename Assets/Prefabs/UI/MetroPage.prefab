@@ -356,11 +356,11 @@ RectTransform:
   - {fileID: 2522013586747206216}
   - {fileID: 7876218903577551650}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -610}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8590148932448946019
@@ -521,8 +521,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 0
-  stationNumber: 14
-  stationPosition: {x: 12, y: 8, z: 0}
+  previousLocation: 5
+  stationNumber: 1
+  stationPosition: {x: 12, y: 2, z: 0}
   stationColor: {r: 0.8980392, g: 0.3882353, b: 0, a: 1}
   locationScene: Location26
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -557,22 +558,22 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1159588224817823938}
   - {fileID: 4831905508881603933}
+  - {fileID: 6849945574624803691}
+  - {fileID: 1159588224817823938}
   - {fileID: 8960376778163060567}
-  - {fileID: 494629873265174226}
   - {fileID: 8026349459228911971}
+  - {fileID: 3269709499442049604}
+  - {fileID: 494629873265174226}
   - {fileID: 2895622598183694899}
   - {fileID: 6712050040278790092}
-  - {fileID: 3269709499442049604}
-  - {fileID: 6849945574624803691}
   m_Father: {fileID: 5632247741572830662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 840}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &910083850204397261
 MonoBehaviour:
@@ -833,8 +834,8 @@ RectTransform:
   m_Father: {fileID: 3408786934530312892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.17467856}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -942,7 +943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#E50049>341-14</color>'
+  m_text: 'Room: <color=#E50049>341-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1077,7 +1078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#BBE500>71-14</color>'
+  m_text: 'Room: <color=#BBE500>71-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1317,11 +1318,11 @@ RectTransform:
   - {fileID: 1561682487769147669}
   - {fileID: 4080904107391826272}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -800}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2966509572477137685
@@ -1482,8 +1483,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 8
-  stationNumber: 4
-  stationPosition: {x: 11, y: 0, z: 0}
+  previousLocation: 3
+  stationNumber: 1
+  stationPosition: {x: 10, y: 1, z: 0}
   stationColor: {r: 0.64599997, g: 0.64599997, b: 0.64599997, a: 1}
   locationScene: CentralLocation
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -1572,9 +1574,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 17.063812, y: 0}
-  m_SizeDelta: {x: 31.0833, y: -17}
+  m_SizeDelta: {x: 31.0833, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1235327762877522798
 CanvasRenderer:
@@ -1658,7 +1660,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3564632560089303828}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.82532144
+  m_Size: 0.89467394
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1864,7 +1866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#D600E5>296-12</color>'
+  m_text: 'Room: <color=#D600E5>296-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1969,11 +1971,11 @@ RectTransform:
   - {fileID: 1315379737487336170}
   - {fileID: 7331994661413390235}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -230}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7457851642499565219
@@ -2134,8 +2136,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 1
-  stationNumber: 14
-  stationPosition: {x: 14, y: 2, z: 0}
+  previousLocation: 6
+  stationNumber: 1
+  stationPosition: {x: 13, y: 1, z: 0}
   stationColor: {r: 0.73333335, g: 0.8980392, b: 0, a: 1}
   locationScene: Location71
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -2253,9 +2256,9 @@ RectTransform:
   m_Father: {fileID: 3578921032307987747}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -420}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5447857287654555753
@@ -2416,8 +2419,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 4
-  stationNumber: 14
-  stationPosition: {x: 6, y: -8, z: 0}
+  previousLocation: 1
+  stationNumber: 1
+  stationPosition: {x: 9, y: -6, z: 0}
   stationColor: {r: 0, g: 0.50980395, b: 0.8980392, a: 1}
   locationScene: Location206
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -2457,11 +2461,11 @@ RectTransform:
   - {fileID: 1036039962752142548}
   - {fileID: 6228282115509708822}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -515}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7486446738236578551
@@ -2622,8 +2626,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 5
-  stationNumber: 14
-  stationPosition: {x: 4, y: -5, z: 0}
+  previousLocation: 2
+  stationNumber: 1
+  stationPosition: {x: 8, y: 0, z: 0}
   stationColor: {r: 0.16470589, g: 0, b: 0.8980392, a: 1}
   locationScene: Location251
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -2663,11 +2668,11 @@ RectTransform:
   - {fileID: 3276373438607476103}
   - {fileID: 8730124991216657614}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1962147222908023505
@@ -2828,8 +2833,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 6
-  stationNumber: 14
-  stationPosition: {x: 7, y: 4, z: 0}
+  previousLocation: 8
+  stationNumber: 1
+  stationPosition: {x: 4, y: 2, z: 0}
   stationColor: {r: 0.8392157, g: 0, b: 0.8980392, a: 1}
   locationScene: Location296
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -2899,7 +2905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#2A00E5>251-14</color>'
+  m_text: 'Room: <color=#2A00E5>251-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3004,11 +3010,11 @@ RectTransform:
   - {fileID: 8343213402983586080}
   - {fileID: 7546651299349520186}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -135}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6644299597827442830
@@ -3169,8 +3175,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 3
-  stationNumber: 14
-  stationPosition: {x: 16, y: -8, z: 0}
+  previousLocation: 9
+  stationNumber: 1
+  stationPosition: {x: 12, y: -6, z: 0}
   stationColor: {r: 0, g: 0.8980392, b: 0.6117647, a: 1}
   locationScene: Location161
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -3777,6 +3784,16 @@ MonoBehaviour:
   menu: {fileID: 0}
   metroMenu: {fileID: 6186538280328457837}
   formSwitchController: {fileID: 0}
+  buttons:
+  - {fileID: 5626224341299562133}
+  - {fileID: 7443177269351497175}
+  - {fileID: 490739036}
+  - {fileID: 1565679625778966941}
+  - {fileID: 3433401136789796754}
+  - {fileID: 2782956611985596000}
+  - {fileID: 3997839485222457844}
+  - {fileID: 4738871416248399907}
+  - {fileID: 5295598126378992773}
 --- !u!1 &4274341201006906730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,7 +4130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#0FE500>116-14</color>'
+  m_text: 'Room: <color=#0FE500>116-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4221,8 +4238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -666, y: 2.536}
-  m_SizeDelta: {x: 500, y: 710.27}
+  m_AnchoredPosition: {x: -666, y: -26.592}
+  m_SizeDelta: {x: 500, y: 768.5261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7042902348999833562
 CanvasRenderer:
@@ -4328,9 +4345,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -28.0833, y: 20}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &783363858026423979
 CanvasRenderer:
@@ -4784,7 +4801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1155770261327250485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4913,7 +4930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#E56300>26-14</color>'
+  m_text: 'Room: <color=#E56300>26-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5048,7 +5065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#00E59C>161-14</color>'
+  m_text: 'Room: <color=#00E59C>161-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5381,11 +5398,11 @@ RectTransform:
   - {fileID: 6829189621318461601}
   - {fileID: 4892120136209551809}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -705}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5068933833384272002
@@ -5546,8 +5563,9 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 7
-  stationNumber: 14
-  stationPosition: {x: 8, y: 7, z: 0}
+  previousLocation: 4
+  stationNumber: 1
+  stationPosition: {x: 9, y: 2, z: 0}
   stationColor: {r: 0.8980392, g: 0, b: 0.28627452, a: 1}
   locationScene: Location341
   metroStationPos: {x: 0, y: 0, z: 0}
@@ -5992,9 +6010,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -28.0833, y: -17}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2331939680220832266
 CanvasRenderer:
@@ -6081,7 +6099,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6189,7 +6207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#A5A5A5>Center-4</color>'
+  m_text: 'Room: <color=#A5A5A5>Center-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6564,11 +6582,11 @@ RectTransform:
   - {fileID: 4084673551318000292}
   - {fileID: 7754214818043664148}
   m_Father: {fileID: 3578921032307987747}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -325}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5021733394333533879
@@ -6729,7 +6747,8 @@ MonoBehaviour:
   mapController: {fileID: 0}
   controller: {fileID: 1124781707}
   stationLocation: 2
-  stationNumber: 14
+  previousLocation: 7
+  stationNumber: 1
   stationPosition: {x: 17, y: -6, z: 0}
   stationColor: {r: 0.05882353, g: 0.8980392, b: 0, a: 1}
   locationScene: Location116
@@ -6800,7 +6819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Room: <color=#0082E5>206-14</color>'
+  m_text: 'Room: <color=#0082E5>206-1</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

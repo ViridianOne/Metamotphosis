@@ -49,6 +49,8 @@ public class Mecro71 : Player
             accelerate = 0;
         }
 
+        accelerate = LevelManager.instance.completedAchievements[2] ? accelerate * 2 : accelerate;
+
         float moveForce = 0;
         if(isHorizontal)
             moveForce = (targetSpeed - rigidBody.velocity.x) * accelerate;

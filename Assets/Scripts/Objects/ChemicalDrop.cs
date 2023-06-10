@@ -56,7 +56,10 @@ public class ChemicalDrop : MonoBehaviour, IPoolObject
         }
 
         if (isTouchingChemical || isTouchingDrop)
+        {
             Player.instance.DamagePlayer();
+            LevelManager.instance.UpdateAntidoteStats();
+        }
     }
 
     private IEnumerator Splash()

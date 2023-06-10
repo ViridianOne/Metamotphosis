@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public static Timer instance;
     private bool isStarted;
-    private float elapsedTime;
+    [HideInInspector] public float elapsedTime;
 
     private void Awake()
     {
@@ -23,7 +23,6 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         isStarted = true;
-        elapsedTime = 0f;
 
         StartCoroutine(UpdateTimer());
     }

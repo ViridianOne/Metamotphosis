@@ -33,13 +33,7 @@ public class PressingBlock : MonoBehaviour, IPoolObject
 
     void Start()
     {
-        if(animationLayer != 1)
-        {
-            anim.SetLayerWeight(animationLayer, 100);
-            anim.SetLayerWeight(1, 0);
-        }
-        else
-            anim.SetLayerWeight(1, 100);
+        SetAnimationLayer();
         rigidBody.bodyType = RigidbodyType2D.Kinematic;
         canAttack = true;
         ableToDamege = true;
@@ -87,6 +81,17 @@ public class PressingBlock : MonoBehaviour, IPoolObject
             rigidBody.velocity = Vector2.zero;
         }
         objectLight.intensity = LevelManager.instance.isDarknessOn ? 1 : 0;
+    }
+
+    private void SetAnimationLayer()
+    {
+        if (animationLayer != 1)
+        {
+            anim.SetLayerWeight(animationLayer, 100);
+            anim.SetLayerWeight(1, 0);
+        }
+        else
+            anim.SetLayerWeight(1, 100);
     }
 
     private IEnumerator Attack()
@@ -160,5 +165,7 @@ public class PressingBlock : MonoBehaviour, IPoolObject
         triggerTime = pressingBlockData.triggerTime;
         landingTime = pressingBlockData.landingTime;
         animationLayer = pressingBlockData.animationLayer;
+
+        SetAnimationLayer();
     }
 }

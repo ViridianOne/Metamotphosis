@@ -53,7 +53,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 98a03b35ecd866945a42c6686ea40caf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +95,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 98a03b35ecd866945a42c6686ea40caf, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -112,7 +112,8 @@ GameObject:
   - component: {fileID: 1587194312233092248}
   - component: {fileID: 1587194312233092255}
   - component: {fileID: 1587194312233092252}
-  m_Layer: 0
+  - component: {fileID: 3753849202471451985}
+  m_Layer: 18
   m_Name: Disk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,3 +238,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 637385843}
   location: 3
+  id: 
+--- !u!50 &3753849202471451985
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587194312233092251}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

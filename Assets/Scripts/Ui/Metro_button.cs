@@ -12,6 +12,7 @@ public class Metro_button : MonoBehaviour
 
     [Header("Map and Metro Station")]
     public Location stationLocation;
+    public Location previousLocation;
     public int stationNumber;
     public Vector3Int stationPosition;
     public Color stationColor;

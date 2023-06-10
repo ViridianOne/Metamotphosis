@@ -22,6 +22,8 @@ public class Metro_system : MonoBehaviour
     public GameObject metroMenu;
     public GameObject formSwitchController;
 
+    public Metro_button[] buttons;
+
     private void Awake()
     {
         instance = this;
@@ -45,6 +47,8 @@ public class Metro_system : MonoBehaviour
 
     public void ToggleActive(bool isActive)
     {
+        if (isActive)
+            TurnButtonsOn();
         metroMenu.SetActive(isActive);
         mapController.SetActive(isActive);
         formSwitchController.SetActive(!isActive);
@@ -61,6 +65,19 @@ public class Metro_system : MonoBehaviour
             hasPlayerChoosen = false;
             DataManager.instance.SaveGame();
             SceneManager.LoadScene(locationScene);
+        }
+    }
+
+    private void TurnButtonsOn()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (buttons[i].previousLocation == Location.None)
+                buttons[i].gameObject.SetActive(true);
+            else if (buttons[i].previousLocation == Location.centralLocation)
+                buttons[i].gameObject.SetActive(LevelManager.instance.completedLocations[(int)Location.location161]);
+            else
+                buttons[i].gameObject.SetActive(LevelManager.instance.completedLocations[(int)buttons[i].previousLocation]);
         }
     }
 }

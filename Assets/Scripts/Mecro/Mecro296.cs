@@ -49,7 +49,11 @@ public class Mecro296 : Player
                 {
                     isCeilingHitted = Physics2D.OverlapBox(headPos.position, headDetectorSize, 0f, noPlatfromMask);
                     if (isCeilingHitted)
+                    {
                         jumpTimer = 0;
+                        if (!LevelManager.instance.completedAchievements[1])
+                            moveInput = 0;
+                    }
                 }
 
                 isChargingJump = Input.GetButton("Jump");

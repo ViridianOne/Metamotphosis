@@ -5,7 +5,9 @@ using UnityEngine;
 public class MetroStation : MonoBehaviour
 {
     private Animator animator;
-    [SerializeField] private Location location;
+    [SerializeField] private Location location; 
+    [SerializeField] private Location prevoiusLocation = Location.None;
+    [SerializeField] private GameObject tip;
 
     private void Awake()
     {
@@ -16,19 +18,13 @@ public class MetroStation : MonoBehaviour
         animator.SetFloat("location", (float)location);
     }
 
-    private void Update()
-    {
-        if(Metro_system.instance.hasPlayerChoosen)
-        {
-            ToggleMetroStationActive(false);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
-            ToggleMetroStationActive(true);
+            if(prevoiusLocation == Location.None 
+                || (prevoiusLocation != Location.None && LevelManager.instance.completedLocations[(int)prevoiusLocation]))
+                ToggleMetroStationActive(true);
         }
     }
 
@@ -36,7 +32,9 @@ public class MetroStation : MonoBehaviour
     {
         if(collision.tag == "Player" && !Metro_system.instance.hasPlayerChoosen)
         {
-            ToggleMetroStationActive(false);
+            if (prevoiusLocation == Location.None
+                || (prevoiusLocation != Location.None && LevelManager.instance.completedLocations[(int)prevoiusLocation]))
+                ToggleMetroStationActive(false);
         }
     }
 
@@ -45,5 +43,6 @@ public class MetroStation : MonoBehaviour
         animator.SetBool("isOpening", isOpen);
         animator.speed = 1.25f;
         Metro_system.instance.isAbleToOpen = isOpen;
+        tip.SetActive(isOpen);
     }
 }

@@ -40,6 +40,7 @@ public class Disk : MonoBehaviour, IDataPersistance
             }
             gameObject.GetComponent<Collider2D>().enabled = !gameObject.GetComponent<Collider2D>().enabled;
             gameObject.GetComponent<SpriteRenderer>().enabled = !gameObject.GetComponent<SpriteRenderer>().enabled;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             //gameObject.SetActive(false);
             StartCoroutine(DestroyDisk());
         }

@@ -6,15 +6,9 @@ using UnityEngine;
 public class CustomAchievement : MonoBehaviour
 {
     public GameObject sprite;
-    public string id { get; set; }
+    public int id;
 
     public bool completed { get; private set; }
-
-    public CustomAchievement(string id, double percent)
-    {
-        this.id = id;
-        completed = false;
-    }
 
     public void SetCompleted()
     {
@@ -23,7 +17,6 @@ public class CustomAchievement : MonoBehaviour
         else
         {
             completed = true;
-            LevelManager.instance.AchievementsCount++;
             sprite.SetActive(false);
         }
     }

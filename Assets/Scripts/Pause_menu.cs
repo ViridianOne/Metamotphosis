@@ -44,6 +44,8 @@ public class Pause_menu : MonoBehaviour
     public Image background;
     public Sprite mapBackground;
 
+    public ExtrasController extrasController;
+
     void Update()
     {
 
@@ -163,6 +165,7 @@ public class Pause_menu : MonoBehaviour
     {
         if (activeButtonState == ActiveButtonState.Extras)
         {
+            extrasController.UpdateData();
             if (activePage == extrasPage)
             {
                 activePage.SetActive(false);

@@ -68,7 +68,7 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
         {
             leftDiode.SetBool("isAttacking", false);
             rightDiode.SetBool("isAttacking", false);
-            AudioManager.instance.Stop(16);
+            //AudioManager.instance.Stop(16);
             grid.SetActive(false);
             disableTimer = disableTime;
         }
@@ -81,7 +81,7 @@ public class ElectricityTileChange : MonoBehaviour, IPoolObject
         leftDiode.SetBool("isAttacking", true);
         rightDiode.SetBool("isAttacking", true);
         yield return new WaitForSeconds(turningOnTime);
-        AudioManager.instance.Play(16);
+        //AudioManager.instance.Play(16);
         grid.SetActive(true);
         activeTimer = activeTime;
     }

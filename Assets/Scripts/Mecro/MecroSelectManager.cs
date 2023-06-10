@@ -154,6 +154,7 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
     public void SaveData(ref GameData data)
     {
         data.mecroFormsAvailabilty = isMecroUnlocked;
-        data.lastCheckpoint = respawnPoint.position;
+        if(respawnPoint != null)
+            data.lastCheckpoint = respawnPoint.position;
     }
 }
