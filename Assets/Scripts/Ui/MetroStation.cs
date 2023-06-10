@@ -30,7 +30,7 @@ public class MetroStation : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && !Metro_system.instance.hasPlayerChoosen)
+        if(collision.tag == "Player")
         {
             if (prevoiusLocation == Location.None
                 || (prevoiusLocation != Location.None && LevelManager.instance.completedLocations[(int)prevoiusLocation]))

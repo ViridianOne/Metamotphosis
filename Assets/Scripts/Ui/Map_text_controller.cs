@@ -53,8 +53,8 @@ public class Map_text_controller : MonoBehaviour
                 break;
 
             case Location.centralLocation:
-                SectionText.text = "Location: " + "<color=#2A00E5>251</color>";
-                RoomText.text = "Room: " + "<color=#2A00E5>" + roomNumber + "</color>";
+                SectionText.text = "Location: " + "<color=#e6e6e6>Center</color>";
+                RoomText.text = "Room: " + "<color=#e6e6e6>Center-" + roomNumber + "</color>";
                 break;
         }
     }

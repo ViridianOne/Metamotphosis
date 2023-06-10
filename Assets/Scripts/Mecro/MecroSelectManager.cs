@@ -54,46 +54,6 @@ public class MecroSelectManager : MonoBehaviour, IDataPersistance
         Player.instance.gameObject.SetActive(true);
     }
 
-    void Update()
-    {
-        //Player.instance.isActive = canSelect;
-        if (canSelect)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                SelectMecro(MecroStates.form161);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                SelectMecro(MecroStates.form296);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                SelectMecro(MecroStates.form71);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                SelectMecro(MecroStates.form206);
-            }
-            else if (Input.GetKeyDown(KeyCode.I))
-            {
-                SelectMecro(MecroStates.form341);
-            }
-            else if (Input.GetKeyDown(KeyCode.J))
-            {
-                SelectMecro(MecroStates.form116);
-            }
-            else if(Input.GetKeyDown(KeyCode.L))
-            {
-                SelectMecro(MecroStates.form251);
-            }
-            else if (Input.GetKeyDown(KeyCode.K))
-            {
-                SelectMecro(MecroStates.form26);
-            }
-        }
-    }
-
     public void SelectMecro(MecroStates mecroState)
     {
         if (isMecroUnlocked[(int)mecroState] && currentMecro != mecroState)

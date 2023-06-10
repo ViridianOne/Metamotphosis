@@ -53,7 +53,6 @@ public class LevelManager : MonoBehaviour, IDataPersistance
 
     private void Start()
     {
-        currentLocation = Location.location161;
         currentRoomNumber = 1;
         currentPositionOnMap = new Vector3Int(12, -6, 0);
         Timer.instance.StartTimer();

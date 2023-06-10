@@ -77,6 +77,8 @@ public class MapController : MonoBehaviour
             Player.SetTile(position, new Tile());
             Player.GetTile<Tile>(position).sprite = PlayerSprites[(int)PlayerLocation];
             Player.RefreshTile(position);
+
+            PlayerLocation = Location.None;
         }
         else
         {
@@ -95,8 +97,10 @@ public class MapController : MonoBehaviour
 
             PlayerPosition = position;
         }
-        foreach(var text in MapTexts)
+        foreach (var text in MapTexts)
+        {
             text.SetLocationText(newLocation, roomNumber);
+        }
     }
 
 
@@ -119,7 +123,6 @@ public class MapController : MonoBehaviour
     {
         if (PlayerLocation == newLocation)
             return;
-
         foreach (var tileCoordinate in SectorsCoordinates[(int)newLocation])
         {
             Sectors.SetColor(tileCoordinate, new Color(1, 1, 1, 1));
@@ -133,7 +136,7 @@ public class MapController : MonoBehaviour
             //Sectors
             //SpecialRooms
         }
-        if (PlayerLocation != Location.None)
+        if(PlayerLocation != newLocation && PlayerLocation != Location.None)
             foreach(var tileCoordinate in SectorsCoordinates[(int)PlayerLocation])
             {
                 Sectors.SetColor(tileCoordinate, new Color(0, 0, 0, 0.5f));

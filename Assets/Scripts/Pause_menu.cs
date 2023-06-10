@@ -64,7 +64,8 @@ public class Pause_menu : MonoBehaviour
 
     public void Resume()
     {
-        if(activePage != null)
+        background.sprite = null;
+        if (activePage != null)
         {
             activePage.SetActive(false);
             activeButtonState = ActiveButtonState.None;

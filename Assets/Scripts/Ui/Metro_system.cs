@@ -60,9 +60,9 @@ public class Metro_system : MonoBehaviour
     {
         hasPlayerChoosen = true;
         ToggleActive(false);
+        hasPlayerChoosen = false;
         if (locationScene != currentScene)
         {
-            hasPlayerChoosen = false;
             DataManager.instance.SaveGame();
             SceneManager.LoadScene(locationScene);
         }

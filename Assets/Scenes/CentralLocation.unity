@@ -22236,7 +22236,7 @@ PrefabInstance:
     - target: {fileID: 490739036, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 1438220234, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: Rooms
       value: 
@@ -22308,7 +22308,7 @@ PrefabInstance:
     - target: {fileID: 1565679625778966941, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 1598374779467252209, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -22332,7 +22332,7 @@ PrefabInstance:
     - target: {fileID: 2782956611985596000, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 2782956611985596000, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: stationPosition.x
       value: 8
@@ -22380,7 +22380,7 @@ PrefabInstance:
     - target: {fileID: 3433401136789796754, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 3535739476295441449, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -22428,7 +22428,7 @@ PrefabInstance:
     - target: {fileID: 3997839485222457844, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 4273026492957560640, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: m_Name
       value: MetroPage
@@ -22444,7 +22444,7 @@ PrefabInstance:
     - target: {fileID: 4738871416248399907, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 4831905508881603933, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -22468,7 +22468,7 @@ PrefabInstance:
     - target: {fileID: 5295598126378992773, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 5295598126378992773, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: stationPosition.x
       value: 12
@@ -22484,7 +22484,7 @@ PrefabInstance:
     - target: {fileID: 5626224341299562133, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 5632247741572830662, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -22644,7 +22644,7 @@ PrefabInstance:
     - target: {fileID: 7443177269351497175, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 2037404851}
+      objectReference: {fileID: 2037404856}
     - target: {fileID: 7443177269351497175, guid: 6b64534dcf600714eb28ba757fe2fa93, type: 3}
       propertyPath: stationLocation
       value: 8
@@ -30834,6 +30834,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5967019448738411169, guid: 8af7dfaa6ccbf7647a4db26268d0552a, type: 3}
+      propertyPath: MapTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 985126177}
+    - target: {fileID: 5967019448738411169, guid: 8af7dfaa6ccbf7647a4db26268d0552a, type: 3}
+      propertyPath: MapTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1107161513}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af7dfaa6ccbf7647a4db26268d0552a, type: 3}
 --- !u!1839735485 &2037404845 stripped
@@ -30866,11 +30874,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2495591986125541719, guid: 8af7dfaa6ccbf7647a4db26268d0552a, type: 3}
   m_PrefabInstance: {fileID: 2037404844}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2037404851
+--- !u!114 &2037404856 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5967019448738411169, guid: 8af7dfaa6ccbf7647a4db26268d0552a, type: 3}
+  m_PrefabInstance: {fileID: 2037404844}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037404850}
   m_Enabled: 1
@@ -30878,28 +30885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc329276a4cbc32449021695df891611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerLocation: 1
-  PlayerPosition: {x: 0, y: 0, z: 0}
-  Rooms: {fileID: 2037404849}
-  Sectors: {fileID: 2037404847}
-  SpecialRooms: {fileID: 2037404845}
-  Player: {fileID: 2037404848}
-  PlayerSprites:
-  - {fileID: 1037733665, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: -206192257, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: 59287019, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: 840280935, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: 1366743711, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: 1826499304, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: -654348966, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: -2004898075, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: 1263288985, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  RoomsSprites:
-  - {fileID: -234444918, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  - {fileID: -1312396792, guid: b5219bd5cfe727f4bb884f2cdb110e06, type: 3}
-  MapTexts:
-  - {fileID: 985126177}
-  - {fileID: 1107161513}
 --- !u!1 &2053986249
 GameObject:
   m_ObjectHideFlags: 0
